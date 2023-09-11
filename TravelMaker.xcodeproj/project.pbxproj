@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
+		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
+		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
+		09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EE22AAE95330082A6A2 /* PinLayout */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
 		09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */; };
 		09D7B1812AAAFE9100991841 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B1802AAAFE9100991841 /* ViewController.swift */; };
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */,
+				09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */,
+				09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */,
+				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,12 @@
 			dependencies = (
 			);
 			name = TravelMaker;
+			packageProductDependencies = (
+				09A83EDB2AAE94CE0082A6A2 /* FlexLayout */,
+				09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */,
+				09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */,
+				09A83EE22AAE95330082A6A2 /* PinLayout */,
+			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,10 @@
 				Base,
 			);
 			mainGroup = 09D7B1702AAAFE9100991841;
+			packageReferences = (
+				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +376,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.18;
+			};
+		};
+		09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09A83EDB2AAE94CE0082A6A2 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayoutYoga;
+		};
+		09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayoutYogaKit;
+		};
+		09A83EE22AAE95330082A6A2 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09D7B1712AAAFE9100991841 /* Project object */;
 }
