@@ -78,10 +78,18 @@
 		09A83EF12AAEAB500082A6A2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				09A83EF62AAECD2D0082A6A2 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09A83EF62AAECD2D0082A6A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				09A83EF22AAEAB620082A6A2 /* LoginView.swift */,
 				09A83EF32AAEAB620082A6A2 /* LoginView.xib */,
 			);
-			path = Login;
+			path = View;
 			sourceTree = "<group>";
 		};
 		09D7B1702AAAFE9100991841 = {
@@ -274,6 +282,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					"FLEXLAYOUT_SWIFT_PACKAGE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -330,6 +339,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -354,6 +364,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85JQGU3JU9;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"DEBUG=1",
+					"FLEXLAYOUT_SWIFT_PACKAGE=1",
+					"$(inherited)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMaker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,6 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85JQGU3JU9;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMaker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

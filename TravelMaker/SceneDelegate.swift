@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: scene)
         
-        
         let vc = LoginView(nibName: "LoginView", bundle: nil)
         let rootViewController = UINavigationController(rootViewController: vc)
         rootViewController.isNavigationBarHidden = true
