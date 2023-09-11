@@ -111,54 +111,59 @@ class LoginView: UIViewController {
         view.addSubview(flexView)
         
         flexView.flex.paddingTop(148).alignItems(.center).define { flex in
-            flex.addItem(logoImage)
-                .width(168)
-                .height(168)
             
-            flex.addItem(appleLoginView)
-                .marginTop(142)
-                .width(295)
-                .height(50)
-                .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
-                .define { flex in
-                    flex.addItem(appleLoginImage).position(.absolute).start(53).marginVertical(9)
-                        .width(32)
-                        .height(32)
-                    
-                    flex.addItem(appleTitle).position(.absolute).start(99).marginVertical(16)
-                    
-                    flex.addItem(appleLoginButton).position(.absolute).all(0)
-                }
+            flex.addItem().define { flex in
+                flex.addItem(logoImage)
+                    .width(168)
+                    .height(168)
+            }.grow(1)
             
-            flex.addItem(kakaoLoginView)
-                .marginTop(12)
-                .width(295)
-                .height(50)
-                .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
-                .define { flex in
-                    flex.addItem(kakaoLoginImage).position(.absolute).start(53).marginVertical(9)
-                        .width(32)
-                        .height(32)
-                    
-                    flex.addItem(kakaoTitle).position(.absolute).start(99).marginVertical(16)
-                    
-                    flex.addItem(kakaoLoginButton).position(.absolute).all(0)
-                }
-            
-            flex.addItem(naverLoginView)
-                .marginTop(12)
-                .width(295)
-                .height(50)
-                .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
-                .define { flex in
-                    flex.addItem(naverLoginImage).position(.absolute).start(53).marginVertical(9)
-                        .width(32)
-                        .height(32)
-                    
-                    flex.addItem(naverTitle).position(.absolute).start(99).marginVertical(16)
-                    
-                    flex.addItem(naverLoginButton).position(.absolute).all(0)
-                }
+            flex.addItem().define { flex in
+                flex.addItem(appleLoginView)
+                    .marginTop(142)
+                    .width(295)
+                    .height(50)
+                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .define { flex in
+                        flex.addItem(appleLoginImage).position(.absolute).start(53).marginVertical(9)
+                            .width(32)
+                            .height(32)
+                        
+                        flex.addItem(appleTitle).position(.absolute).start(99).marginVertical(16)
+                        
+                        flex.addItem(appleLoginButton).position(.absolute).all(0)
+                    }
+                
+                flex.addItem(kakaoLoginView)
+                    .marginTop(12)
+                    .width(295)
+                    .height(50)
+                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .define { flex in
+                        flex.addItem(kakaoLoginImage).position(.absolute).start(53).marginVertical(9)
+                            .width(32)
+                            .height(32)
+                        
+                        flex.addItem(kakaoTitle).position(.absolute).start(99).marginVertical(16)
+                        
+                        flex.addItem(kakaoLoginButton).position(.absolute).all(0)
+                    }
+                
+                flex.addItem(naverLoginView)
+                    .marginTop(12)
+                    .width(295)
+                    .height(50)
+                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .define { flex in
+                        flex.addItem(naverLoginImage).position(.absolute).start(53).marginVertical(9)
+                            .width(32)
+                            .height(32)
+                        
+                        flex.addItem(naverTitle).position(.absolute).start(99).marginVertical(16)
+                        
+                        flex.addItem(naverLoginButton).position(.absolute).all(0)
+                    }
+            }.grow(1)
         }
     }
     
