@@ -17,6 +17,15 @@
 		09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */; };
 		09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EF22AAEAB620082A6A2 /* LoginView.swift */; };
 		09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EF32AAEAB620082A6A2 /* LoginView.xib */; };
+		09A83F072AAEE8AF0082A6A2 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EFE2AAEE8AE0082A6A2 /* SUIT-Thin.otf */; };
+		09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EFF2AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf */; };
+		09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F002AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf */; };
+		09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F012AAEE8AF0082A6A2 /* SUIT-Light.otf */; };
+		09A83F0B2AAEE8AF0082A6A2 /* SUIT-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F022AAEE8AF0082A6A2 /* SUIT-Medium.otf */; };
+		09A83F0C2AAEE8AF0082A6A2 /* SUIT-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F032AAEE8AF0082A6A2 /* SUIT-Heavy.otf */; };
+		09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F042AAEE8AF0082A6A2 /* SUIT-SemiBold.otf */; };
+		09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F052AAEE8AF0082A6A2 /* SUIT-Regular.otf */; };
+		09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F062AAEE8AF0082A6A2 /* SUIT-Bold.otf */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
 		09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */; };
 		09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B1802AAAFE9100991841 /* TabBarViewController.swift */; };
@@ -32,6 +41,15 @@
 		09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArroundView.xib; sourceTree = "<group>"; };
 		09A83EF22AAEAB620082A6A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		09A83EF32AAEAB620082A6A2 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		09A83EFE2AAEE8AE0082A6A2 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
+		09A83EFF2AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraBold.otf"; sourceTree = "<group>"; };
+		09A83F002AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraLight.otf"; sourceTree = "<group>"; };
+		09A83F012AAEE8AF0082A6A2 /* SUIT-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Light.otf"; sourceTree = "<group>"; };
+		09A83F022AAEE8AF0082A6A2 /* SUIT-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Medium.otf"; sourceTree = "<group>"; };
+		09A83F032AAEE8AF0082A6A2 /* SUIT-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Heavy.otf"; sourceTree = "<group>"; };
+		09A83F042AAEE8AF0082A6A2 /* SUIT-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-SemiBold.otf"; sourceTree = "<group>"; };
+		09A83F052AAEE8AF0082A6A2 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
+		09A83F062AAEE8AF0082A6A2 /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
 		09D7B1792AAAFE9100991841 /* TravelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D7B17C2AAAFE9100991841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +110,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		09A83EFB2AAEE88D0082A6A2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				09A83EFC2AAEE8980082A6A2 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		09A83EFC2AAEE8980082A6A2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				09A83EFD2AAEE89F0082A6A2 /* Suit */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		09A83EFD2AAEE89F0082A6A2 /* Suit */ = {
+			isa = PBXGroup;
+			children = (
+				09A83F062AAEE8AF0082A6A2 /* SUIT-Bold.otf */,
+				09A83EFF2AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf */,
+				09A83F002AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf */,
+				09A83F032AAEE8AF0082A6A2 /* SUIT-Heavy.otf */,
+				09A83F012AAEE8AF0082A6A2 /* SUIT-Light.otf */,
+				09A83F022AAEE8AF0082A6A2 /* SUIT-Medium.otf */,
+				09A83F052AAEE8AF0082A6A2 /* SUIT-Regular.otf */,
+				09A83F042AAEE8AF0082A6A2 /* SUIT-SemiBold.otf */,
+				09A83EFE2AAEE8AE0082A6A2 /* SUIT-Thin.otf */,
+			);
+			path = Suit;
+			sourceTree = "<group>";
+		};
 		09D7B1702AAAFE9100991841 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +171,7 @@
 				09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */,
 				09D7B18A2AAAFE9200991841 /* Info.plist */,
 				09D7B1852AAAFE9200991841 /* Assets.xcassets */,
+				09A83EFB2AAEE88D0082A6A2 /* Resource */,
 			);
 			path = TravelMaker;
 			sourceTree = "<group>";
@@ -193,11 +244,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A83F0C2AAEE8AF0082A6A2 /* SUIT-Heavy.otf in Resources */,
+				09A83F0B2AAEE8AF0082A6A2 /* SUIT-Medium.otf in Resources */,
+				09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */,
+				09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */,
+				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
+				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
+				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
 				09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */,
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
+				09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */,
+				09A83F072AAEE8AF0082A6A2 /* SUIT-Thin.otf in Resources */,
 				09A83EEB2AAE9C9B0082A6A2 /* RecommendView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

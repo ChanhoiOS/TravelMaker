@@ -55,30 +55,27 @@ class LoginView: UIViewController {
     private let appleTitle: UILabel = {
         let label = UILabel()
         label.text = "애플 계정으로 시작하기"
-        label.textColor = .black
+        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
     
     private let kakaoTitle: UILabel = {
         let label = UILabel()
         label.text = "카카오 계정으로 시작하기"
-        label.textColor = .black
+        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
     
     private let naverTitle: UILabel = {
         let label = UILabel()
         label.text = "네이버 계정으로 시작하기"
-        label.textColor = .black
+        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
 
-    private let loginButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(startLogin), for: .touchUpInside)
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
