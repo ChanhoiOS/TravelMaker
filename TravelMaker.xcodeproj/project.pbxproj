@@ -11,19 +11,31 @@
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
 		09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EE22AAE95330082A6A2 /* PinLayout */; };
+		09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */; };
+		09A83EEB2AAE9C9B0082A6A2 /* RecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */; };
+		09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EED2AAE9D210082A6A2 /* ArroundView.swift */; };
+		09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */; };
+		09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EF22AAEAB620082A6A2 /* LoginView.swift */; };
+		09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EF32AAEAB620082A6A2 /* LoginView.xib */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
 		09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */; };
-		09D7B1812AAAFE9100991841 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B1802AAAFE9100991841 /* ViewController.swift */; };
+		09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B1802AAAFE9100991841 /* TabBarViewController.swift */; };
 		09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1822AAAFE9100991841 /* Main.storyboard */; };
 		09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1852AAAFE9200991841 /* Assets.xcassets */; };
 		09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
+		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
+		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
+		09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArroundView.xib; sourceTree = "<group>"; };
+		09A83EF22AAEAB620082A6A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09A83EF32AAEAB620082A6A2 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		09D7B1792AAAFE9100991841 /* TravelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D7B17C2AAAFE9100991841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09D7B1802AAAFE9100991841 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		09D7B1802AAAFE9100991841 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		09D7B1832AAAFE9100991841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09D7B1852AAAFE9200991841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D7B1882AAAFE9200991841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */,
+				09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		09A83EEC2AAE9D040082A6A2 /* Arround */ = {
+			isa = PBXGroup;
+			children = (
+				09A83EED2AAE9D210082A6A2 /* ArroundView.swift */,
+				09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */,
+			);
+			path = Arround;
+			sourceTree = "<group>";
+		};
+		09A83EF12AAEAB500082A6A2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09A83EF22AAEAB620082A6A2 /* LoginView.swift */,
+				09A83EF32AAEAB620082A6A2 /* LoginView.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		09D7B1702AAAFE9100991841 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +103,16 @@
 		09D7B17B2AAAFE9100991841 /* TravelMaker */ = {
 			isa = PBXGroup;
 			children = (
+				09A83EF12AAEAB500082A6A2 /* Login */,
+				09A83EEC2AAE9D040082A6A2 /* Arround */,
+				09A83EE72AAE9C790082A6A2 /* Recommend */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
-				09D7B1802AAAFE9100991841 /* ViewController.swift */,
+				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
 				09D7B1822AAAFE9100991841 /* Main.storyboard */,
-				09D7B1852AAAFE9200991841 /* Assets.xcassets */,
 				09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */,
 				09D7B18A2AAAFE9200991841 /* Info.plist */,
+				09D7B1852AAAFE9200991841 /* Assets.xcassets */,
 			);
 			path = TravelMaker;
 			sourceTree = "<group>";
@@ -143,9 +185,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */,
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
+				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
+				09A83EEB2AAE9C9B0082A6A2 /* RecommendView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D7B1812AAAFE9100991841 /* ViewController.swift in Sources */,
+				09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */,
+				09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
+				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
+				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
