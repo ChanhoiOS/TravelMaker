@@ -75,6 +75,24 @@ class LoginView: UIViewController {
         label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
+    
+    private lazy var appleLoginButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(appleLogin), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var kakaoLoginButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(kakaoLogin), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var naverLoginButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(naverLogin), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +103,6 @@ class LoginView: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        // 2. pin으로 레이아웃 잡기
         flexView.pin.all(view.pin.safeArea)
         flexView.flex.layout()
     }
@@ -109,6 +126,8 @@ class LoginView: UIViewController {
                         .height(32)
                     
                     flex.addItem(appleTitle).position(.absolute).start(99).marginVertical(16)
+                    
+                    flex.addItem(appleLoginButton).position(.absolute).all(0)
                 }
             
             flex.addItem(kakaoLoginView)
@@ -122,6 +141,8 @@ class LoginView: UIViewController {
                         .height(32)
                     
                     flex.addItem(kakaoTitle).position(.absolute).start(99).marginVertical(16)
+                    
+                    flex.addItem(kakaoLoginButton).position(.absolute).all(0)
                 }
             
             flex.addItem(naverLoginView)
@@ -135,39 +156,49 @@ class LoginView: UIViewController {
                         .height(32)
                     
                     flex.addItem(naverTitle).position(.absolute).start(99).marginVertical(16)
+                    
+                    flex.addItem(naverLoginButton).position(.absolute).all(0)
                 }
         }
     }
     
-    @objc func startLogin() {
-        
+    @objc func appleLogin() {
+        print("애플")
+    }
+    
+    @objc func kakaoLogin() {
+        print("카카오")
+    }
+    
+    @objc func naverLogin() {
+        print("네이버")
     }
 
-    @IBAction func Test(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-        
-        let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
-        let arroundView =  ArroundView(nibName: "ArroundView", bundle: nil)
-        
-        let recommentNavigationView = UINavigationController(rootViewController: recommendView)
-        let arroundNavigationView = UINavigationController(rootViewController: arroundView)
-        
-        tabBarController.setViewControllers([recommentNavigationView, arroundNavigationView], animated: true)
-        
-        if let items = tabBarController.tabBar.items {
-            items[0].selectedImage = UIImage(systemName: "folder.fill")
-            items[0].image = UIImage(systemName: "folder")
-            items[0].title = "추천"
-            
-            items[1].selectedImage = UIImage(systemName: "folder.fill")
-            items[1].image = UIImage(systemName: "folder")
-            items[1].title = "주변"
-        }
-         
-        tabBarController.tabBar.backgroundColor = .white
-        
-        self.navigationController?.pushViewController(tabBarController, animated: true)
-    }
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+//
+//        let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
+//        let arroundView =  ArroundView(nibName: "ArroundView", bundle: nil)
+//
+//        let recommentNavigationView = UINavigationController(rootViewController: recommendView)
+//        let arroundNavigationView = UINavigationController(rootViewController: arroundView)
+//
+//        tabBarController.setViewControllers([recommentNavigationView, arroundNavigationView], animated: true)
+//
+//        if let items = tabBarController.tabBar.items {
+//            items[0].selectedImage = UIImage(systemName: "folder.fill")
+//            items[0].image = UIImage(systemName: "folder")
+//            items[0].title = "추천"
+//
+//            items[1].selectedImage = UIImage(systemName: "folder.fill")
+//            items[1].image = UIImage(systemName: "folder")
+//            items[1].title = "주변"
+//        }
+//
+//        tabBarController.tabBar.backgroundColor = .white
+//
+//        self.navigationController?.pushViewController(tabBarController, animated: true)
+
     
 }
