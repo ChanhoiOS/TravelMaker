@@ -11,6 +11,8 @@ import PinLayout
 
 class LoginView: UIViewController {
     
+    let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
+    
     let flexView = UIView()
     
     private let logoImage: UIImageView = {
@@ -168,7 +170,9 @@ class LoginView: UIViewController {
     }
     
     @objc func appleLogin() {
-        print("애플")
+        wrapper.requestPost(target: .login("kakao", "12345"), instance: LoginModel.self) { result in
+            print("result: ", result)
+        }
     }
     
     @objc func kakaoLogin() {
