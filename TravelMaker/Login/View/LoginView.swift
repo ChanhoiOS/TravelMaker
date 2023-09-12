@@ -95,10 +95,10 @@ class LoginView: UIViewController {
         button.addTarget(self, action: #selector(naverLogin), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setFlexView()
     }
     
@@ -169,19 +169,41 @@ class LoginView: UIViewController {
         }
     }
     
+}
+
+extension LoginView {
     @objc func appleLogin() {
-        wrapper.requestPost(target: .login("kakao", "12345"), instance: LoginModel.self) { result in
-            print("result: ", result)
-        }
+        
     }
     
     @objc func kakaoLogin() {
-        print("카카오")
+        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
+            print("Login Data: ", response)
+            switch response {
+            case .success(let data):
+                self.goToMain(data)
+            case .failure(let error):
+                self.goToSignUp()
+            }
+        }
     }
     
     @objc func naverLogin() {
-        print("네이버")
+        
     }
+}
+
+extension LoginView {
+    func goToMain(_ data: LoginModel) {
+        if let token = data.data?.accessToken {
+            SessionManager.shared.accessToken = token
+        }
+    }
+    
+    func goToSignUp() {
+        print("회원가입 로직")
+    }
+}
 
 //
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -209,5 +231,3 @@ class LoginView: UIViewController {
 //
 //        self.navigationController?.pushViewController(tabBarController, animated: true)
 
-    
-}
