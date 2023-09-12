@@ -60,6 +60,8 @@ class SignUpView: BaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        
+        setButton()
         flexView.pin.all(view.pin.safeArea)
         flexView.flex.layout()
     }
@@ -81,6 +83,11 @@ class SignUpView: BaseViewController {
         }
     }
     
+    func setButton() {
+        self.confirmButton.isEnabled = false
+        self.confirmButton.backgroundColor = UIColor(red: 141.0/255.0, green: 141.0/255.0, blue: 141.0/255.0, alpha: 1.0)
+    }
+    
     func buttonAnimation(_ height: CGFloat) {
         confirmButton.flex.marginBottom(height)
         confirmButton.flex.markDirty()
@@ -97,6 +104,14 @@ class SignUpView: BaseViewController {
             .distinctUntilChanged()
             .subscribe(onNext: { text in
                 self.nickNameText = text
+                
+                if text.count > 1 {
+                    self.confirmButton.isEnabled = true
+                    self.confirmButton.backgroundColor = UIColor(red: 56.0/255.0, green: 96.0/255.0, blue: 226.0/255.0, alpha: 1.0)
+                } else {
+                    self.confirmButton.isEnabled = false
+                    self.confirmButton.backgroundColor = UIColor(red: 141.0/255.0, green: 141.0/255.0, blue: 141.0/255.0, alpha: 1.0)
+                }
             })
             .disposed(by: disposeBag)
     }

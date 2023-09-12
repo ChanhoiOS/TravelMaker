@@ -193,7 +193,7 @@ extension LoginView {
             switch response {
             case .success(let data):
                 self.goToMain(data)
-            case .failure(let error):
+            case .failure( _):
                 self.goToSignUp()
             }
         }
@@ -213,6 +213,7 @@ extension LoginView {
     
     func goToSignUp() {
         let vc = SignUpView(nibName: "SignUpView", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
     }
 }
