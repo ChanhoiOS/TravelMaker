@@ -19,6 +19,7 @@
 		09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B942AB0305A00A3F0D6 /* OnboardingView.xib */; };
 		09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B992AB033C800A3F0D6 /* OnboardingCell.swift */; };
 		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
+		09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -66,6 +67,7 @@
 		09591B942AB0305A00A3F0D6 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		09591B992AB033C800A3F0D6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09591B9E2AB04B9F00A3F0D6 /* LocalData */,
 				09591B8A2AB020DC00A3F0D6 /* Base */,
 				09591B7E2AAFF43700A3F0D6 /* Extension */,
 			);
@@ -195,6 +198,30 @@
 				09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		09591B9E2AB04B9F00A3F0D6 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				09591BA12AB04CA400A3F0D6 /* UserDefault */,
+				09591BA02AB04BB500A3F0D6 /* CoreData */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		09591BA02AB04BB500A3F0D6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		09591BA12AB04CA400A3F0D6 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
@@ -458,6 +485,7 @@
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* LoginApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
+				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,

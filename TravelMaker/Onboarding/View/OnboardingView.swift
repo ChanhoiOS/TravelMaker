@@ -37,6 +37,12 @@ class OnboardingView: UIViewController {
         setUI()
     }
     
+    @IBAction func finish(_ sender: Any) {
+        self.dismiss(animated: true) {
+            UserDefaultsManager.shared.showOnboarding = true
+        }
+    }
+    
     private func setUI() {
         pageControl.isUserInteractionEnabled = false
         startButton.titleLabel?.font =  UIFont(name: "SUIT-Bold", size: 20)

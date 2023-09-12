@@ -42,6 +42,9 @@
                     <buttonConfiguration key="configuration" style="plain" title="시작하기">
                         <attributedString key="attributedSubtitle"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="finish:" destination="-1" eventType="touchUpInside" id="saf-7c-0f9"/>
+                    </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="M3k-MD-H0U">
                     <rect key="frame" x="138.66666666666666" y="699" width="115.66666666666666" height="10"/>

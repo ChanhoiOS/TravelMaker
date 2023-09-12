@@ -109,6 +109,10 @@ class LoginView: BaseViewController {
         flexView.flex.layout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        checkOnboarding()
+    }
+    
     func setFlexView() {
         view.addSubview(flexView)
         
@@ -168,13 +172,19 @@ class LoginView: BaseViewController {
         }
     }
     
+    func checkOnboarding() {
+        if !UserDefaultsManager.shared.showOnboarding {
+            let vc = OnboardingView(nibName: "OnboardingView", bundle: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
+    }
+    
 }
 
 extension LoginView {
     @objc func appleLogin() {
-        let vc = OnboardingView(nibName: "OnboardingView", bundle: nil)
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+       
     }
     
     @objc func kakaoLogin() {
@@ -202,7 +212,6 @@ extension LoginView {
     }
     
     func goToSignUp() {
-        print("회원가입 로직")
         let vc = SignUpView(nibName: "SignUpView", bundle: nil)
         self.present(vc, animated: true)
     }
