@@ -15,6 +15,10 @@
 		09591B872AB003AF00A3F0D6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09591B862AB003AF00A3F0D6 /* RxSwift */; };
 		09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */; };
 		09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B902AB0296800A3F0D6 /* SignUpModel.swift */; };
+		09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B932AB0305A00A3F0D6 /* OnboardingView.swift */; };
+		09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B942AB0305A00A3F0D6 /* OnboardingView.xib */; };
+		09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B992AB033C800A3F0D6 /* OnboardingCell.swift */; };
+		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -58,6 +62,10 @@
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		09591B902AB0296800A3F0D6 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		09591B932AB0305A00A3F0D6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		09591B942AB0305A00A3F0D6 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
+		09591B992AB033C800A3F0D6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
@@ -160,6 +168,33 @@
 				09591B902AB0296800A3F0D6 /* SignUpModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		09591B922AB0302B00A3F0D6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				09591B972AB0336000A3F0D6 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		09591B972AB0336000A3F0D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09591B932AB0305A00A3F0D6 /* OnboardingView.swift */,
+				09591B942AB0305A00A3F0D6 /* OnboardingView.xib */,
+				09591B982AB0336D00A3F0D6 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09591B982AB0336D00A3F0D6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				09591B992AB033C800A3F0D6 /* OnboardingCell.swift */,
+				09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
@@ -285,8 +320,9 @@
 			isa = PBXGroup;
 			children = (
 				09591B7D2AAFF43100A3F0D6 /* Common */,
-				09A83F1F2AAF091D0082A6A2 /* Manger */,
 				09A83F1C2AAF05B90082A6A2 /* Network */,
+				09A83F1F2AAF091D0082A6A2 /* Manger */,
+				09591B922AB0302B00A3F0D6 /* Onboarding */,
 				09591B752AAFE72A00A3F0D6 /* SignUp */,
 				09A83EF12AAEAB500082A6A2 /* Login */,
 				09A83EEC2AAE9D040082A6A2 /* Arround */,
@@ -390,7 +426,9 @@
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
 				09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */,
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
+				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
+				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
 				09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */,
@@ -420,7 +458,9 @@
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* LoginApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
+				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
+				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

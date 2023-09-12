@@ -172,7 +172,9 @@ class LoginView: BaseViewController {
 
 extension LoginView {
     @objc func appleLogin() {
-        
+        let vc = OnboardingView(nibName: "OnboardingView", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
     }
     
     @objc func kakaoLogin() {

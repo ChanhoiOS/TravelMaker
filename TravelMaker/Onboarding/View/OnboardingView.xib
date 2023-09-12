@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingView" customModule="TravelMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Az8-uk-BGy" id="v9d-Fi-XKz"/>
+                <outlet property="pageControl" destination="M3k-MD-H0U" id="QWH-Db-J7b"/>
+                <outlet property="startButton" destination="lil-TN-JsW" id="jrK-zk-8dN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-uk-BGy">
+                    <rect key="frame" x="0.0" y="119" width="393" height="495"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lrd-TM-7ng">
+                        <size key="itemSize" width="375" height="400"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lil-TN-JsW">
+                    <rect key="frame" x="0.0" y="749" width="393" height="69"/>
+                    <color key="backgroundColor" red="0.2196078431372549" green="0.37647058823529411" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="69" id="l4E-m7-Zxd"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="시작하기">
+                        <attributedString key="attributedSubtitle"/>
+                    </buttonConfiguration>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="M3k-MD-H0U">
+                    <rect key="frame" x="138.66666666666666" y="699" width="115.66666666666666" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="4bL-Ma-FIW"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" red="0.2196078431372549" green="0.37647058823529411" blue="0.88627450980392153" alpha="0.20280612244897958" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="0.21960784310000001" green="0.37647058820000001" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="M3k-MD-H0U" firstAttribute="top" secondItem="Az8-uk-BGy" secondAttribute="bottom" constant="85" id="2Sg-pO-ivn"/>
+                <constraint firstItem="lil-TN-JsW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3rX-Dr-Hod"/>
+                <constraint firstItem="M3k-MD-H0U" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MhV-wV-uA1"/>
+                <constraint firstItem="Az8-uk-BGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hBD-rw-DmC"/>
+                <constraint firstItem="Az8-uk-BGy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="if7-j5-UX3"/>
+                <constraint firstItem="lil-TN-JsW" firstAttribute="top" secondItem="M3k-MD-H0U" secondAttribute="bottom" constant="40" id="lbc-0p-VFM"/>
+                <constraint firstItem="lil-TN-JsW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oak-42-4vf"/>
+                <constraint firstItem="Az8-uk-BGy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rVB-RT-UBj"/>
+                <constraint firstItem="lil-TN-JsW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="y2C-jF-0us"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
