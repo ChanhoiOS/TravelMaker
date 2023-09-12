@@ -20,6 +20,7 @@
 		09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B992AB033C800A3F0D6 /* OnboardingCell.swift */; };
 		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
 		09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */; };
+		09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -68,6 +69,7 @@
 		09591B992AB033C800A3F0D6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09591BA42AB0586A00A3F0D6 /* Color */,
 				09591B9E2AB04B9F00A3F0D6 /* LocalData */,
 				09591B8A2AB020DC00A3F0D6 /* Base */,
 				09591B7E2AAFF43700A3F0D6 /* Extension */,
@@ -222,6 +225,14 @@
 				09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */,
 			);
 			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		09591BA42AB0586A00A3F0D6 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
@@ -474,6 +485,7 @@
 				09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */,
 				09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */,
 				09A83F212AAF09290082A6A2 /* SessionManager.swift in Sources */,
+				09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */,
 				09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */,
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,

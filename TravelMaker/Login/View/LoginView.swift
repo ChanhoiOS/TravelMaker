@@ -57,7 +57,7 @@ class LoginView: BaseViewController {
     private let appleTitle: UILabel = {
         let label = UILabel()
         label.text = "애플 계정으로 시작하기"
-        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
@@ -65,7 +65,7 @@ class LoginView: BaseViewController {
     private let kakaoTitle: UILabel = {
         let label = UILabel()
         label.text = "카카오 계정으로 시작하기"
-        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
@@ -73,7 +73,7 @@ class LoginView: BaseViewController {
     private let naverTitle: UILabel = {
         let label = UILabel()
         label.text = "네이버 계정으로 시작하기"
-        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
@@ -128,7 +128,7 @@ class LoginView: BaseViewController {
                     .marginTop(142)
                     .width(295)
                     .height(50)
-                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .border(1, Colors.DESIGN_WHITE)
                     .define { flex in
                         flex.addItem(appleLoginImage).position(.absolute).start(53).marginVertical(9)
                             .width(32)
@@ -143,7 +143,7 @@ class LoginView: BaseViewController {
                     .marginTop(12)
                     .width(295)
                     .height(50)
-                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .border(1, Colors.DESIGN_WHITE)
                     .define { flex in
                         flex.addItem(kakaoLoginImage).position(.absolute).start(53).marginVertical(9)
                             .width(32)
@@ -158,7 +158,7 @@ class LoginView: BaseViewController {
                     .marginTop(12)
                     .width(295)
                     .height(50)
-                    .border(1, UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1.0))
+                    .border(1, Colors.DESIGN_WHITE)
                     .define { flex in
                         flex.addItem(naverLoginImage).position(.absolute).start(53).marginVertical(9)
                             .width(32)

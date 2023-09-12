@@ -22,7 +22,7 @@ class SignUpView: BaseViewController {
     private let nickNameTitle: UILabel = {
         let label = UILabel()
         label.text = "닉네임을 \n입력해 주세요."
-        label.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Bold", size: 24)
         label.numberOfLines = 0
         return label
@@ -30,7 +30,7 @@ class SignUpView: BaseViewController {
     
     private let nickNameTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = UIColor(red: 34.0/255.0, green: 34.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        textField.textColor = Colors.DESIGN_BLACK
         textField.font = UIFont(name: "SUIT-Regular", size: 18)
         textField.placeholder = "닉네임"
         textField.borderStyle = .line
@@ -45,9 +45,10 @@ class SignUpView: BaseViewController {
         button.setTitle("회원가입", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Bold", size: 20)
-        button.backgroundColor = UIColor(red: 56/255, green: 96/255, blue: 226/255, alpha: 1.0)
+        button.backgroundColor = Colors.DESIGN_GRAY
         button.frame.size.height = 69
         button.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
@@ -60,8 +61,6 @@ class SignUpView: BaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        
-        setButton()
         flexView.pin.all(view.pin.safeArea)
         flexView.flex.layout()
     }
@@ -82,12 +81,7 @@ class SignUpView: BaseViewController {
             }.grow(1)
         }
     }
-    
-    func setButton() {
-        self.confirmButton.isEnabled = false
-        self.confirmButton.backgroundColor = UIColor(red: 141.0/255.0, green: 141.0/255.0, blue: 141.0/255.0, alpha: 1.0)
-    }
-    
+      
     func buttonAnimation(_ height: CGFloat) {
         confirmButton.flex.marginBottom(height)
         confirmButton.flex.markDirty()
@@ -107,10 +101,10 @@ class SignUpView: BaseViewController {
                 
                 if text.count > 1 {
                     self.confirmButton.isEnabled = true
-                    self.confirmButton.backgroundColor = UIColor(red: 56.0/255.0, green: 96.0/255.0, blue: 226.0/255.0, alpha: 1.0)
+                    self.confirmButton.backgroundColor = Colors.DESIGN_BLUE
                 } else {
                     self.confirmButton.isEnabled = false
-                    self.confirmButton.backgroundColor = UIColor(red: 141.0/255.0, green: 141.0/255.0, blue: 141.0/255.0, alpha: 1.0)
+                    self.confirmButton.backgroundColor = Colors.DESIGN_GRAY
                 }
             })
             .disposed(by: disposeBag)
