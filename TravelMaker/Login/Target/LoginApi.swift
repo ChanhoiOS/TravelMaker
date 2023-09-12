@@ -10,6 +10,7 @@ import Moya
 
 enum LoginApi {
     case login(_ socialType: String, _ loginId: String)
+    case signUp(_ socialType: String, _ nickname: String, _ loginId: String)
 }
 
 extension LoginApi: TargetType {
@@ -19,14 +20,18 @@ extension LoginApi: TargetType {
     
     var path: String {
         switch self {
-        case .login(let socialType , _):
+        case .login(let socialType, _):
             return "/api/auth/login/\(socialType)"
+        case .signUp(let socialType, _ , _):
+            return "/api/user/signUp/\(socialType)"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .login(_, _):
+            return .post
+        case.signUp(_, _, _):
             return .post
         }
     }
@@ -35,6 +40,12 @@ extension LoginApi: TargetType {
         switch self {
         case .login(_ , let loginId):
             let params: [String: Any] = [
+                "loginId" : loginId
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .signUp(_, let nickname, let loginId):
+            let params: [String: Any] = [
+                "nickname" : nickname,
                 "loginId" : loginId
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)

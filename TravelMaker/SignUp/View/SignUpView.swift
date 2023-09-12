@@ -14,7 +14,7 @@ import RxCocoa
 
 class SignUpView: BaseViewController {
 
-    //let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
+    let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
     let disposeBag = DisposeBag()
     let flexView = UIView()
     var nickNameText = ""
@@ -104,7 +104,15 @@ class SignUpView: BaseViewController {
 
 extension SignUpView {
     @objc func signUpAction() {
-        
+        wrapper.requestPost(target: .signUp("kakao", "minchan", "12345"), instance: SignUpModel.self) { response in
+            print("SignUp Data: ", response)
+            switch response {
+            case .success(let data):
+                print("data: ", data)
+            case .failure(let error):
+                print("error: ", error)
+            }
+        }
     }
 }
 
