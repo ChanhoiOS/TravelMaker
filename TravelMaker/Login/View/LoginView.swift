@@ -112,9 +112,8 @@ class LoginView: UIViewController {
     func setFlexView() {
         view.addSubview(flexView)
         
-        flexView.flex.paddingTop(148).alignItems(.center).define { flex in
-            
-            flex.addItem().define { flex in
+        flexView.flex.alignItems(.center).define { flex in
+            flex.addItem().marginTop(148).define { flex in
                 flex.addItem(logoImage)
                     .width(168)
                     .height(168)
@@ -202,6 +201,8 @@ extension LoginView {
     
     func goToSignUp() {
         print("회원가입 로직")
+        let vc = SignUpView(nibName: "SignUpView", bundle: nil)
+        self.present(vc, animated: true)
     }
 }
 
