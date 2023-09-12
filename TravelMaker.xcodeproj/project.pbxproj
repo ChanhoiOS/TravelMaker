@@ -10,6 +10,10 @@
 		09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B792AAFE77800A3F0D6 /* SignUpView.swift */; };
 		09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */; };
 		09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */; };
+		09591B832AB003AF00A3F0D6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 09591B822AB003AF00A3F0D6 /* RxCocoa */; };
+		09591B852AB003AF00A3F0D6 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 09591B842AB003AF00A3F0D6 /* RxRelay */; };
+		09591B872AB003AF00A3F0D6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09591B862AB003AF00A3F0D6 /* RxSwift */; };
+		09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -51,6 +55,7 @@
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
@@ -87,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09591B852AB003AF00A3F0D6 /* RxRelay in Frameworks */,
+				09591B832AB003AF00A3F0D6 /* RxCocoa in Frameworks */,
 				09A83F192AAF05060082A6A2 /* ReactiveMoya in Frameworks */,
 				09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */,
 				09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */,
@@ -95,6 +102,7 @@
 				09A83F152AAF05060082A6A2 /* CombineMoya in Frameworks */,
 				09A83F1B2AAF05060082A6A2 /* RxMoya in Frameworks */,
 				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
+				09591B872AB003AF00A3F0D6 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09591B8A2AB020DC00A3F0D6 /* Base */,
 				09591B7E2AAFF43700A3F0D6 /* Extension */,
 			);
 			path = Common;
@@ -132,6 +141,14 @@
 				09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		09591B8A2AB020DC00A3F0D6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
@@ -300,6 +317,9 @@
 				09A83F162AAF05060082A6A2 /* Moya */,
 				09A83F182AAF05060082A6A2 /* ReactiveMoya */,
 				09A83F1A2AAF05060082A6A2 /* RxMoya */,
+				09591B822AB003AF00A3F0D6 /* RxCocoa */,
+				09591B842AB003AF00A3F0D6 /* RxRelay */,
+				09591B862AB003AF00A3F0D6 /* RxSwift */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -333,6 +353,7 @@
 				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */,
 				09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */,
+				09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -379,6 +400,7 @@
 				09A83F212AAF09290082A6A2 /* SessionManager.swift in Sources */,
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
+				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
@@ -615,6 +637,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
@@ -642,6 +672,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		09591B822AB003AF00A3F0D6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		09591B842AB003AF00A3F0D6 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		09591B862AB003AF00A3F0D6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		09A83EDB2AAE94CE0082A6A2 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;

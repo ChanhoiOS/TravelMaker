@@ -9,7 +9,7 @@ import UIKit
 import FlexLayout
 import PinLayout
 
-class LoginView: UIViewController {
+class LoginView: BaseViewController {
     
     let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
     

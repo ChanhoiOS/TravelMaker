@@ -9,12 +9,15 @@ import UIKit
 import PinLayout
 import FlexLayout
 import Moya
+import RxSwift
+import RxCocoa
 
-class SignUpView: UIViewController {
+class SignUpView: BaseViewController {
 
     //let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
-    
+    let disposeBag = DisposeBag()
     let flexView = UIView()
+    var nickNameText = ""
     
     private let nickNameTitle: UILabel = {
         let label = UILabel()
@@ -52,6 +55,8 @@ class SignUpView: UIViewController {
         super.viewDidLoad()
 
         setFlexView()
+        inputNickName()
+        setKeyboard()
     }
     
     override func viewDidLayoutSubviews() {
@@ -74,12 +79,61 @@ class SignUpView: UIViewController {
                 flex.addItem(confirmButton).marginHorizontal(0).height(69)
             }.grow(1)
         }
+    }
+    
+    func buttonAnimation(_ height: CGFloat) {
+        confirmButton.flex.marginBottom(height)
+        confirmButton.flex.markDirty()
         
+        self.view.setNeedsLayout()
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func inputNickName() {
+        nickNameTextField.rx.text
+            .orEmpty
+            .distinctUntilChanged()
+            .subscribe(onNext: { text in
+                self.nickNameText = text
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 extension SignUpView {
     @objc func signUpAction() {
-        print("버튼 탭")
+        
+    }
+}
+
+
+//MARK: 키보드
+extension SignUpView {
+    func setKeyboard() {
+    keyboardHeight()
+                .observe(on: MainScheduler.instance)
+                .subscribe(onNext: { keyboardHeight in
+                    let safeAreaBottom = self.view.pin.safeArea.bottom
+                    let height = keyboardHeight > 0.0 ? (keyboardHeight - safeAreaBottom) : 0
+                    self.buttonAnimation(height)
+                })
+                .disposed(by: disposeBag)
+    }
+    
+    func keyboardHeight() -> Observable<CGFloat> {
+        return Observable
+                .from([
+                    NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+                                .map { notification -> CGFloat in
+                                    (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+                                },
+                    NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+                                .map { _ -> CGFloat in
+                                    0
+                                }
+                ])
+                .merge()
     }
 }
