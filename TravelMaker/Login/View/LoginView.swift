@@ -100,6 +100,8 @@ class LoginView: BaseViewController {
         super.viewDidLoad()
         
         setFlexView()
+        
+        SocialLoginManager.shared.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -188,19 +190,19 @@ extension LoginView: SocialLoginDelegate {
     }
     
     @objc func kakaoLogin() {
-        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
-            print("Login Data: ", response)
-            switch response {
-            case .success(let data):
-                self.goToMain(data)
-            case .failure( _):
-                self.goToSignUp()
-            }
-        }
+//        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
+//            print("Login Data: ", response)
+//            switch response {
+//            case .success(let data):
+//                self.goToMain(data)
+//            case .failure( _):
+//                self.goToSignUp()
+//            }
+//        }
+        SocialLoginManager.shared.startKakaoLogin()
     }
     
     @objc func naverLogin() {
-        SocialLoginManager.shared.delegate = self
         SocialLoginManager.shared.startNaverLogin()
     }
     
@@ -209,7 +211,7 @@ extension LoginView: SocialLoginDelegate {
         case .apple:
             print("apple")
         case .kakao:
-            print("kakao")
+            print("kakao: ", social_id)
         case .naver:
             print("naver: ", social_id)
         }

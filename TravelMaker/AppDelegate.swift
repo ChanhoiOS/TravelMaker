@@ -7,6 +7,7 @@
 
 import UIKit
 import NaverThirdPartyLogin
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setNaverLogin()
+        setKakaoLogin()
         
         return true
     }
@@ -44,6 +46,12 @@ extension AppDelegate {
         instance?.consumerKey = kConsumerKey
         instance?.consumerSecret = kConsumerSecret
         instance?.appName = kServiceAppName
+    }
+}
+
+extension AppDelegate {
+    func setKakaoLogin() {
+        KakaoSDK.initSDK(appKey: "5be589cc2deb0cbaf08105f0ada52f30")
     }
 }
 

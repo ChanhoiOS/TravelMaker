@@ -6,8 +6,11 @@
 //
 
 import Foundation
-import NaverThirdPartyLogin
 import Alamofire
+import NaverThirdPartyLogin
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 protocol SocialLoginDelegate {
     func socialLoginSuccess(_ social_id: String, _ type: LoginType)
@@ -21,12 +24,42 @@ enum LoginType {
 }
 
 class SocialLoginManager: NSObject {
-    
     static let shared = SocialLoginManager()
     var delegate: SocialLoginDelegate?
-    
 }
 
+// MARK: 네이버 로그인 로직
+extension SocialLoginManager {
+    func startKakaoLogin() {
+            
+    if UserApi.isKakaoTalkLoginAvailable() {
+        UserApi.shared.loginWithKakaoTalk { oauthToken, error in
+            onKakaoLoginCompleted(oauthToken?.accessToken)
+        }
+    } else {
+        UserApi.shared.loginWithKakaoAccount(prompts:[.Login]) { oauthToken, error  in
+            onKakaoLoginCompleted(oauthToken?.accessToken)
+        }
+    }
+    
+    func onKakaoLoginCompleted(_ accessToken : String?){
+        getKakaoUserInfo(accessToken)
+    }
+    
+    func getKakaoUserInfo(_ accessToken : String?) {
+        UserApi.shared.me() { [weak self] user, error in
+            if error == nil {
+                let id = String(describing: user?.id)
+                self?.delegate?.socialLoginSuccess(id, .kakao)
+            } else {
+                self?.delegate?.SocialLoginError(.kakao)
+            }
+        }
+    }
+}
+}
+
+// MARK: 네이버 로그인 로직
 extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
     func startNaverLogin() {
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }

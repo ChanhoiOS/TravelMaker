@@ -7,6 +7,9 @@
 
 import UIKit
 import NaverThirdPartyLogin
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -56,12 +59,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        // naver login set
-        NaverThirdPartyLoginConnection
-            .getSharedInstance()?
-            .receiveAccessToken(URLContexts.first?.url)
+        if let url = URLContexts.first?.url {
+            // 네이버 로그인
+            NaverThirdPartyLoginConnection
+                .getSharedInstance()?
+                .receiveAccessToken(url)
+            
+            // 카카오 로그인
+            if AuthApi.isKakaoTalkLoginUrl(url) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
     }
-
-
 }
 

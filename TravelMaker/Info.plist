@@ -14,11 +14,21 @@
 				<string>com.develop.chanho.TravelMaker</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao5be589cc2deb0cbaf08105f0ada52f30</string>
+			</array>
+		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>naversearchthirdlogin</string>
 		<string>naversearchapp</string>
+		<string>kakaolink</string>
+		<string>kakaokompassauth</string>
 	</array>
 	<key>UIAppFonts</key>
 	<array>
