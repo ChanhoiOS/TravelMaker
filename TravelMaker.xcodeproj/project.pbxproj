@@ -390,7 +390,6 @@
 				CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */,
 				084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -462,10 +461,10 @@
 			);
 			mainGroup = 09D7B1702AAAFE9100991841;
 			packageReferences = (
-				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */,
+				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */,
 				09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
-				09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */,
-				09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */,
+				09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -800,7 +799,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
+		09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -808,7 +807,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */ = {
+		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
 			requirement = {
@@ -824,7 +823,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */ = {
+		09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -837,32 +836,32 @@
 /* Begin XCSwiftPackageProductDependency section */
 		09591B822AB003AF00A3F0D6 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 		09591B842AB003AF00A3F0D6 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
 		09591B862AB003AF00A3F0D6 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 		09A83EDB2AAE94CE0082A6A2 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
 			productName = FlexLayout;
 		};
 		09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
 			productName = FlexLayoutYoga;
 		};
 		09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
 			productName = FlexLayoutYogaKit;
 		};
 		09A83EE22AAE95330082A6A2 /* PinLayout */ = {
@@ -872,22 +871,22 @@
 		};
 		09A83F142AAF05060082A6A2 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
 		};
 		09A83F162AAF05060082A6A2 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 		09A83F182AAF05060082A6A2 /* ReactiveMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = ReactiveMoya;
 		};
 		09A83F1A2AAF05060082A6A2 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
