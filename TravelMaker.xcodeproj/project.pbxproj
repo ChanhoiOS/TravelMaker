@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */; };
+		091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */; };
 		09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B792AAFE77800A3F0D6 /* SignUpView.swift */; };
 		09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */; };
 		09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
+		091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginModel.swift; sourceTree = "<group>"; };
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				09A83F202AAF09290082A6A2 /* SessionManager.swift */,
+				091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */,
 			);
 			path = Manger;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				09A83F232AAF0A410082A6A2 /* LoginModel.swift */,
+				091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,11 +568,13 @@
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
+				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* LoginApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
+				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,

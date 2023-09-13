@@ -200,7 +200,7 @@ extension LoginView {
     }
     
     @objc func naverLogin() {
-        
+        SocialLoginManager.shared.startNaverLogin()
     }
 }
 

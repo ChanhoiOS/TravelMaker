@@ -34,6 +34,6 @@ typedef enum {
 
 #define kServiceAppUrlScheme    @"com.develop.chanho.TravelMaker"
 
-#define kConsumerKey            @"fGzAFa3RoZ"
-#define kConsumerSecret         @"6i8baGNQBZUmFtrWueqx"
+#define kConsumerKey            @"F_ozCDB_hVTc3f6_hLEQ"
+#define kConsumerSecret         @"cLSHWajusl"
 #define kServiceAppName         @"TravelMaker"
