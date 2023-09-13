@@ -56,9 +56,11 @@
 		09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1822AAAFE9100991841 /* Main.storyboard */; };
 		09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1852AAAFE9200991841 /* Assets.xcassets */; };
 		09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */; };
+		2E999E17F8C54B0610DF36B4 /* Pods_TravelMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -99,6 +101,8 @@
 		09D7B1852AAAFE9200991841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D7B1882AAAFE9200991841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09D7B18A2AAAFE9200991841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.debug.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				09A83F1B2AAF05060082A6A2 /* RxMoya in Frameworks */,
 				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
 				09591B872AB003AF00A3F0D6 /* RxSwift in Frameworks */,
+				2E999E17F8C54B0610DF36B4 /* Pods_TravelMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +348,8 @@
 			children = (
 				09D7B17B2AAAFE9100991841 /* TravelMaker */,
 				09D7B17A2AAAFE9100991841 /* Products */,
+				3D78A2FAA5E4397521E1085A /* Pods */,
+				ED0619CF77927A6579070512 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -377,6 +384,24 @@
 			path = TravelMaker;
 			sourceTree = "<group>";
 		};
+		3D78A2FAA5E4397521E1085A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */,
+				084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED0619CF77927A6579070512 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,9 +409,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09D7B18D2AAAFE9200991841 /* Build configuration list for PBXNativeTarget "TravelMaker" */;
 			buildPhases = (
+				A7A4446CF7CB3CB1F849BC02 /* [CP] Check Pods Manifest.lock */,
 				09D7B1752AAAFE9100991841 /* Sources */,
 				09D7B1762AAAFE9100991841 /* Frameworks */,
 				09D7B1772AAAFE9100991841 /* Resources */,
+				D87744CB8C6F3D6F1F48127C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -435,10 +462,10 @@
 			);
 			mainGroup = 09D7B1702AAAFE9100991841;
 			packageReferences = (
-				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */,
 				09A83EE12AAE95330082A6A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
-				09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */,
-				09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */,
+				09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -476,6 +503,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7A4446CF7CB3CB1F849BC02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelMaker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D87744CB8C6F3D6F1F48127C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMaker/Pods-TravelMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMaker/Pods-TravelMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelMaker/Pods-TravelMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09D7B1752AAAFE9100991841 /* Sources */ = {
@@ -645,6 +714,7 @@
 		};
 		09D7B18E2AAAFE9200991841 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -678,6 +748,7 @@
 		};
 		09D7B18F2AAAFE9200991841 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -729,7 +800,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -737,7 +808,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
 			requirement = {
@@ -753,7 +824,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -766,32 +837,32 @@
 /* Begin XCSwiftPackageProductDependency section */
 		09591B822AB003AF00A3F0D6 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxCocoa;
 		};
 		09591B842AB003AF00A3F0D6 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxRelay;
 		};
 		09591B862AB003AF00A3F0D6 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxSwift;
 		};
 		09A83EDB2AAE94CE0082A6A2 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
 			productName = FlexLayout;
 		};
 		09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
 			productName = FlexLayoutYoga;
 		};
 		09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			package = 09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout.git" */;
 			productName = FlexLayoutYogaKit;
 		};
 		09A83EE22AAE95330082A6A2 /* PinLayout */ = {
@@ -801,22 +872,22 @@
 		};
 		09A83F142AAF05060082A6A2 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = CombineMoya;
 		};
 		09A83F162AAF05060082A6A2 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = Moya;
 		};
 		09A83F182AAF05060082A6A2 /* ReactiveMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = ReactiveMoya;
 		};
 		09A83F1A2AAF05060082A6A2 /* RxMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya.git" */;
 			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
