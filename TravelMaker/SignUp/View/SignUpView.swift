@@ -14,7 +14,7 @@ import RxCocoa
 
 class SignUpView: BaseViewController {
 
-    let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
+    let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     let disposeBag = DisposeBag()
     let flexView = UIView()
     var nickNameText = ""

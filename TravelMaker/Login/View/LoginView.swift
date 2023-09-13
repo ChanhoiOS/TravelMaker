@@ -11,7 +11,7 @@ import PinLayout
 
 class LoginView: BaseViewController {
     
-    let wrapper = NetworkWrapper<LoginApi>(plugins: [CustomPlugIn()])
+    let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     
     let flexView = UIView()
     
@@ -201,10 +201,13 @@ extension LoginView: SocialLoginDelegate {
         switch type {
         case .apple:
             print("apple: ", social_id)
+            socialLogin(.apple, id: social_id)
         case .kakao:
             print("kakao: ", social_id)
+            socialLogin(.kakao, id: social_id)
         case .naver:
             print("naver: ", social_id)
+            socialLogin(.naver, id: social_id)
         }
     }
     

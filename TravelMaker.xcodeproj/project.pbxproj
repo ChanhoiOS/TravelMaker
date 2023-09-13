@@ -49,7 +49,7 @@
 		09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F042AAEE8AF0082A6A2 /* SUIT-SemiBold.otf */; };
 		09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F052AAEE8AF0082A6A2 /* SUIT-Regular.otf */; };
 		09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83F062AAEE8AF0082A6A2 /* SUIT-Bold.otf */; };
-		09A83F122AAF04940082A6A2 /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F112AAF04940082A6A2 /* LoginApi.swift */; };
+		09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F112AAF04940082A6A2 /* UsersApi.swift */; };
 		09A83F152AAF05060082A6A2 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83F142AAF05060082A6A2 /* CombineMoya */; };
 		09A83F172AAF05060082A6A2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83F162AAF05060082A6A2 /* Moya */; };
 		09A83F192AAF05060082A6A2 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83F182AAF05060082A6A2 /* ReactiveMoya */; };
@@ -99,7 +99,7 @@
 		09A83F042AAEE8AF0082A6A2 /* SUIT-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-SemiBold.otf"; sourceTree = "<group>"; };
 		09A83F052AAEE8AF0082A6A2 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
 		09A83F062AAEE8AF0082A6A2 /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
-		09A83F112AAF04940082A6A2 /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		09A83F112AAF04940082A6A2 /* UsersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		09A83F1D2AAF05DB0082A6A2 /* Apis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
 		09A83F202AAF09290082A6A2 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		09A83F232AAF0A410082A6A2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -147,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091D5F402AB17C9B00D58FA2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				09A83F112AAF04940082A6A2 /* UsersApi.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		09591B752AAFE72A00A3F0D6 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				09A83F222AAF09F70082A6A2 /* Model */,
-				09A83F102AAF047D0082A6A2 /* Target */,
 				09A83EF62AAECD2D0082A6A2 /* View */,
 			);
 			path = Login;
@@ -328,12 +335,12 @@
 			path = Suit;
 			sourceTree = "<group>";
 		};
-		09A83F102AAF047D0082A6A2 /* Target */ = {
+		09A83F102AAF047D0082A6A2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				09A83F112AAF04940082A6A2 /* LoginApi.swift */,
+				091D5F402AB17C9B00D58FA2 /* User */,
 			);
-			path = Target;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		09A83F1C2AAF05B90082A6A2 /* Network */ = {
@@ -388,6 +395,7 @@
 				091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */,
 				09591B7D2AAFF43100A3F0D6 /* Common */,
 				09A83F1C2AAF05B90082A6A2 /* Network */,
+				09A83F102AAF047D0082A6A2 /* Repository */,
 				09A83F1F2AAF091D0082A6A2 /* Manger */,
 				09591B922AB0302B00A3F0D6 /* Onboarding */,
 				09591B752AAFE72A00A3F0D6 /* SignUp */,
@@ -594,7 +602,7 @@
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
-				09A83F122AAF04940082A6A2 /* LoginApi.swift in Sources */,
+				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,

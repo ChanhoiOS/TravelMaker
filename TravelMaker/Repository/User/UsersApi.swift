@@ -8,12 +8,12 @@
 import Foundation
 import Moya
 
-enum LoginApi {
+enum UsersApi {
     case login(_ socialType: String, _ loginId: String)
     case signUp(_ socialType: String, _ nickname: String, _ loginId: String)
 }
 
-extension LoginApi: TargetType {
+extension UsersApi: TargetType {
     var baseURL: URL {
         return URL(string: Apis.baseUrl)!
     }
