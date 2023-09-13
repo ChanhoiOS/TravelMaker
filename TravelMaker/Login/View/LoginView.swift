@@ -11,6 +11,7 @@ import PinLayout
 
 class LoginView: BaseViewController {
     
+    var tabBarViewController: TabBarViewController?
     let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     
     let flexView = UIView()
@@ -100,6 +101,7 @@ class LoginView: BaseViewController {
         super.viewDidLoad()
         
         setFlexView()
+        setTabBar()
         
         SocialLoginManager.shared.delegate = self
     }
@@ -181,7 +183,47 @@ class LoginView: BaseViewController {
             self.present(vc, animated: true)
         }
     }
-    
+}
+
+extension LoginView {
+    func setTabBar() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController
+
+        let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
+        let arroundView =  ArroundView(nibName: "ArroundView", bundle: nil)
+        
+        let myCollectionView = MyCollectionView(nibName: "MyCollectionView", bundle: nil)
+        let myPageView = MyPageView(nibName: "MyPageView", bundle: nil)
+
+        let recommentNavigationView = UINavigationController(rootViewController: recommendView)
+        let arroundNavigationView = UINavigationController(rootViewController: arroundView)
+        let myCollectionNavigationView = UINavigationController(rootViewController: myCollectionView)
+        let myPageNavigationView = UINavigationController(rootViewController: myPageView)
+
+        tabBarViewController?.setViewControllers([recommentNavigationView, arroundNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
+
+        if let items = tabBarViewController?.tabBar.items {
+            items[0].selectedImage = UIImage(named: "tabBar_selected_recommend")
+            items[0].image = UIImage(named: "tabBar_recommend")
+            items[0].title = "추천"
+
+            items[1].selectedImage = UIImage(named: "tabBar_selected_arround")
+            items[1].image = UIImage(named: "tabBar_arround")
+            items[1].title = "내 주변"
+            
+            items[2].selectedImage = UIImage(named: "tabBar_selected_collection")
+            items[2].image = UIImage(named: "tabBar_collection")
+            items[2].title = "컬렉션"
+            
+            items[3].selectedImage = UIImage(named: "tabBar_selected_mypage")
+            items[3].image = UIImage(named: "tabBar_mypage")
+            items[3].title = "마이"
+        }
+
+        tabBarViewController?.tabBar.backgroundColor = .white
+
+    }
 }
 
 extension LoginView: SocialLoginDelegate {
@@ -223,7 +265,7 @@ extension LoginView: SocialLoginDelegate {
     }
     
     func socialLogin(_ type: LoginType, id: String) {
-        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
+        wrapper.requestPost(target: .login("kakao", "12345"), instance: LoginModel.self) { response in
             switch response {
             case .success(let data):
                 self.goToMain(data)
@@ -239,38 +281,18 @@ extension LoginView {
         if let token = data.data?.accessToken {
             SessionManager.shared.accessToken = token
         }
+        
+        self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     
     func goToSignUp() {
-        let vc = SignUpView(nibName: "SignUpView", bundle: nil)
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+//        let vc = SignUpView(nibName: "SignUpView", bundle: nil)
+//        vc.modalPresentationStyle = .overFullScreen
+//        self.present(vc, animated: true)
+        
+        self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
 }
 
-//
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-//
-//        let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
-//        let arroundView =  ArroundView(nibName: "ArroundView", bundle: nil)
-//
-//        let recommentNavigationView = UINavigationController(rootViewController: recommendView)
-//        let arroundNavigationView = UINavigationController(rootViewController: arroundView)
-//
-//        tabBarController.setViewControllers([recommentNavigationView, arroundNavigationView], animated: true)
-//
-//        if let items = tabBarController.tabBar.items {
-//            items[0].selectedImage = UIImage(systemName: "folder.fill")
-//            items[0].image = UIImage(systemName: "folder")
-//            items[0].title = "추천"
-//
-//            items[1].selectedImage = UIImage(systemName: "folder.fill")
-//            items[1].image = UIImage(systemName: "folder")
-//            items[1].title = "주변"
-//        }
-//
-//        tabBarController.tabBar.backgroundColor = .white
-//
-//        self.navigationController?.pushViewController(tabBarController, animated: true)
 
+      

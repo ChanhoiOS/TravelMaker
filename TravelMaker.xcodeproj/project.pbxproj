@@ -16,6 +16,10 @@
 		091D5F3A2AB1551B00D58FA2 /* KakaoSDKTalk in Frameworks */ = {isa = PBXBuildFile; productRef = 091D5F392AB1551B00D58FA2 /* KakaoSDKTalk */; };
 		091D5F3C2AB1551B00D58FA2 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = 091D5F3B2AB1551B00D58FA2 /* KakaoSDKTemplate */; };
 		091D5F3E2AB1551B00D58FA2 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 091D5F3D2AB1551B00D58FA2 /* KakaoSDKUser */; };
+		091D5F452AB17F8C00D58FA2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F432AB17F8C00D58FA2 /* MyPageView.swift */; };
+		091D5F462AB17F8C00D58FA2 /* MyPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091D5F442AB17F8C00D58FA2 /* MyPageView.xib */; };
+		091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F492AB18A0B00D58FA2 /* MyCollectionView.swift */; };
+		091D5F4C2AB18A0B00D58FA2 /* MyCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */; };
 		09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B792AAFE77800A3F0D6 /* SignUpView.swift */; };
 		09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */; };
 		09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */; };
@@ -73,6 +77,10 @@
 		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
 		091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginModel.swift; sourceTree = "<group>"; };
 		091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelMaker.entitlements; sourceTree = "<group>"; };
+		091D5F432AB17F8C00D58FA2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		091D5F442AB17F8C00D58FA2 /* MyPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageView.xib; sourceTree = "<group>"; };
+		091D5F492AB18A0B00D58FA2 /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
+		091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionView.xib; sourceTree = "<group>"; };
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -153,6 +161,40 @@
 				09A83F112AAF04940082A6A2 /* UsersApi.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		091D5F412AB17F6000D58FA2 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				091D5F422AB17F7000D58FA2 /* View */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		091D5F422AB17F7000D58FA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091D5F432AB17F8C00D58FA2 /* MyPageView.swift */,
+				091D5F442AB17F8C00D58FA2 /* MyPageView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		091D5F472AB189CB00D58FA2 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				091D5F482AB189DB00D58FA2 /* View */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		091D5F482AB189DB00D58FA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				091D5F492AB18A0B00D58FA2 /* MyCollectionView.swift */,
+				091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		09591B752AAFE72A00A3F0D6 /* SignUp */ = {
@@ -402,6 +444,8 @@
 				09A83EF12AAEAB500082A6A2 /* Login */,
 				09A83EEC2AAE9D040082A6A2 /* Arround */,
 				09A83EE72AAE9C790082A6A2 /* Recommend */,
+				091D5F472AB189CB00D58FA2 /* Collection */,
+				091D5F412AB17F6000D58FA2 /* Mypage */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -523,10 +567,12 @@
 				09A83F0B2AAEE8AF0082A6A2 /* SUIT-Medium.otf in Resources */,
 				09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */,
 				09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */,
+				091D5F462AB17F8C00D58FA2 /* MyPageView.xib in Resources */,
 				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
 				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
 				09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */,
+				091D5F4C2AB18A0B00D58FA2 /* MyCollectionView.xib in Resources */,
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
 				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
@@ -598,9 +644,11 @@
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
+				091D5F452AB17F8C00D58FA2 /* MyPageView.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
+				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
