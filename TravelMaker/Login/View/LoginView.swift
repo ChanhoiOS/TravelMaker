@@ -182,7 +182,7 @@ class LoginView: BaseViewController {
     
 }
 
-extension LoginView {
+extension LoginView: SocialLoginDelegate {
     @objc func appleLogin() {
        
     }
@@ -200,7 +200,30 @@ extension LoginView {
     }
     
     @objc func naverLogin() {
+        SocialLoginManager.shared.delegate = self
         SocialLoginManager.shared.startNaverLogin()
+    }
+    
+    func socialLoginSuccess(_ social_id: String, _ type: LoginType) {
+        switch type {
+        case .apple:
+            print("apple")
+        case .kakao:
+            print("kakao")
+        case .naver:
+            print("naver: ", social_id)
+        }
+    }
+    
+    func SocialLoginError(_ type: LoginType) {
+        switch type {
+        case .apple:
+            print("apple")
+        case .kakao:
+            print("kakao")
+        case .naver:
+            print("naver")
+        }
     }
 }
 

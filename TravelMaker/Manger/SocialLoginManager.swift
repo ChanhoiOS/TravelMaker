@@ -9,9 +9,21 @@ import Foundation
 import NaverThirdPartyLogin
 import Alamofire
 
+protocol SocialLoginDelegate {
+    func socialLoginSuccess(_ social_id: String, _ type: LoginType)
+    func SocialLoginError(_ type: LoginType)
+}
+
+enum LoginType {
+    case apple
+    case kakao
+    case naver
+}
+
 class SocialLoginManager: NSObject {
     
     static let shared = SocialLoginManager()
+    var delegate: SocialLoginDelegate?
     
 }
 
@@ -41,7 +53,14 @@ extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
                 
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
             .responseDecodable(of: NaverLoginModel.self) { [weak self] response in
-                print("response: ",response)
+                switch response.result {
+                case .success(let data):
+                    let id = data.response?.id ?? ""
+                    
+                    self?.delegate?.socialLoginSuccess(id, .naver)
+                case .failure(let error):
+                    self?.delegate?.SocialLoginError(.naver)
+                }
         }
     }
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NaverLoginModel: Decodable {
+struct NaverLoginModel: Codable {
     var resultCode: String?
     var response: NaverLoginData?
     var message: String?
@@ -19,7 +19,7 @@ struct NaverLoginModel: Decodable {
     }
 }
 
-struct NaverLoginData: Decodable {
+struct NaverLoginData: Codable {
     var email: String?
     var id: String?
     var name: String?
