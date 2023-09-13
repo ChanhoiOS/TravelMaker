@@ -11,10 +11,11 @@ import NaverThirdPartyLogin
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
 protocol SocialLoginDelegate {
     func socialLoginSuccess(_ social_id: String, _ type: LoginType)
-    func SocialLoginError(_ type: LoginType)
+    func socialLoginError(_ type: LoginType)
 }
 
 enum LoginType {
@@ -26,9 +27,20 @@ enum LoginType {
 class SocialLoginManager: NSObject {
     static let shared = SocialLoginManager()
     var delegate: SocialLoginDelegate?
+    
+    func startSocialLogin(_ loginType: LoginType) {
+        switch loginType {
+        case .apple:
+            startAppleLogin()
+        case .kakao:
+            startKakaoLogin()
+        case .naver:
+            startNaverLogin()
+        }
+    }
 }
 
-// MARK: 네이버 로그인 로직
+// MARK: 카카오 로그인 로직
 extension SocialLoginManager {
     func startKakaoLogin() {
             
@@ -52,7 +64,7 @@ extension SocialLoginManager {
                 let id = String(describing: user?.id)
                 self?.delegate?.socialLoginSuccess(id, .kakao)
             } else {
-                self?.delegate?.SocialLoginError(.kakao)
+                self?.delegate?.socialLoginError(.kakao)
             }
         }
     }
@@ -92,7 +104,7 @@ extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
                     
                     self?.delegate?.socialLoginSuccess(id, .naver)
                 case .failure(let error):
-                    self?.delegate?.SocialLoginError(.naver)
+                    self?.delegate?.socialLoginError(.naver)
                 }
         }
     }
@@ -113,5 +125,35 @@ extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
                
         self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
+    }
+}
+
+// MARK: 애플 로그인 로직
+extension SocialLoginManager: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    func startAppleLogin() {
+        let appleIdProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIdProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        let topViewController = UIApplication.getMostTopViewController()
+        return (topViewController?.view.window)!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let user = appleIDCredential.user
+            let email = appleIDCredential.email
+            
+            self.delegate?.socialLoginSuccess(user, .apple)
+        } else {
+            self.delegate?.socialLoginError(.apple)
+        }
     }
 }

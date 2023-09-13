@@ -186,30 +186,21 @@ class LoginView: BaseViewController {
 
 extension LoginView: SocialLoginDelegate {
     @objc func appleLogin() {
-       
+        SocialLoginManager.shared.startSocialLogin(.apple)
     }
     
     @objc func kakaoLogin() {
-//        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
-//            print("Login Data: ", response)
-//            switch response {
-//            case .success(let data):
-//                self.goToMain(data)
-//            case .failure( _):
-//                self.goToSignUp()
-//            }
-//        }
-        SocialLoginManager.shared.startKakaoLogin()
+        SocialLoginManager.shared.startSocialLogin(.kakao)
     }
     
     @objc func naverLogin() {
-        SocialLoginManager.shared.startNaverLogin()
+        SocialLoginManager.shared.startSocialLogin(.naver)
     }
     
     func socialLoginSuccess(_ social_id: String, _ type: LoginType) {
         switch type {
         case .apple:
-            print("apple")
+            print("apple: ", social_id)
         case .kakao:
             print("kakao: ", social_id)
         case .naver:
@@ -217,7 +208,7 @@ extension LoginView: SocialLoginDelegate {
         }
     }
     
-    func SocialLoginError(_ type: LoginType) {
+    func socialLoginError(_ type: LoginType) {
         switch type {
         case .apple:
             print("apple")
@@ -225,6 +216,17 @@ extension LoginView: SocialLoginDelegate {
             print("kakao")
         case .naver:
             print("naver")
+        }
+    }
+    
+    func socialLogin(_ type: LoginType, id: String) {
+        wrapper.requestPost(target: .login("kakao", "1234"), instance: LoginModel.self) { response in
+            switch response {
+            case .success(let data):
+                self.goToMain(data)
+            case .failure( _):
+                self.goToSignUp()
+            }
         }
     }
 }
