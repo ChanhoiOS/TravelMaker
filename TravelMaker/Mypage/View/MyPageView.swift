@@ -58,6 +58,51 @@ class MyPageView: UIViewController {
         button.addTarget(self, action: #selector(editProfile), for: .touchUpInside)
         return button
     }()
+    
+    private let myPostsLabel_1: UILabel = {
+        let label = UILabel()
+        label.text = "내가 작성한 글"
+        label.textColor = Colors.DESIGN_BLACK
+        label.font = UIFont(name: "SUIT-Regular", size: 18)
+        return label
+    }()
+    
+    private let myPostsLabel_2: UILabel = {
+        let label = UILabel()
+        label.text = "내가 작성한 글"
+        label.textColor = Colors.DESIGN_BLACK
+        label.font = UIFont(name: "SUIT-Regular", size: 18)
+        return label
+    }()
+    
+    private let myPostsLabel_3: UILabel = {
+        let label = UILabel()
+        label.text = "내가 작성한 글"
+        label.textColor = Colors.DESIGN_BLACK
+        label.font = UIFont(name: "SUIT-Regular", size: 18)
+        return label
+    }()
+    
+    private lazy var myPostsButton_1: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "myPost_go_btn"), for: .normal)
+        button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var myPostsButton_2: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "myPost_go_btn"), for: .normal)
+        button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var myPostsButton_3: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "myPost_go_btn"), for: .normal)
+        button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +120,7 @@ class MyPageView: UIViewController {
     func setFlexView() {
         view.addSubview(flexView)
         
-        flexView.flex.define { flex in
+        flexView.flex.backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).define { flex in
             flex.addItem().height(59).direction(.row).alignItems(.center).justifyContent(.spaceBetween).define { flex in
                 flex.addItem(backBtn).marginLeft(24).width(32).height(32)
                 flex.addItem(pageTitle)
@@ -99,6 +144,23 @@ class MyPageView: UIViewController {
                     }
                 }
             }
+            
+            flex.addItem().height(1).backgroundColor(Colors.DESIGN_WHITE).marginHorizontal(24)
+            
+            flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                flex.addItem(myPostsLabel_1).position(.absolute).left(20)
+                flex.addItem(myPostsButton_1).position(.absolute).right(20)
+            }
+            
+            flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                flex.addItem(myPostsLabel_2).position(.absolute).left(20)
+                flex.addItem(myPostsButton_2).position(.absolute).right(20)
+            }
+            
+            flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                flex.addItem(myPostsLabel_3).position(.absolute).left(20)
+                flex.addItem(myPostsButton_3).position(.absolute).right(20)
+            }
         }
     }
 
@@ -106,6 +168,10 @@ class MyPageView: UIViewController {
 
 extension MyPageView {
     @objc func editProfile() {
+        
+    }
+    
+    @objc func goMyPosts() {
         
     }
 }

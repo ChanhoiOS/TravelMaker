@@ -22,4 +22,8 @@ struct Colors {
     
     // white
     static let DESIGN_WHITE = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+    
+    
+    // myPage backgroun
+    static let DESIGN_MYPAGE_BACKGROUND = UIColor(red: 239/255, green: 241/255, blue: 244/255, alpha: 0.5)
 }
