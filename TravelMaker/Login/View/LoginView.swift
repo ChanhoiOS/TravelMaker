@@ -201,6 +201,11 @@ extension LoginView {
         let myCollectionNavigationView = UINavigationController(rootViewController: myCollectionView)
         let myPageNavigationView = UINavigationController(rootViewController: myPageView)
 
+        recommentNavigationView.isNavigationBarHidden = true
+        arroundNavigationView.isNavigationBarHidden = true
+        myCollectionNavigationView.isNavigationBarHidden = true
+        myPageNavigationView.isNavigationBarHidden = true
+        
         tabBarViewController?.setViewControllers([recommentNavigationView, arroundNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
 
         if let items = tabBarViewController?.tabBar.items {
