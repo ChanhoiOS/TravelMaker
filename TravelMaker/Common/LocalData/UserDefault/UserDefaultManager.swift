@@ -24,4 +24,13 @@ class UserDefaultsManager {
             defaults.set(newValue, forKey: "showOnboarding")
         }
     }
+    
+    var profileCache: String {
+        get {
+            return defaults.string(forKey: "profileCache") ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "profileCache")
+        }
+    }
 }

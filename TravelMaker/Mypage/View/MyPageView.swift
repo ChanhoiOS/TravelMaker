@@ -14,6 +14,9 @@ class MyPageView: UIViewController {
     
     let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     
+    private let imageCache = NSCache<NSString, UIImage>()
+    let fileManager = FileManager.default
+    
     let flexView = UIView()
     
     private let backBtn: UIImageView = {
@@ -110,6 +113,7 @@ class MyPageView: UIViewController {
         super.viewDidLoad()
 
         setFlexView()
+        cacheCheck()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +125,8 @@ class MyPageView: UIViewController {
         
         flexView.pin.all(view.pin.safeArea)
         flexView.flex.layout()
+        
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
     }
     
     func setFlexView() {
@@ -174,6 +180,12 @@ class MyPageView: UIViewController {
             flex.addItem().backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).grow(1)
         }
     }
+    
+    func cacheCheck() {
+        if let localData = getCacheImage() {
+            profileImage.image = localData
+        }
+    }
 }
 
 extension MyPageView {
@@ -193,7 +205,7 @@ extension MyPageView {
             case .success(let data):
                 self.setUserData(data)
             case .failure( _):
-                print("fail: ")
+                print("fetch userData fail")
             }
         }
     }
@@ -201,6 +213,11 @@ extension MyPageView {
     func setUserData(_ data: MyPageModel) {
         nickName.text = data.data?.nickname ?? "여행자A"
         
+        if let localData = getCacheImage() {
+            profileImage.image = localData
+            return
+        }
+         
         if let url = data.data?.imagePath {
             _Concurrency.Task {
                 do {
@@ -208,6 +225,8 @@ extension MyPageView {
                     DispatchQueue.main.async {
                         if let image = UIImage(data: imageData) {
                             self.profileImage.image = image
+                            self.setMemoryCache(url, image)
+                            self.setDiskCache(url, image)
                         }
                     }
                 } catch {
@@ -226,5 +245,75 @@ extension MyPageView {
         }
         
         return data
+    }
+}
+
+extension MyPageView {
+    func setMemoryCache(_ url: String, _ image: UIImage) {
+        var url = url
+        
+        if url.contains("/") {
+            url = url.replacingSlashWithUnderscore()
+        }
+        
+        self.imageCache.setObject(image, forKey: url as NSString)
+    }
+    
+    func setDiskCache(_ url: String, _ image: UIImage) {
+        var url = url
+        
+        if url.contains("/") {
+            url = url.replacingSlashWithUnderscore()
+        }
+        
+        guard let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first else { return }
+        
+        var filePath = URL(fileURLWithPath: path)
+        filePath.appendPathComponent(url)
+        
+        if !fileManager.fileExists(atPath: filePath.path) {
+            if let data = image.jpegData(compressionQuality: 1.0) {
+                do {
+                    try data.write(to: filePath)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        if url.contains("/") {
+            let pathUrl = url.replacingSlashWithUnderscore()
+            UserDefaultsManager.shared.profileCache = pathUrl
+        } else {
+            UserDefaultsManager.shared.profileCache = url
+        }
+        
+    }
+    
+    func getCacheImage() -> UIImage? {
+        let url = UserDefaultsManager.shared.profileCache
+        
+        // Memory Cache
+        if let image = imageCache.object(forKey: url as NSString) {
+            return image
+        }
+        
+        // Disk Cache
+        if let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first {
+            var filePath = URL(fileURLWithPath: path)
+            filePath.appendPathComponent(url)
+            
+            if fileManager.fileExists(atPath: filePath.path) {
+                if let imageData = try? Data(contentsOf: filePath), let image = UIImage(data: imageData) {
+                    return image
+                } else {
+                    return nil
+                }
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
     }
 }
