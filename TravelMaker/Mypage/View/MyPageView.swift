@@ -110,6 +110,9 @@ class MyPageView: UIViewController {
         super.viewDidLoad()
 
         setFlexView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         fetchUserData()
     }
     
@@ -123,14 +126,14 @@ class MyPageView: UIViewController {
     func setFlexView() {
         view.addSubview(flexView)
         
-        flexView.flex.backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).define { flex in
+        flexView.flex.define { flex in
             flex.addItem().height(59).direction(.row).alignItems(.center).justifyContent(.spaceBetween).define { flex in
                 flex.addItem(backBtn).marginLeft(24).width(32).height(32)
                 flex.addItem(pageTitle)
                 flex.addItem().marginRight(24).width(32)
             }
             
-            flex.addItem().height(124).direction(.row).justifyContent(.spaceBetween).define { flex in
+            flex.addItem().height(124).direction(.row).backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).justifyContent(.spaceBetween).define { flex in
                 flex.addItem(profileImage).marginLeft(24).width(60).height(60).marginVertical(32)
                 flex.addItem().paddingRight(80).define { flex in
                     flex.addItem().height(62).define { flex in
@@ -150,20 +153,25 @@ class MyPageView: UIViewController {
             
             flex.addItem().height(1).backgroundColor(Colors.DESIGN_WHITE).marginHorizontal(24)
             
-            flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                flex.addItem(myPostsLabel_1).position(.absolute).left(20)
-                flex.addItem(myPostsButton_1).position(.absolute).right(20)
-            }
+            flex.addItem().backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).define { flex in
             
-            flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                flex.addItem(myPostsLabel_2).position(.absolute).left(20)
-                flex.addItem(myPostsButton_2).position(.absolute).right(20)
-            }
+                flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                    flex.addItem(myPostsLabel_1).position(.absolute).left(20)
+                    flex.addItem(myPostsButton_1).position(.absolute).right(20)
+                }
+                
+                flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                    flex.addItem(myPostsLabel_2).position(.absolute).left(20)
+                    flex.addItem(myPostsButton_2).position(.absolute).right(20)
+                }
+                
+                flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                    flex.addItem(myPostsLabel_3).position(.absolute).left(20)
+                    flex.addItem(myPostsButton_3).position(.absolute).right(20)
+                }
+            }.grow(2)
             
-            flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                flex.addItem(myPostsLabel_3).position(.absolute).left(20)
-                flex.addItem(myPostsButton_3).position(.absolute).right(20)
-            }
+            flex.addItem().backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).grow(1)
         }
     }
 }
@@ -183,10 +191,40 @@ extension MyPageView {
         wrapper.requestGet(target: .fetchMyData, instance: MyPageModel.self) { response in
             switch response {
             case .success(let data):
-                print("data: ", data)
+                self.setUserData(data)
             case .failure( _):
                 print("fail: ")
             }
         }
+    }
+    
+    func setUserData(_ data: MyPageModel) {
+        nickName.text = data.data?.nickname ?? "여행자A"
+        
+        if let url = data.data?.imagePath {
+            _Concurrency.Task {
+                do {
+                    let imageData = try await loadImage(url)
+                    DispatchQueue.main.async {
+                        if let image = UIImage(data: imageData) {
+                            self.profileImage.image = image
+                        }
+                    }
+                } catch {
+                    
+                }
+            }
+        }
+    }
+        
+    func loadImage(_ url: String) async throws -> Data {
+        let imageUrl = URL(string: Constants.imageUrl + url)!
+        let (data, response) = try await URLSession.shared.data(from: imageUrl)
+        
+        guard let httpReponse = response as? HTTPURLResponse, httpReponse.statusCode == 200 else {
+            throw TMError.loadImageError
+        }
+        
+        return data
     }
 }
