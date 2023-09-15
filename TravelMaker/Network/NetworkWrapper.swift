@@ -21,6 +21,25 @@ class NetworkWrapper<Provider : TargetType> : MoyaProvider<Provider> {
         super.init(endpointClosure: endPointClosure, stubClosure: stubClosure, session: session, plugins: plugins)
     }
     
+    func requestGet<T : Codable>(target : Provider, instance: T.Type, completion : @escaping(Result<T, MoyaError>) -> ()) {
+        self.request(target) { result in
+            switch result {
+            case .success(let response):
+                if (200..<300).contains(response.statusCode) {
+                    if let decodeData = try? JSONDecoder().decode(instance, from: response.data) {
+                        completion(.success(decodeData))
+                    } else {
+                        completion(.failure(.requestMapping("Get Moya Decoding Error")))
+                    }
+                } else {
+                    completion(.failure(.statusCode(response)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func requestPost<T : Codable>(target : Provider, instance: T.Type , completion : @escaping(Result<T, MoyaError>) -> ()) {
         self.request(target) { result in
             switch result {

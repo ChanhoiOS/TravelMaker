@@ -247,10 +247,10 @@ extension LoginView: SocialLoginDelegate {
     func socialLoginSuccess(_ social_id: String, _ type: LoginType) {
         switch type {
         case .apple:
-            print("apple: ", social_id)
+            print("appleID: ", social_id)
             socialLogin(.apple, id: social_id)
         case .kakao:
-            print("kakao: ", social_id)
+            print("kakaoID: ", social_id)
             socialLogin(.kakao, id: social_id)
         case .naver:
             print("naver: ", social_id)
@@ -291,11 +291,9 @@ extension LoginView {
     }
     
     func goToSignUp() {
-//        let vc = SignUpView(nibName: "SignUpView", bundle: nil)
-//        vc.modalPresentationStyle = .overFullScreen
-//        self.present(vc, animated: true)
-        
-        self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
+        let vc = SignUpView(nibName: "SignUpView", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
     }
 }
 

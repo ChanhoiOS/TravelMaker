@@ -12,6 +12,8 @@ import FlexLayout
 
 class MyPageView: UIViewController {
     
+    let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
+    
     let flexView = UIView()
     
     private let backBtn: UIImageView = {
@@ -108,6 +110,7 @@ class MyPageView: UIViewController {
         super.viewDidLoad()
 
         setFlexView()
+        fetchUserData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -163,7 +166,6 @@ class MyPageView: UIViewController {
             }
         }
     }
-
 }
 
 extension MyPageView {
@@ -173,5 +175,18 @@ extension MyPageView {
     
     @objc func goMyPosts() {
         
+    }
+}
+
+extension MyPageView {
+    func fetchUserData() {
+        wrapper.requestGet(target: .fetchMyData, instance: MyPageModel.self) { response in
+            switch response {
+            case .success(let data):
+                print("data: ", data)
+            case .failure( _):
+                print("fail: ")
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ import Moya
 enum UsersApi {
     case login(_ socialType: String, _ loginId: String)
     case signUp(_ socialType: String, _ nickname: String, _ loginId: String)
+    case fetchMyData
 }
 
 extension UsersApi: TargetType {
@@ -24,6 +25,8 @@ extension UsersApi: TargetType {
             return "/api/auth/login/\(socialType)"
         case .signUp(let socialType, _ , _):
             return "/api/user/signUp/\(socialType)"
+        case .fetchMyData:
+            return "/api/user/profile"
         }
     }
     
@@ -31,8 +34,10 @@ extension UsersApi: TargetType {
         switch self {
         case .login(_, _):
             return .post
-        case.signUp(_, _, _):
+        case .signUp(_, _, _):
             return .post
+        case .fetchMyData:
+            return .get
         }
     }
     
@@ -49,6 +54,9 @@ extension UsersApi: TargetType {
                 "loginId" : loginId
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .fetchMyData:
+            let params: [String: Any] = [:]
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
         }
     }
     
@@ -59,7 +67,7 @@ extension UsersApi: TargetType {
         ]
         
         if let accessToken = SessionManager.shared.accessToken {
-            header = ["Authorization": "Bearer \(accessToken)"]
+            header = ["Authorization": accessToken]
         }
         
         return header

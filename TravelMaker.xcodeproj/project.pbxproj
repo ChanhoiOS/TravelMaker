@@ -69,6 +69,7 @@
 		09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1822AAAFE9100991841 /* Main.storyboard */; };
 		09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1852AAAFE9200991841 /* Assets.xcassets */; };
 		09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */; };
+		09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DB992AB3F1C500207F0D /* MyPageModel.swift */; };
 		2E999E17F8C54B0610DF36B4 /* Pods_TravelMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		09D7B1852AAAFE9200991841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D7B1882AAAFE9200991841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09D7B18A2AAAFE9200991841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F0DB992AB3F1C500207F0D /* MyPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModel.swift; sourceTree = "<group>"; };
 		CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.debug.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 		091D5F412AB17F6000D58FA2 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				09F0DB982AB3F1B500207F0D /* Model */,
 				091D5F422AB17F7000D58FA2 /* View */,
 			);
 			path = Mypage;
@@ -458,6 +461,14 @@
 			path = TravelMaker;
 			sourceTree = "<group>";
 		};
+		09F0DB982AB3F1B500207F0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09F0DB992AB3F1C500207F0D /* MyPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3D78A2FAA5E4397521E1085A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +664,7 @@
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
+				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
