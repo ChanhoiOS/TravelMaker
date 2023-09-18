@@ -234,6 +234,7 @@ extension LoginView {
 extension LoginView: SocialLoginDelegate {
     @objc func appleLogin() {
         SocialLoginManager.shared.startSocialLogin(.apple)
+        //self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     
     @objc func kakaoLogin() {

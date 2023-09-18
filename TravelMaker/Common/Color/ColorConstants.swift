@@ -15,6 +15,8 @@ struct Colors {
     // gray
     static let DESIGN_GRAY = UIColor(red: 141/255, green: 141/255, blue: 141/255, alpha: 1.0)
     
+    static let COLLECTION_COUNT_GRAY = UIColor(red: 106/255, green: 106/255, blue: 106/255, alpha: 1.0)
+    
     
     // blue
     static let DESIGN_BLUE = UIColor(red: 56/255, green: 96/255, blue: 226/255, alpha: 1.0)
@@ -25,5 +27,5 @@ struct Colors {
     
     
     // myPage backgroun
-    static let DESIGN_MYPAGE_BACKGROUND = UIColor(red: 239/255, green: 241/255, blue: 244/255, alpha: 0.5)
+    static let DESIGN_BACKGROUND = UIColor(red: 239/255, green: 241/255, blue: 244/255, alpha: 0.5)
 }

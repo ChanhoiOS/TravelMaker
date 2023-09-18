@@ -139,7 +139,7 @@ class MyPageView: UIViewController {
                 flex.addItem().marginRight(24).width(32)
             }
             
-            flex.addItem().height(124).direction(.row).backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).justifyContent(.spaceBetween).define { flex in
+            flex.addItem().height(124).direction(.row).backgroundColor(Colors.DESIGN_BACKGROUND).justifyContent(.spaceBetween).define { flex in
                 flex.addItem(profileImage).marginLeft(24).width(60).height(60).marginVertical(32)
                 flex.addItem().paddingRight(80).define { flex in
                     flex.addItem().height(62).define { flex in
@@ -159,7 +159,7 @@ class MyPageView: UIViewController {
             
             flex.addItem().height(1).backgroundColor(Colors.DESIGN_WHITE).marginHorizontal(24)
             
-            flex.addItem().backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).define { flex in
+            flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).define { flex in
             
                 flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
                     flex.addItem(myPostsLabel_1).position(.absolute).left(20)
@@ -177,7 +177,7 @@ class MyPageView: UIViewController {
                 }
             }.grow(2)
             
-            flex.addItem().backgroundColor(Colors.DESIGN_MYPAGE_BACKGROUND).grow(1)
+            flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).grow(1)
         }
     }
     
