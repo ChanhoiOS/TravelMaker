@@ -191,22 +191,22 @@ extension LoginView {
         tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController
 
         let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
-        let arroundView =  ArroundView(nibName: "ArroundView", bundle: nil)
+        let aroundView =  AroundView(nibName: "AroundView", bundle: nil)
         
         let myCollectionView = MyCollectionView(nibName: "MyCollectionView", bundle: nil)
         let myPageView = MyPageView(nibName: "MyPageView", bundle: nil)
 
         let recommentNavigationView = UINavigationController(rootViewController: recommendView)
-        let arroundNavigationView = UINavigationController(rootViewController: arroundView)
+        let aroundNavigationView = UINavigationController(rootViewController: aroundView)
         let myCollectionNavigationView = UINavigationController(rootViewController: myCollectionView)
         let myPageNavigationView = UINavigationController(rootViewController: myPageView)
 
         recommentNavigationView.isNavigationBarHidden = true
-        arroundNavigationView.isNavigationBarHidden = true
+        aroundNavigationView.isNavigationBarHidden = true
         myCollectionNavigationView.isNavigationBarHidden = true
         myPageNavigationView.isNavigationBarHidden = true
         
-        tabBarViewController?.setViewControllers([recommentNavigationView, arroundNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
+        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
 
         if let items = tabBarViewController?.tabBar.items {
             items[0].selectedImage = UIImage(named: "tabBar_selected_recommend")

@@ -1,5 +1,5 @@
 //
-//  ArroundView.swift
+//  AroundView.swift
 //  TravelMaker
 //
 //  Created by 이찬호 on 2023/09/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ArroundView: UIViewController {
+class AroundView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

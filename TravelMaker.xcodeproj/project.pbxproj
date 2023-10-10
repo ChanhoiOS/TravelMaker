@@ -40,8 +40,8 @@
 		09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EE22AAE95330082A6A2 /* PinLayout */; };
 		09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */; };
 		09A83EEB2AAE9C9B0082A6A2 /* RecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */; };
-		09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EED2AAE9D210082A6A2 /* ArroundView.swift */; };
-		09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */; };
+		09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EED2AAE9D210082A6A2 /* AroundView.swift */; };
+		09A83EF02AAE9D210082A6A2 /* AroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EEE2AAE9D210082A6A2 /* AroundView.xib */; };
 		09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83EF22AAEAB620082A6A2 /* LoginView.swift */; };
 		09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EF32AAEAB620082A6A2 /* LoginView.xib */; };
 		09A83F072AAEE8AF0082A6A2 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 09A83EFE2AAEE8AE0082A6A2 /* SUIT-Thin.otf */; };
@@ -97,8 +97,8 @@
 		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
-		09A83EED2AAE9D210082A6A2 /* ArroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArroundView.swift; sourceTree = "<group>"; };
-		09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArroundView.xib; sourceTree = "<group>"; };
+		09A83EED2AAE9D210082A6A2 /* AroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundView.swift; sourceTree = "<group>"; };
+		09A83EEE2AAE9D210082A6A2 /* AroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundView.xib; sourceTree = "<group>"; };
 		09A83EF22AAEAB620082A6A2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		09A83EF32AAEAB620082A6A2 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		09A83EFE2AAEE8AE0082A6A2 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
@@ -161,6 +161,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091B19A02AD4E4A6009A6AF1 /* RegisterAround */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterAround;
+			sourceTree = "<group>";
+		};
 		091D5F402AB17C9B00D58FA2 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,13 +334,13 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
-		09A83EEC2AAE9D040082A6A2 /* Arround */ = {
+		09A83EEC2AAE9D040082A6A2 /* Around */ = {
 			isa = PBXGroup;
 			children = (
-				09A83EED2AAE9D210082A6A2 /* ArroundView.swift */,
-				09A83EEE2AAE9D210082A6A2 /* ArroundView.xib */,
+				09A83EED2AAE9D210082A6A2 /* AroundView.swift */,
+				09A83EEE2AAE9D210082A6A2 /* AroundView.xib */,
 			);
-			path = Arround;
+			path = Around;
 			sourceTree = "<group>";
 		};
 		09A83EF12AAEAB500082A6A2 /* Login */ = {
@@ -443,6 +450,7 @@
 		09D7B17B2AAAFE9100991841 /* TravelMaker */ = {
 			isa = PBXGroup;
 			children = (
+				091B19A02AD4E4A6009A6AF1 /* RegisterAround */,
 				091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */,
 				09591B7D2AAFF43100A3F0D6 /* Common */,
 				09A83F1C2AAF05B90082A6A2 /* Network */,
@@ -451,7 +459,7 @@
 				09591B922AB0302B00A3F0D6 /* Onboarding */,
 				09591B752AAFE72A00A3F0D6 /* SignUp */,
 				09A83EF12AAEAB500082A6A2 /* Login */,
-				09A83EEC2AAE9D040082A6A2 /* Arround */,
+				09A83EEC2AAE9D040082A6A2 /* Around */,
 				09A83EE72AAE9C790082A6A2 /* Recommend */,
 				091D5F472AB189CB00D58FA2 /* Collection */,
 				091D5F412AB17F6000D58FA2 /* Mypage */,
@@ -596,7 +604,7 @@
 				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
 				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
-				09A83EF02AAE9D210082A6A2 /* ArroundView.xib in Resources */,
+				09A83EF02AAE9D210082A6A2 /* AroundView.xib in Resources */,
 				091D5F4C2AB18A0B00D58FA2 /* MyCollectionView.xib in Resources */,
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
 				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
@@ -683,7 +691,7 @@
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
-				09A83EEF2AAE9D210082A6A2 /* ArroundView.swift in Sources */,
+				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 			);
