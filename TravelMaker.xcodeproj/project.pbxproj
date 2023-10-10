@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */; };
+		091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */; };
 		091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */; };
 		091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */; };
 		091D5F322AB1551B00D58FA2 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 091D5F312AB1551B00D58FA2 /* KakaoSDK */; };
@@ -77,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNearMe.swift; sourceTree = "<group>"; };
+		091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNearMe.xib; sourceTree = "<group>"; };
 		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
 		091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginModel.swift; sourceTree = "<group>"; };
 		091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelMaker.entitlements; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 			children = (
 			);
 			path = RegisterAround;
+			sourceTree = "<group>";
+		};
+		091B19A12AD4E716009A6AF1 /* RegisterNearMe */ = {
+			isa = PBXGroup;
+			children = (
+				091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */,
+				091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */,
+			);
+			path = RegisterNearMe;
 			sourceTree = "<group>";
 		};
 		091D5F402AB17C9B00D58FA2 /* User */ = {
@@ -461,6 +474,7 @@
 				09A83EF12AAEAB500082A6A2 /* Login */,
 				09A83EEC2AAE9D040082A6A2 /* Around */,
 				09A83EE72AAE9C790082A6A2 /* Recommend */,
+				091B19A12AD4E716009A6AF1 /* RegisterNearMe */,
 				091D5F472AB189CB00D58FA2 /* Collection */,
 				091D5F412AB17F6000D58FA2 /* Mypage */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
@@ -602,6 +616,7 @@
 				09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */,
 				091D5F462AB17F8C00D58FA2 /* MyPageView.xib in Resources */,
 				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
+				091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */,
 				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
 				09A83EF02AAE9D210082A6A2 /* AroundView.xib in Resources */,
@@ -683,6 +698,7 @@
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
+				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,

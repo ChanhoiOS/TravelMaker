@@ -193,20 +193,24 @@ extension LoginView {
         let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
         let aroundView =  AroundView(nibName: "AroundView", bundle: nil)
         
+        let registerView = RegisterNearMe(nibName: "RegisterNearMe", bundle: nil)
+        
         let myCollectionView = MyCollectionView(nibName: "MyCollectionView", bundle: nil)
         let myPageView = MyPageView(nibName: "MyPageView", bundle: nil)
 
         let recommentNavigationView = UINavigationController(rootViewController: recommendView)
         let aroundNavigationView = UINavigationController(rootViewController: aroundView)
+        let registerNavigationView = UINavigationController(rootViewController: registerView)
         let myCollectionNavigationView = UINavigationController(rootViewController: myCollectionView)
         let myPageNavigationView = UINavigationController(rootViewController: myPageView)
 
         recommentNavigationView.isNavigationBarHidden = true
         aroundNavigationView.isNavigationBarHidden = true
+        registerNavigationView.isNavigationBarHidden = true
         myCollectionNavigationView.isNavigationBarHidden = true
         myPageNavigationView.isNavigationBarHidden = true
         
-        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
+        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, registerNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
 
         if let items = tabBarViewController?.tabBar.items {
             items[0].selectedImage = UIImage(named: "tabBar_selected_recommend")
@@ -217,13 +221,16 @@ extension LoginView {
             items[1].image = UIImage(named: "tabBar_arround")
             items[1].title = "내 주변"
             
-            items[2].selectedImage = UIImage(named: "tabBar_selected_collection")
-            items[2].image = UIImage(named: "tabBar_collection")
-            items[2].title = "컬렉션"
+            items[2].selectedImage = UIImage(named: "tabBar_register")
+            items[2].image = UIImage(named: "tabBar_register")
             
-            items[3].selectedImage = UIImage(named: "tabBar_selected_mypage")
-            items[3].image = UIImage(named: "tabBar_mypage")
-            items[3].title = "마이"
+            items[3].selectedImage = UIImage(named: "tabBar_selected_collection")
+            items[3].image = UIImage(named: "tabBar_collection")
+            items[3].title = "컬렉션"
+            
+            items[4].selectedImage = UIImage(named: "tabBar_selected_mypage")
+            items[4].image = UIImage(named: "tabBar_mypage")
+            items[4].title = "마이"
         }
 
         tabBarViewController?.tabBar.backgroundColor = .white
