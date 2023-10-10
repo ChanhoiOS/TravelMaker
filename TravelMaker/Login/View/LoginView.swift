@@ -295,6 +295,7 @@ extension LoginView {
             SessionManager.shared.accessToken = token
         }
         
+        tabBarViewController?.selectedIndex = 1
         self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     
