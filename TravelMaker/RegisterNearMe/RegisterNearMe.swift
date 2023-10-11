@@ -13,6 +13,7 @@ import Cosmos
 class RegisterNearMe: UIViewController {
     var headerView: UIView!
     var scrollView: UIScrollView!
+    var contentView: UIView!
     var headerLine: UIView!
     var starView: UIView!
     var satisficationLabel: UILabel!
@@ -20,9 +21,15 @@ class RegisterNearMe: UIViewController {
     var starLine: UIView!
     var dateTextField: UITextField!
     var spaceTextField: UITextField!
+    var contentTextView: UITextView!
+    var photoStackView: UIStackView!
     
     let date = Date()
     let dateFormatter = DateFormatter()
+    var screenWidth: CGFloat?
+    var photoWidth: CGFloat?
+    
+    let textViewPlaceHolder = "Q.\n장소에 대한 리뷰를 남겨주세요.\n최소 15자 이상 작성해 주세요.\n최대 200자 작성 가능합니다."
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -38,6 +45,18 @@ class RegisterNearMe: UIViewController {
         return label
     }()
     
+    private lazy var addPhotoBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "camera_add"), for: .normal)
+        button.setTitle("  사진 추가", for: .normal)
+        button.setTitleColor(Colors.DESIGN_GRAY, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = Colors.DESIGN_WHITE.cgColor
+        button.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,12 +66,14 @@ class RegisterNearMe: UIViewController {
         initScrollView()
         initStarView()
         initContentView()
+        initPhotoView()
         
         setGesture()
     }
     
     override func viewDidLayoutSubviews() {
-       
+        screenWidth = UIScreen.main.bounds.size.width
+        photoWidth = (screenWidth! - 72) / 3
     }
     
     func initHeader() {
@@ -101,15 +122,24 @@ class RegisterNearMe: UIViewController {
                     make.bottom.equalToSuperview().offset(-69)
                 }
             }
+            .then {
+                contentView = UIView()
+                $0.addSubview(contentView)
+                contentView.translatesAutoresizingMaskIntoConstraints = false
+                contentView.snp.makeConstraints { make in
+                    make.top.bottom.equalToSuperview()
+                    make.left.right.equalTo(self.view)
+                }
+            }
     }
     
     func initStarView() {
         starView = UIView()
             .then {
-                self.view.addSubview($0)
+                contentView.addSubview($0)
                 $0.snp.makeConstraints { make in
                     make.left.right.equalToSuperview()
-                    make.top.equalTo(scrollView.snp.top).offset(0)
+                    make.top.equalTo(contentView.snp.top).offset(0)
                     make.height.equalTo(72)
                 }
             }
@@ -147,7 +177,7 @@ class RegisterNearMe: UIViewController {
         
         starLine = UIView()
             .then {
-                self.view.addSubview($0)
+                contentView.addSubview($0)
                 $0.backgroundColor = Colors.DESIGN_WHITE
                 $0.snp.makeConstraints { make in
                     make.left.equalToSuperview().offset(24)
@@ -166,7 +196,7 @@ class RegisterNearMe: UIViewController {
         dateTextField.font = UIFont(name: "SUIT-Bold", size: 18)
         dateTextField.borderStyle = .line
         dateTextField.layer.borderWidth = 1
-        self.view.addSubview(dateTextField)
+        contentView.addSubview(dateTextField)
         
         dateTextField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
         dateTextField.leftViewMode = .always
@@ -184,7 +214,7 @@ class RegisterNearMe: UIViewController {
         spaceTextField.font = UIFont(name: "SUIT-Bold", size: 18)
         spaceTextField.borderStyle = .line
         spaceTextField.layer.borderWidth = 1
-        self.view.addSubview(spaceTextField)
+        contentView.addSubview(spaceTextField)
         
         spaceTextField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
         spaceTextField.leftViewMode = .always
@@ -209,12 +239,69 @@ class RegisterNearMe: UIViewController {
         guardBtn.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        contentTextView = UITextView()
+        contentTextView.delegate = self
+        contentView.addSubview(contentTextView)
+        contentTextView.font = UIFont(name: "SUIT-Bold", size: 18)
+        contentTextView.text = textViewPlaceHolder
+        contentTextView.textColor = Colors.DESIGN_GRAY
+        contentTextView.layer.borderColor = Colors.DESIGN_GRAY.cgColor
+        contentTextView.layer.borderWidth = 1.0
+        contentTextView.textContainerInset = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+        
+        contentTextView.snp.makeConstraints { make in
+            make.top.equalTo(spaceTextField.snp.bottom).offset(14)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(327)
+        }
+    }
+    
+    func initPhotoView() {
+        photoStackView = UIStackView()
+            .then {
+                contentView.addSubview($0)
+                $0.axis = .horizontal
+                $0.spacing = 12
+                $0.distribution = .fillEqually
+                $0.isLayoutMarginsRelativeArrangement = true
+            }
+            .then {
+                $0.snp.makeConstraints { make in
+                    make.top.equalTo(contentTextView.snp.bottom).offset(20)
+                    make.left.equalToSuperview().offset(24)
+                }
+            }
+        
+        contentView.addSubview(addPhotoBtn)
+        
+        addPhotoBtn.snp.makeConstraints { make in
+            make.top.equalTo(photoStackView.snp.bottom).offset(14)
+            make.left.equalToSuperview().offset(24)
+            make.width.equalTo(113)
+            make.height.equalTo(40)
+            make.bottom.equalTo(contentView.snp.bottom).offset(0)
+        }
     }
 }
 
 extension RegisterNearMe {
     @objc func searchSpace() {
         print("호출")
+    }
+}
+
+extension RegisterNearMe {
+    @objc func addPhoto() {
+        let image = UIView()
+        image.backgroundColor = .blue
+      
+        image.snp.makeConstraints { make in
+            make.width.height.equalTo(photoWidth!)
+        }
+        
+        photoStackView.addArrangedSubview(image)
     }
 }
 
@@ -233,5 +320,21 @@ extension RegisterNearMe {
 extension RegisterNearMe: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
+    }
+}
+
+extension RegisterNearMe: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if contentTextView.text == textViewPlaceHolder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+           textView.text = textViewPlaceHolder
+            textView.textColor = Colors.DESIGN_GRAY
+        }
     }
 }
