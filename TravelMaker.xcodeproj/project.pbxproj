@@ -66,6 +66,7 @@
 		09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F252AAF0B0E0082A6A2 /* NetworkWrapper.swift */; };
 		09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F272AAF0C600082A6A2 /* CustomPlugin.swift */; };
 		09B318462AD658BB0060CF20 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 09B318452AD658BB0060CF20 /* Cosmos */; };
+		09B318492AD667420060CF20 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B318482AD667410060CF20 /* Utils.swift */; };
 		09CAB1532AD508230077B46F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1522AD508230077B46F /* Then */; };
 		09CAB1562AD508820077B46F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1552AD508820077B46F /* SnapKit */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
@@ -123,6 +124,7 @@
 		09A83F232AAF0A410082A6A2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		09A83F252AAF0B0E0082A6A2 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
 		09A83F272AAF0C600082A6A2 /* CustomPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlugin.swift; sourceTree = "<group>"; };
+		09B318482AD667410060CF20 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		09D7B1792AAAFE9100991841 /* TravelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D7B17C2AAAFE9100991841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				09B318472AD667310060CF20 /* Util */,
 				09F0DB9B2AB412B300207F0D /* Constants */,
 				09591BA42AB0586A00A3F0D6 /* Color */,
 				09591B9E2AB04B9F00A3F0D6 /* LocalData */,
@@ -446,6 +449,14 @@
 				091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		09B318472AD667310060CF20 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				09B318482AD667410060CF20 /* Utils.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		09D7B1702AAAFE9100991841 = {
@@ -702,6 +713,7 @@
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
+				09B318492AD667420060CF20 /* Utils.swift in Sources */,
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,

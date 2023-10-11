@@ -11,13 +11,17 @@ import SnapKit
 import Cosmos
 
 class RegisterNearMe: UIViewController {
-    
     var headerView: UIView!
     var scrollView: UIScrollView!
     var headerLine: UIView!
     var starView: UIView!
     var satisficationLabel: UILabel!
     var star: CosmosView!
+    var starLine: UIView!
+    var dateTextField: UITextField!
+    
+    let date = Date()
+    let dateFormatter = DateFormatter()
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -36,9 +40,13 @@ class RegisterNearMe: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         initHeader()
         initScrollView()
         initStarView()
+        initContentView()
+        
         setGesture()
     }
     
@@ -117,9 +125,9 @@ class RegisterNearMe: UIViewController {
                 star.settings.emptyBorderColor = Colors.STAR_EMPTY
                 star.settings.filledBorderColor = Colors.STAR_FILL
                 
-//                star.didFinishTouchingCosmos = { rating in
-//                    self.star.rating = rating
-//                }
+                star.didFinishTouchingCosmos = { rating in
+                    self.star.rating = rating
+                }
                 
                 star.didTouchCosmos = { rating in
                     self.star.rating = rating
@@ -135,6 +143,38 @@ class RegisterNearMe: UIViewController {
                     make.right.equalToSuperview().offset(-24)
                 }
             }
+        
+        starLine = UIView()
+            .then {
+                self.view.addSubview($0)
+                $0.backgroundColor = Colors.DESIGN_WHITE
+                $0.snp.makeConstraints { make in
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.bottom.equalTo(starView.snp.bottom).offset(0)
+                    make.height.equalTo(0.8)
+                }
+            }
+    }
+    
+    func initContentView() {
+        dateTextField = UITextField()
+        dateTextField.delegate = self
+        dateTextField.text = Utils.parsingDate(dateFormatter.string(from: date))
+        dateTextField.font = UIFont(name: "SUIT-Bold", size: 18)
+        dateTextField.borderStyle = .line
+        dateTextField.layer.borderWidth = 1
+        self.view.addSubview(dateTextField)
+        
+        dateTextField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
+        dateTextField.leftViewMode = .always
+        
+        dateTextField.snp.makeConstraints { make in
+            make.top.equalTo(starLine.snp.bottom).offset(24)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(60)
+        }
     }
     
 }
@@ -149,6 +189,10 @@ extension RegisterNearMe {
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
     }
+}
 
-
+extension RegisterNearMe: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }
