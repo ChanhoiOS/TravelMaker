@@ -14,4 +14,6 @@ class Utils {
         
         return String(truncatedString)
     }
+    
+    
 }

@@ -19,6 +19,7 @@ class RegisterNearMe: UIViewController {
     var star: CosmosView!
     var starLine: UIView!
     var dateTextField: UITextField!
+    var spaceTextField: UITextField!
     
     let date = Date()
     let dateFormatter = DateFormatter()
@@ -175,8 +176,28 @@ class RegisterNearMe: UIViewController {
             make.right.equalToSuperview().offset(-24)
             make.height.equalTo(60)
         }
+        
+        spaceTextField = UITextField()
+        spaceTextField.delegate = self
+        spaceTextField.text = "장소 선택"
+        spaceTextField.font = UIFont(name: "SUIT-Bold", size: 18)
+        spaceTextField.borderStyle = .line
+        spaceTextField.layer.borderWidth = 1
+        self.view.addSubview(spaceTextField)
+        
+        spaceTextField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
+        spaceTextField.leftViewMode = .always
+        
+        let image = UIImage(named: "register_arrow")
+        spaceTextField.withImage("right", image!)
+                
+        spaceTextField.snp.makeConstraints { make in
+            make.top.equalTo(dateTextField.snp.bottom).offset(14)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(60)
+        }
     }
-    
 }
 
 extension RegisterNearMe {
