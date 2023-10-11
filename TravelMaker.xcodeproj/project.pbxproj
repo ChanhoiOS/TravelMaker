@@ -65,6 +65,7 @@
 		09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F232AAF0A410082A6A2 /* LoginModel.swift */; };
 		09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F252AAF0B0E0082A6A2 /* NetworkWrapper.swift */; };
 		09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A83F272AAF0C600082A6A2 /* CustomPlugin.swift */; };
+		09B318462AD658BB0060CF20 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 09B318452AD658BB0060CF20 /* Cosmos */; };
 		09CAB1532AD508230077B46F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1522AD508230077B46F /* Then */; };
 		09CAB1562AD508820077B46F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1552AD508820077B46F /* SnapKit */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
@@ -152,6 +153,7 @@
 				091D5F3C2AB1551B00D58FA2 /* KakaoSDKTemplate in Frameworks */,
 				09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */,
 				09A83F172AAF05060082A6A2 /* Moya in Frameworks */,
+				09B318462AD658BB0060CF20 /* Cosmos in Frameworks */,
 				091D5F342AB1551B00D58FA2 /* KakaoSDKAuth in Frameworks */,
 				091D5F3A2AB1551B00D58FA2 /* KakaoSDKTalk in Frameworks */,
 				09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */,
@@ -565,6 +567,7 @@
 				091D5F3D2AB1551B00D58FA2 /* KakaoSDKUser */,
 				09CAB1522AD508230077B46F /* Then */,
 				09CAB1552AD508820077B46F /* SnapKit */,
+				09B318452AD658BB0060CF20 /* Cosmos */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -602,6 +605,7 @@
 				091D5F302AB1551A00D58FA2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				09CAB1512AD508230077B46F /* XCRemoteSwiftPackageReference "Then" */,
 				09CAB1542AD508820077B46F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				09B318442AD658BB0060CF20 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -989,6 +993,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		09B318442AD658BB0060CF20 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
 		09CAB1512AD508230077B46F /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1097,6 +1109,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09A83F132AAF05060082A6A2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		09B318452AD658BB0060CF20 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09B318442AD658BB0060CF20 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 		09CAB1522AD508230077B46F /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

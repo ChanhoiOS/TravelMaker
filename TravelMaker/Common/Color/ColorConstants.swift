@@ -28,4 +28,11 @@ struct Colors {
     
     // myPage backgroun
     static let DESIGN_BACKGROUND = UIColor(red: 239/255, green: 241/255, blue: 244/255, alpha: 0.5)
+    
+    // gray line
+    static let GRAY_LINE = UIColor(red: 182/255, green: 182/255, blue: 182/255, alpha: 1.0)
+    
+    // star
+    static let STAR_FILL = UIColor(red: 141/255, green: 224/255, blue: 126/255, alpha: 1.0)
+    static let STAR_EMPTY = UIColor(red: 182/255, green: 182/255, blue: 182/255, alpha: 1.0)
 }
