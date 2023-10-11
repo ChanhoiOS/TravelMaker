@@ -241,7 +241,6 @@ extension LoginView {
 extension LoginView: SocialLoginDelegate {
     @objc func appleLogin() {
         SocialLoginManager.shared.startSocialLogin(.apple)
-        //self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     
     @objc func kakaoLogin() {
@@ -255,13 +254,10 @@ extension LoginView: SocialLoginDelegate {
     func socialLoginSuccess(_ social_id: String, _ type: LoginType) {
         switch type {
         case .apple:
-            print("appleID: ", social_id)
             socialLogin(.apple, id: social_id)
         case .kakao:
-            print("kakaoID: ", social_id)
             socialLogin(.kakao, id: social_id)
         case .naver:
-            print("naver: ", social_id)
             socialLogin(.naver, id: social_id)
         }
     }
@@ -269,11 +265,11 @@ extension LoginView: SocialLoginDelegate {
     func socialLoginError(_ type: LoginType) {
         switch type {
         case .apple:
-            print("apple")
+            print("apple login error")
         case .kakao:
-            print("kakao")
+            print("kakao login error")
         case .naver:
-            print("naver")
+            print("naver login error")
         }
     }
     

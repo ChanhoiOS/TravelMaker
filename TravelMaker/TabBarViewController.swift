@@ -29,7 +29,6 @@ class TabBarViewController: UITabBarController {
             if tabBarItem.image == UIImage(named: "tabBar_middle") {
                 isUploadTabBarEnabled = false
             } else if tabBarItem.image == UIImage(named: "tabBar_register") {
-                
                 let registerView = RegisterNearMe(nibName: "RegisterNearMe", bundle: nil)
                 self.navigationController?.pushViewController(registerView, animated: true)
             } else {
