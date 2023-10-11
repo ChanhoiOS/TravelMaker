@@ -161,6 +161,7 @@ class RegisterNearMe: UIViewController {
     func initContentView() {
         dateTextField = UITextField()
         dateTextField.delegate = self
+        dateTextField.isUserInteractionEnabled = false
         dateTextField.text = Utils.parsingDate(dateFormatter.string(from: date))
         dateTextField.font = UIFont(name: "SUIT-Bold", size: 18)
         dateTextField.borderStyle = .line
@@ -190,13 +191,30 @@ class RegisterNearMe: UIViewController {
         
         let image = UIImage(named: "register_arrow")
         spaceTextField.withImage("right", image!)
-                
+        
         spaceTextField.snp.makeConstraints { make in
             make.top.equalTo(dateTextField.snp.bottom).offset(14)
             make.left.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
             make.height.equalTo(60)
         }
+        
+        let guardBtn = UIButton()
+        guardBtn.setTitle("", for: .normal)
+        guardBtn.backgroundColor = .clear
+        spaceTextField.addSubview(guardBtn)
+        
+        guardBtn.addTarget(self, action: #selector(searchSpace), for: .touchUpInside)
+        
+        guardBtn.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+extension RegisterNearMe {
+    @objc func searchSpace() {
+        print("호출")
     }
 }
 
