@@ -27,11 +27,11 @@ class RegisterNearMe: UIViewController {
         label.font = UIFont(name: "SUIT-Bold", size: 20)
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        setGesture()
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,7 +62,7 @@ class RegisterNearMe: UIViewController {
             make.center.equalToSuperview()
         }
     }
-
+    
     func initScrollView() {
         scrollView = UIScrollView()
             .then {
@@ -74,6 +74,19 @@ class RegisterNearMe: UIViewController {
                     make.bottom.equalToSuperview().offset(-69)
                 }
             }
+    }
+    
+}
+
+extension RegisterNearMe {
+    func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
+        backBtn.addGestureRecognizer(tapGesture)
+        backBtn.isUserInteractionEnabled = true
+    }
+    
+    @objc func backBtnAction(sender: UITapGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
     }
 
 

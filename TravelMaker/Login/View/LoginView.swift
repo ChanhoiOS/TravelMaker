@@ -189,7 +189,7 @@ extension LoginView {
     func setTabBar() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController
-
+        
         let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
         let aroundView =  AroundView(nibName: "AroundView", bundle: nil)
         
@@ -210,8 +210,8 @@ extension LoginView {
         myCollectionNavigationView.isNavigationBarHidden = true
         myPageNavigationView.isNavigationBarHidden = true
         
-        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, registerNavigationView, myCollectionNavigationView, myPageNavigationView], animated: true)
-
+        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, UIViewController(), myCollectionNavigationView, myPageNavigationView], animated: true)
+        
         if let items = tabBarViewController?.tabBar.items {
             items[0].selectedImage = UIImage(named: "tabBar_selected_recommend")
             items[0].image = UIImage(named: "tabBar_recommend")
@@ -295,7 +295,6 @@ extension LoginView {
             SessionManager.shared.accessToken = token
         }
         
-        tabBarViewController?.selectedIndex = 1
         self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     

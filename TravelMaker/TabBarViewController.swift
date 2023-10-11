@@ -10,23 +10,31 @@ import FlexLayout
 import PinLayout
 
 class TabBarViewController: UITabBarController {
-    
     var isUploadTabBarEnabled = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
-        self.selectedIndex = 2
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = 1
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.image == UIImage(named: "tabBar_middle") {
-            let previousIndex = self.selectedIndex
-            self.selectedIndex = previousIndex
-            isUploadTabBarEnabled = false
-        } else {
-            isUploadTabBarEnabled = true
+        guard let items = tabBar.items else { return }
+        
+        for (_ , tabBarItem) in items.enumerated() where tabBarItem == item {
+            if tabBarItem.image == UIImage(named: "tabBar_middle") {
+                isUploadTabBarEnabled = false
+            } else if tabBarItem.image == UIImage(named: "tabBar_register") {
+                
+                let registerView = RegisterNearMe(nibName: "RegisterNearMe", bundle: nil)
+                self.navigationController?.pushViewController(registerView, animated: true)
+            } else {
+                isUploadTabBarEnabled = true
+            }
         }
     }
 
