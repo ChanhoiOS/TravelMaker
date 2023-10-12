@@ -10,6 +10,8 @@ import Then
 import SnapKit
 import Cosmos
 import YPImagePicker
+import RxSwift
+import RxCocoa
 
 class RegisterNearMe: UIViewController {
     var headerView: UIView!
@@ -30,6 +32,8 @@ class RegisterNearMe: UIViewController {
     var screenWidth: CGFloat?
     var photoWidth: CGFloat?
     var images = [UIImage]()
+    
+    let disposeBag = DisposeBag()
     
     let textViewPlaceHolder = "Q.\n장소에 대한 리뷰를 남겨주세요.\n최소 15자 이상 작성해 주세요.\n최대 200자 작성 가능합니다."
     
@@ -295,19 +299,60 @@ extension RegisterNearMe {
 }
 
 extension RegisterNearMe: YPImagePickerDelegate {
+    @objc func removePhoto(_ index: Int) {
+        var subIndex = index
+        
+        if subIndex == 0 {
+            subIndex = 100
+        }
+        
+        let photoSubview = photoStackView.subviews
+        
+        for subView in photoSubview {
+            if let target = subView.viewWithTag(subIndex) {
+                photoStackView.removeArrangedSubview(target)
+                subView.removeFromSuperview()
+            }
+        }
+    }
+    
     @objc func addPhoto() {
         presentToImagePicker()
     }
     
     func presentSelectedPhoto() {
-        for image in images {
+        for i in 0..<images.count {
             let imageView = UIImageView()
+            if i == 0 {
+                imageView.tag = 100
+            } else {
+                imageView.tag = i
+            }
+           
             photoStackView.addArrangedSubview(imageView)
             imageView.snp.makeConstraints { make in
                 make.width.height.equalTo(photoWidth!)
             }
             
-            imageView.image = image
+            imageView.image = images[i]
+            
+            let button = UIButton()
+            imageView.addSubview(button)
+            button.setTitle("", for: .normal)
+            button.setImage(UIImage(named: "photo_remove"), for: .normal)
+            button.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(12)
+                $0.right.equalToSuperview().offset(-12)
+                $0.width.height.equalTo(24)
+            }
+            
+            imageView.isUserInteractionEnabled = true
+                        
+            button.rx.controlEvent(.touchDown)
+                .bind(onNext: { [weak self] _ in
+                    self?.removePhoto(i)
+                })
+                .disposed(by: disposeBag)
         }
     }
     
@@ -340,12 +385,9 @@ extension RegisterNearMe: YPImagePickerDelegate {
             imagePicker.didFinishPicking { [weak self] items, cancelled in
                 guard let self = self else { return }
                 
-                let subViews = photoStackView.arrangedSubviews
-                
-                for index in 0..<images.count {
-                    photoStackView.removeArrangedSubview(subViews[index])
-                }
-                
+                let subviews = photoStackView.arrangedSubviews
+                photoStackView.arrangedSubviews.forEach(photoStackView.removeArrangedSubview(_:))
+                subviews.forEach { $0.removeFromSuperview() }
                 images.removeAll()
                 
                 for item in items {
@@ -360,7 +402,9 @@ extension RegisterNearMe: YPImagePickerDelegate {
 
                 imagePicker.dismiss(animated: true) {
                     if !cancelled {
-                        self.presentSelectedPhoto()
+                        DispatchQueue.main.async {
+                            self.presentSelectedPhoto()
+                        }
                     }
                 }
             }
