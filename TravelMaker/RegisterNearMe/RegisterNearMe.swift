@@ -9,6 +9,7 @@ import UIKit
 import Then
 import SnapKit
 import Cosmos
+import YPImagePicker
 
 class RegisterNearMe: UIViewController {
     var headerView: UIView!
@@ -28,6 +29,7 @@ class RegisterNearMe: UIViewController {
     let dateFormatter = DateFormatter()
     var screenWidth: CGFloat?
     var photoWidth: CGFloat?
+    var images = [UIImage]()
     
     let textViewPlaceHolder = "Q.\n장소에 대한 리뷰를 남겨주세요.\n최소 15자 이상 작성해 주세요.\n최대 200자 작성 가능합니다."
     
@@ -292,17 +294,80 @@ extension RegisterNearMe {
     }
 }
 
-extension RegisterNearMe {
+extension RegisterNearMe: YPImagePickerDelegate {
     @objc func addPhoto() {
-        let image = UIView()
-        image.backgroundColor = .blue
-      
-        image.snp.makeConstraints { make in
-            make.width.height.equalTo(photoWidth!)
-        }
-        
-        photoStackView.addArrangedSubview(image)
+        presentToImagePicker()
     }
+    
+    func presentSelectedPhoto() {
+        for image in images {
+            let imageView = UIImageView()
+            photoStackView.addArrangedSubview(imageView)
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(photoWidth!)
+            }
+            
+            imageView.image = image
+        }
+    }
+    
+    func imagePickerHasNoItemsInLibrary(_ picker: YPImagePicker) {
+        print("사진 가져오기 에러")
+    }
+
+    func shouldAddToSelection(indexPath: IndexPath, numSelections: Int) -> Bool {
+        return true
+    }
+    
+    private func presentToImagePicker() {
+            var config = YPImagePickerConfiguration()
+            config.library.mediaType = .photo
+            config.library.defaultMultipleSelection = false
+            config.library.maxNumberOfItems = 3
+            config.screens = [.library]
+            config.startOnScreen = .library
+            // cropping style 을 square or not 으로 지정.
+            config.library.isSquareByDefault = true
+            // 필터 단계 스킵.
+            config.showsPhotoFilters = false
+            config.showsCrop = .rectangle(ratio: 1.0)
+
+            config.shouldSaveNewPicturesToAlbum = false
+
+            let imagePicker = YPImagePicker(configuration: config)
+            imagePicker.imagePickerDelegate = self
+
+            imagePicker.didFinishPicking { [weak self] items, cancelled in
+                guard let self = self else { return }
+                
+                let subViews = photoStackView.arrangedSubviews
+                
+                for index in 0..<images.count {
+                    photoStackView.removeArrangedSubview(subViews[index])
+                }
+                
+                images.removeAll()
+                
+                for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        let image: UIImage = photo.image
+                        images.append(image)
+                    case .video(let video):
+                        print("video: ", video)
+                    }
+                }
+
+                imagePicker.dismiss(animated: true) {
+                    if !cancelled {
+                        self.presentSelectedPhoto()
+                    }
+                }
+            }
+
+            imagePicker.modalPresentationStyle = .overFullScreen
+            present(imagePicker, animated: true, completion: nil)
+        }
 }
 
 extension RegisterNearMe {
