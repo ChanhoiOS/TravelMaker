@@ -63,6 +63,16 @@ class RegisterNearMe: UIViewController {
         return button
     }()
     
+    private lazy var registerBtn: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = Colors.DESIGN_GRAY
+        button.setTitle("등록하기", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Bold", size: 16)
+        button.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +83,7 @@ class RegisterNearMe: UIViewController {
         initStarView()
         initContentView()
         initPhotoView()
+        initRegisterView()
         
         setGesture()
     }
@@ -287,7 +298,17 @@ class RegisterNearMe: UIViewController {
             make.left.equalToSuperview().offset(24)
             make.width.equalTo(113)
             make.height.equalTo(40)
-            make.bottom.equalTo(contentView.snp.bottom).offset(0)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-60)
+        }
+    }
+    
+    func initRegisterView() {
+        self.view.addSubview(registerBtn)
+        
+        registerBtn.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-44)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(69)
         }
     }
 }
