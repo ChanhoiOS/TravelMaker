@@ -13,7 +13,7 @@ import YPImagePicker
 import RxSwift
 import RxCocoa
 
-class RegisterNearMe: UIViewController {
+class RegisterNearMe: BaseViewController {
     var headerView: UIView!
     var scrollView: UIScrollView!
     var contentView: UIView!
@@ -315,7 +315,8 @@ class RegisterNearMe: UIViewController {
 
 extension RegisterNearMe {
     @objc func searchSpace() {
-        print("호출")
+        let searchView = SearchSpaceView(nibName: "SearchSpaceView", bundle: nil)
+        self.navigationController?.pushViewController(searchView, animated: true)
     }
 }
 
