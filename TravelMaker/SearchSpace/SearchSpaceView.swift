@@ -16,6 +16,7 @@ class SearchSpaceView: BaseViewController {
     var headerView: UIView!
     var headerLine: UIView!
     var textField: UITextField!
+    var middleLine: UIView!
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -28,6 +29,22 @@ class SearchSpaceView: BaseViewController {
         label.text = "장소 검색"
         label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Bold", size: 20)
+        return label
+    }()
+    
+    private let recommendTitle: UILabel = {
+        let label = UILabel()
+        label.text = "추천 장소"
+        label.textColor = Colors.DESIGN_BLACK
+        label.font = UIFont(name: "SUIT-Bold", size: 18)
+        return label
+    }()
+    
+    private let recommendText: UILabel = {
+        let label = UILabel()
+        label.text = "현재 위치로부터의 거리가 표시됩니다."
+        label.textColor = Colors.DESIGN_GRAY
+        label.font = UIFont(name: "SUIT-Regular", size: 14)
         return label
     }()
     
@@ -96,6 +113,31 @@ class SearchSpaceView: BaseViewController {
             make.right.equalToSuperview().offset(-24)
             make.height.equalTo(50)
         }
+        
+        self.view.addSubview(recommendTitle)
+        recommendTitle.snp.makeConstraints { make in
+            make.top.equalTo(textField.snp.bottom).offset(24)
+            make.left.equalToSuperview().offset(24)
+        }
+        
+        self.view.addSubview(recommendText)
+        recommendText.snp.makeConstraints { make in
+            make.top.equalTo(recommendTitle.snp.bottom).offset(6)
+            make.left.equalToSuperview().offset(24)
+        }
+        
+        middleLine = UIView()
+            .then {
+                self.view.addSubview($0)
+                $0.backgroundColor = Colors.GRAY_LINE
+                $0.snp.makeConstraints { make in
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.top.equalTo(recommendText.snp.bottom).offset(16)
+                    make.height.equalTo(0.8)
+                }
+            }
+        
     }
 
 
