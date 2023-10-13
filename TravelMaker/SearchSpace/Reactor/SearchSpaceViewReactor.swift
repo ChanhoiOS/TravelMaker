@@ -19,11 +19,11 @@ class SearchSpaceViewReactor: Reactor {
     }
         
     enum Mutation {
-        case setSearch(SearchSpaceModel?)
+        case setResult(SearchSpaceModel?)
     }
         
     struct State {
-    
+        var searchResult: SearchSpaceModel?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -33,6 +33,16 @@ class SearchSpaceViewReactor: Reactor {
                 self.searchSpace(text ?? "")
             ])
         }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setResult(let data):
+            state.searchResult = data
+        }
+        
+        return state
     }
 }
 
@@ -50,7 +60,7 @@ extension SearchSpaceViewReactor {
     func searchSpace(_ text: String) -> Observable<Mutation> {
         let url = "https://dapi.kakao.com/v2/local/search/keyword.json"
         var param = [String: Any]()
-        param["query"] = "시그니엘 서울"
+        param["query"] = text
         param["x"] = "37.514322572335935"
         param["y"] = "127.06283102249932"
         param["page"] = 1
@@ -66,7 +76,7 @@ extension SearchSpaceViewReactor {
             .responseDecodable(of: SearchSpaceModel.self) { response in
                 switch response.result {
                 case .success(let data):
-                    observer.onNext(.setSearch(data))
+                    observer.onNext(.setResult(data))
                 case .failure(let error):
                     observer.onError(error)
                 }

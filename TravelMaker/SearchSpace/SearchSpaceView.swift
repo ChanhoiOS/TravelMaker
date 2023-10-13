@@ -20,6 +20,7 @@ class SearchSpaceView: BaseViewController, StoryboardView {
     
     var disposeBag = DisposeBag()
     let reactor = SearchSpaceViewReactor()
+    var searchResult: SearchSpaceModel?
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -118,7 +119,6 @@ class SearchSpaceView: BaseViewController, StoryboardView {
     
     func initTextField() {
         self.view.addSubview(textField)
-        textField.delegate = self
         textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
         textField.leftView?.tintColor = Colors.TEXTFIELD_BACKGROUND
         textField.leftViewMode = .always
@@ -167,8 +167,6 @@ class SearchSpaceView: BaseViewController, StoryboardView {
             make.height.equalTo(69)
         }
     }
-
-
 }
 
 extension SearchSpaceView {
@@ -189,35 +187,29 @@ extension SearchSpaceView {
                 $0.rowHeight = 67
                 $0.separatorStyle = .none
             }
-        
-        //bind()
     }
-    
-//    func bind() {
-//            viewModel.getCellData().bind(to: tableView.rx.items) {
-//                (tableView: UITableView,
-//                 index: Int,
-//                 element: String)
-//                -> UITableViewCell in
-//
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchSpaceCell.reuseIdentifier) as? SearchSpaceCell else { fatalError() }
-//                cell.setupData("1", "2")
-//                return cell
-//            }
-//            .disposed(by: disposeBag)
-//        }
-    
-    
 }
 
 extension SearchSpaceView {
     func bind(reactor: SearchSpaceViewReactor) {
         textField.rx.text
+            .skip(1)
+            .distinctUntilChanged()
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { SearchSpaceViewReactor.Action.search($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.searchResult }
+            .bind(onNext: { [weak self] result in
+                self?.searchResult = result
+                print("result: ", result)
+            })
+            .disposed(by: disposeBag)
     }
+    
+    
 }
 
 extension SearchSpaceView {
@@ -230,8 +222,4 @@ extension SearchSpaceView {
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
     }
-}
-
-extension SearchSpaceView: UITextFieldDelegate {
-    
 }
