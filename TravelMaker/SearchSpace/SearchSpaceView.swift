@@ -15,6 +15,7 @@ class SearchSpaceView: BaseViewController {
     
     var headerView: UIView!
     var headerLine: UIView!
+    var textField: UITextField!
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -34,6 +35,7 @@ class SearchSpaceView: BaseViewController {
         super.viewDidLoad()
 
         initHeader()
+        initTextField()
         
         setGesture()
     }
@@ -72,6 +74,29 @@ class SearchSpaceView: BaseViewController {
                 }
             }
     }
+    
+    func initTextField() {
+        textField = UITextField()
+        textField.delegate = self
+        textField.placeholder = "검색어를 입력해 주세요."
+        textField.font = UIFont(name: "SUIT-Bold", size: 18)
+        textField.backgroundColor = Colors.TEXTFIELD_BACKGROUND
+        self.view.addSubview(textField)
+        
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
+        textField.leftView?.tintColor = Colors.TEXTFIELD_BACKGROUND
+        textField.leftViewMode = .always
+        
+        let image = UIImage(named: "search_icon")
+        textField.withImage("right", image!, .clear)
+        
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(headerLine.snp.bottom).offset(32)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(50)
+        }
+    }
 
 
 }
@@ -86,4 +111,8 @@ extension SearchSpaceView {
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+extension SearchSpaceView: UITextFieldDelegate {
+    
 }

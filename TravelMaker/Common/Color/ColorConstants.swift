@@ -35,4 +35,7 @@ struct Colors {
     // star
     static let STAR_FILL = UIColor(red: 141/255, green: 224/255, blue: 126/255, alpha: 1.0)
     static let STAR_EMPTY = UIColor(red: 182/255, green: 182/255, blue: 182/255, alpha: 1.0)
+    
+    // textField
+    static let TEXTFIELD_BACKGROUND = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.3)
 }

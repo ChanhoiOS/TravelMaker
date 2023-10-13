@@ -14,11 +14,12 @@ extension UITextField {
         self.leftViewMode = ViewMode.always
     }
     
-    func withImage(_ direction: String, _ image: UIImage) {
+    func withImage(_ direction: String, _ image: UIImage, _ color: UIColor? = .white) {
         let mainView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 45))
+        mainView.backgroundColor = color
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 45))
-        view.backgroundColor = .white
+        view.backgroundColor = color
         view.clipsToBounds = true
         
         mainView.addSubview(view)
