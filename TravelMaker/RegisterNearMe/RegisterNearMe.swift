@@ -316,6 +316,7 @@ class RegisterNearMe: BaseViewController {
 extension RegisterNearMe {
     @objc func searchSpace() {
         let searchView = SearchSpaceView(nibName: "SearchSpaceView", bundle: nil)
+        searchView.reactor = SearchSpaceViewReactor()
         self.navigationController?.pushViewController(searchView, animated: true)
     }
 }

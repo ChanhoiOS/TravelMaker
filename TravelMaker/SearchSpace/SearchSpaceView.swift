@@ -10,18 +10,16 @@ import Then
 import SnapKit
 import RxSwift
 import RxCocoa
+import ReactorKit
 
-class SearchSpaceView: BaseViewController {
-    
+class SearchSpaceView: BaseViewController, StoryboardView {
     var headerView: UIView!
     var headerLine: UIView!
-    var textField: UITextField!
     var middleLine: UIView!
     var tableView: UITableView!
     
-    let viewModel = SearchSpaceViewModel()
-    
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
+    let reactor = SearchSpaceViewReactor()
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -35,6 +33,14 @@ class SearchSpaceView: BaseViewController {
         label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Bold", size: 20)
         return label
+    }()
+    
+    private var textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "검색어를 입력해 주세요."
+        textField.font = UIFont(name: "SUIT-Bold", size: 18)
+        textField.backgroundColor = Colors.TEXTFIELD_BACKGROUND
+        return textField
     }()
     
     private let recommendTitle: UILabel = {
@@ -111,13 +117,8 @@ class SearchSpaceView: BaseViewController {
     }
     
     func initTextField() {
-        textField = UITextField()
-        textField.delegate = self
-        textField.placeholder = "검색어를 입력해 주세요."
-        textField.font = UIFont(name: "SUIT-Bold", size: 18)
-        textField.backgroundColor = Colors.TEXTFIELD_BACKGROUND
         self.view.addSubview(textField)
-        
+        textField.delegate = self
         textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
         textField.leftView?.tintColor = Colors.TEXTFIELD_BACKGROUND
         textField.leftViewMode = .always
@@ -189,22 +190,34 @@ extension SearchSpaceView {
                 $0.separatorStyle = .none
             }
         
-        bind()
+        //bind()
     }
     
-    func bind() {
-            viewModel.getCellData().bind(to: tableView.rx.items) {
-                (tableView: UITableView,
-                 index: Int,
-                 element: String)
-                -> UITableViewCell in
-                
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchSpaceCell.reuseIdentifier) as? SearchSpaceCell else { fatalError() }
-                cell.setupData("1", "2")
-                return cell
-            }
+//    func bind() {
+//            viewModel.getCellData().bind(to: tableView.rx.items) {
+//                (tableView: UITableView,
+//                 index: Int,
+//                 element: String)
+//                -> UITableViewCell in
+//
+//                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchSpaceCell.reuseIdentifier) as? SearchSpaceCell else { fatalError() }
+//                cell.setupData("1", "2")
+//                return cell
+//            }
+//            .disposed(by: disposeBag)
+//        }
+    
+    
+}
+
+extension SearchSpaceView {
+    func bind(reactor: SearchSpaceViewReactor) {
+        textField.rx.text
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .map { SearchSpaceViewReactor.Action.search($0) }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        }
+    }
 }
 
 extension SearchSpaceView {
