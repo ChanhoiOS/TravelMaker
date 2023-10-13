@@ -73,6 +73,7 @@
 		09BF583F2AD7E07600DCF822 /* SearchSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */; };
 		09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */; };
 		09C4BA752AD8E12200BE8376 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA742AD8E12200BE8376 /* SearchSpaceViewModel.swift */; };
+		09C4BA782AD9059300BE8376 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C4BA772AD9059300BE8376 /* ReactorKit */; };
 		09CAB1532AD508230077B46F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1522AD508230077B46F /* Then */; };
 		09CAB1562AD508820077B46F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1552AD508820077B46F /* SnapKit */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
@@ -178,6 +179,7 @@
 				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
 				091D5F362AB1551B00D58FA2 /* KakaoSDKNavi in Frameworks */,
 				09591B872AB003AF00A3F0D6 /* RxSwift in Frameworks */,
+				09C4BA782AD9059300BE8376 /* ReactorKit in Frameworks */,
 				2E999E17F8C54B0610DF36B4 /* Pods_TravelMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +623,7 @@
 				09B318452AD658BB0060CF20 /* Cosmos */,
 				09BF582D2AD7883600DCF822 /* YPImagePicker */,
 				09BF58302AD78F5C00DCF822 /* Kingfisher */,
+				09C4BA772AD9059300BE8376 /* ReactorKit */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -661,6 +664,7 @@
 				09B318442AD658BB0060CF20 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				09BF582C2AD7883600DCF822 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				09BF582F2AD78F5C00DCF822 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -1079,6 +1083,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		09CAB1512AD508230077B46F /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1202,6 +1214,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09BF582F2AD78F5C00DCF822 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		09C4BA772AD9059300BE8376 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
 		};
 		09CAB1522AD508230077B46F /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

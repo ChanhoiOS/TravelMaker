@@ -192,10 +192,6 @@ extension SearchSpaceView {
         bind()
     }
     
-    func setupAttribute() {
-           
-        }
-    
     func bind() {
             viewModel.getCellData().bind(to: tableView.rx.items) {
                 (tableView: UITableView,
