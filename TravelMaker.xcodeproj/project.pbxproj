@@ -71,6 +71,8 @@
 		09BF58312AD78F5C00DCF822 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09BF58302AD78F5C00DCF822 /* Kingfisher */; };
 		09BF583E2AD7E07600DCF822 /* SearchSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF583C2AD7E07600DCF822 /* SearchSpaceView.swift */; };
 		09BF583F2AD7E07600DCF822 /* SearchSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */; };
+		09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */; };
+		09C4BA752AD8E12200BE8376 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA742AD8E12200BE8376 /* SearchSpaceViewModel.swift */; };
 		09CAB1532AD508230077B46F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1522AD508230077B46F /* Then */; };
 		09CAB1562AD508820077B46F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1552AD508820077B46F /* SnapKit */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
@@ -131,6 +133,8 @@
 		09B318482AD667410060CF20 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		09BF583C2AD7E07600DCF822 /* SearchSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceView.swift; sourceTree = "<group>"; };
 		09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpaceView.xib; sourceTree = "<group>"; };
+		09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceCell.swift; sourceTree = "<group>"; };
+		09C4BA742AD8E12200BE8376 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		09D7B1792AAAFE9100991841 /* TravelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D7B17C2AAAFE9100991841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -470,10 +474,28 @@
 		09BF583B2AD7E04400DCF822 /* SearchSpace */ = {
 			isa = PBXGroup;
 			children = (
+				09C4BA732AD8E10E00BE8376 /* ViewModel */,
+				09C4BA702AD8E08C00BE8376 /* Cell */,
 				09BF583C2AD7E07600DCF822 /* SearchSpaceView.swift */,
 				09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */,
 			);
 			path = SearchSpace;
+			sourceTree = "<group>";
+		};
+		09C4BA702AD8E08C00BE8376 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		09C4BA732AD8E10E00BE8376 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09C4BA742AD8E12200BE8376 /* SearchSpaceViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		09D7B1702AAAFE9100991841 = {
@@ -731,6 +753,7 @@
 				09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */,
 				09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */,
 				09A83F212AAF09290082A6A2 /* SessionManager.swift in Sources */,
+				09C4BA752AD8E12200BE8376 /* SearchSpaceViewModel.swift in Sources */,
 				09BF583E2AD7E07600DCF822 /* SearchSpaceView.swift in Sources */,
 				09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */,
 				09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */,
@@ -753,6 +776,7 @@
 				09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
+				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,

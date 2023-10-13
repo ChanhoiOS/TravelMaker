@@ -17,6 +17,11 @@ class SearchSpaceView: BaseViewController {
     var headerLine: UIView!
     var textField: UITextField!
     var middleLine: UIView!
+    var tableView: UITableView!
+    
+    let viewModel = SearchSpaceViewModel()
+    
+    let disposeBag = DisposeBag()
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -48,11 +53,24 @@ class SearchSpaceView: BaseViewController {
         return label
     }()
     
+    private lazy var confirmBtn: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = Colors.DESIGN_GRAY
+        button.setTitle("확인", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Bold", size: 16)
+        //button.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+        return button
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initHeader()
         initTextField()
+        initRegisterView()
+        setTableView()
         
         setGesture()
     }
@@ -136,11 +154,61 @@ class SearchSpaceView: BaseViewController {
                     make.top.equalTo(recommendText.snp.bottom).offset(16)
                     make.height.equalTo(0.8)
                 }
-            }
+        }
+    }
+    
+    func initRegisterView() {
+        self.view.addSubview(confirmBtn)
         
+        confirmBtn.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-44)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(69)
+        }
     }
 
 
+}
+
+extension SearchSpaceView {
+    func setTableView() {
+        tableView = UITableView()
+            .then {
+                self.view.addSubview($0)
+                
+                $0.snp.makeConstraints { make in
+                    make.top.equalTo(middleLine.snp.bottom).offset(16)
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.bottom.equalTo(confirmBtn.snp.top).offset(-16)
+                }
+            }
+            .then {
+                $0.register(SearchSpaceCell.self, forCellReuseIdentifier: SearchSpaceCell.reuseIdentifier)
+                $0.rowHeight = 67
+                $0.separatorStyle = .none
+            }
+        
+        bind()
+    }
+    
+    func setupAttribute() {
+           
+        }
+    
+    func bind() {
+            viewModel.getCellData().bind(to: tableView.rx.items) {
+                (tableView: UITableView,
+                 index: Int,
+                 element: String)
+                -> UITableViewCell in
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchSpaceCell.reuseIdentifier) as? SearchSpaceCell else { fatalError() }
+                cell.setupData("1", "2")
+                return cell
+            }
+            .disposed(by: disposeBag)
+        }
 }
 
 extension SearchSpaceView {
