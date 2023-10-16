@@ -8,6 +8,7 @@
 import UIKit
 import FlexLayout
 import PinLayout
+import RxSwift
 
 class LoginView: BaseViewController {
     
@@ -15,6 +16,7 @@ class LoginView: BaseViewController {
     let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     
     let flexView = UIView()
+    var disposeBag = DisposeBag()
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
@@ -100,6 +102,7 @@ class LoginView: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLocation()
         setFlexView()
         setTabBar()
         
@@ -301,5 +304,12 @@ extension LoginView {
     }
 }
 
+extension LoginView {
+    func setLocation() {
+        LocationManager.shared.requestLocation()
+            .bind { print($0) }
+            .disposed(by: self.disposeBag)
+    }
+}
 
       

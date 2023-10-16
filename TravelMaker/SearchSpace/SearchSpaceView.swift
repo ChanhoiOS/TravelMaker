@@ -22,6 +22,9 @@ class SearchSpaceView: BaseViewController, StoryboardView {
     let reactor = SearchSpaceViewReactor()
     var searchResult: SearchSpaceModel?
     
+    var latitude = 37.50518440330725
+    var longitude = 127.05485569769449
+    
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "header_back_btn.png")
@@ -175,6 +178,9 @@ extension SearchSpaceView {
             .then {
                 self.view.addSubview($0)
                 
+                $0.delegate = self
+                $0.dataSource = self
+                
                 $0.snp.makeConstraints { make in
                     make.top.equalTo(middleLine.snp.bottom).offset(16)
                     make.left.equalToSuperview().offset(24)
@@ -196,20 +202,46 @@ extension SearchSpaceView {
             .skip(1)
             .distinctUntilChanged()
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-            .map { SearchSpaceViewReactor.Action.search($0) }
+            .map { SearchSpaceViewReactor.Action.search($0, self.latitude, self.longitude) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        
+        reactor.action.onNext(.location(()))
+        
+        reactor.state
+            .map { $0.locationResult }
+            .bind(onNext: {[weak self] result in
+                self?.latitude = result?.latitude ?? 37.50518440330725
+                self?.longitude = result?.longitude ?? 127.05485569769449
+            })
+            .disposed(by: disposeBag)
+        
         
         reactor.state
             .map { $0.searchResult }
             .bind(onNext: { [weak self] result in
                 self?.searchResult = result
-                print("result: ", result)
+                if let _ = result?.documents {
+                    self?.tableView.reloadData()
+                }
             })
             .disposed(by: disposeBag)
     }
+}
+
+extension SearchSpaceView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResult?.documents?.count ?? 0
+    }
     
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchSpaceCell", for:  indexPath) as! SearchSpaceCell
+        cell.spaceName.text = searchResult?.documents?[indexPath.row].placeName ?? ""
+        cell.spaceAddress.text = searchResult?.documents?[indexPath.row].addressName ?? ""
+        
+        return cell
+    }
 }
 
 extension SearchSpaceView {

@@ -36,6 +36,8 @@
 		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
 		09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */; };
 		09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */; };
+		099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099EE9B92ADD140F000F0BBE /* LocationManager.swift */; };
+		099EE9BD2ADD14AC000F0BBE /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -111,6 +113,7 @@
 		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		099EE9B92ADD140F000F0BBE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* AroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundView.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 			files = (
 				09591B852AB003AF00A3F0D6 /* RxRelay in Frameworks */,
 				091D5F322AB1551B00D58FA2 /* KakaoSDK in Frameworks */,
+				099EE9BD2ADD14AC000F0BBE /* RxCoreLocation in Frameworks */,
 				09591B832AB003AF00A3F0D6 /* RxCocoa in Frameworks */,
 				09CAB1562AD508820077B46F /* SnapKit in Frameworks */,
 				091D5F3E2AB1551B00D58FA2 /* KakaoSDKUser in Frameworks */,
@@ -269,6 +273,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				099EE9B82ADD13FB000F0BBE /* Location */,
 				09B318472AD667310060CF20 /* Util */,
 				09F0DB9B2AB412B300207F0D /* Constants */,
 				09591BA42AB0586A00A3F0D6 /* Color */,
@@ -361,6 +366,14 @@
 				09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		099EE9B82ADD13FB000F0BBE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				099EE9B92ADD140F000F0BBE /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
@@ -635,6 +648,7 @@
 				09BF582D2AD7883600DCF822 /* YPImagePicker */,
 				09BF58302AD78F5C00DCF822 /* Kingfisher */,
 				09C4BA772AD9059300BE8376 /* ReactorKit */,
+				099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -676,6 +690,7 @@
 				09BF582C2AD7883600DCF822 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				09BF582F2AD78F5C00DCF822 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -783,6 +798,7 @@
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
+				099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */,
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
@@ -956,6 +972,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMaker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "주변 위치를 검색 기능 사용을 위해 위치 권한 허용이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 첨부, 게시글 사진 첨부 기능 사용을 위해 앨범 접근권한 동의가 필요합니다. 설정에서 이를 변경할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -988,6 +1005,7 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMaker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "주변 위치를 검색 기능 사용을 위해 위치 권한 허용이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 첨부, 게시글 사진 첨부 기능 사용을 위해 앨범 접근권한 동의가 필요합니다. 설정에서 이를 변경할 수 있습니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1045,6 +1063,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.0.0;
+			};
+		};
+		099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		09A83EDA2AAE94CE0082A6A2 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
@@ -1171,6 +1197,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */;
+			productName = RxCoreLocation;
 		};
 		09A83EDB2AAE94CE0082A6A2 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;

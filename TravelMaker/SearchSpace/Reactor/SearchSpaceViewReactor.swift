@@ -10,27 +10,37 @@ import RxSwift
 import ReactorKit
 import RxCocoa
 import Alamofire
+import CoreLocation
 
 class SearchSpaceViewReactor: Reactor {
     let initialState = State()
+    var disposeBag = DisposeBag()
     
     enum Action {
-        case search(String?)
+        case location(Void)
+        case search(String?, Double, Double)
     }
         
     enum Mutation {
+        case setLocation(CLLocationCoordinate2D?)
         case setResult(SearchSpaceModel?)
     }
         
     struct State {
+        var locationResult: CLLocationCoordinate2D?
         var searchResult: SearchSpaceModel?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .search(let text):
+        case .location:
             return Observable.concat([
-                self.searchSpace(text ?? "")
+                self.getLocation()
+            ])
+            
+        case .search(let text, let x, let y):
+            return Observable.concat([
+                self.searchSpace(text ?? "", x, y)
             ])
         }
     }
@@ -38,6 +48,8 @@ class SearchSpaceViewReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
+        case .setLocation(let location):
+            state.locationResult = location
         case .setResult(let data):
             state.searchResult = data
         }
@@ -57,12 +69,12 @@ extension SearchSpaceViewReactor {
     }
     
     
-    func searchSpace(_ text: String) -> Observable<Mutation> {
+    func searchSpace(_ text: String, _ x: Double, _ y: Double) -> Observable<Mutation> {
         let url = "https://dapi.kakao.com/v2/local/search/keyword.json"
         var param = [String: Any]()
         param["query"] = text
-        param["x"] = "37.514322572335935"
-        param["y"] = "127.06283102249932"
+        param["x"] = x
+        param["y"] = y
         param["page"] = 1
         param["size"] = 15
         param["sort"] = "accuracy"
@@ -85,4 +97,18 @@ extension SearchSpaceViewReactor {
             return Disposables.create()
         }
     }
+}
+
+extension SearchSpaceViewReactor {
+    func getLocation() -> Observable<Mutation> {
+        return Observable<Mutation>.create { observer -> Disposable in
+            
+            LocationManager.shared.locationSubject
+                .compactMap { $0 }
+                .bind { [weak self] location in
+                    observer.onNext(.setLocation(location))
+                }
+            }
+            
+        }
 }
