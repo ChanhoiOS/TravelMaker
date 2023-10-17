@@ -17,6 +17,7 @@ class SearchSpaceSelectView: UIViewController {
     var middleLine: UIView!
     
     var naverMapView: NMFMapView?
+    var customView: AroundMeCumtomView?
     
     var latitude = ""
     var longitude = ""
@@ -34,15 +35,20 @@ class SearchSpaceSelectView: UIViewController {
         label.font = UIFont(name: "SUIT-Bold", size: 20)
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initHeader()
         setMap()
         setLocation()
+        setGesture()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        setCustomView()
+    }
+    
     func initHeader() {
         headerView = UIView()
             .then {
@@ -78,6 +84,24 @@ class SearchSpaceSelectView: UIViewController {
             }
     }
     
+    func setCustomView() {
+        customView = AroundMeCumtomView()
+            .then {
+                self.view.addSubview($0)
+                
+                $0.snp.makeConstraints { make in
+                    make.bottom.equalToSuperview().offset(-60)
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.height.equalTo(231)
+                }
+                
+                $0.bringSubviewToFront(naverMapView!)
+        }
+    }
+}
+
+extension SearchSpaceSelectView {
     func setMap() {
         naverMapView = NMFMapView()
             .then {
@@ -103,7 +127,7 @@ class SearchSpaceSelectView: UIViewController {
         let image = UIImage(named: "location_marker")!.resize(newWidth: 48)
         
         marker.iconImage = NMFOverlayImage(image: image)
-        marker.mapView = self.naverMapView
+        marker.mapView = naverMapView
     }
     
 }

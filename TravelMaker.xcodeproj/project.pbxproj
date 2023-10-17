@@ -10,6 +10,7 @@
 		090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */; };
 		090FB9EC2ADE553D005081F8 /* SearchSpaceSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */; };
 		090FB9EE2ADE5B48005081F8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */; };
+		090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9F12ADE7985005081F8 /* AroundMeCustomView.swift */; };
 		091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */; };
 		091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */; };
 		091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */; };
@@ -99,6 +100,7 @@
 		090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceSelectView.swift; sourceTree = "<group>"; };
 		090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpaceSelectView.xib; sourceTree = "<group>"; };
 		090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		090FB9F12ADE7985005081F8 /* AroundMeCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMeCustomView.swift; sourceTree = "<group>"; };
 		091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNearMe.swift; sourceTree = "<group>"; };
 		091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNearMe.xib; sourceTree = "<group>"; };
 		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
@@ -199,6 +201,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090FB9EF2ADE7942005081F8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				090FB9F02ADE7948005081F8 /* AroundMe */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		090FB9F02ADE7948005081F8 /* AroundMe */ = {
+			isa = PBXGroup;
+			children = (
+				090FB9F12ADE7985005081F8 /* AroundMeCustomView.swift */,
+			);
+			path = AroundMe;
+			sourceTree = "<group>";
+		};
 		091B19A02AD4E4A6009A6AF1 /* RegisterAround */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +297,7 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				090FB9EF2ADE7942005081F8 /* CustomView */,
 				099EE9B82ADD13FB000F0BBE /* Location */,
 				09B318472AD667310060CF20 /* Util */,
 				09F0DB9B2AB412B300207F0D /* Constants */,
@@ -822,6 +841,7 @@
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
+				090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
