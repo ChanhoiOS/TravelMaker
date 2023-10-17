@@ -17,59 +17,140 @@
 			);
 			name = "naveridlogin-sdk-ios";
 		};
+		72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EB98AD101AB530610FAEE48FABDF7F57 /* Build configuration list for PBXAggregateTarget "NMapsGeometry" */;
+			buildPhases = (
+				06DEA16D4139F67FC0E17642FDBEECD0 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = NMapsGeometry;
+		};
+		8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 73E737D5F21341C24A13EBC70CD8D471 /* Build configuration list for PBXAggregateTarget "NMapsMap" */;
+			buildPhases = (
+				B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				0F42F1C3A1A2E12582757CAA1B54FC6D /* PBXTargetDependency */,
+			);
+			name = NMapsMap;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		004E3340967B000DD23C697A998CDA2C /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
-		81F1BD2BBA81D6967EFEEA5187ED8425 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		F0AF7520DE5D2C20044B612939F8B184 /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		472A0B0F86770ECC291B7CFE5D04844B /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
+		4BFE24B76EBC648364B8EC2FAD5E576C /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2253451DF19CE948740C85C72FFDDAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F79D5B919DA6B34408C5B5053A5161A1 /* PBXContainerItemProxy */ = {
+		26695FA8DD386F888686B9D5ACAA6B27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E049F5F4E3BDC647F924FEF22D49D90;
+			remoteInfo = NMapsMap;
+		};
+		A21C1AC54EBB65E1249E5E9BDF249C0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
+		D83938E7A9D29ADBBD92C38681BEF770 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3516E9D4735D155BC036A4DB393966FC;
 			remoteInfo = "naveridlogin-sdk-ios";
 		};
+		F6AC05DFB83B4774459DCCB14D87138C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		192A5FAA9E90D9C72A3A1C09FF40F0CD /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
+		25BE71B1F1D8BF00261C93FBB0774982 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
 		384DA08F24DD23E03FDC8890E5C7F1D1 /* Pods-TravelMaker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TravelMaker-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
 		45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TravelMaker"; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4E7ACE1512FC68AA17D5BB9D6CC5F6 /* Pods-TravelMaker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-acknowledgements.plist"; sourceTree = "<group>"; };
+		52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
+		6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		79DD4FA719AF54FB40075999FF7FF9FE /* Pods-TravelMaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-Info.plist"; sourceTree = "<group>"; };
 		7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TravelMaker-umbrella.h"; sourceTree = "<group>"; };
 		7CBA60C873735FBD873AAA19563AADBD /* Pods-TravelMaker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TravelMaker-frameworks.sh"; sourceTree = "<group>"; };
-		7D8EBA2229426769A0473AE25ED11A13 /* naveridlogin-sdk-ios-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "naveridlogin-sdk-ios-xcframeworks.sh"; sourceTree = "<group>"; };
+		93BDE20C94786077A442F53B52930F96 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
 		99F7808A0770AA044E2A57BEC08BBC3D /* Pods-TravelMaker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TravelMaker.modulemap"; sourceTree = "<group>"; };
-		9D354B8C2B4C2CA6F74543B5B69411EB /* naveridlogin-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		9C781F99FF2686A15C9D4CBBDC96FD61 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A7A35C960C7DAE4071D245A5D0E9F7E8 /* naveridlogin-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		C2BF69224145F5408992BC6DC8CBC802 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
 		C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TravelMaker-dummy.m"; sourceTree = "<group>"; };
+		CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
+		D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
+		E72C981902935E4F55E1719D98AF7524 /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
+		F88E07AF6C6B387C6DC91432DF418D3E /* naveridlogin-sdk-ios-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "naveridlogin-sdk-ios-xcframeworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00D7E0EEEABB28394C128BB363E963C5 /* Frameworks */ = {
+		0FE390ABD626562178B2BAD16CAF6B84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F1BD2BBA81D6967EFEEA5187ED8425 /* Foundation.framework in Frameworks */,
+				C2253451DF19CE948740C85C72FFDDAC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C5446A0B659730A42FA2B9211EA65C1 /* Frameworks */ = {
+		03D43C79CAED640EA517FFF56E1270FF /* NMapsMap */ = {
 			isa = PBXGroup;
 			children = (
-				192A5FAA9E90D9C72A3A1C09FF40F0CD /* NaverThirdPartyLogin.xcframework */,
+				447765612DBED7C8AF72109794667975 /* Frameworks */,
+				8F1D6A2DDDE98CF04C88376868219C29 /* Support Files */,
+			);
+			name = NMapsMap;
+			path = NMapsMap;
+			sourceTree = "<group>";
+		};
+		0AA0D1639D3AD82B0433842A3F30B7CB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F88E07AF6C6B387C6DC91432DF418D3E /* naveridlogin-sdk-ios-xcframeworks.sh */,
+				C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */,
+				6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/naveridlogin-sdk-ios";
+			sourceTree = "<group>";
+		};
+		2BF8730661485F45709823778F8363CC /* naveridlogin-sdk-ios */ = {
+			isa = PBXGroup;
+			children = (
+				6C5AF1A587EEBFFE0DC77683A6475718 /* Frameworks */,
+				0AA0D1639D3AD82B0433842A3F30B7CB /* Support Files */,
+			);
+			name = "naveridlogin-sdk-ios";
+			path = "naveridlogin-sdk-ios";
+			sourceTree = "<group>";
+		};
+		447765612DBED7C8AF72109794667975 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93BDE20C94786077A442F53B52930F96 /* NMapsMap.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,23 +163,42 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5798114C70A4B6A3264AF034CFF8DFDF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7D8EBA2229426769A0473AE25ED11A13 /* naveridlogin-sdk-ios-xcframeworks.sh */,
-				A7A35C960C7DAE4071D245A5D0E9F7E8 /* naveridlogin-sdk-ios.debug.xcconfig */,
-				9D354B8C2B4C2CA6F74543B5B69411EB /* naveridlogin-sdk-ios.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/naveridlogin-sdk-ios";
-			sourceTree = "<group>";
-		};
 		6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				ECD3429FAD76C4AB75FBDCD251D6C904 /* Pods-TravelMaker */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6C5AF1A587EEBFFE0DC77683A6475718 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C781F99FF2686A15C9D4CBBDC96FD61 /* NaverThirdPartyLogin.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E62504738D5088FC3F5CBAE3A6C2E35 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E72C981902935E4F55E1719D98AF7524 /* NMapsGeometry-xcframeworks.sh */,
+				CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */,
+				52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMapsGeometry";
+			sourceTree = "<group>";
+		};
+		8F1D6A2DDDE98CF04C88376868219C29 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				25BE71B1F1D8BF00261C93FBB0774982 /* NMapsMap-xcframeworks.sh */,
+				420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */,
+				D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMapsMap";
 			sourceTree = "<group>";
 		};
 		A9CD8F24F09825BC43D11658B17F70CC /* Products */ = {
@@ -109,14 +209,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B68BE003A5520BD585CDED242497892A /* naveridlogin-sdk-ios */ = {
+		B756060AB2A1CC1F097E168C237E9AF0 /* NMapsGeometry */ = {
 			isa = PBXGroup;
 			children = (
-				0C5446A0B659730A42FA2B9211EA65C1 /* Frameworks */,
-				5798114C70A4B6A3264AF034CFF8DFDF /* Support Files */,
+				DC40D8B333CF818E3C0B221A9CF9C37D /* Frameworks */,
+				8E62504738D5088FC3F5CBAE3A6C2E35 /* Support Files */,
 			);
-			name = "naveridlogin-sdk-ios";
-			path = "naveridlogin-sdk-ios";
+			name = NMapsGeometry;
+			path = NMapsGeometry;
+			sourceTree = "<group>";
+		};
+		BAA16A3DE0661F33C4EE0A17C5ECAB9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BF8730661485F45709823778F8363CC /* naveridlogin-sdk-ios */,
+				B756060AB2A1CC1F097E168C237E9AF0 /* NMapsGeometry */,
+				03D43C79CAED640EA517FFF56E1270FF /* NMapsMap */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -124,7 +234,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				EDFD056A374120E7638719045D245FF6 /* Pods */,
+				BAA16A3DE0661F33C4EE0A17C5ECAB9F /* Pods */,
 				A9CD8F24F09825BC43D11658B17F70CC /* Products */,
 				6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */,
 			);
@@ -134,6 +244,14 @@
 			isa = PBXGroup;
 			children = (
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC40D8B333CF818E3C0B221A9CF9C37D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2BF69224145F5408992BC6DC8CBC802 /* NMapsGeometry.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,22 +273,14 @@
 			path = "Target Support Files/Pods-TravelMaker";
 			sourceTree = "<group>";
 		};
-		EDFD056A374120E7638719045D245FF6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B68BE003A5520BD585CDED242497892A /* naveridlogin-sdk-ios */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7410E0E57FA81F9BCE350D2B39FE8C7A /* Headers */ = {
+		3E4001910AA5FBA8114E9E0BAA64BBB4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0AF7520DE5D2C20044B612939F8B184 /* Pods-TravelMaker-umbrella.h in Headers */,
+				4BFE24B76EBC648364B8EC2FAD5E576C /* Pods-TravelMaker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,17 +289,19 @@
 /* Begin PBXNativeTarget section */
 		63B4D62694066E40AB546D642FAA8D56 /* Pods-TravelMaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8AB89879DB17294F832B193C28DF1BDD /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
+			buildConfigurationList = F2F5107D4AA8F15E6BC461C12AEE191D /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
 			buildPhases = (
-				7410E0E57FA81F9BCE350D2B39FE8C7A /* Headers */,
-				D39BF930903E1143D7EFF20B730B65C9 /* Sources */,
-				00D7E0EEEABB28394C128BB363E963C5 /* Frameworks */,
-				E8B15B3027B90AB05D3F3C58D5986686 /* Resources */,
+				3E4001910AA5FBA8114E9E0BAA64BBB4 /* Headers */,
+				890EB6DF83A1DA1A81FCFE87D3AFDAAC /* Sources */,
+				0FE390ABD626562178B2BAD16CAF6B84 /* Frameworks */,
+				763E68A424EF26D36C916ADADE9C05F6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				14ED71DA636672D5500CA968D0CAEF1B /* PBXTargetDependency */,
+				374F72A3865D20FDB89696BE8BF6B8BA /* PBXTargetDependency */,
+				1D158EF1EB38C76FAAE6FC95DC8CB515 /* PBXTargetDependency */,
+				1DF62AE1EB3D8210FCFA327DB634BFEC /* PBXTargetDependency */,
 			);
 			name = "Pods-TravelMaker";
 			productName = Pods_TravelMaker;
@@ -219,13 +331,15 @@
 			projectRoot = "";
 			targets = (
 				3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */,
+				72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */,
+				8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */,
 				63B4D62694066E40AB546D642FAA8D56 /* Pods-TravelMaker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E8B15B3027B90AB05D3F3C58D5986686 /* Resources */ = {
+		763E68A424EF26D36C916ADADE9C05F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,6 +349,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06DEA16D4139F67FC0E17642FDBEECD0 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NMapsGeometry/NMapsGeometry-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NMapsGeometry/NMapsGeometry-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/NMapsGeometry/NMapsGeometry-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E05BCF0D92F31389F4CCB961DA341B4 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,32 +383,84 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/naveridlogin-sdk-ios/naveridlogin-sdk-ios-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NMapsMap/NMapsMap-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NMapsMap/NMapsMap-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/NMapsMap/NMapsMap-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D39BF930903E1143D7EFF20B730B65C9 /* Sources */ = {
+		890EB6DF83A1DA1A81FCFE87D3AFDAAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004E3340967B000DD23C697A998CDA2C /* Pods-TravelMaker-dummy.m in Sources */,
+				472A0B0F86770ECC291B7CFE5D04844B /* Pods-TravelMaker-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		14ED71DA636672D5500CA968D0CAEF1B /* PBXTargetDependency */ = {
+		0F42F1C3A1A2E12582757CAA1B54FC6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMapsGeometry;
+			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
+			targetProxy = F6AC05DFB83B4774459DCCB14D87138C /* PBXContainerItemProxy */;
+		};
+		1D158EF1EB38C76FAAE6FC95DC8CB515 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMapsMap;
+			target = 8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */;
+			targetProxy = 26695FA8DD386F888686B9D5ACAA6B27 /* PBXContainerItemProxy */;
+		};
+		1DF62AE1EB3D8210FCFA327DB634BFEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "naveridlogin-sdk-ios";
 			target = 3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */;
-			targetProxy = F79D5B919DA6B34408C5B5053A5161A1 /* PBXContainerItemProxy */;
+			targetProxy = D83938E7A9D29ADBBD92C38681BEF770 /* PBXContainerItemProxy */;
+		};
+		374F72A3865D20FDB89696BE8BF6B8BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMapsGeometry;
+			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
+			targetProxy = A21C1AC54EBB65E1249E5E9BDF249C0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		35613D0A5F350911AE6E907FDFC836E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7A35C960C7DAE4071D245A5D0E9F7E8 /* naveridlogin-sdk-ios.debug.xcconfig */;
+			baseConfigurationReference = C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,46 +474,25 @@
 			};
 			name = Debug;
 		};
-		4D91E4BB9318946C46820E042697E8C7 /* Debug */ = {
+		4122D12474652D4B94029A59C0DC6010 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
+			baseConfigurationReference = CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 		768846D27ACEFD82711658787FCAC0B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D354B8C2B4C2CA6F74543B5B69411EB /* naveridlogin-sdk-ios.release.xcconfig */;
+			baseConfigurationReference = 6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -411,9 +573,9 @@
 			};
 			name = Debug;
 		};
-		C8A9CE2A65FE67B55F44AF1ED7E5B6EA /* Release */ = {
+		93D8F825E85C7DDF7F272ED0647F54B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */;
+			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -443,9 +605,41 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE5D137BA104CCBECE001BF38C0AEB3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -511,6 +705,44 @@
 			};
 			name = Release;
 		};
+		FFA386680C2300092A60D7A64E8B74BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -519,6 +751,15 @@
 			buildConfigurations = (
 				7C3FBC45C4966EFE20583918767EFBE2 /* Debug */,
 				FF0A36149038A192FFD678E1D4A40D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E737D5F21341C24A13EBC70CD8D471 /* Build configuration list for PBXAggregateTarget "NMapsMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */,
+				FE5D137BA104CCBECE001BF38C0AEB3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -532,11 +773,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8AB89879DB17294F832B193C28DF1BDD /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
+		EB98AD101AB530610FAEE48FABDF7F57 /* Build configuration list for PBXAggregateTarget "NMapsGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D91E4BB9318946C46820E042697E8C7 /* Debug */,
-				C8A9CE2A65FE67B55F44AF1ED7E5B6EA /* Release */,
+				4122D12474652D4B94029A59C0DC6010 /* Debug */,
+				138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F5107D4AA8F15E6BC461C12AEE191D /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93D8F825E85C7DDF7F272ED0647F54B5 /* Debug */,
+				FFA386680C2300092A60D7A64E8B74BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

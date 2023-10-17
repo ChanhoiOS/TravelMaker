@@ -11,4 +11,8 @@ extension String {
     func replacingSlashWithUnderscore() -> String {
         return self.replacingOccurrences(of: "/", with: "_")
     }
+    
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
+    }
 }

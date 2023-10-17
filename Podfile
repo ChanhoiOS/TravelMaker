@@ -6,6 +6,7 @@ target 'TravelMaker' do
   use_frameworks!
 
  pod 'naveridlogin-sdk-ios'
+ pod 'NMapsMap'
 
 
   # Pods for TravelMaker

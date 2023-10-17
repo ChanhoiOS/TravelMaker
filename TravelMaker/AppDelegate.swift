@@ -8,6 +8,8 @@
 import UIKit
 import NaverThirdPartyLogin
 import KakaoSDKCommon
+import NMapsMap
+import NMapsGeometry
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setNaverLogin()
         setKakaoLogin()
+        setNaverMap()
         
         return true
     }
@@ -55,3 +58,8 @@ extension AppDelegate {
     }
 }
 
+extension AppDelegate {
+    func setNaverMap() {
+        NMFAuthManager.shared().clientId = "d339gzg0n5"
+    }
+}

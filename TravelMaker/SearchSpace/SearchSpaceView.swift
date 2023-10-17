@@ -242,6 +242,13 @@ extension SearchSpaceView: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectView = SearchSpaceSelectView(nibName: "SearchSpaceSelectView", bundle: nil)
+        selectView.longitude = searchResult?.documents?[indexPath.row].x ?? "37.50518440330725"
+        selectView.latitude = searchResult?.documents?[indexPath.row].y ?? "127.05485569769449"
+        self.navigationController?.pushViewController(selectView, animated: true)
+    }
 }
 
 extension SearchSpaceView {

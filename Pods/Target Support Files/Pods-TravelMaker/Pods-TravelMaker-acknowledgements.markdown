@@ -1,6 +1,18 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## NMapsGeometry
+
+Copyright © 2018 NAVER Corp.
+All rights reserved.
+
+
+## NMapsMap
+
+Copyright © 2018 NAVER Corp.
+All rights reserved.
+
+
 ## naveridlogin-sdk-ios
 
                                 Apache License
