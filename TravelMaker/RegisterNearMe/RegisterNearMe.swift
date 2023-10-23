@@ -33,6 +33,7 @@ class RegisterNearMe: BaseViewController {
     var photoWidth: CGFloat?
     var images = [UIImage]()
     var selectedSpace = [String: Any]()
+    var requestModel: RequestRegisterNearMeModel?
     
     let searchSpaceViewModel = SearchSpaceViewModel.shared
     let disposeBag = DisposeBag()
@@ -71,7 +72,7 @@ class RegisterNearMe: BaseViewController {
         button.setTitle("등록하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Bold", size: 16)
-        button.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
+        button.addTarget(self, action: #selector(uploadData), for: .touchUpInside)
         return button
     }()
     
@@ -448,6 +449,32 @@ extension RegisterNearMe {
                 self?.spaceTextField.text = data["placeTitle"] as? String
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc func uploadData() {
+        var imageData: [Data]?
+        
+        for image in images {
+            let imageJpg = image.jpegData(compressionQuality: 1.0)!
+            imageData?.append(imageJpg)
+        }
+        
+        requestModel = RequestRegisterNearMeModel(
+            content: contentTextView.text,
+            placeName: selectedSpace["placeName"] as? String ?? "",
+            dateTime: dateTextField.text ?? "",
+            latitude: selectedSpace["y"] as? Double ?? 0.0,
+            longitude: selectedSpace["x"] as? Double ?? 0.0,
+            imageFiles: imageData,
+            address: selectedSpace["address"] as? String ?? "",
+            categoryName: selectedSpace["categoryName"] as? String ?? "",
+            starRating: star.rating)
+        
+        FileUploadRepository.shared.uploadArroundMeData(url: Apis.post, with: requestModel!) { response in
+            print("response: ", response)
+        } failureHandler: { error in
+            print("error: ", error)
+        }
     }
 }
 

@@ -42,6 +42,9 @@
 		09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */; };
 		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
 		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
+		0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF992AE63187004D9068 /* FileUploadRepository.swift */; };
+		0960FF9F2AE6321D004D9068 /* RequestRegisterNearMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF9E2AE6321D004D9068 /* RequestRegisterNearMeModel.swift */; };
+		0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FFA12AE64979004D9068 /* ResponseRegisterNearMeModel.swift */; };
 		099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099EE9B92ADD140F000F0BBE /* LocationManager.swift */; };
 		099EE9BD2ADD14AC000F0BBE /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
@@ -125,6 +128,9 @@
 		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
+		0960FF992AE63187004D9068 /* FileUploadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadRepository.swift; sourceTree = "<group>"; };
+		0960FF9E2AE6321D004D9068 /* RequestRegisterNearMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterNearMeModel.swift; sourceTree = "<group>"; };
+		0960FFA12AE64979004D9068 /* ResponseRegisterNearMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRegisterNearMeModel.swift; sourceTree = "<group>"; };
 		099EE9B92ADD140F000F0BBE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 		091B19A12AD4E716009A6AF1 /* RegisterNearMe */ = {
 			isa = PBXGroup;
 			children = (
+				0960FF9B2AE631EE004D9068 /* Model */,
 				091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */,
 				091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */,
 			);
@@ -407,6 +414,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0960FF9B2AE631EE004D9068 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0960FF9E2AE6321D004D9068 /* RequestRegisterNearMeModel.swift */,
+				0960FFA12AE64979004D9068 /* ResponseRegisterNearMeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0960FFA02AE63B67004D9068 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				0960FF992AE63187004D9068 /* FileUploadRepository.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		099EE9B82ADD13FB000F0BBE /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +510,7 @@
 		09A83F102AAF047D0082A6A2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				0960FFA02AE63B67004D9068 /* File */,
 				091D5F402AB17C9B00D58FA2 /* User */,
 			);
 			path = Repository;
@@ -834,6 +859,7 @@
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
+				0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */,
 				09B318492AD667420060CF20 /* Utils.swift in Sources */,
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */,
@@ -857,7 +883,9 @@
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
+				0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */,
 				090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */,
+				0960FF9F2AE6321D004D9068 /* RequestRegisterNearMeModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,

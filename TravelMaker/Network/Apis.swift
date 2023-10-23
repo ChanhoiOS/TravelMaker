@@ -11,4 +11,6 @@ struct Apis {
     static let baseUrl = "http://43.200.32.96:8140"
     
     static let login = "\(Apis.baseUrl)/api/auth/login"
+    
+    static let post = "\(Apis.baseUrl)/api/post"
 }

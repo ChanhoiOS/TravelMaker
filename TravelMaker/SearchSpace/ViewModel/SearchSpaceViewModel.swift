@@ -18,6 +18,8 @@ class SearchSpaceViewModel {
     var requestSelectedData = PublishSubject<[String: Any]>()
     var responseSelectedData = PublishSubject<[String: Any]>()
     
+    
+    
     init() {
         requestSelectedData.subscribe(onNext: {[weak self] data in
             self?.dataMove(data)
