@@ -10,6 +10,8 @@ import NMapsMap
 import NMapsGeometry
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SearchSpaceSelectView: UIViewController {
     var headerView: UIView!
@@ -21,6 +23,11 @@ class SearchSpaceSelectView: UIViewController {
     
     var latitude = ""
     var longitude = ""
+    var placeName = ""
+    var address = ""
+    var categoryName = ""
+    
+    let searchSpaceViewModel = SearchSpaceViewModel.shared
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -85,9 +92,10 @@ class SearchSpaceSelectView: UIViewController {
     }
     
     func setCustomView() {
-        customView = AroundMeCumtomView()
+        customView = AroundMeCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), placeName, address)
             .then {
                 self.view.addSubview($0)
+                $0.delegate = self
                 
                 $0.snp.makeConstraints { make in
                     make.bottom.equalToSuperview().offset(-60)
@@ -130,6 +138,25 @@ extension SearchSpaceSelectView {
         marker.mapView = naverMapView
     }
     
+}
+
+extension SearchSpaceSelectView: ArroundMeCustomViewDelegate {
+    func registerSpace() {
+        var data = [String: Any]()
+        data["x"] = longitude.toDouble()
+        data["y"] = latitude.toDouble()
+        data["placeTitle"] = placeName
+        data["address"] = address
+        data["categoryName"] = categoryName
+        
+        searchSpaceViewModel.requestSelectedData.onNext(data)
+        
+        self.navigationController?.popTo("RegisterNearMe")
+    }
+    
+    func cancelSpace() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension SearchSpaceSelectView {

@@ -247,6 +247,9 @@ extension SearchSpaceView: UITableViewDelegate, UITableViewDataSource {
         let selectView = SearchSpaceSelectView(nibName: "SearchSpaceSelectView", bundle: nil)
         selectView.longitude = searchResult?.documents?[indexPath.row].x ?? "37.50518440330725"
         selectView.latitude = searchResult?.documents?[indexPath.row].y ?? "127.05485569769449"
+        selectView.placeName = searchResult?.documents?[indexPath.row].placeName ?? ""
+        selectView.address = searchResult?.documents?[indexPath.row].addressName ?? ""
+        selectView.categoryName = searchResult?.documents?[indexPath.row].categoryName ?? ""
         self.navigationController?.pushViewController(selectView, animated: true)
     }
 }

@@ -32,7 +32,9 @@ class RegisterNearMe: BaseViewController {
     var screenWidth: CGFloat?
     var photoWidth: CGFloat?
     var images = [UIImage]()
+    var selectedSpace = [String: Any]()
     
+    let searchSpaceViewModel = SearchSpaceViewModel.shared
     let disposeBag = DisposeBag()
     
     let textViewPlaceHolder = "Q.\n장소에 대한 리뷰를 남겨주세요.\n최소 15자 이상 작성해 주세요.\n최대 200자 작성 가능합니다."
@@ -85,6 +87,7 @@ class RegisterNearMe: BaseViewController {
         initPhotoView()
         initRegisterView()
         
+        setData()
         setGesture()
     }
     
@@ -435,6 +438,17 @@ extension RegisterNearMe: YPImagePickerDelegate {
             imagePicker.modalPresentationStyle = .overFullScreen
             present(imagePicker, animated: true, completion: nil)
         }
+}
+
+extension RegisterNearMe {
+    func setData() {
+        searchSpaceViewModel.responseSelectedData
+            .subscribe(onNext: { [weak self] data in
+                self?.selectedSpace = data
+                self?.spaceTextField.text = data["placeTitle"] as? String
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 extension RegisterNearMe {

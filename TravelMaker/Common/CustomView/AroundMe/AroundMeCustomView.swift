@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol ArroundMeCustomViewDelegate {
+    func registerSpace()
+    func cancelSpace()
+}
+
 class AroundMeCumtomView: UIView {
+    
+    var delegate: ArroundMeCustomViewDelegate?
     
     private let pageTitle: UILabel = {
         let label = UILabel()
@@ -46,27 +53,31 @@ class AroundMeCumtomView: UIView {
         return button
     }()
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, _ place: String, _ address: String) {
         super.init(frame: frame)
-        setView()
+        setView(place, address)
+    }
+    
+    required init?(coder: NSCoder, _ place: String, _ address: String) {
+        super.init(coder: coder)
+        setView(place, address)
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setView()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func setView() {
+    private func setView(_ place: String, _ address: String) {
         self.backgroundColor = .white
         
-        pageTitle.text = "창경궁"
+        pageTitle.text = place
         self.addSubview(pageTitle)
         
         pageTitle.snp.makeConstraints { make in
             make.top.left.equalToSuperview().offset(24)
         }
         
-        pageContent.text = "서울특별시 강서구 마곡동로 62"
+        pageContent.text = address
         self.addSubview(pageContent)
         
         pageContent.snp.makeConstraints { make in
@@ -93,11 +104,11 @@ class AroundMeCumtomView: UIView {
     }
     
     @objc func selectSpace() {
-        print("selectSpace")
+        delegate?.registerSpace()
     }
     
     @objc func cancelChoice() {
-        print("cancelChoice")
+        delegate?.cancelSpace()
     }
 }
 

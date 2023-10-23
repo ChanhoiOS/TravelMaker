@@ -40,6 +40,8 @@
 		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
 		09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */; };
 		09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */; };
+		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
+		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
 		099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099EE9B92ADD140F000F0BBE /* LocationManager.swift */; };
 		099EE9BD2ADD14AC000F0BBE /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
@@ -121,6 +123,8 @@
 		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		099EE9B92ADD140F000F0BBE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 				09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */,
 				09F0DBA52AB4493100207F0D /* String+Extension.swift */,
 				090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */,
+				0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -392,6 +397,14 @@
 				09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		0960FF962AE60DDF004D9068 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		099EE9B82ADD13FB000F0BBE /* Location */ = {
@@ -517,6 +530,7 @@
 		09BF583B2AD7E04400DCF822 /* SearchSpace */ = {
 			isa = PBXGroup;
 			children = (
+				0960FF962AE60DDF004D9068 /* ViewModel */,
 				09C4BA7D2AD934F400BE8376 /* Model */,
 				09C4BA732AD8E10E00BE8376 /* Reactor */,
 				09C4BA702AD8E08C00BE8376 /* Cell */,
@@ -822,6 +836,7 @@
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
 				09B318492AD667420060CF20 /* Utils.swift in Sources */,
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
+				0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */,
 				09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
 				090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */,
@@ -830,6 +845,7 @@
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
 				099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */,
+				0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */,
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
