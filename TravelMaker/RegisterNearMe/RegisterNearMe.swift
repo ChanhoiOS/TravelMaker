@@ -483,10 +483,21 @@ extension RegisterNearMe {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
         backBtn.addGestureRecognizer(tapGesture)
         backBtn.isUserInteractionEnabled = true
+        
+        let scrollViewGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        scrollViewGesture.numberOfTapsRequired = 1
+        scrollViewGesture.isEnabled = true
+        scrollViewGesture.cancelsTouchesInView = false
+
+        scrollView.addGestureRecognizer(scrollViewGesture)
     }
     
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func hideKeyboard(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 }
 
