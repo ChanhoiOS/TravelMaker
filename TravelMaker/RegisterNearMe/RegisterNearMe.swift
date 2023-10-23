@@ -90,6 +90,7 @@ class RegisterNearMe: BaseViewController {
         
         setData()
         setGesture()
+        controlKeyboard()
     }
     
     override func viewDidLayoutSubviews() {
@@ -484,7 +485,7 @@ extension RegisterNearMe {
         backBtn.addGestureRecognizer(tapGesture)
         backBtn.isUserInteractionEnabled = true
         
-        let scrollViewGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        let scrollViewGesture = UITapGestureRecognizer(target: self, action: #selector(scrollTouchKeyboard))
         scrollViewGesture.numberOfTapsRequired = 1
         scrollViewGesture.isEnabled = true
         scrollViewGesture.cancelsTouchesInView = false
@@ -496,8 +497,43 @@ extension RegisterNearMe {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func hideKeyboard(sender: UITapGestureRecognizer) {
+    @objc func scrollTouchKeyboard(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+}
+
+extension RegisterNearMe {
+    func controlKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification) {
+        let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        if let keyboardHeight = keyboardSize?.height {
+            let heihgt = keyboardHeight
+            UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
+                self.registerBtn.snp.updateConstraints { (make) -> Void in
+                    make.bottom.equalToSuperview().offset(-heihgt)
+                }
+                self.registerBtn.superview?.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
+                self.registerBtn.snp.updateConstraints { (make) -> Void in
+                    make.bottom.equalToSuperview().offset(-336)
+                }
+            })
+        }
+    }
+
+    @objc func keyboardWillHide(_ sender: Notification) {
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
+            self.registerBtn.snp.updateConstraints { (make) -> Void in
+                make.bottom.equalToSuperview().offset(-44)
+            }
+            self.registerBtn.superview?.layoutIfNeeded()
+        })
     }
 }
 
@@ -519,6 +555,14 @@ extension RegisterNearMe: UITextViewDelegate {
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
            textView.text = textViewPlaceHolder
             textView.textColor = Colors.DESIGN_GRAY
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count >= 15 {
+            registerBtn.backgroundColor = Colors.DESIGN_BLUE
+        } else {
+            registerBtn.backgroundColor = Colors.DESIGN_GRAY
         }
     }
 }
