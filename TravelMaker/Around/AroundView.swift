@@ -12,13 +12,17 @@ import Then
 import SnapKit
 import RxSwift
 import RxCocoa
+import ReactorKit
 
-class AroundView: UIViewController {
+class AroundView: BaseViewController, StoryboardView {
     
     var headerView: UIView!
     var headerLine: UIView!
     
     var naverMapView: NMFMapView?
+    
+    let reactor = AroundViewReactor()
+    var aroundAllResult: ResponseAroundModel?
     
     var disposeBag = DisposeBag()
     
@@ -72,6 +76,22 @@ class AroundView: UIViewController {
 }
 
 extension AroundView {
+    func bind(reactor: AroundViewReactor) {
+        reactor.action.onNext(.getAllAroundData(()))
+        
+        reactor.state
+            .map { $0.aroundResult }
+            .bind(onNext: {[weak self] result in
+                self?.aroundAllResult = result
+                if let data = result?.data {
+                    self?.setMarker(result)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+extension AroundView {
     func setCoordinate() {
         LocationManager.shared.locationSubject
             .bind(onNext: { [weak self] gps in
@@ -98,16 +118,22 @@ extension AroundView {
     func setLocation(_ x: Double, _ y: Double) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
         naverMapView?.moveCamera(cameraUpdate)
-        
-        let marker = NMFMarker()
-                                
-        marker.captionRequestedWidth = 60
-        marker.position = NMGLatLng(lat: latitude.toDouble() ?? 37.50518440330725, lng: longitude.toDouble() ?? 127.05485569769449)
-                                
-        let image = UIImage(named: "location_marker")!.resize(newWidth: 48)
-        
-        marker.iconImage = NMFOverlayImage(image: image)
-        marker.mapView = naverMapView
+    }
+    
+    func setMarker(_ aroundData: ResponseAroundModel) {
+        if let details = aroundData.data {
+            for detail in details {
+                let marker = NMFMarker()
+                                        
+                marker.captionRequestedWidth = 60
+                marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                        
+                let image = UIImage(named: "location_marker")!.resize(newWidth: 48)
+                
+                marker.iconImage = NMFOverlayImage(image: image)
+                marker.mapView = naverMapView
+            }
+        }
     }
     
 }

@@ -105,7 +105,7 @@ extension SearchSpaceViewReactor {
             
             LocationManager.shared.locationSubject
                 .compactMap { $0 }
-                .bind { [weak self] location in
+                .bind { location in
                     observer.onNext(.setLocation(location))
                 }
             }

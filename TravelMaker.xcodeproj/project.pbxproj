@@ -47,6 +47,8 @@
 		0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FFA12AE64979004D9068 /* ResponseRegisterNearMeModel.swift */; };
 		099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099EE9B92ADD140F000F0BBE /* LocationManager.swift */; };
 		099EE9BD2ADD14AC000F0BBE /* RxCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */; };
+		09A565122AE75DC6003DF90B /* AroundViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A565112AE75DC6003DF90B /* AroundViewReactor.swift */; };
+		09A565152AE76061003DF90B /* ResponseAroundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A565142AE76061003DF90B /* ResponseAroundModel.swift */; };
 		09A83EDC2AAE94CE0082A6A2 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDB2AAE94CE0082A6A2 /* FlexLayout */; };
 		09A83EDE2AAE94CE0082A6A2 /* FlexLayoutYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDD2AAE94CE0082A6A2 /* FlexLayoutYoga */; };
 		09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09A83EDF2AAE94CE0082A6A2 /* FlexLayoutYogaKit */; };
@@ -132,6 +134,8 @@
 		0960FF9E2AE6321D004D9068 /* RequestRegisterNearMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterNearMeModel.swift; sourceTree = "<group>"; };
 		0960FFA12AE64979004D9068 /* ResponseRegisterNearMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRegisterNearMeModel.swift; sourceTree = "<group>"; };
 		099EE9B92ADD140F000F0BBE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		09A565112AE75DC6003DF90B /* AroundViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundViewReactor.swift; sourceTree = "<group>"; };
+		09A565142AE76061003DF90B /* ResponseAroundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAroundModel.swift; sourceTree = "<group>"; };
 		09A83EE82AAE9C9B0082A6A2 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		09A83EE92AAE9C9B0082A6A2 /* RecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
 		09A83EED2AAE9D210082A6A2 /* AroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundView.swift; sourceTree = "<group>"; };
@@ -439,6 +443,22 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		09A565102AE75DA8003DF90B /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				09A565112AE75DC6003DF90B /* AroundViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		09A565132AE75FFC003DF90B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09A565142AE76061003DF90B /* ResponseAroundModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		09A83EE72AAE9C790082A6A2 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +471,8 @@
 		09A83EEC2AAE9D040082A6A2 /* Around */ = {
 			isa = PBXGroup;
 			children = (
+				09A565132AE75FFC003DF90B /* Model */,
+				09A565102AE75DA8003DF90B /* Reactor */,
 				09A83EED2AAE9D210082A6A2 /* AroundView.swift */,
 				09A83EEE2AAE9D210082A6A2 /* AroundView.xib */,
 			);
@@ -875,6 +897,7 @@
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
+				09A565122AE75DC6003DF90B /* AroundViewReactor.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */,
@@ -888,6 +911,7 @@
 				0960FF9F2AE6321D004D9068 /* RequestRegisterNearMeModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,
+				09A565152AE76061003DF90B /* ResponseAroundModel.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 				09C4BA7F2AD9350100BE8376 /* SearchSpaceModel.swift in Sources */,
 			);

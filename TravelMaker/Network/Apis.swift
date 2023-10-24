@@ -12,5 +12,7 @@ struct Apis {
     
     static let login = "\(Apis.baseUrl)/api/auth/login"
     
-    static let post = "\(Apis.baseUrl)/api/post"
+    static let postAround = "\(Apis.baseUrl)/api/post"
+    
+    static let getAround = "\(Apis.baseUrl)/api/post/all"
 }

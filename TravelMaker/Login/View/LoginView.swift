@@ -195,6 +195,7 @@ extension LoginView {
         
         let recommendView =  RecommendView(nibName: "RecommendView", bundle: nil)
         let aroundView =  AroundView(nibName: "AroundView", bundle: nil)
+        aroundView.reactor = AroundViewReactor()
         
         let registerView = RegisterNearMe(nibName: "RegisterNearMe", bundle: nil)
         

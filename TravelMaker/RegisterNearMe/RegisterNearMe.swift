@@ -471,7 +471,7 @@ extension RegisterNearMe {
             categoryName: selectedSpace["categoryName"] as? String ?? "",
             starRating: star.rating)
         
-        FileUploadRepository.shared.uploadArroundMeData(url: Apis.post, with: requestModel!) { response in
+        FileUploadRepository.shared.uploadArroundMeData(url: Apis.postAround, with: requestModel!) { response in
             print("response: ", response)
             self.navigationController?.popViewController(animated: true)
         } failureHandler: { error in
