@@ -473,6 +473,7 @@ extension RegisterNearMe {
         
         FileUploadRepository.shared.uploadArroundMeData(url: Apis.post, with: requestModel!) { response in
             print("response: ", response)
+            self.navigationController?.popViewController(animated: true)
         } failureHandler: { error in
             print("error: ", error)
         }

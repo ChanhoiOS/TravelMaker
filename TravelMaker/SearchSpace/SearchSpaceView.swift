@@ -237,6 +237,9 @@ extension SearchSpaceView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchSpaceCell", for:  indexPath) as! SearchSpaceCell
+        
+        cell.selectionStyle = .none
+        
         cell.spaceName.text = searchResult?.documents?[indexPath.row].placeName ?? ""
         cell.spaceAddress.text = searchResult?.documents?[indexPath.row].addressName ?? ""
         
