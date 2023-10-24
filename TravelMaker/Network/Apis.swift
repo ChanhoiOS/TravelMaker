@@ -15,4 +15,6 @@ struct Apis {
     static let postAround = "\(Apis.baseUrl)/api/post"
     
     static let getAround = "\(Apis.baseUrl)/api/post/all"
+    
+    static let imageUrl = "http://43.200.32.96:8140/images/"
 }

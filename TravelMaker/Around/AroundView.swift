@@ -13,6 +13,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import ReactorKit
+import Kingfisher
 
 class AroundView: BaseViewController, StoryboardView {
     
@@ -84,7 +85,7 @@ extension AroundView {
             .bind(onNext: {[weak self] result in
                 self?.aroundAllResult = result
                 if let data = result?.data {
-                    self?.setMarker(result)
+                    self?.setMarker(result!)
                 }
             })
             .disposed(by: disposeBag)
@@ -124,16 +125,29 @@ extension AroundView {
         if let details = aroundData.data {
             for detail in details {
                 let marker = NMFMarker()
-                                        
-                marker.captionRequestedWidth = 60
-                marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
-                                        
-                let image = UIImage(named: "location_marker")!.resize(newWidth: 48)
                 
-                marker.iconImage = NMFOverlayImage(image: image)
-                marker.mapView = naverMapView
+                marker.captionRequestedWidth = 60
+                
+                
+                if let imageUrls = detail.imagesPath {
+                    if imageUrls.count > 0 {
+                        DispatchQueue.global().async {
+                            let url = URL(string: Apis.imageUrl + imageUrls[0])!
+                            
+                            if let data = try? Data(contentsOf: url) {
+                                if let image = UIImage(data: data) {
+                                    DispatchQueue.main.async {
+                                        let resizeImage = image.resizeAll(newWidth: 60, newHeight: 70)
+                                        marker.iconImage = NMFOverlayImage(image: resizeImage)
+                                        marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                        marker.mapView = self.naverMapView
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    
 }
