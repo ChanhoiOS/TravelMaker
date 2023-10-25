@@ -72,21 +72,21 @@ class AroundMeRecordCumtomView: UIView {
         return button
     }()
 
-    init(frame: CGRect, _ place: String, _ address: String, _ category: String, _ image: UIImage) {
+    init(frame: CGRect, _ detail: AroundData, _ image: UIImage) {
         super.init(frame: frame)
-        setView(place, address, category, image)
+        setView(detail, image)
     }
     
-    required init?(coder: NSCoder,_ place: String, _ address: String, _ category: String, _ image: UIImage) {
+    required init?(coder: NSCoder, _ detail: AroundData, _ image: UIImage) {
         super.init(coder: coder)
-        setView(place, address, category, image)
+        setView(detail, image)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setView(_ place: String, _ address: String, _ category: String, _ image: UIImage) {
+    private func setView(_ detail: AroundData, _ image: UIImage) {
         self.backgroundColor = .white
         
         self.addSubview(infoImage)
@@ -98,14 +98,14 @@ class AroundMeRecordCumtomView: UIView {
             make.width.height.equalTo(60)
         }
         
-        categoryLabel.text = category
+        categoryLabel.text = detail.categoryName ?? ""
         self.addSubview(categoryLabel)
         
         categoryLabel.snp.makeConstraints { make in
             make.top.left.equalToSuperview().offset(24)
         }
         
-        pageTitle.text = place
+        pageTitle.text = detail.placeName ?? ""
         self.addSubview(pageTitle)
         
         pageTitle.snp.makeConstraints { make in
@@ -114,7 +114,7 @@ class AroundMeRecordCumtomView: UIView {
             make.right.equalTo(infoImage.snp.left).offset(-24)
         }
         
-        pageContent.text = address
+        pageContent.text = detail.address ?? ""
         self.addSubview(pageContent)
         
         pageContent.snp.makeConstraints { make in
@@ -150,7 +150,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(starLabel)
-        starLabel.text = "★ 4.0"
+        starLabel.text = "★ " + "\(detail.starRating ?? 0.0)"
         starLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-24)
             make.centerY.equalTo(profileImage)

@@ -26,6 +26,7 @@ class AroundView: BaseViewController, StoryboardView {
     let reactor = AroundViewReactor()
     var aroundAllResult: ResponseAroundModel?
     
+    private var gpsDisposable: Disposable?
     var disposeBag = DisposeBag()
     
     var latitude = ""
@@ -45,8 +46,13 @@ class AroundView: BaseViewController, StoryboardView {
 
         initHeader()
         
+        setMap()
         setCoordinate()
         getHeight()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     func initHeader() {
@@ -100,13 +106,18 @@ extension AroundView {
 
 extension AroundView: NMFMapViewTouchDelegate {
     func setCoordinate() {
-        LocationManager.shared.locationSubject
-            .bind(onNext: { [weak self] gps in
+        let gpsDisposable = LocationManager.shared.locationSubject
+            .subscribe(onNext: { [weak self] gps in
                 let x = gps?.longitude ?? 127.05485569769449
                 let y = gps?.latitude ?? 37.50518440330725
-                self?.setMap()
                 self?.setLocation(x, y)
-            }).disposed(by: disposeBag)
+            }, onCompleted: {
+                print("onComplete")
+            }) {
+                print("disposed")
+            }
+        
+        gpsDisposable.dispose()
     }
     
     func setMap() {
@@ -166,15 +177,11 @@ extension AroundView: NMFMapViewTouchDelegate {
     }
     
     func markerAction(_ index: Int, _ detail: AroundData, _ image: UIImage) {
-        let place = detail.placeName ?? ""
-        let address = detail.address ?? ""
-        let category = detail.categoryName ?? ""
-        
         if customView != nil {
             customView?.removeFromSuperview()
         }
         
-        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), place, address, category, image)
+        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail, image)
             .then {
                 self.view.addSubview($0)
                 //$0.delegate = self
