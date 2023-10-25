@@ -20,6 +20,7 @@ class AroundView: BaseViewController, StoryboardView {
     var headerView: UIView!
     var headerLine: UIView!
     
+    var customView: AroundMeRecordCumtomView?
     var naverMapView: NMFMapView?
     
     let reactor = AroundViewReactor()
@@ -29,6 +30,7 @@ class AroundView: BaseViewController, StoryboardView {
     
     var latitude = ""
     var longitude = ""
+    var tabBarHeight: Int = 83
     
     private let pageTitle: UILabel = {
         let label = UILabel()
@@ -44,7 +46,7 @@ class AroundView: BaseViewController, StoryboardView {
         initHeader()
         
         setCoordinate()
-        //setMap()
+        getHeight()
     }
     
     func initHeader() {
@@ -74,6 +76,10 @@ class AroundView: BaseViewController, StoryboardView {
                 }
             }
     }
+    
+    func getHeight() {
+        tabBarHeight = Int(self.tabBarController?.tabBar.frame.height ?? 49.0)
+    }
 }
 
 extension AroundView {
@@ -84,7 +90,7 @@ extension AroundView {
             .map { $0.aroundResult }
             .bind(onNext: {[weak self] result in
                 self?.aroundAllResult = result
-                if let data = result?.data {
+                if let _ = result?.data {
                     self?.setMarker(result!)
                 }
             })
@@ -123,7 +129,7 @@ extension AroundView {
     
     func setMarker(_ aroundData: ResponseAroundModel) {
         if let details = aroundData.data {
-            for detail in details {
+            for (index, detail) in details.enumerated() {
                 let marker = NMFMarker()
                 
                 marker.captionRequestedWidth = 60
@@ -141,6 +147,11 @@ extension AroundView {
                                         marker.iconImage = NMFOverlayImage(image: resizeImage)
                                         marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
                                         marker.mapView = self.naverMapView
+                                        
+                                        marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
+                                            self.markerAction(index, detail)
+                                            return true
+                                        }
                                     }
                                 }
                             }
@@ -148,6 +159,32 @@ extension AroundView {
                     }
                 }
             }
+        }
+    }
+    
+    func markerAction(_ index: Int, _ detail: AroundData) {
+        let place = detail.placeName ?? ""
+        let address = detail.address ?? ""
+        let category = detail.categoryName ?? ""
+        let imagePaths = detail.imagesPath ?? [String]()
+        
+        if customView != nil {
+            customView?.removeFromSuperview()
+        }
+        
+        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), place, address, category, imagePaths)
+            .then {
+                self.view.addSubview($0)
+                //$0.delegate = self
+                
+                $0.snp.makeConstraints { make in
+                    make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.height.equalTo(184)
+                }
+                
+                $0.bringSubviewToFront(naverMapView!)
         }
     }
 }
