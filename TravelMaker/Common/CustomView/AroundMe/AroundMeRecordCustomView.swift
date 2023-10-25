@@ -66,32 +66,32 @@ class AroundMeRecordCumtomView: UIView {
 
     private lazy var selectBtn: UIButton = {
         let button = UIButton()
-        button.backgroundColor = Colors.DESIGN_BLUE
-        button.setTitle("장소선택", for: .normal)
+        button.backgroundColor = .clear
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
-        //button.addTarget(self, action: #selector(selectSpace), for: .touchUpInside)
+        button.addTarget(self, action: #selector(detailInfo), for: .touchUpInside)
         return button
     }()
 
-    init(frame: CGRect, _ place: String, _ address: String, _ category: String, _ imagePath: [String]) {
+    init(frame: CGRect, _ place: String, _ address: String, _ category: String, _ image: UIImage) {
         super.init(frame: frame)
-        setView(place, address, category, imagePath)
+        setView(place, address, category, image)
     }
     
-    required init?(coder: NSCoder,_ place: String, _ address: String, _ category: String, _ imagePath: [String]) {
+    required init?(coder: NSCoder,_ place: String, _ address: String, _ category: String, _ image: UIImage) {
         super.init(coder: coder)
-        setView(place, address, category, imagePath)
+        setView(place, address, category, image)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setView(_ place: String, _ address: String, _ category: String, _ imagePath: [String]) {
+    private func setView(_ place: String, _ address: String, _ category: String, _ image: UIImage) {
         self.backgroundColor = .white
         
         self.addSubview(infoImage)
+        infoImage.image = image
+        
         infoImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
@@ -155,5 +155,16 @@ class AroundMeRecordCumtomView: UIView {
             make.right.equalToSuperview().offset(-24)
             make.centerY.equalTo(profileImage)
         }
+        
+        self.addSubview(selectBtn)
+        selectBtn.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+extension AroundMeRecordCumtomView {
+    @objc func detailInfo() {
+        print("호호호")
     }
 }

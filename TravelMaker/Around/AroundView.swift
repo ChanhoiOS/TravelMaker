@@ -98,7 +98,7 @@ extension AroundView {
     }
 }
 
-extension AroundView {
+extension AroundView: NMFMapViewTouchDelegate {
     func setCoordinate() {
         LocationManager.shared.locationSubject
             .bind(onNext: { [weak self] gps in
@@ -113,6 +113,8 @@ extension AroundView {
         naverMapView = NMFMapView()
             .then {
                 self.view.addSubview($0)
+                
+                $0.touchDelegate = self
                 
                 $0.snp.makeConstraints { make in
                     make.top.equalTo(headerLine.snp.bottom).offset(0)
@@ -149,7 +151,8 @@ extension AroundView {
                                         marker.mapView = self.naverMapView
                                         
                                         marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
-                                            self.markerAction(index, detail)
+                                            self.markerAction(index, detail, image)
+                                            self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)))
                                             return true
                                         }
                                     }
@@ -162,17 +165,16 @@ extension AroundView {
         }
     }
     
-    func markerAction(_ index: Int, _ detail: AroundData) {
+    func markerAction(_ index: Int, _ detail: AroundData, _ image: UIImage) {
         let place = detail.placeName ?? ""
         let address = detail.address ?? ""
         let category = detail.categoryName ?? ""
-        let imagePaths = detail.imagesPath ?? [String]()
         
         if customView != nil {
             customView?.removeFromSuperview()
         }
         
-        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), place, address, category, imagePaths)
+        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), place, address, category, image)
             .then {
                 self.view.addSubview($0)
                 //$0.delegate = self
@@ -185,6 +187,12 @@ extension AroundView {
                 }
                 
                 $0.bringSubviewToFront(naverMapView!)
+        }
+    }
+    
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        if customView != nil {
+            customView?.removeFromSuperview()
         }
     }
 }
