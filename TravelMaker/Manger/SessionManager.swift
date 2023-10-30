@@ -12,5 +12,6 @@ class SessionManager {
     static let shared = SessionManager()
         
     var accessToken: String? = ""
+    var nickName: String = ""
     
 }

@@ -88,6 +88,10 @@ class AroundMeRecordCumtomView: UIView {
     
     private func setView(_ detail: AroundData, _ image: UIImage) {
         self.backgroundColor = .white
+        self.layer.cornerRadius = 12
+        self.layer.shadowOffset = CGSize(width: 0, height: 20)
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 12
         
         self.addSubview(infoImage)
         infoImage.image = image
@@ -136,6 +140,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(profileImage)
+        profileImage.layer.cornerRadius = 12
         
         profileImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
@@ -144,6 +149,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(nameLabel)
+        nameLabel.text = SessionManager.shared.nickName
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(profileImage.snp.right).offset(12)
             make.centerY.equalTo(profileImage)

@@ -212,6 +212,7 @@ extension MyPageView {
     
     func setUserData(_ data: MyPageModel) {
         nickName.text = data.data?.nickname ?? "여행자A"
+        SessionManager.shared.nickName = data.data?.nickname ?? "여행자A"
         
         if let localData = getCacheImage() {
             profileImage.image = localData
