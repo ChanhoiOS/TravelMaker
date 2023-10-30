@@ -16,6 +16,7 @@
 			dependencies = (
 			);
 			name = "naveridlogin-sdk-ios";
+			productName = "naveridlogin-sdk-ios";
 		};
 		72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */ = {
 			isa = PBXAggregateTarget;
@@ -26,6 +27,7 @@
 			dependencies = (
 			);
 			name = NMapsGeometry;
+			productName = NMapsGeometry;
 		};
 		8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */ = {
 			isa = PBXAggregateTarget;
@@ -34,41 +36,66 @@
 				B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				0F42F1C3A1A2E12582757CAA1B54FC6D /* PBXTargetDependency */,
+				5EF5630E4D8102CA526859F393ABE9C5 /* PBXTargetDependency */,
 			);
 			name = NMapsMap;
+			productName = NMapsMap;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		472A0B0F86770ECC291B7CFE5D04844B /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
-		4BFE24B76EBC648364B8EC2FAD5E576C /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2253451DF19CE948740C85C72FFDDAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		0E8B4C6C3FC4F926AEFEE8A68E18AAA5 /* ImageSlideshow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB1B5F1E08374254AF6BF8B8FC00934 /* ImageSlideshow-dummy.m */; };
+		37532F1C3F548FB210218D9A7C2B6528 /* ImageSlideshowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948778283DE6E38BD4AA97B61863C3E3 /* ImageSlideshowItem.swift */; };
+		47B6806493F0F11A6F9FAC7CE4F070EC /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78B7225CF64E5FA38E2DF34A927277E /* FullScreenSlideshowViewController.swift */; };
+		53B4539A09E05B884DA75A1655747124 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 633F2E829B5718E6E1280ED7EB01DD89 /* ic_cross_white@3x.png */; };
+		547F9ECE0AD875C24A2093B568B3F256 /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5925A6294EE5B50BC8E2B26628797A60 /* UIImageView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A54BD09162A84970D0B6C60BE388D8 /* UIImageView+Tools.swift */; };
+		600A858A104DF5CC26C581BF67A08AA0 /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
+		74EA001A27A206767BE222A6539BC5D8 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7789DC52EE7C7C96AF5CF9BE9EF04920 /* ZoomAnimatedTransitioning.swift */; };
+		77B4A451EF0C07F1AC3712F915FA8F91 /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3D77A366115E459CF06D029BA9CBD /* UIImage+AspectFit.swift */; };
+		95EDF0D844D99237550E7209F6E2C87C /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCC080AB49E2A772FFF45E90B09C98A /* ImageSlideshow.swift */; };
+		B99E793E702BE86A5CDB45EB96BA109B /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06662AA2A1CF3F89CD1AE11260F03D0E /* InputSource.swift */; };
+		C25ECEC767960C062FB59A570C98945D /* PageIndicatorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA608BE82FB33F40ED3DBA25FBDFF00 /* PageIndicatorPosition.swift */; };
+		C51F23068C5C7908F073CAE1640B9EA1 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401B3F3FDC50A36A9E0714FA80F7D0E2 /* SwiftSupport.swift */; };
+		CB365255C1FB4DC52067E58ADC141217 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D2355558CDF30BD4941D1740C18237FB /* ImageSlideshow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6F964DCA2D3D92A16B43254F9863DE0 /* ImageSlideshow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEA3E3C7FD0C3EF78B89AF15AC7A2BFA /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7D05D4A8C72E0C07C0A2BF5D60408 /* PageIndicator.swift */; };
+		E1A05F7AAC7473380981C8B79C629BC9 /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BE98BCFBDE59EA8D60C99CA8354CA5 /* Bundle+Module.swift */; };
+		F15006A1D3124DBD2DA00F85AA72F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F6F652FAF9D47F3D4AB6191139E7548A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777BB06EB4691A66BB5E6C4AEA0C642 /* ActivityIndicator.swift */; };
+		FE0ACA68E14F40AD7364C10534AFBA8C /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FE45CFC85F0208037ED91F37A68A87E /* ic_cross_white@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		26695FA8DD386F888686B9D5ACAA6B27 /* PBXContainerItemProxy */ = {
+		31D2E73E7CFA9447C5AFE06DAA7B2232 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8E049F5F4E3BDC647F924FEF22D49D90;
 			remoteInfo = NMapsMap;
 		};
-		A21C1AC54EBB65E1249E5E9BDF249C0C /* PBXContainerItemProxy */ = {
+		4742A72A2AFE9B82BA4623C70A04F826 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
 			remoteInfo = NMapsGeometry;
 		};
-		D83938E7A9D29ADBBD92C38681BEF770 /* PBXContainerItemProxy */ = {
+		4D339BD874DE6819F7E3744CAE74A8D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F46A67275CC5973EE13076CD708247;
+			remoteInfo = ImageSlideshow;
+		};
+		65567853B4588D5E2A553D62BD17B86C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3516E9D4735D155BC036A4DB393966FC;
 			remoteInfo = "naveridlogin-sdk-ios";
 		};
-		F6AC05DFB83B4774459DCCB14D87138C /* PBXContainerItemProxy */ = {
+		9EA9154015B0290BBAE018C1251EECB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -78,79 +105,131 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25BE71B1F1D8BF00261C93FBB0774982 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
+		06662AA2A1CF3F89CD1AE11260F03D0E /* InputSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputSource.swift; path = ImageSlideshow/Classes/Core/InputSource.swift; sourceTree = "<group>"; };
+		096807EF5DBFC997886F56FEB491E69F /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
+		102A8ADAA0F4AD2EBE093AD0E9D69A28 /* ImageSlideshow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageSlideshow.modulemap; sourceTree = "<group>"; };
+		1AAFF9CFE80342C5B7308DD6B90D2D57 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
+		24F2BD11F74A7DAE2FE4BED6268DCDE7 /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
+		28B0CC10BC13F51D40F6153C1A86F18E /* ImageSlideshow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageSlideshow-Info.plist"; sourceTree = "<group>"; };
 		384DA08F24DD23E03FDC8890E5C7F1D1 /* Pods-TravelMaker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TravelMaker-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
-		420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
+		401B3F3FDC50A36A9E0714FA80F7D0E2 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = ImageSlideshow/Classes/Core/SwiftSupport.swift; sourceTree = "<group>"; };
 		45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TravelMaker"; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4777BB06EB4691A66BB5E6C4AEA0C642 /* ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = ImageSlideshow/Classes/Core/ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C4E7ACE1512FC68AA17D5BB9D6CC5F6 /* Pods-TravelMaker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-acknowledgements.plist"; sourceTree = "<group>"; };
-		52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
-		6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		4FE45CFC85F0208037ED91F37A68A87E /* ic_cross_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
+		5BC7CBDAF35F51F4BC4A3A2E60877710 /* naveridlogin-sdk-ios-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "naveridlogin-sdk-ios-xcframeworks.sh"; sourceTree = "<group>"; };
+		6129760E04566898839C49DAEEC6F496 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
+		6318A6C5A9BA158A776C36BAB251154A /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
+		633F2E829B5718E6E1280ED7EB01DD89 /* ic_cross_white@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7789DC52EE7C7C96AF5CF9BE9EF04920 /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomAnimatedTransitioning.swift; path = ImageSlideshow/Classes/Core/ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		77BE98BCFBDE59EA8D60C99CA8354CA5 /* Bundle+Module.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Module.swift"; path = "ImageSlideshow/Classes/Core/Bundle+Module.swift"; sourceTree = "<group>"; };
+		7814DA997AA9E5FD0FE817BBD4A99303 /* ImageSlideshow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.release.xcconfig; sourceTree = "<group>"; };
 		79DD4FA719AF54FB40075999FF7FF9FE /* Pods-TravelMaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-Info.plist"; sourceTree = "<group>"; };
 		7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TravelMaker-umbrella.h"; sourceTree = "<group>"; };
 		7CBA60C873735FBD873AAA19563AADBD /* Pods-TravelMaker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TravelMaker-frameworks.sh"; sourceTree = "<group>"; };
-		93BDE20C94786077A442F53B52930F96 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
+		8AF0E21519342FD3E15C1323E85CDBD7 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
+		948778283DE6E38BD4AA97B61863C3E3 /* ImageSlideshowItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshowItem.swift; path = ImageSlideshow/Classes/Core/ImageSlideshowItem.swift; sourceTree = "<group>"; };
 		99F7808A0770AA044E2A57BEC08BBC3D /* Pods-TravelMaker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TravelMaker.modulemap"; sourceTree = "<group>"; };
-		9C781F99FF2686A15C9D4CBBDC96FD61 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9BCC080AB49E2A772FFF45E90B09C98A /* ImageSlideshow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshow.swift; path = ImageSlideshow/Classes/Core/ImageSlideshow.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
-		C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		C2BF69224145F5408992BC6DC8CBC802 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
+		B7A54BD09162A84970D0B6C60BE388D8 /* UIImageView+Tools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Tools.swift"; path = "ImageSlideshow/Classes/Core/UIImageView+Tools.swift"; sourceTree = "<group>"; };
+		BCB1B5F1E08374254AF6BF8B8FC00934 /* ImageSlideshow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageSlideshow-dummy.m"; sourceTree = "<group>"; };
+		BFA608BE82FB33F40ED3DBA25FBDFF00 /* PageIndicatorPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicatorPosition.swift; path = ImageSlideshow/Classes/Core/PageIndicatorPosition.swift; sourceTree = "<group>"; };
+		C1D78A7F43807F49FDB5B04DD9BD6AC7 /* ImageSlideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TravelMaker-dummy.m"; sourceTree = "<group>"; };
-		CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
-		D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
-		E72C981902935E4F55E1719D98AF7524 /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
-		F88E07AF6C6B387C6DC91432DF418D3E /* naveridlogin-sdk-ios-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "naveridlogin-sdk-ios-xcframeworks.sh"; sourceTree = "<group>"; };
+		CAD7D05D4A8C72E0C07C0A2BF5D60408 /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = ImageSlideshow/Classes/Core/PageIndicator.swift; sourceTree = "<group>"; };
+		CC2EFBFB31E69C770998678F6810C932 /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
+		CD99B4769645A843A9BED7F224411835 /* ImageSlideshow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.debug.xcconfig; sourceTree = "<group>"; };
+		D5DCD0E8AFA2CDE8C2787F3219AE9B07 /* naveridlogin-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		D5E3FFF58B64174B124DB9D46DC8A1B8 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
+		DDA519D71E92AD187E12A006FFD57655 /* ImageSlideshow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-prefix.pch"; sourceTree = "<group>"; };
+		F32018F4E761E58CD8E5B26F28C2B56A /* naveridlogin-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		F3F3D77A366115E459CF06D029BA9CBD /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+AspectFit.swift"; path = "ImageSlideshow/Classes/Core/UIImage+AspectFit.swift"; sourceTree = "<group>"; };
+		F6F964DCA2D3D92A16B43254F9863DE0 /* ImageSlideshow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-umbrella.h"; sourceTree = "<group>"; };
+		F78B7225CF64E5FA38E2DF34A927277E /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenSlideshowViewController.swift; path = ImageSlideshow/Classes/Core/FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
+		F90D659363C97907EBA5C8F69AAD0EB8 /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0FE390ABD626562178B2BAD16CAF6B84 /* Frameworks */ = {
+		1C5337ECFDD0DFEB347F671D3079C7E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2253451DF19CE948740C85C72FFDDAC /* Foundation.framework in Frameworks */,
+				CB365255C1FB4DC52067E58ADC141217 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2600B062A98E702FEC03475B350B69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15006A1D3124DBD2DA00F85AA72F93A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03D43C79CAED640EA517FFF56E1270FF /* NMapsMap */ = {
+		1798EFD9E887965B8A24051F7E4C2944 /* ImageSlideshow */ = {
 			isa = PBXGroup;
 			children = (
-				447765612DBED7C8AF72109794667975 /* Frameworks */,
-				8F1D6A2DDDE98CF04C88376868219C29 /* Support Files */,
+				33917462CE96FC3D0A410A8758792E6C /* Core */,
+				34EF5524D99B11C14D74D3909834978F /* Support Files */,
 			);
-			name = NMapsMap;
-			path = NMapsMap;
+			path = ImageSlideshow;
 			sourceTree = "<group>";
 		};
-		0AA0D1639D3AD82B0433842A3F30B7CB /* Support Files */ = {
+		33917462CE96FC3D0A410A8758792E6C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F88E07AF6C6B387C6DC91432DF418D3E /* naveridlogin-sdk-ios-xcframeworks.sh */,
-				C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */,
-				6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */,
+				4777BB06EB4691A66BB5E6C4AEA0C642 /* ActivityIndicator.swift */,
+				77BE98BCFBDE59EA8D60C99CA8354CA5 /* Bundle+Module.swift */,
+				F78B7225CF64E5FA38E2DF34A927277E /* FullScreenSlideshowViewController.swift */,
+				9BCC080AB49E2A772FFF45E90B09C98A /* ImageSlideshow.swift */,
+				948778283DE6E38BD4AA97B61863C3E3 /* ImageSlideshowItem.swift */,
+				06662AA2A1CF3F89CD1AE11260F03D0E /* InputSource.swift */,
+				CAD7D05D4A8C72E0C07C0A2BF5D60408 /* PageIndicator.swift */,
+				BFA608BE82FB33F40ED3DBA25FBDFF00 /* PageIndicatorPosition.swift */,
+				401B3F3FDC50A36A9E0714FA80F7D0E2 /* SwiftSupport.swift */,
+				F3F3D77A366115E459CF06D029BA9CBD /* UIImage+AspectFit.swift */,
+				B7A54BD09162A84970D0B6C60BE388D8 /* UIImageView+Tools.swift */,
+				7789DC52EE7C7C96AF5CF9BE9EF04920 /* ZoomAnimatedTransitioning.swift */,
+				D57C750F313C342DDEA147AB20255E94 /* Resources */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		34EF5524D99B11C14D74D3909834978F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				102A8ADAA0F4AD2EBE093AD0E9D69A28 /* ImageSlideshow.modulemap */,
+				BCB1B5F1E08374254AF6BF8B8FC00934 /* ImageSlideshow-dummy.m */,
+				28B0CC10BC13F51D40F6153C1A86F18E /* ImageSlideshow-Info.plist */,
+				DDA519D71E92AD187E12A006FFD57655 /* ImageSlideshow-prefix.pch */,
+				F6F964DCA2D3D92A16B43254F9863DE0 /* ImageSlideshow-umbrella.h */,
+				CD99B4769645A843A9BED7F224411835 /* ImageSlideshow.debug.xcconfig */,
+				7814DA997AA9E5FD0FE817BBD4A99303 /* ImageSlideshow.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/naveridlogin-sdk-ios";
+			path = "../Target Support Files/ImageSlideshow";
 			sourceTree = "<group>";
 		};
-		2BF8730661485F45709823778F8363CC /* naveridlogin-sdk-ios */ = {
+		5220FB82CA57FFF4618E30F6C07CAB8A /* NMapsGeometry */ = {
 			isa = PBXGroup;
 			children = (
-				6C5AF1A587EEBFFE0DC77683A6475718 /* Frameworks */,
-				0AA0D1639D3AD82B0433842A3F30B7CB /* Support Files */,
+				8C4D2289AABAA954F2660728FA62E9FF /* Frameworks */,
+				ED3BD2FDD941C9C4EA18F7F34919F858 /* Support Files */,
 			);
-			name = "naveridlogin-sdk-ios";
-			path = "naveridlogin-sdk-ios";
+			path = NMapsGeometry;
 			sourceTree = "<group>";
 		};
-		447765612DBED7C8AF72109794667975 /* Frameworks */ = {
+		5656619F67D794621665B36F2677C5FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				93BDE20C94786077A442F53B52930F96 /* NMapsMap.xcframework */,
+				D5E3FFF58B64174B124DB9D46DC8A1B8 /* NaverThirdPartyLogin.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +242,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		5FA3EE2C1FE861238B5D483E54A6C4A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1D78A7F43807F49FDB5B04DD9BD6AC7 /* ImageSlideshow.framework */,
+				45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,62 +259,71 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6C5AF1A587EEBFFE0DC77683A6475718 /* Frameworks */ = {
+		7357CFFA535E37A5CC873901FFCB7F48 /* NMapsMap */ = {
 			isa = PBXGroup;
 			children = (
-				9C781F99FF2686A15C9D4CBBDC96FD61 /* NaverThirdPartyLogin.xcframework */,
+				9EFA1626AC84A70D12812AD92D26E4EB /* Frameworks */,
+				8DB77D7F819FE28E4BAA195993C7FA28 /* Support Files */,
+			);
+			path = NMapsMap;
+			sourceTree = "<group>";
+		};
+		886D9408710DBDA78EBF8B5F181125AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1798EFD9E887965B8A24051F7E4C2944 /* ImageSlideshow */,
+				9A32F6D4B61E1C61CD3F9CD381978339 /* naveridlogin-sdk-ios */,
+				5220FB82CA57FFF4618E30F6C07CAB8A /* NMapsGeometry */,
+				7357CFFA535E37A5CC873901FFCB7F48 /* NMapsMap */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C4D2289AABAA954F2660728FA62E9FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AF0E21519342FD3E15C1323E85CDBD7 /* NMapsGeometry.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8E62504738D5088FC3F5CBAE3A6C2E35 /* Support Files */ = {
+		8DB77D7F819FE28E4BAA195993C7FA28 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E72C981902935E4F55E1719D98AF7524 /* NMapsGeometry-xcframeworks.sh */,
-				CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */,
-				52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/NMapsGeometry";
-			sourceTree = "<group>";
-		};
-		8F1D6A2DDDE98CF04C88376868219C29 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				25BE71B1F1D8BF00261C93FBB0774982 /* NMapsMap-xcframeworks.sh */,
-				420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */,
-				D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */,
+				096807EF5DBFC997886F56FEB491E69F /* NMapsMap-xcframeworks.sh */,
+				6318A6C5A9BA158A776C36BAB251154A /* NMapsMap.debug.xcconfig */,
+				CC2EFBFB31E69C770998678F6810C932 /* NMapsMap.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NMapsMap";
 			sourceTree = "<group>";
 		};
-		A9CD8F24F09825BC43D11658B17F70CC /* Products */ = {
+		95FDA5FDA036DE67E1AC4DFBB78C78F7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */,
+				5BC7CBDAF35F51F4BC4A3A2E60877710 /* naveridlogin-sdk-ios-xcframeworks.sh */,
+				D5DCD0E8AFA2CDE8C2787F3219AE9B07 /* naveridlogin-sdk-ios.debug.xcconfig */,
+				F32018F4E761E58CD8E5B26F28C2B56A /* naveridlogin-sdk-ios.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/naveridlogin-sdk-ios";
 			sourceTree = "<group>";
 		};
-		B756060AB2A1CC1F097E168C237E9AF0 /* NMapsGeometry */ = {
+		9A32F6D4B61E1C61CD3F9CD381978339 /* naveridlogin-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				DC40D8B333CF818E3C0B221A9CF9C37D /* Frameworks */,
-				8E62504738D5088FC3F5CBAE3A6C2E35 /* Support Files */,
+				5656619F67D794621665B36F2677C5FA /* Frameworks */,
+				95FDA5FDA036DE67E1AC4DFBB78C78F7 /* Support Files */,
 			);
-			name = NMapsGeometry;
-			path = NMapsGeometry;
+			path = "naveridlogin-sdk-ios";
 			sourceTree = "<group>";
 		};
-		BAA16A3DE0661F33C4EE0A17C5ECAB9F /* Pods */ = {
+		9EFA1626AC84A70D12812AD92D26E4EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2BF8730661485F45709823778F8363CC /* naveridlogin-sdk-ios */,
-				B756060AB2A1CC1F097E168C237E9AF0 /* NMapsGeometry */,
-				03D43C79CAED640EA517FFF56E1270FF /* NMapsMap */,
+				1AAFF9CFE80342C5B7308DD6B90D2D57 /* NMapsMap.xcframework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -234,8 +331,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				BAA16A3DE0661F33C4EE0A17C5ECAB9F /* Pods */,
-				A9CD8F24F09825BC43D11658B17F70CC /* Products */,
+				886D9408710DBDA78EBF8B5F181125AB /* Pods */,
+				5FA3EE2C1FE861238B5D483E54A6C4A6 /* Products */,
 				6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -248,12 +345,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC40D8B333CF818E3C0B221A9CF9C37D /* Frameworks */ = {
+		D57C750F313C342DDEA147AB20255E94 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C2BF69224145F5408992BC6DC8CBC802 /* NMapsGeometry.xcframework */,
+				4FE45CFC85F0208037ED91F37A68A87E /* ic_cross_white@2x.png */,
+				633F2E829B5718E6E1280ED7EB01DD89 /* ic_cross_white@3x.png */,
 			);
-			name = Frameworks;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		ECD3429FAD76C4AB75FBDCD251D6C904 /* Pods-TravelMaker */ = {
@@ -273,14 +371,33 @@
 			path = "Target Support Files/Pods-TravelMaker";
 			sourceTree = "<group>";
 		};
+		ED3BD2FDD941C9C4EA18F7F34919F858 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				24F2BD11F74A7DAE2FE4BED6268DCDE7 /* NMapsGeometry-xcframeworks.sh */,
+				6129760E04566898839C49DAEEC6F496 /* NMapsGeometry.debug.xcconfig */,
+				F90D659363C97907EBA5C8F69AAD0EB8 /* NMapsGeometry.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMapsGeometry";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3E4001910AA5FBA8114E9E0BAA64BBB4 /* Headers */ = {
+		18FCCCEFE9DBF9BB8AA2A0F835B73A00 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BFE24B76EBC648364B8EC2FAD5E576C /* Pods-TravelMaker-umbrella.h in Headers */,
+				D2355558CDF30BD4941D1740C18237FB /* ImageSlideshow-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BE593EF93055DA3065E91508A95A4B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547F9ECE0AD875C24A2093B568B3F256 /* Pods-TravelMaker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,23 +406,42 @@
 /* Begin PBXNativeTarget section */
 		63B4D62694066E40AB546D642FAA8D56 /* Pods-TravelMaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2F5107D4AA8F15E6BC461C12AEE191D /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
+			buildConfigurationList = 76A1E37B6199778DE243B6CFB7A53D62 /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
 			buildPhases = (
-				3E4001910AA5FBA8114E9E0BAA64BBB4 /* Headers */,
-				890EB6DF83A1DA1A81FCFE87D3AFDAAC /* Sources */,
-				0FE390ABD626562178B2BAD16CAF6B84 /* Frameworks */,
-				763E68A424EF26D36C916ADADE9C05F6 /* Resources */,
+				4BE593EF93055DA3065E91508A95A4B1 /* Headers */,
+				C87729BE0F6ACBDE813CBCB53A2E7CFA /* Sources */,
+				1C5337ECFDD0DFEB347F671D3079C7E2 /* Frameworks */,
+				0C26BF8F33DBC61EF2FF968975A2FB80 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				374F72A3865D20FDB89696BE8BF6B8BA /* PBXTargetDependency */,
-				1D158EF1EB38C76FAAE6FC95DC8CB515 /* PBXTargetDependency */,
-				1DF62AE1EB3D8210FCFA327DB634BFEC /* PBXTargetDependency */,
+				49B54FB6DC1D8D0D08FAA8C50C260E81 /* PBXTargetDependency */,
+				C4D51866F3745A9829DD9689FAE104C1 /* PBXTargetDependency */,
+				FA9230E41611DCCA7ECB873EDDC7268C /* PBXTargetDependency */,
+				F0410A8CDAEDD067DF4F3AA13B5A98CB /* PBXTargetDependency */,
 			);
 			name = "Pods-TravelMaker";
 			productName = Pods_TravelMaker;
 			productReference = 45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41C17E86ABA339C15EA7E6F1FAF29E11 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */;
+			buildPhases = (
+				18FCCCEFE9DBF9BB8AA2A0F835B73A00 /* Headers */,
+				C4982A9FFE61E31045E3DB5C0A2F3EB8 /* Sources */,
+				3C2600B062A98E702FEC03475B350B69 /* Frameworks */,
+				DD1EB5C47999A598DD0A6DB3CD1082D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageSlideshow;
+			productName = ImageSlideshow;
+			productReference = C1D78A7F43807F49FDB5B04DD9BD6AC7 /* ImageSlideshow.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -314,8 +450,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -326,10 +462,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A9CD8F24F09825BC43D11658B17F70CC /* Products */;
+			productRefGroup = 5FA3EE2C1FE861238B5D483E54A6C4A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */,
 				3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */,
 				72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */,
 				8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */,
@@ -339,10 +476,19 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		763E68A424EF26D36C916ADADE9C05F6 /* Resources */ = {
+		0C26BF8F33DBC61EF2FF968975A2FB80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD1EB5C47999A598DD0A6DB3CD1082D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0ACA68E14F40AD7364C10534AFBA8C /* ic_cross_white@2x.png in Resources */,
+				53B4539A09E05B884DA75A1655747124 /* ic_cross_white@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,47 +549,73 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		890EB6DF83A1DA1A81FCFE87D3AFDAAC /* Sources */ = {
+		C4982A9FFE61E31045E3DB5C0A2F3EB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472A0B0F86770ECC291B7CFE5D04844B /* Pods-TravelMaker-dummy.m in Sources */,
+				F6F652FAF9D47F3D4AB6191139E7548A /* ActivityIndicator.swift in Sources */,
+				E1A05F7AAC7473380981C8B79C629BC9 /* Bundle+Module.swift in Sources */,
+				47B6806493F0F11A6F9FAC7CE4F070EC /* FullScreenSlideshowViewController.swift in Sources */,
+				95EDF0D844D99237550E7209F6E2C87C /* ImageSlideshow.swift in Sources */,
+				0E8B4C6C3FC4F926AEFEE8A68E18AAA5 /* ImageSlideshow-dummy.m in Sources */,
+				37532F1C3F548FB210218D9A7C2B6528 /* ImageSlideshowItem.swift in Sources */,
+				B99E793E702BE86A5CDB45EB96BA109B /* InputSource.swift in Sources */,
+				DEA3E3C7FD0C3EF78B89AF15AC7A2BFA /* PageIndicator.swift in Sources */,
+				C25ECEC767960C062FB59A570C98945D /* PageIndicatorPosition.swift in Sources */,
+				C51F23068C5C7908F073CAE1640B9EA1 /* SwiftSupport.swift in Sources */,
+				77B4A451EF0C07F1AC3712F915FA8F91 /* UIImage+AspectFit.swift in Sources */,
+				5925A6294EE5B50BC8E2B26628797A60 /* UIImageView+Tools.swift in Sources */,
+				74EA001A27A206767BE222A6539BC5D8 /* ZoomAnimatedTransitioning.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C87729BE0F6ACBDE813CBCB53A2E7CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600A858A104DF5CC26C581BF67A08AA0 /* Pods-TravelMaker-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0F42F1C3A1A2E12582757CAA1B54FC6D /* PBXTargetDependency */ = {
+		49B54FB6DC1D8D0D08FAA8C50C260E81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ImageSlideshow;
+			target = B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */;
+			targetProxy = 4D339BD874DE6819F7E3744CAE74A8D7 /* PBXContainerItemProxy */;
+		};
+		5EF5630E4D8102CA526859F393ABE9C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMapsGeometry;
 			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = F6AC05DFB83B4774459DCCB14D87138C /* PBXContainerItemProxy */;
+			targetProxy = 4742A72A2AFE9B82BA4623C70A04F826 /* PBXContainerItemProxy */;
 		};
-		1D158EF1EB38C76FAAE6FC95DC8CB515 /* PBXTargetDependency */ = {
+		C4D51866F3745A9829DD9689FAE104C1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = NMapsMap;
-			target = 8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */;
-			targetProxy = 26695FA8DD386F888686B9D5ACAA6B27 /* PBXContainerItemProxy */;
+			name = NMapsGeometry;
+			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
+			targetProxy = 9EA9154015B0290BBAE018C1251EECB9 /* PBXContainerItemProxy */;
 		};
-		1DF62AE1EB3D8210FCFA327DB634BFEC /* PBXTargetDependency */ = {
+		F0410A8CDAEDD067DF4F3AA13B5A98CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "naveridlogin-sdk-ios";
 			target = 3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */;
-			targetProxy = D83938E7A9D29ADBBD92C38681BEF770 /* PBXContainerItemProxy */;
+			targetProxy = 65567853B4588D5E2A553D62BD17B86C /* PBXContainerItemProxy */;
 		};
-		374F72A3865D20FDB89696BE8BF6B8BA /* PBXTargetDependency */ = {
+		FA9230E41611DCCA7ECB873EDDC7268C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = NMapsGeometry;
-			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = A21C1AC54EBB65E1249E5E9BDF249C0C /* PBXContainerItemProxy */;
+			name = NMapsMap;
+			target = 8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */;
+			targetProxy = 31D2E73E7CFA9447C5AFE06DAA7B2232 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52D80DC61DBC4718A034F25B36FA024D /* NMapsGeometry.release.xcconfig */;
+			baseConfigurationReference = F90D659363C97907EBA5C8F69AAD0EB8 /* NMapsGeometry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,7 +632,7 @@
 		};
 		35613D0A5F350911AE6E907FDFC836E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C14CBBB166FD731B5502127496207509 /* naveridlogin-sdk-ios.debug.xcconfig */;
+			baseConfigurationReference = D5DCD0E8AFA2CDE8C2787F3219AE9B07 /* naveridlogin-sdk-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -476,7 +648,7 @@
 		};
 		4122D12474652D4B94029A59C0DC6010 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC9B2500811CD12E879B5178C0001AB3 /* NMapsGeometry.debug.xcconfig */;
+			baseConfigurationReference = 6129760E04566898839C49DAEEC6F496 /* NMapsGeometry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,9 +662,80 @@
 			};
 			name = Debug;
 		};
+		5432736F8CD4583FD74A03AFC426FA1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5DA5FF897D53F86DA9C9F3A3B69407B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD99B4769645A843A9BED7F224411835 /* ImageSlideshow.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
+				PRODUCT_MODULE_NAME = ImageSlideshow;
+				PRODUCT_NAME = ImageSlideshow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		768846D27ACEFD82711658787FCAC0B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B7ACFE4DD3B32FEF70B34B14FDD0D2D /* naveridlogin-sdk-ios.release.xcconfig */;
+			baseConfigurationReference = F32018F4E761E58CD8E5B26F28C2B56A /* naveridlogin-sdk-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -573,9 +816,44 @@
 			};
 			name = Debug;
 		};
-		93D8F825E85C7DDF7F272ED0647F54B5 /* Debug */ = {
+		7DF2324936BD134EEA9B57D35CC17040 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
+			baseConfigurationReference = 7814DA997AA9E5FD0FE817BBD4A99303 /* ImageSlideshow.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
+				PRODUCT_MODULE_NAME = ImageSlideshow;
+				PRODUCT_NAME = ImageSlideshow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ACD0C8175153545D42522BE3A6F74E16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -605,14 +883,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 420D0C60F0D83F017CFABEBA2C064331 /* NMapsMap.debug.xcconfig */;
+			baseConfigurationReference = 6318A6C5A9BA158A776C36BAB251154A /* NMapsMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -628,7 +907,7 @@
 		};
 		FE5D137BA104CCBECE001BF38C0AEB3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D85D4188330C0DD508E8C9CD98984839 /* NMapsMap.release.xcconfig */;
+			baseConfigurationReference = CC2EFBFB31E69C770998678F6810C932 /* NMapsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -705,47 +984,18 @@
 			};
 			name = Release;
 		};
-		FFA386680C2300092A60D7A64E8B74BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41C17E86ABA339C15EA7E6F1FAF29E11 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DA5FF897D53F86DA9C9F3A3B69407B7 /* Debug */,
+				7DF2324936BD134EEA9B57D35CC17040 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -773,20 +1023,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		76A1E37B6199778DE243B6CFB7A53D62 /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5432736F8CD4583FD74A03AFC426FA1B /* Debug */,
+				ACD0C8175153545D42522BE3A6F74E16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EB98AD101AB530610FAEE48FABDF7F57 /* Build configuration list for PBXAggregateTarget "NMapsGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4122D12474652D4B94029A59C0DC6010 /* Debug */,
 				138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F5107D4AA8F15E6BC461C12AEE191D /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				93D8F825E85C7DDF7F272ED0647F54B5 /* Debug */,
-				FFA386680C2300092A60D7A64E8B74BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

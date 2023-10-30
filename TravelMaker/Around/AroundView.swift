@@ -25,6 +25,7 @@ class AroundView: BaseViewController, StoryboardView {
     
     let reactor = AroundViewReactor()
     var aroundAllResult: ResponseAroundModel?
+    var detailData: AroundData?
     
     private var gpsDisposable: Disposable?
     var disposeBag = DisposeBag()
@@ -181,6 +182,8 @@ extension AroundView: NMFMapViewTouchDelegate {
             customView?.removeFromSuperview()
         }
         
+        detailData = detail
+        
         customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail, image)
             .then {
                 self.view.addSubview($0)
@@ -195,11 +198,29 @@ extension AroundView: NMFMapViewTouchDelegate {
                 
                 $0.bringSubviewToFront(naverMapView!)
         }
+            .then {
+                let button = UIButton()
+                $0.addSubview(button)
+                
+                button.snp.makeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+                
+                button.addTarget(self, action: #selector(selectDetail), for: .touchUpInside)
+            }
     }
     
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         if customView != nil {
             customView?.removeFromSuperview()
         }
+    }
+}
+
+extension AroundView {
+    @objc func selectDetail() {
+        let detailView = AroundDetailView(nibName: "AroundDetailView", bundle: nil)
+        detailView.detailData = detailData
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }

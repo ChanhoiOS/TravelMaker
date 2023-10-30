@@ -7,6 +7,7 @@ target 'TravelMaker' do
 
  pod 'naveridlogin-sdk-ios'
  pod 'NMapsMap'
+ pod 'ImageSlideshow', '~> 1.9.0'
 
 
   # Pods for TravelMaker
