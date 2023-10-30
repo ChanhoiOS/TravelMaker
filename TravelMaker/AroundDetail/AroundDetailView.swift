@@ -76,7 +76,29 @@ class AroundDetailView: BaseViewController {
         let label = UILabel()
         label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 18)
+        label.numberOfLines = 0
         return label
+    }()
+    
+    private let starLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Colors.DESIGN_BLUE
+        label.font = UIFont(name: "SUIT-Regular", size: 16)
+        return label
+    }()
+    
+    private let commentImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "detail_comment")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let bookmarkImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "detail_bookmark")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
 
     override func viewDidLoad() {
@@ -86,6 +108,7 @@ class AroundDetailView: BaseViewController {
         setImageSlide()
         setProfile()
         setContent()
+        setStar()
         
         setGesture()
     }
@@ -212,18 +235,47 @@ class AroundDetailView: BaseViewController {
         contentText.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
             make.top.equalTo(contentDate.snp.bottom).offset(40)
+            make.right.equalToSuperview().offset(-24)
         }
         
         bottomLine = UIView()
             .then {
-                self.view.addSubview($0)
+                contentView.addSubview($0)
                 $0.backgroundColor = Colors.GRAY_LINE
                 $0.snp.makeConstraints { make in
-                    make.left.right.equalToSuperview()
-                    make.bottom.equalTo(profileImage.snp.bottom).offset(26)
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.top.equalTo(contentText.snp.bottom).offset(20)
                     make.height.equalTo(1)
                 }
             }
+    }
+    
+    func setStar() {
+        contentView.addSubview(starLabel)
+        starLabel.text = "★ " + "\(detailData?.starRating ?? 0.0)" + " | " + "만족도"
+        
+        starLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(24)
+            make.top.equalTo(bottomLine.snp.bottom).offset(16)
+        }
+        
+        contentView.addSubview(commentImage)
+        
+        commentImage.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-24)
+            make.top.equalTo(bottomLine.snp.bottom).offset(16)
+            make.width.height.equalTo(28)
+        }
+        
+        contentView.addSubview(bookmarkImage)
+        
+        bookmarkImage.snp.makeConstraints { make in
+            make.right.equalTo(commentImage.snp.left).offset(4)
+            make.centerY.equalTo(commentImage)
+            make.width.height.equalTo(28)
+            make.bottom.equalToSuperview().offset(-40)
+        }
     }
 }
 
@@ -232,7 +284,7 @@ extension AroundDetailView {
         let sources = imagePaths.map {
             KFSource(urlString: Apis.imageUrl + $0)!
         }
-        print("source: ", sources)
+        
         return sources
     }
 }
