@@ -29,6 +29,28 @@ class RecommendView: UIViewController {
         button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
         return button
     }()
+    
+    private lazy var hotpleBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "recommend_hotple"), for: .normal)
+        button.setTitle("  추천 핫플", for: .normal)
+        button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var dormitoryBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "recommend_dormitory"), for: .normal)
+        button.setTitle("  추천 숙소", for: .normal)
+        button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +63,33 @@ class RecommendView: UIViewController {
     func setTopBtn() {
         self.view.addSubview(restaurantBtn)
         
-        restaurantBtn.layer.cornerRadius = 12
+        restaurantBtn.layer.cornerRadius = 16
         
         restaurantBtn.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(64)
             make.left.equalToSuperview().offset(24)
+            make.width.equalTo(102)
+            make.height.equalTo(38)
+        }
+        
+        self.view.addSubview(hotpleBtn)
+        
+        hotpleBtn.layer.cornerRadius = 16
+        
+        hotpleBtn.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(64)
+            make.left.equalTo(restaurantBtn.snp.right).offset(8)
+            make.width.equalTo(102)
+            make.height.equalTo(38)
+        }
+        
+        self.view.addSubview(dormitoryBtn)
+        
+        dormitoryBtn.layer.cornerRadius = 16
+        
+        dormitoryBtn.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(64)
+            make.left.equalTo(hotpleBtn.snp.right).offset(8)
             make.width.equalTo(102)
             make.height.equalTo(38)
         }
