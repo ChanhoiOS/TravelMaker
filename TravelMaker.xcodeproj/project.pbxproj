@@ -95,6 +95,8 @@
 		09C4BA7F2AD9350100BE8376 /* SearchSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA7E2AD9350100BE8376 /* SearchSpaceModel.swift */; };
 		09CAB1532AD508230077B46F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1522AD508230077B46F /* Then */; };
 		09CAB1562AD508820077B46F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09CAB1552AD508820077B46F /* SnapKit */; };
+		09CDB73C2AF0C1C700044CF2 /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CDB73B2AF0C1C700044CF2 /* PassThroughView.swift */; };
+		09CDB73E2AF0C20300044CF2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CDB73D2AF0C20300044CF2 /* BottomSheetView.swift */; };
 		09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17C2AAAFE9100991841 /* AppDelegate.swift */; };
 		09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */; };
 		09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7B1802AAAFE9100991841 /* TabBarViewController.swift */; };
@@ -173,6 +175,8 @@
 		09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceCell.swift; sourceTree = "<group>"; };
 		09C4BA742AD8E12200BE8376 /* SearchSpaceViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewReactor.swift; sourceTree = "<group>"; };
 		09C4BA7E2AD9350100BE8376 /* SearchSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceModel.swift; sourceTree = "<group>"; };
+		09CDB73B2AF0C1C700044CF2 /* PassThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
+		09CDB73D2AF0C20300044CF2 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		09D7B1792AAAFE9100991841 /* TravelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D7B17C2AAAFE9100991841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		090FB9EF2ADE7942005081F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				09CDB73A2AF0C1AC00044CF2 /* BottomSheet */,
 				09112BF32AE8D6B9001AFDC6 /* PaddingLabel */,
 				090FB9F02ADE7948005081F8 /* AroundMe */,
 			);
@@ -651,6 +656,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		09CDB73A2AF0C1AC00044CF2 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				09CDB73B2AF0C1C700044CF2 /* PassThroughView.swift */,
+				09CDB73D2AF0C20300044CF2 /* BottomSheetView.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		09D7B1702AAAFE9100991841 = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +933,7 @@
 				09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */,
 				09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */,
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
+				09CDB73C2AF0C1C700044CF2 /* PassThroughView.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
 				0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */,
@@ -950,6 +965,7 @@
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
 				0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */,
 				090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */,
+				09CDB73E2AF0C20300044CF2 /* BottomSheetView.swift in Sources */,
 				0960FF9F2AE6321D004D9068 /* RequestRegisterNearMeModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,

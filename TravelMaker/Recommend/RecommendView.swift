@@ -51,6 +51,13 @@ class RecommendView: UIViewController {
         button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
         return button
     }()
+    
+    private let bottomSheetView: BottomSheetView = {
+        let view = BottomSheetView()
+        view.bottomSheetColor = .lightGray
+        view.barViewColor = .darkGray
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +65,7 @@ class RecommendView: UIViewController {
         setMap()
         setCoordinate()
         setTopBtn()
+        setBottomSheet()
     }
     
     func setTopBtn() {
@@ -92,6 +100,14 @@ class RecommendView: UIViewController {
             make.left.equalTo(hotpleBtn.snp.right).offset(8)
             make.width.equalTo(102)
             make.height.equalTo(38)
+        }
+    }
+    
+    func setBottomSheet() {
+        self.view.addSubview(self.bottomSheetView)
+        
+        self.bottomSheetView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }
