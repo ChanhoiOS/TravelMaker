@@ -17,6 +17,8 @@ struct Colors {
     
     static let COLLECTION_COUNT_GRAY = UIColor(red: 106/255, green: 106/255, blue: 106/255, alpha: 1.0)
     
+    static let RECOMMEND_GRAY = UIColor(red: 92/255, green: 92/255, blue: 92/255, alpha: 1.0)
+    
     
     // blue
     static let DESIGN_BLUE = UIColor(red: 56/255, green: 96/255, blue: 226/255, alpha: 1.0)

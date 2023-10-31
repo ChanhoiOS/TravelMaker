@@ -18,12 +18,37 @@ import Kingfisher
 class RecommendView: UIViewController {
     
     var naverMapView: NMFMapView?
+    
+    private lazy var restaurantBtn: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "recommend_restaurant"), for: .normal)
+        button.setTitle("  추천 맛집", for: .normal)
+        button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
+        button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
+        button.backgroundColor = .white
+        button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setMap()
         setCoordinate()
+        setTopBtn()
+    }
+    
+    func setTopBtn() {
+        self.view.addSubview(restaurantBtn)
+        
+        restaurantBtn.layer.cornerRadius = 12
+        
+        restaurantBtn.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(64)
+            make.left.equalToSuperview().offset(24)
+            make.width.equalTo(102)
+            make.height.equalTo(38)
+        }
     }
 }
 
@@ -60,5 +85,11 @@ extension RecommendView: NMFMapViewTouchDelegate {
     func setLocation(_ x: Double, _ y: Double) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
         naverMapView?.moveCamera(cameraUpdate)
+    }
+}
+
+extension RecommendView {
+    @objc func recommendRestaurant() {
+        print("호출")
     }
 }
