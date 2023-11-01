@@ -26,7 +26,7 @@ final class BottomSheetView: PassThroughView {
                 case .tip:
                     return 0.85 // 위에서 부터의 값 (밑으로 갈수록 값이 커짐)
                 case .full:
-                    return 0.6
+                    return 0.55
             }
         }
         
@@ -37,7 +37,7 @@ final class BottomSheetView: PassThroughView {
       
     let bottomSheetView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         return view
     }()
     
@@ -45,6 +45,24 @@ final class BottomSheetView: PassThroughView {
         let view = UIView()
         view.backgroundColor = .darkGray
         view.isUserInteractionEnabled = false
+        return view
+    }()
+    
+    var viewTitle: UILabel = {
+        let label = UILabel()
+        label.text = "추천 장소"
+        label.textColor = Colors.DESIGN_BLACK
+        label.font = UIFont(name: "SUIT-Bold", size: 22)
+        return label
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 10
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.backgroundColor = .white
+
         return view
     }()
 
@@ -71,7 +89,6 @@ final class BottomSheetView: PassThroughView {
     
     required init?(coder: NSCoder, _ data: ResponseRecommendALLModel?) {
         super.init(coder: coder)
-        setData(data)
     }
     
     required init?(coder: NSCoder) {
@@ -103,7 +120,29 @@ final class BottomSheetView: PassThroughView {
             $0.size.equalTo(Const.barViewSize)
         }
         
-        setData(data)
+        self.bottomSheetView.addSubview(viewTitle)
+        
+        self.viewTitle.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(24)
+            $0.top.equalToSuperview().offset(36)
+        }
+        
+        self.bottomSheetView.addSubview(collectionView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: RecommendCollectionViewCell.id)
+        
+        self.collectionView.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(24)
+            $0.right.equalToSuperview().offset(-24)
+            $0.top.equalTo(viewTitle.snp.bottom).offset(20)
+            $0.height.equalTo(167)
+        }
+        
+        recommendAllModel = data
+        collectionView.reloadData()
     }
     
     @objc private func didPan(_ recognizer: UIPanGestureRecognizer) {
@@ -144,8 +183,24 @@ final class BottomSheetView: PassThroughView {
             $0.top.equalToSuperview().inset(offset)
         }
     }
+}
+
+extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return recommendAllModel?.data?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.id, for: indexPath)
+        
+        if let cell = cell as? RecommendCollectionViewCell {
+            cell.model = recommendAllModel?.data?[indexPath.item]
+        }
+        
+        return cell
+    }
     
-    func setData(_ data: ResponseRecommendALLModel?) {
-        print("data:: ", data)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 160, height: collectionView.frame.height)
     }
 }
