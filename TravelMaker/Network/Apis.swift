@@ -16,5 +16,7 @@ struct Apis {
     
     static let getAround = "\(Apis.baseUrl)/api/post/all"
     
-    static let imageUrl = "http://43.200.32.96:8140/images/"
+    static let recommendAll = "\(Apis.baseUrl)/api/place/all"
+    
+    static let imageUrl = "\(Apis.baseUrl)/images/"
 }

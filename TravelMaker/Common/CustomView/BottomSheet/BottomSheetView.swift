@@ -33,12 +33,12 @@ final class BottomSheetView: PassThroughView {
         }
     }
       
-  // MARK: UI
     let bottomSheetView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
         return view
     }()
+    
     private let barView: UIView = {
         let view = UIView()
         view.backgroundColor = .darkGray
@@ -46,7 +46,6 @@ final class BottomSheetView: PassThroughView {
         return view
     }()
 
-// MARK: Properties
     var mode: Mode = .tip {
         didSet {
             switch self.mode {

@@ -66,6 +66,8 @@ class RecommendView: UIViewController {
         setCoordinate()
         setTopBtn()
         setBottomSheet()
+        
+        setData()
     }
     
     func setTopBtn() {
@@ -145,6 +147,19 @@ extension RecommendView: NMFMapViewTouchDelegate {
     func setLocation(_ x: Double, _ y: Double) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
         naverMapView?.moveCamera(cameraUpdate)
+    }
+}
+
+extension RecommendView {
+    func setData() {
+        Task {
+            do {
+                let data = try await AsyncNetworkManager.shared.asyncGet(Apis.recommendAll)
+                print("data: ", data)
+            } catch {
+                
+            }
+        }
     }
 }
 
