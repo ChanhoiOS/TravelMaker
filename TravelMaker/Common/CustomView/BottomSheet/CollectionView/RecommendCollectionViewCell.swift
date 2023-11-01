@@ -19,7 +19,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private let recommendImage: UIImageView = {
+    var recommendImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "collection_recommend")
         return imageView

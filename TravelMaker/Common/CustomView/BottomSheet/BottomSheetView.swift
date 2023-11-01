@@ -170,7 +170,6 @@ final class BottomSheetView: PassThroughView {
             delay: 0,
             options: .allowUserInteraction,
             animations: {
-                // velocity를 이용하여 위로 스와이프인지, 아래로 스와이프인지 확인
                 self.mode = recognizer.velocity(in: self).y >= 0 ? Mode.tip : .full
             },
             completion: nil
@@ -196,6 +195,12 @@ extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource,
         if let cell = cell as? RecommendCollectionViewCell {
             cell.model = recommendAllModel?.data?[indexPath.item]
         }
+        
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 8
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = Colors.DESIGN_WHITE.cgColor
+        cell.layer.masksToBounds = true
         
         return cell
     }
