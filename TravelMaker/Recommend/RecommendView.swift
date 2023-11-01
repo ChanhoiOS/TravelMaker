@@ -18,6 +18,9 @@ import Kingfisher
 class RecommendView: UIViewController {
     
     var naverMapView: NMFMapView?
+    var bottomSheet: BottomSheetView?
+    
+    var responseAllModel: ResponseRecommendALLModel?
     
     private lazy var restaurantBtn: UIButton = {
         let button = UIButton()
@@ -52,20 +55,12 @@ class RecommendView: UIViewController {
         return button
     }()
     
-    private let bottomSheetView: BottomSheetView = {
-        let view = BottomSheetView()
-        view.bottomSheetColor = .lightGray
-        view.barViewColor = .darkGray
-        return view
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setMap()
         setCoordinate()
         setTopBtn()
-        setBottomSheet()
         
         setData()
     }
@@ -105,12 +100,15 @@ class RecommendView: UIViewController {
         }
     }
     
-    func setBottomSheet() {
-        self.view.addSubview(self.bottomSheetView)
-        
-        self.bottomSheetView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+    func setBottomSheet(_ data: ResponseRecommendALLModel?) {
+        bottomSheet = BottomSheetView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), data)
+            .then {
+                self.view.addSubview($0)
+                
+                $0.snp.makeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+            }
     }
 }
 
@@ -154,11 +152,12 @@ extension RecommendView {
     func setData() {
         Task {
             do {
-                let data = try await AsyncNetworkManager.shared.asyncGet(Apis.recommendAll)
-                print("data: ", data)
+                responseAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommendAll)
             } catch {
                 
             }
+            
+            setBottomSheet(responseAllModel)
         }
     }
 }

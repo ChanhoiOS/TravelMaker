@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class BottomSheetView: PassThroughView {
+    var recommendAllModel: ResponseRecommendALLModel?
+    
     enum Mode {
         case tip
         case full
@@ -67,12 +69,16 @@ final class BottomSheetView: PassThroughView {
         didSet { self.barView.backgroundColor = self.barViewColor }
     }
     
-    @available(*, unavailable)
+    required init?(coder: NSCoder, _ data: ResponseRecommendALLModel?) {
+        super.init(coder: coder)
+        setData(data)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init() has not been implemented")
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, _ data: ResponseRecommendALLModel?) {
         super.init(frame: frame)
         
         self.backgroundColor = .clear
@@ -96,6 +102,8 @@ final class BottomSheetView: PassThroughView {
             $0.top.equalToSuperview().inset(Const.barViewTopSpacing)
             $0.size.equalTo(Const.barViewSize)
         }
+        
+        setData(data)
     }
     
     @objc private func didPan(_ recognizer: UIPanGestureRecognizer) {
@@ -135,5 +143,9 @@ final class BottomSheetView: PassThroughView {
             $0.left.right.bottom.equalToSuperview()
             $0.top.equalToSuperview().inset(offset)
         }
+    }
+    
+    func setData(_ data: ResponseRecommendALLModel?) {
+        print("data:: ", data)
     }
 }
