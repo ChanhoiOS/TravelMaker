@@ -21,6 +21,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     var bottomSheet: BottomSheetView?
     
     var responseAllModel: ResponseRecommendALLModel?
+    var forMapData: [RecommendAllData]?
     
     private lazy var restaurantBtn: UIButton = {
         let button = UIButton()
@@ -165,6 +166,7 @@ extension RecommendView {
             }
             
             setBottomSheet(responseAllModel)
+            setCategory(true, true, true)
         }
     }
 }
@@ -177,6 +179,8 @@ extension RecommendView {
         let image = restaurantBtn.isSelected ? UIImage(named: "recommend_restaurant_white") : UIImage(named: "recommend_restaurant")
         restaurantBtn.backgroundColor = color
         restaurantBtn.setImage(image, for: .normal)
+        
+        setCategory(restaurantBtn.isSelected, hotpleBtn.isSelected, dormitoryBtn.isSelected)
     }
     
     @objc func recommendHotple() {
@@ -186,6 +190,8 @@ extension RecommendView {
         let image = hotpleBtn.isSelected ? UIImage(named: "recommend_hotple_white") : UIImage(named: "recommend_hotple")
         hotpleBtn.backgroundColor = color
         hotpleBtn.setImage(image, for: .normal)
+        
+        setCategory(restaurantBtn.isSelected, hotpleBtn.isSelected, dormitoryBtn.isSelected)
     }
     
     @objc func recommendDormitory() {
@@ -195,6 +201,99 @@ extension RecommendView {
         let image = dormitoryBtn.isSelected ? UIImage(named: "recommend_dormitory_white") : UIImage(named: "recommend_dormitory")
         dormitoryBtn.backgroundColor = color
         dormitoryBtn.setImage(image, for: .normal)
+        
+        setCategory(restaurantBtn.isSelected, hotpleBtn.isSelected, dormitoryBtn.isSelected)
+    }
+    
+    func setCategory(_ restaurant: Bool, _ hotple: Bool, _ dormitory: Bool) {
+        if restaurant && hotple && dormitory {
+            forMapData = responseAllModel?.data
+        } else if restaurant && hotple && !dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .food || $0.category == .popular }
+        } else if restaurant && !hotple && dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .food || $0.category == .accommodation }
+        } else if !restaurant && hotple && dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .popular || $0.category == .accommodation }
+        } else if !restaurant && hotple && !dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .popular }
+        } else if !restaurant && !hotple && dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .accommodation }
+        } else {
+            forMapData = [RecommendAllData]()
+        }
+        
+        setMarker()
+    }
+    
+    func setMarker() {
+        if let details = forMapData {
+            for (index, detail) in details.enumerated() {
+                let marker = NMFMarker()
+                
+                marker.captionRequestedWidth = 60
+                
+                if let imageUrls = detail.imageURL {
+                    if imageUrls.count > 0 {
+                        DispatchQueue.global().async {
+                            var imageName = "recommend_red_marker"
+                            
+                            if detail.category == .popular {
+                                imageName = "recommend_orange_marker"
+                            } else if detail.category == .accommodation {
+                                imageName = "recommend_purple_marker"
+                            }
+                            
+                            let image = UIImage(named: imageName)!
+                            DispatchQueue.main.async {
+                                let resizeImage = image.resizeAll(newWidth: 48, newHeight: 48)
+                                marker.iconImage = NMFOverlayImage(image: resizeImage)
+                                marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                marker.mapView = self.naverMapView
+                                
+                                marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
+                                    self.markerAction(index, detail, image)
+                                    self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)))
+                                    return true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func markerAction(_ index: Int, _ detail: RecommendAllData, _ image: UIImage) {
+//        if customView != nil {
+//            customView?.removeFromSuperview()
+//        }
+//        
+//        detailData = detail
+//        
+//        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail, image)
+//            .then {
+//                self.view.addSubview($0)
+//                //$0.delegate = self
+//                
+//                $0.snp.makeConstraints { make in
+//                    make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
+//                    make.left.equalToSuperview().offset(24)
+//                    make.right.equalToSuperview().offset(-24)
+//                    make.height.equalTo(184)
+//                }
+//                
+//                $0.bringSubviewToFront(naverMapView!)
+//        }
+//            .then {
+//                let button = UIButton()
+//                $0.addSubview(button)
+//                
+//                button.snp.makeConstraints { make in
+//                    make.edges.equalToSuperview()
+//                }
+//                
+//                button.addTarget(self, action: #selector(selectDetail), for: .touchUpInside)
+//            }
     }
 }
 
