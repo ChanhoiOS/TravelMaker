@@ -150,9 +150,8 @@ extension RecommendView: NMFMapViewTouchDelegate {
         naverMapView?.moveCamera(cameraUpdate)
     }
     
-    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool) {
-        print("reason: ", reason)
-        print("animated:", animated)
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        bottomSheet?.mode = .tip
     }
 }
 
