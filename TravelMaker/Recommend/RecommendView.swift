@@ -117,6 +117,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
                 $0.snp.makeConstraints { make in
                     make.edges.equalToSuperview()
                 }
+                
             }
     }
     
@@ -284,7 +285,6 @@ extension RecommendView {
         customView = RecommendSelectView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail)
             .then {
                 self.view.addSubview($0)
-                //$0.delegate = self
                 
                 $0.snp.makeConstraints { make in
                     make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
@@ -292,6 +292,8 @@ extension RecommendView {
                     make.right.equalToSuperview().offset(-24)
                     make.height.equalTo(184)
                 }
+                
+                self.view.insertSubview($0, belowSubview: bottomSheet ?? UIView())
                 
                 $0.bringSubviewToFront(naverMapView!)
         }
