@@ -17,11 +17,15 @@ import Kingfisher
 
 class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
+    var customView: RecommendSelectView?
     var naverMapView: NMFMapView?
     var bottomSheet: BottomSheetView?
     
     var responseAllModel: ResponseRecommendALLModel?
     var forMapData: [RecommendAllData]?
+    var detailData: RecommendAllData?
+    
+    var tabBarHeight: Int = 83
     
     private lazy var restaurantBtn: UIButton = {
         let button = UIButton()
@@ -64,6 +68,8 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
         setTopBtn()
         
         setData()
+        
+        getHeight()
     }
     
     func setTopBtn() {
@@ -111,6 +117,10 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
                     make.edges.equalToSuperview()
                 }
             }
+    }
+    
+    func getHeight() {
+        tabBarHeight = Int(self.tabBarController?.tabBar.frame.height ?? 49.0)
     }
 }
 
@@ -251,7 +261,7 @@ extension RecommendView {
                                 marker.mapView = self.naverMapView
                                 
                                 marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
-                                    self.markerAction(index, detail, image)
+                                    self.markerAction(index, detail)
                                     self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)))
                                     return true
                                 }
@@ -263,37 +273,37 @@ extension RecommendView {
         }
     }
     
-    func markerAction(_ index: Int, _ detail: RecommendAllData, _ image: UIImage) {
-//        if customView != nil {
-//            customView?.removeFromSuperview()
-//        }
-//        
-//        detailData = detail
-//        
-//        customView = AroundMeRecordCumtomView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail, image)
-//            .then {
-//                self.view.addSubview($0)
-//                //$0.delegate = self
-//                
-//                $0.snp.makeConstraints { make in
-//                    make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
-//                    make.left.equalToSuperview().offset(24)
-//                    make.right.equalToSuperview().offset(-24)
-//                    make.height.equalTo(184)
-//                }
-//                
-//                $0.bringSubviewToFront(naverMapView!)
-//        }
-//            .then {
-//                let button = UIButton()
-//                $0.addSubview(button)
-//                
-//                button.snp.makeConstraints { make in
-//                    make.edges.equalToSuperview()
-//                }
-//                
-//                button.addTarget(self, action: #selector(selectDetail), for: .touchUpInside)
-//            }
+    func markerAction(_ index: Int, _ detail: RecommendAllData) {
+        if customView != nil {
+            customView?.removeFromSuperview()
+        }
+        
+        detailData = detail
+        
+        customView = RecommendSelectView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), detail)
+            .then {
+                self.view.addSubview($0)
+                //$0.delegate = self
+                
+                $0.snp.makeConstraints { make in
+                    make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
+                    make.left.equalToSuperview().offset(24)
+                    make.right.equalToSuperview().offset(-24)
+                    make.height.equalTo(184)
+                }
+                
+                $0.bringSubviewToFront(naverMapView!)
+        }
+            .then {
+                let button = UIButton()
+                $0.addSubview(button)
+                
+                button.snp.makeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+                
+                button.addTarget(self, action: #selector(selectDetail), for: .touchUpInside)
+            }
     }
 }
 
@@ -305,5 +315,13 @@ extension RecommendView: SelectRecommendData {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
         cameraUpdate.animation = .easeOut
         naverMapView?.moveCamera(cameraUpdate)
+    }
+}
+
+extension RecommendView {
+    @objc func selectDetail() {
+//        let detailView = AroundDetailView(nibName: "AroundDetailView", bundle: nil)
+//        detailView.detailData = detailData
+//        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }
