@@ -8,8 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol SelectRecommendData {
+    func selectSpace(_ data: RecommendAllData?)
+}
+
 final class BottomSheetView: PassThroughView {
     var recommendAllModel: ResponseRecommendALLModel?
+    var delegate: SelectRecommendData?
     
     enum Mode {
         case tip
@@ -203,6 +208,10 @@ extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource,
         cell.layer.masksToBounds = true
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.selectSpace(recommendAllModel?.data?[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

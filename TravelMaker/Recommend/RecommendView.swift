@@ -15,7 +15,7 @@ import RxCocoa
 import ReactorKit
 import Kingfisher
 
-class RecommendView: UIViewController {
+class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
     var naverMapView: NMFMapView?
     var bottomSheet: BottomSheetView?
@@ -104,6 +104,7 @@ class RecommendView: UIViewController {
         bottomSheet = BottomSheetView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), data)
             .then {
                 self.view.addSubview($0)
+                $0.delegate = self
                 
                 $0.snp.makeConstraints { make in
                     make.edges.equalToSuperview()
@@ -140,11 +141,18 @@ extension RecommendView: NMFMapViewTouchDelegate {
                     make.bottom.equalToSuperview()
                 }
             }
+        
+        naverMapView?.addCameraDelegate(delegate: self)
     }
     
     func setLocation(_ x: Double, _ y: Double) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
         naverMapView?.moveCamera(cameraUpdate)
+    }
+    
+    func mapView(_ mapView: NMFMapView, cameraWillChangeByReason reason: Int, animated: Bool) {
+        print("reason: ", reason)
+        print("animated:", animated)
     }
 }
 
@@ -165,5 +173,16 @@ extension RecommendView {
 extension RecommendView {
     @objc func recommendRestaurant() {
         print("호출")
+    }
+}
+
+extension RecommendView: SelectRecommendData {
+    func selectSpace(_ data: RecommendAllData?) {
+        let latitude = data?.latitude ?? 37.50518440330725
+        let longitude = data?.longitude ?? 127.05485569769449
+        
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        cameraUpdate.animation = .easeOut
+        naverMapView?.moveCamera(cameraUpdate)
     }
 }
