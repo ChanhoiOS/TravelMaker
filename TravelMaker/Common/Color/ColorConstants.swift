@@ -40,4 +40,13 @@ struct Colors {
     
     // textField
     static let TEXTFIELD_BACKGROUND = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 0.3)
+    
+    // red
+    static let RECOMMEND_RED = UIColor(red: 255/255, green: 100/255, blue: 100/255, alpha: 1.0)
+    
+    // orange
+    static let RECOMMEND_ORANGE = UIColor(red: 255/255, green: 119/255, blue: 60/255, alpha: 1.0)
+    
+    // purple
+    static let RECOMMEND_PURPLE = UIColor(red: 151/255, green: 71/255, blue: 255/255, alpha: 1.0)
 }

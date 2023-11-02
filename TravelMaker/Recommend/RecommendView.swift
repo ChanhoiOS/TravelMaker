@@ -40,7 +40,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
         button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
         button.backgroundColor = .white
-        button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        button.addTarget(self, action: #selector(recommendHotple), for: .touchUpInside)
         return button
     }()
     
@@ -51,7 +51,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
         button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
         button.backgroundColor = .white
-        button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        button.addTarget(self, action: #selector(recommendDormitory), for: .touchUpInside)
         return button
     }()
     
@@ -171,7 +171,30 @@ extension RecommendView {
 
 extension RecommendView {
     @objc func recommendRestaurant() {
-        print("호출")
+        restaurantBtn.isSelected.toggle()
+            
+        let color = restaurantBtn.isSelected ? Colors.RECOMMEND_RED : .white
+        let image = restaurantBtn.isSelected ? UIImage(named: "recommend_restaurant_white") : UIImage(named: "recommend_restaurant")
+        restaurantBtn.backgroundColor = color
+        restaurantBtn.setImage(image, for: .normal)
+    }
+    
+    @objc func recommendHotple() {
+        hotpleBtn.isSelected.toggle()
+            
+        let color = hotpleBtn.isSelected ? Colors.RECOMMEND_ORANGE : .white
+        let image = hotpleBtn.isSelected ? UIImage(named: "recommend_hotple_white") : UIImage(named: "recommend_hotple")
+        hotpleBtn.backgroundColor = color
+        hotpleBtn.setImage(image, for: .normal)
+    }
+    
+    @objc func recommendDormitory() {
+        dormitoryBtn.isSelected.toggle()
+            
+        let color = dormitoryBtn.isSelected ? Colors.RECOMMEND_PURPLE : .white
+        let image = dormitoryBtn.isSelected ? UIImage(named: "recommend_dormitory_white") : UIImage(named: "recommend_dormitory")
+        dormitoryBtn.backgroundColor = color
+        dormitoryBtn.setImage(image, for: .normal)
     }
 }
 
