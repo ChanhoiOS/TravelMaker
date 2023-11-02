@@ -16,6 +16,8 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         self.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(transferIndex(_:)), name: Notification.Name("transferIndex"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +55,15 @@ extension TabBarViewController: UITabBarControllerDelegate {
                 items[2].selectedImage = UIImage(named: "tabBar_middle")
                 items[2].image = UIImage(named: "tabBar_middle")
             }
+        }
+    }
+}
+
+extension TabBarViewController {
+    @objc func transferIndex(_ notification: Notification){
+        let index = notification.object as? Int ?? 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.selectedIndex = index
         }
     }
 }

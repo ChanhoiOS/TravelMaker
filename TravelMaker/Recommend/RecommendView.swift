@@ -14,6 +14,7 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import Kingfisher
+import SafariServices
 
 class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
@@ -318,10 +319,17 @@ extension RecommendView: SelectRecommendData {
     }
 }
 
-extension RecommendView {
+extension RecommendView: SFSafariViewControllerDelegate {
     @objc func selectDetail() {
-//        let detailView = AroundDetailView(nibName: "AroundDetailView", bundle: nil)
-//        detailView.detailData = detailData
-//        self.navigationController?.pushViewController(detailView, animated: true)
+        guard let url = URL(string: detailData?.detailURL ?? "www.apple.com") else { return }
+
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        self.present(safariViewController, animated: true)
     }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: nil)
+    }
+    
 }
