@@ -28,6 +28,8 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
     var tabBarHeight: Int = 83
     
+    var markers = [NMFMarker]()
+    
     private lazy var restaurantBtn: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "recommend_restaurant_white"), for: .normal)
@@ -221,12 +223,18 @@ extension RecommendView {
     }
     
     func setCategory(_ restaurant: Bool, _ hotple: Bool, _ dormitory: Bool) {
+        for i in 0..<markers.count {
+            markers[i].mapView = nil
+        }
+        
         if restaurant && hotple && dormitory {
             forMapData = responseAllModel?.data
         } else if restaurant && hotple && !dormitory {
             forMapData = responseAllModel?.data?.filter { $0.category == .food || $0.category == .popular }
         } else if restaurant && !hotple && dormitory {
             forMapData = responseAllModel?.data?.filter { $0.category == .food || $0.category == .accommodation }
+        } else if restaurant && !hotple && !dormitory {
+            forMapData = responseAllModel?.data?.filter { $0.category == .food }
         } else if !restaurant && hotple && dormitory {
             forMapData = responseAllModel?.data?.filter { $0.category == .popular || $0.category == .accommodation }
         } else if !restaurant && hotple && !dormitory {
@@ -237,8 +245,6 @@ extension RecommendView {
             forMapData = [RecommendAllData]()
         }
         
-        print("formatData: ", forMapData?.count)
-        
         setMarker()
     }
     
@@ -246,16 +252,18 @@ extension RecommendView {
         if let details = forMapData {
             for (index, detail) in details.enumerated() {
                 let marker = NMFMarker()
-                print("details: ", details.count)
+                markers.append(marker)
                 
-                marker.captionRequestedWidth = 60
+                markers[index].captionRequestedWidth = 60
                 
                 if let imageUrls = detail.imageURL {
                     if imageUrls.count > 0 {
                         DispatchQueue.global().async {
                             var imageName = "recommend_red_marker"
                             
-                            if detail.category == .popular {
+                            if detail.category == .food {
+                                imageName = "recommend_red_marker"
+                            } else if detail.category == .popular {
                                 imageName = "recommend_orange_marker"
                             } else if detail.category == .accommodation {
                                 imageName = "recommend_purple_marker"
@@ -264,13 +272,16 @@ extension RecommendView {
                             let image = UIImage(named: imageName)!
                             DispatchQueue.main.async {
                                 let resizeImage = image.resizeAll(newWidth: 48, newHeight: 48)
-                                marker.iconImage = NMFOverlayImage(image: resizeImage)
-                                marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
-                                marker.mapView = self.naverMapView
+                                self.markers[index].iconImage = NMFOverlayImage(image: resizeImage)
+                                self.markers[index].position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                self.markers[index].mapView = self.naverMapView
                                 
-                                marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
+                                self.markers[index].touchHandler = { (overlay: NMFOverlay) -> Bool in
                                     self.markerAction(index, detail)
-                                    self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)))
+                                    
+                                    let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449))
+                                    cameraUpdate.animation = .easeOut
+                                    self.naverMapView?.moveCamera(cameraUpdate)
                                     return true
                                 }
                             }
