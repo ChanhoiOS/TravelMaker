@@ -30,34 +30,37 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
     private lazy var restaurantBtn: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "recommend_restaurant"), for: .normal)
+        button.setImage(UIImage(named: "recommend_restaurant_white"), for: .normal)
         button.setTitle("  추천 맛집", for: .normal)
         button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
-        button.backgroundColor = .white
+        button.backgroundColor = Colors.RECOMMEND_RED
         button.addTarget(self, action: #selector(recommendRestaurant), for: .touchUpInside)
+        button.isSelected = true
         return button
     }()
     
     private lazy var hotpleBtn: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "recommend_hotple"), for: .normal)
+        button.setImage(UIImage(named: "recommend_hotple_white"), for: .normal)
         button.setTitle("  추천 핫플", for: .normal)
         button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
-        button.backgroundColor = .white
+        button.backgroundColor = Colors.RECOMMEND_ORANGE
         button.addTarget(self, action: #selector(recommendHotple), for: .touchUpInside)
+        button.isSelected = true
         return button
     }()
     
     private lazy var dormitoryBtn: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "recommend_dormitory"), for: .normal)
+        button.setImage(UIImage(named: "recommend_dormitory_white"), for: .normal)
         button.setTitle("  추천 숙소", for: .normal)
         button.setTitleColor(Colors.RECOMMEND_GRAY, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 16)
-        button.backgroundColor = .white
+        button.backgroundColor = Colors.RECOMMEND_PURPLE
         button.addTarget(self, action: #selector(recommendDormitory), for: .touchUpInside)
+        button.isSelected = true
         return button
     }()
     
@@ -234,6 +237,8 @@ extension RecommendView {
             forMapData = [RecommendAllData]()
         }
         
+        print("formatData: ", forMapData?.count)
+        
         setMarker()
     }
     
@@ -241,6 +246,7 @@ extension RecommendView {
         if let details = forMapData {
             for (index, detail) in details.enumerated() {
                 let marker = NMFMarker()
+                print("details: ", details.count)
                 
                 marker.captionRequestedWidth = 60
                 

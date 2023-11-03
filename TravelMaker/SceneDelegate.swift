@@ -60,15 +60,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
+            // 카카오 로그인
+            if AuthApi.isKakaoTalkLoginUrl(url) {
+                _ = AuthController.handleOpenUrl(url: url)
+                return
+            }
+            
             // 네이버 로그인
             NaverThirdPartyLoginConnection
                 .getSharedInstance()?
                 .receiveAccessToken(url)
-            
-            // 카카오 로그인
-            if AuthApi.isKakaoTalkLoginUrl(url) {
-                _ = AuthController.handleOpenUrl(url: url)
-            }
         }
     }
 }
