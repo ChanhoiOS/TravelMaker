@@ -13,6 +13,10 @@
 		090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9F12ADE7985005081F8 /* AroundMeCustomView.swift */; };
 		09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112BF12AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift */; };
 		09112BF52AE8D6D5001AFDC6 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112BF42AE8D6D5001AFDC6 /* PaddingLabel.swift */; };
+		0914EF7B2AF4AD12008F1E5B /* MyRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0914EF792AF4AD12008F1E5B /* MyRouteView.swift */; };
+		0914EF7C2AF4AD12008F1E5B /* MyRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0914EF7A2AF4AD12008F1E5B /* MyRouteView.xib */; };
+		0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0914EF7E2AF4B246008F1E5B /* MyRouteCollectionViewCell.swift */; };
+		0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */; };
 		091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */; };
 		091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */; };
 		091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */; };
@@ -122,6 +126,10 @@
 		090FB9F12ADE7985005081F8 /* AroundMeCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMeCustomView.swift; sourceTree = "<group>"; };
 		09112BF12AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMeRecordCustomView.swift; sourceTree = "<group>"; };
 		09112BF42AE8D6D5001AFDC6 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		0914EF792AF4AD12008F1E5B /* MyRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouteView.swift; sourceTree = "<group>"; };
+		0914EF7A2AF4AD12008F1E5B /* MyRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRouteView.xib; sourceTree = "<group>"; };
+		0914EF7E2AF4B246008F1E5B /* MyRouteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouteCollectionViewCell.swift; sourceTree = "<group>"; };
+		0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRouteCollectionViewCell.xib; sourceTree = "<group>"; };
 		091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNearMe.swift; sourceTree = "<group>"; };
 		091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNearMe.xib; sourceTree = "<group>"; };
 		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
@@ -265,6 +273,25 @@
 				09112BF42AE8D6D5001AFDC6 /* PaddingLabel.swift */,
 			);
 			path = PaddingLabel;
+			sourceTree = "<group>";
+		};
+		0914EF782AF4ACF3008F1E5B /* MyRoute */ = {
+			isa = PBXGroup;
+			children = (
+				0914EF7D2AF4B1A5008F1E5B /* Cell */,
+				0914EF792AF4AD12008F1E5B /* MyRouteView.swift */,
+				0914EF7A2AF4AD12008F1E5B /* MyRouteView.xib */,
+			);
+			path = MyRoute;
+			sourceTree = "<group>";
+		};
+		0914EF7D2AF4B1A5008F1E5B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0914EF7E2AF4B246008F1E5B /* MyRouteCollectionViewCell.swift */,
+				0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		091B19A02AD4E4A6009A6AF1 /* RegisterAround */ = {
@@ -749,6 +776,7 @@
 				09BF583B2AD7E04400DCF822 /* SearchSpace */,
 				091D5F472AB189CB00D58FA2 /* Collection */,
 				091D5F412AB17F6000D58FA2 /* Mypage */,
+				0914EF782AF4ACF3008F1E5B /* MyRoute */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -899,6 +927,7 @@
 				09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */,
 				09A83F0C2AAEE8AF0082A6A2 /* SUIT-Heavy.otf in Resources */,
 				09A83F0B2AAEE8AF0082A6A2 /* SUIT-Medium.otf in Resources */,
+				0914EF7C2AF4AD12008F1E5B /* MyRouteView.xib in Resources */,
 				09BF583F2AD7E07600DCF822 /* SearchSpaceView.xib in Resources */,
 				09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */,
 				09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */,
@@ -914,6 +943,7 @@
 				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
 				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
+				0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
 				09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */,
@@ -995,6 +1025,7 @@
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
+				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
 				091D5F452AB17F8C00D58FA2 /* MyPageView.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
@@ -1015,6 +1046,7 @@
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
+				0914EF7B2AF4AD12008F1E5B /* MyRouteView.swift in Sources */,
 				0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */,
 				090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */,
 				09CDB73E2AF0C20300044CF2 /* BottomSheetView.swift in Sources */,
