@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
+		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */; };
 		090FB9EC2ADE553D005081F8 /* SearchSpaceSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */; };
 		090FB9EE2ADE5B48005081F8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */; };
@@ -120,6 +122,8 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouteView.swift; sourceTree = "<group>"; };
+		08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterRouteView.xib; sourceTree = "<group>"; };
 		090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceSelectView.swift; sourceTree = "<group>"; };
 		090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpaceSelectView.xib; sourceTree = "<group>"; };
 		090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -247,6 +251,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08FA166D2AFBAA3E00E9C452 /* RegisterRoute */ = {
+			isa = PBXGroup;
+			children = (
+				08FA166E2AFBAA4D00E9C452 /* View */,
+			);
+			path = RegisterRoute;
+			sourceTree = "<group>";
+		};
+		08FA166E2AFBAA4D00E9C452 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */,
+				08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		090FB9EF2ADE7942005081F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,13 +313,6 @@
 				0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		091B19A02AD4E4A6009A6AF1 /* RegisterAround */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RegisterAround;
 			sourceTree = "<group>";
 		};
 		091B19A12AD4E716009A6AF1 /* RegisterNearMe */ = {
@@ -760,7 +774,6 @@
 		09D7B17B2AAAFE9100991841 /* TravelMaker */ = {
 			isa = PBXGroup;
 			children = (
-				091B19A02AD4E4A6009A6AF1 /* RegisterAround */,
 				091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */,
 				09591B7D2AAFF43100A3F0D6 /* Common */,
 				09A83F1C2AAF05B90082A6A2 /* Network */,
@@ -777,6 +790,7 @@
 				091D5F472AB189CB00D58FA2 /* Collection */,
 				091D5F412AB17F6000D58FA2 /* Mypage */,
 				0914EF782AF4ACF3008F1E5B /* MyRoute */,
+				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -947,6 +961,7 @@
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
 				09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */,
+				08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */,
 				09A83F072AAEE8AF0082A6A2 /* SUIT-Thin.otf in Resources */,
 				09A83EEB2AAE9C9B0082A6A2 /* RecommendView.xib in Resources */,
 			);
@@ -1058,6 +1073,7 @@
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 				09C4BA7F2AD9350100BE8376 /* SearchSpaceModel.swift in Sources */,
 				09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */,
+				08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

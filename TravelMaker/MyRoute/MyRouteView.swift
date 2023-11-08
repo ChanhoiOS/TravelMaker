@@ -32,13 +32,22 @@ class MyRouteView: UIViewController {
 
 extension MyRouteView {
     func setGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
-        backBtn.addGestureRecognizer(tapGesture)
+        let backGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
+        backBtn.addGestureRecognizer(backGesture)
         backBtn.isUserInteractionEnabled = true
+        
+        let plusGesture = UITapGestureRecognizer(target: self, action: #selector(registerAction))
+        plusBtn.addGestureRecognizer(plusGesture)
+        plusBtn.isUserInteractionEnabled = true
     }
     
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func registerAction(sender: UITapGestureRecognizer) {
+        let registerRoute = RegisterRouteView(nibName: "RegisterRouteView", bundle: nil)
+        self.navigationController?.pushViewController(registerRoute, animated: true)
     }
 }
 
