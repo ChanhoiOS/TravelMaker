@@ -14,12 +14,6 @@ class MyCollectionView: UIViewController {
 
     let flexView = UIView()
     
-    private let backBtn: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "header_back_btn.png")
-        return imageView
-    }()
-    
     private let pageTitle: UILabel = {
         let label = UILabel()
         label.text = "컬렉션"
@@ -145,10 +139,8 @@ class MyCollectionView: UIViewController {
         view.addSubview(flexView)
         
         flexView.flex.define { flex in
-            flex.addItem().direction(.row).height(59).alignItems(.center).justifyContent(.spaceBetween).define { flex in
-                flex.addItem(backBtn).marginLeft(24).width(32).height(32)
+            flex.addItem().direction(.row).height(59).alignItems(.center).justifyContent(.center).define { flex in
                 flex.addItem(pageTitle)
-                flex.addItem().marginRight(24).width(32)
             }
             
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).define { flex in

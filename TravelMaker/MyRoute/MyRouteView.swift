@@ -19,6 +19,7 @@ class MyRouteView: UIViewController {
         super.viewDidLoad()
         
         setCollectionView()
+        setGesture()
     }
     
     func setCollectionView() {
@@ -26,6 +27,18 @@ class MyRouteView: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "MyRouteCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyRouteCollectionViewCell")
+    }
+}
+
+extension MyRouteView {
+    func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
+        backBtn.addGestureRecognizer(tapGesture)
+        backBtn.isUserInteractionEnabled = true
+    }
+    
+    @objc func backBtnAction(sender: UITapGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
