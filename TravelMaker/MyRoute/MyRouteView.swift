@@ -37,10 +37,13 @@ extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyRouteCollectionViewCell", for: indexPath) as! MyRouteCollectionViewCell
         
+        cell.contentView.layer.borderColor = Colors.DESIGN_WHITE.cgColor
+        cell.contentView.layer.borderWidth = 1
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width / 4, height: self.view.bounds.height / 4)
+        return CGSize(width: self.view.bounds.width - 48, height: 260)
     }
 }
