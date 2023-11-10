@@ -24,7 +24,6 @@
                 <outlet property="bannerConstraint" destination="C0a-sM-DsN" id="Rir-ZS-g5S"/>
                 <outlet property="removeLabel" destination="NDZ-ID-vcK" id="wBT-KP-HpK"/>
                 <outlet property="spaceStackView" destination="DYq-8p-Rk7" id="6P8-5J-HEv"/>
-                <outlet property="stackConstraint" destination="xLN-qd-QW6" id="095-ie-alx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,10 +59,10 @@
                         <constraint firstItem="RQs-xE-Bwn" firstAttribute="centerY" secondItem="4Hm-Oo-7ZG" secondAttribute="centerY" id="y2z-e1-3OH"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VJ-P1-dXs">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8VJ-P1-dXs">
                     <rect key="frame" x="0.0" y="118" width="393" height="631"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOM-A9-nHn">
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOM-A9-nHn">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="631"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myroute_banner" translatesAutoresizingMaskIntoConstraints="NO" id="oga-cd-Ol7">
@@ -121,13 +120,10 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-8p-Rk7">
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-8p-Rk7">
                                     <rect key="frame" x="24" y="420" width="345" height="60"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="xLN-qd-QW6"/>
-                                    </constraints>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="426-NZ-AM2">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="426-NZ-AM2">
                                     <rect key="frame" x="24" y="512" width="29.666666666666671" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="x5o-Wn-iTT"/>
@@ -136,7 +132,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30j-sI-aMt">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30j-sI-aMt">
                                     <rect key="frame" x="256" y="504" width="113" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="113" id="RV4-7d-8oa"/>

@@ -11,7 +11,6 @@ import SnapKit
 
 class RegisterRouteView: UIViewController {
 
-    @IBOutlet weak var stackConstraint: NSLayoutConstraint!
     @IBOutlet weak var bannerConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var spaceStackView: UIStackView!
@@ -24,12 +23,11 @@ class RegisterRouteView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setStackView()
         setGesture()
     }
 
-
     @IBAction func imageAction(_ sender: Any) {
-        
         bannerConstraint.constant = 180
     }
     
@@ -37,6 +35,14 @@ class RegisterRouteView: UIViewController {
        
     }
     
+    func setStackView() {
+        spaceStackView.spacing = 20
+        spaceStackView.distribution = .equalSpacing
+        spaceStackView.isLayoutMarginsRelativeArrangement = true
+        spaceStackView.layoutMargins.top = 20.0
+        spaceStackView.layoutMargins.left = 0
+        spaceStackView.layoutMargins.right = 0
+    }
 }
 
 extension RegisterRouteView {
@@ -52,26 +58,30 @@ extension RegisterRouteView {
     
     @objc func addStackSpace(sender: UITapGestureRecognizer) {
         count += 1
-        
-        stackConstraint.constant = CGFloat(count * 60)
         let view = UIView()
-        view.backgroundColor = .green
+        view.snp.makeConstraints { make in
+            make.height.equalTo(60)
+        }
+        let label = UILabel()
+        view.addSubview(label)
+        
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        label.text = String(count)
+       
         view.tag = count
         spaceStackView.addArrangedSubview(view)
-        
-       
     }
     
     @objc func removeStackSpace(sender: UITapGestureRecognizer) {
         let subviews = spaceStackView.arrangedSubviews
     
-        
         for subView in subviews {
             if let target = subView.viewWithTag(count) {
                 spaceStackView.removeArrangedSubview(target)
                 subView.removeFromSuperview()
                 count -= 1
-                stackConstraint.constant = CGFloat(count * 60)
             }
         }
         
