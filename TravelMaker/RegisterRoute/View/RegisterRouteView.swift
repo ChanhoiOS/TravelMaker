@@ -29,6 +29,9 @@ class RegisterRouteView: UIViewController {
     @IBOutlet weak var arriveArrow: UIImageView!
     @IBOutlet weak var addImageBtn: UIButton!
     
+    var subViewIndex: Array<UIView>.Index?
+    var removeIndex = 0
+    
     var disposeBag = DisposeBag()
     
     var spaceFirstView: UIView!
@@ -89,7 +92,7 @@ class RegisterRouteView: UIViewController {
                 
                 checkBtn.rx.controlEvent(.touchDown)
                     .bind(onNext: { [weak self] _ in
-                        self?.checkSpace()
+                        self?.checkSpace(self?.subViewIndex)
                     })
                     .disposed(by: disposeBag)
                 
@@ -116,12 +119,91 @@ class RegisterRouteView: UIViewController {
             
         
         spaceStackView.addArrangedSubview(spaceFirstView)
+        
+        subViewIndex = spaceStackView.arrangedSubviews.firstIndex(of: spaceFirstView)
     }
 }
 
 extension RegisterRouteView {
-    func checkSpace() {
-        print("호출")
+    @objc func addStackSpace(sender: UITapGestureRecognizer) {
+        count += 1
+        
+        let addSpaceView = UIView()
+            .then {
+                $0.snp.makeConstraints { make in
+                    make.height.equalTo(60)
+                }
+                
+                $0.layer.borderColor = Colors.DESIGN_GRAY.cgColor
+                $0.layer.borderWidth = 1
+                $0.layer.cornerRadius = 4
+            }
+            .then {
+                var checkBtn = UIButton()
+                checkBtn.setImage(UIImage(systemName: "checkmark.rectangle.fill"), for: .normal)
+                $0.addSubview(checkBtn)
+                
+                checkBtn.snp.makeConstraints { make in
+                    make.left.equalToSuperview().offset(16)
+                    make.width.height.equalTo(24)
+                    make.centerY.equalToSuperview()
+                }
+           
+                
+                var searchImage = UIImageView()
+                searchImage.image = UIImage(named: "myroute_search")
+                $0.addSubview(searchImage)
+                
+                searchImage.snp.makeConstraints { make in
+                    make.right.equalToSuperview().offset(-16)
+                    make.width.height.equalTo(28)
+                    make.centerY.equalToSuperview()
+                }
+                
+                var spaceLabel = UILabel()
+                spaceLabel.text = "장소 선택"
+                $0.addSubview(spaceLabel)
+                
+                spaceLabel.snp.makeConstraints { make in
+                    make.left.equalTo(checkBtn.snp.right).offset(10)
+                    make.right.equalTo(searchImage.snp.left).offset(16)
+                    make.centerY.equalToSuperview()
+                }
+                
+                spaceStackView.addArrangedSubview($0)
+                
+                if let index = spaceStackView.arrangedSubviews.firstIndex(of: $0) {
+                    
+                    checkBtn.rx.controlEvent(.touchDown)
+                        .bind(onNext: { [weak self] _ in
+                            self?.checkSpace(index)
+                        })
+                        .disposed(by: disposeBag)
+                }
+            }
+    }
+    
+    @objc func removeStackSpace(sender: UITapGestureRecognizer) {
+        let subView = spaceStackView.arrangedSubviews[removeIndex]
+        spaceStackView.removeArrangedSubview(subView)
+        subView.removeFromSuperview()
+    }
+    
+    func checkSpace(_ index: Array<UIView>.Index?) {
+        let subView = spaceStackView.arrangedSubviews[index ?? 0]
+        
+        for sub in subView.subviews {
+            if let checkBtn = sub as? UIButton {
+                checkBtn.isSelected.toggle()
+                
+                if checkBtn.isSelected {
+                    checkBtn.setImage(UIImage(systemName: "checkmark.rectangle.fill"), for: .normal)
+                    removeIndex = index ?? 0
+                } else {
+                    checkBtn.setImage(UIImage(systemName: "checkmark.rectangle"), for: .normal)
+                }
+            }
+        }
     }
 }
 
@@ -134,37 +216,5 @@ extension RegisterRouteView {
         let removeSpace = UITapGestureRecognizer(target: self, action: #selector(removeStackSpace))
         removeLabel.isUserInteractionEnabled = true
         removeLabel.addGestureRecognizer(removeSpace)
-    }
-    
-    @objc func addStackSpace(sender: UITapGestureRecognizer) {
-        count += 1
-        let view = UIView()
-        view.snp.makeConstraints { make in
-            make.height.equalTo(60)
-        }
-        let label = UILabel()
-        view.addSubview(label)
-        
-        label.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        label.text = String(count)
-       
-        view.tag = count
-        spaceStackView.addArrangedSubview(view)
-    }
-    
-    @objc func removeStackSpace(sender: UITapGestureRecognizer) {
-        let subviews = spaceStackView.arrangedSubviews
-    
-        for subView in subviews {
-            if let target = subView.viewWithTag(count) {
-                spaceStackView.removeArrangedSubview(target)
-                subView.removeFromSuperview()
-                count -= 1
-            }
-        }
-        
-        
     }
 }
