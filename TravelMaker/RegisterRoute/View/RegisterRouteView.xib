@@ -23,7 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterRouteView" customModule="TravelMaker" customModuleProvider="target">
             <connections>
                 <outlet property="addImageBtn" destination="30j-sI-aMt" id="ROf-wV-cGd"/>
-                <outlet property="addLabel" destination="FDF-Kr-m93" id="cb9-ID-wVE"/>
+                <outlet property="addLabel" destination="NDZ-ID-vcK" id="JSK-rg-CkT"/>
                 <outlet property="arriveArrow" destination="DRo-Al-6xA" id="Hz0-QB-3j4"/>
                 <outlet property="arriveLabel" destination="pLQ-N1-xeZ" id="snd-aY-cLa"/>
                 <outlet property="arriveView" destination="B7q-oc-vY4" id="3zs-8O-k8C"/>
@@ -33,7 +33,6 @@
                 <outlet property="departArrow" destination="dNP-ua-fFV" id="7AS-l6-LbF"/>
                 <outlet property="departLabel" destination="s6I-or-S9I" id="glW-pb-GYr"/>
                 <outlet property="departView" destination="jad-re-Uro" id="Vmv-l0-pho"/>
-                <outlet property="removeLabel" destination="NDZ-ID-vcK" id="wBT-KP-HpK"/>
                 <outlet property="spaceStackView" destination="DYq-8p-Rk7" id="6P8-5J-HEv"/>
                 <outlet property="titleTextField" destination="tuL-Cn-RhJ" id="9gB-m7-x6Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -218,13 +217,13 @@
                                         </attributedString>
                                     </buttonConfiguration>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDZ-ID-vcK">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDZ-ID-vcK">
                                     <rect key="frame" x="341" y="384" width="28" height="20"/>
                                     <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="16"/>
-                                    <color key="textColor" red="1" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-Kr-m93">
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-Kr-m93">
                                     <rect key="frame" x="297" y="384" width="28" height="20"/>
                                     <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="16"/>
                                     <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>

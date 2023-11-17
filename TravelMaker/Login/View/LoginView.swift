@@ -278,7 +278,7 @@ extension LoginView: SocialLoginDelegate {
     }
     
     func socialLogin(_ type: LoginType, id: String) {
-        wrapper.requestPost(target: .login("kakao", "12345"), instance: LoginModel.self) { response in
+        wrapper.requestPost(target: .login("kakao", "123456"), instance: LoginModel.self) { response in
             switch response {
             case .success(let data):
                 self.goToMain(data)
