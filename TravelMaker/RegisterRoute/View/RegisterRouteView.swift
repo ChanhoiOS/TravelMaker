@@ -10,6 +10,7 @@ import Then
 import SnapKit
 import RxSwift
 import RxCocoa
+import RxGesture
 
 class RegisterRouteView: UIViewController {
 
@@ -99,6 +100,7 @@ extension RegisterRouteView {
                 
                 let searchImage = UIImageView()
                 searchImage.image = UIImage(named: "myroute_search")
+                searchImage.tag = spaceStackView.subviews.count + 100
                 $0.addSubview(searchImage)
                 
                 searchImage.snp.makeConstraints { make in
@@ -107,8 +109,16 @@ extension RegisterRouteView {
                     make.centerY.equalToSuperview()
                 }
                 
+                $0.rx.tapGesture()
+                        .when(.recognized)
+                        .subscribe(onNext: { [weak self] _ in
+                            self?.searchSpace(searchImage.tag)
+                        })
+                    .disposed(by: disposeBag)
+                
                 let spaceLabel = UILabel()
                 spaceLabel.text = "장소 선택"
+                spaceLabel.tag = spaceStackView.subviews.count + 200
                 $0.addSubview(spaceLabel)
                 
                 spaceLabel.snp.makeConstraints { make in
@@ -139,8 +149,22 @@ extension RegisterRouteView {
                 if let removeBtn = piece as? UIButton {
                     removeBtn.tag = index
                 }
+                
+                if let searchImage = piece as? UIImageView {
+                    searchImage.tag = index + 100
+                }
+                
+                if let spaceLabel = piece as? UILabel {
+                    spaceLabel.tag = index + 200
+                }
             }
         }
+    }
+}
+
+extension RegisterRouteView {
+    func searchSpace(_ index: Int) {
+        print("index: ", index)
     }
 }
 

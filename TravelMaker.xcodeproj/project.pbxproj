@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A6AF4C2B0A2E520045EAFA /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 08A6AF4B2B0A2E520045EAFA /* RxGesture */; };
 		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
 		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */; };
@@ -238,6 +239,7 @@
 				09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */,
 				091D5F382AB1551B00D58FA2 /* KakaoSDKShare in Frameworks */,
 				09A83F152AAF05060082A6A2 /* CombineMoya in Frameworks */,
+				08A6AF4C2B0A2E520045EAFA /* RxGesture in Frameworks */,
 				09A83F1B2AAF05060082A6A2 /* RxMoya in Frameworks */,
 				09CAB1532AD508230077B46F /* Then in Frameworks */,
 				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
@@ -880,6 +882,7 @@
 				09BF58302AD78F5C00DCF822 /* Kingfisher */,
 				09C4BA772AD9059300BE8376 /* ReactorKit */,
 				099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */,
+				08A6AF4B2B0A2E520045EAFA /* RxGesture */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -922,6 +925,7 @@
 				09BF582F2AD78F5C00DCF822 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
+				08A6AF4A2B0A2E520045EAFA /* XCRemoteSwiftPackageReference "RxGesture" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -1311,6 +1315,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		08A6AF4A2B0A2E520045EAFA /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
 		091D5F302AB1551A00D58FA2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -1410,6 +1422,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		08A6AF4B2B0A2E520045EAFA /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08A6AF4A2B0A2E520045EAFA /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
 		091D5F312AB1551B00D58FA2 /* KakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 091D5F302AB1551A00D58FA2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
