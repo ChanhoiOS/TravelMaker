@@ -21,6 +21,7 @@ class SearchRouteView: BaseViewController, StoryboardView {
     var disposeBag = DisposeBag()
     let reactor = SearchRouteViewReactor()
     var searchResult: SearchRouteModel?
+    var index = 0
     
     var latitude = 37.50518440330725
     var longitude = 127.05485569769449
@@ -260,6 +261,7 @@ extension SearchRouteView: UITableViewDelegate, UITableViewDataSource {
         selectView.placeName = searchResult?.documents?[indexPath.row].placeName ?? ""
         selectView.address = searchResult?.documents?[indexPath.row].addressName ?? ""
         selectView.categoryName = searchResult?.documents?[indexPath.row].categoryName ?? ""
+        selectView.index = index
         self.navigationController?.pushViewController(selectView, animated: true)
     }
 }

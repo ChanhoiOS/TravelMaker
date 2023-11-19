@@ -28,6 +28,7 @@ class SearchRouteSelectView: UIViewController {
     var placeName = ""
     var address = ""
     var categoryName = ""
+    var index = 0
     
     let searchRouteViewModel = SearchRouteViewModel.shared
     
@@ -150,6 +151,7 @@ extension SearchRouteSelectView: ArroundMeCustomViewDelegate {
         data["placeTitle"] = placeName
         data["address"] = address
         data["categoryName"] = categoryName
+        data["index"] = index
         
         searchRouteViewModel.requestSelectedData.onNext(data)
         

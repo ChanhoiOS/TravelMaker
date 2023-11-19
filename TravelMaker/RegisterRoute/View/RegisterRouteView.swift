@@ -169,6 +169,7 @@ extension RegisterRouteView {
     func searchSpace(_ index: Int) {
         let searchView = SearchRouteView(nibName: "SearchRouteView", bundle: nil)
         searchView.reactor = SearchRouteViewReactor()
+        searchView.index = index
         self.navigationController?.pushViewController(searchView, animated: true)
     }
 }
@@ -177,10 +178,24 @@ extension RegisterRouteView {
     func setData() {
         searchRouteViewModel.responseSelectedData
             .subscribe(onNext: { [weak self] data in
-                print("data: ", data)
-                //self?.spaceTextField.text = data["placeTitle"] as? String
+                self?.setTitle(data)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func setTitle(_ data: [String: Any]) {
+        let index = data["index"] as? Int ?? 0
+        let labelIndex = index + 100
+        
+        for (index, sub) in spaceStackView.subviews.enumerated() {
+            for piece in sub.subviews {
+                if let spaceLabel = piece as? UILabel {
+                    if spaceLabel.tag == labelIndex {
+                        spaceLabel.text = data["placeTitle"] as? String
+                    }
+                }
+            }
+        }
     }
 }
 
