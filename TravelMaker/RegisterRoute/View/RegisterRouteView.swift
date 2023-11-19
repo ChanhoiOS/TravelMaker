@@ -32,6 +32,7 @@ class RegisterRouteView: UIViewController {
     var subViewIndex: Array<UIView>.Index?
     var removeIndex = 0
     
+    var searchRouteViewModel = SearchRouteViewModel.shared
     var disposeBag = DisposeBag()
     
     var spaceFirstView: UIView!
@@ -43,6 +44,8 @@ class RegisterRouteView: UIViewController {
         setUI()
         setStackView()
         setGesture()
+        
+        setData()
     }
     
     func setUI() {
@@ -167,6 +170,17 @@ extension RegisterRouteView {
         let searchView = SearchRouteView(nibName: "SearchRouteView", bundle: nil)
         searchView.reactor = SearchRouteViewReactor()
         self.navigationController?.pushViewController(searchView, animated: true)
+    }
+}
+
+extension RegisterRouteView {
+    func setData() {
+        searchRouteViewModel.responseSelectedData
+            .subscribe(onNext: { [weak self] data in
+                print("data: ", data)
+                //self?.spaceTextField.text = data["placeTitle"] as? String
+            })
+            .disposed(by: disposeBag)
     }
 }
 

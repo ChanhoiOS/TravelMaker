@@ -1,17 +1,17 @@
 //
-//  SearchSpaceViewModel.swift
+//  SearchRouteViewModel.swift
 //  TravelMaker
 //
-//  Created by 이찬호 on 10/23/23.
+//  Created by 이찬호 on 11/19/23.
 //
 
 import Foundation
 import RxSwift
 import RxCocoa
 
-class SearchSpaceViewModel {
+class SearchRouteViewModel {
     
-    static let shared = SearchSpaceViewModel()
+    static let shared = SearchRouteViewModel()
 
     var disposedBag = DisposeBag()
 
@@ -25,7 +25,7 @@ class SearchSpaceViewModel {
     }
 }
 
-extension SearchSpaceViewModel {
+extension SearchRouteViewModel {
     func dataMove(_ data: [String: Any]) {
         responseSelectedData.onNext(data)
     }
