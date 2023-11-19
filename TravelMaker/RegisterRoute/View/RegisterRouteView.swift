@@ -164,7 +164,9 @@ extension RegisterRouteView {
 
 extension RegisterRouteView {
     func searchSpace(_ index: Int) {
-        print("index: ", index)
+        let searchView = SearchRouteView(nibName: "SearchRouteView", bundle: nil)
+        searchView.reactor = SearchRouteViewReactor()
+        self.navigationController?.pushViewController(searchView, animated: true)
     }
 }
 

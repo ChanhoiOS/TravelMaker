@@ -1,0 +1,114 @@
+//
+//  SearchRouteViewReactor.swift
+//  TravelMaker
+//
+//  Created by 이찬호 on 11/19/23.
+//
+
+import Foundation
+import RxSwift
+import ReactorKit
+import RxCocoa
+import Alamofire
+import CoreLocation
+
+class SearchRouteViewReactor: Reactor {
+    let initialState = State()
+    var disposeBag = DisposeBag()
+    
+    enum Action {
+        case location(Void)
+        case search(String?, Double, Double)
+    }
+        
+    enum Mutation {
+        case setLocation(CLLocationCoordinate2D?)
+        case setResult(SearchRouteModel?)
+    }
+        
+    struct State {
+        var locationResult: CLLocationCoordinate2D?
+        var searchResult: SearchRouteModel?
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .location:
+            return Observable.concat([
+                self.getLocation()
+            ])
+            
+        case .search(let text, let x, let y):
+            return Observable.concat([
+                self.searchRoute(text ?? "", x, y)
+            ])
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        switch mutation {
+        case .setLocation(let location):
+            state.locationResult = location
+        case .setResult(let data):
+            state.searchResult = data
+        }
+        
+        return state
+    }
+}
+
+extension SearchRouteViewReactor {
+    func getCommonHeaders() -> HTTPHeaders {
+        let headers: HTTPHeaders = [
+            "Authorization": "KakaoAK 6c8efb7c415446c40b0a1ffb43babe9a",
+            "Content-Type": "application/json"
+        ]
+        
+        return headers
+    }
+    
+    
+    func searchRoute(_ text: String, _ x: Double, _ y: Double) -> Observable<Mutation> {
+        let url = "https://dapi.kakao.com/v2/local/search/keyword.json"
+        var param = [String: Any]()
+        param["query"] = text
+        param["x"] = x
+        param["y"] = y
+        param["page"] = 1
+        param["size"] = 15
+        param["sort"] = "accuracy"
+        
+        return Observable<Mutation>.create { observer -> Disposable in
+            AF.request(url,
+                       method: .get,
+                       parameters: param,
+                       encoding: URLEncoding.queryString,
+                       headers: self.getCommonHeaders())
+            .responseDecodable(of: SearchRouteModel.self) { response in
+                switch response.result {
+                case .success(let data):
+                    observer.onNext(.setResult(data))
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            
+            return Disposables.create()
+        }
+    }
+}
+
+extension SearchRouteViewReactor {
+    func getLocation() -> Observable<Mutation> {
+        return Observable<Mutation>.create { observer -> Disposable in
+            
+            LocationManager.shared.locationSubject
+                .compactMap { $0 }
+                .bind { location in
+                    observer.onNext(.setLocation(location))
+                }
+            }
+            
+        }
+}

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		08A6AF4C2B0A2E520045EAFA /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 08A6AF4B2B0A2E520045EAFA /* RxGesture */; };
+		08A6AF512B0A319D0045EAFA /* SearchRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF4F2B0A319D0045EAFA /* SearchRouteView.swift */; };
+		08A6AF522B0A319D0045EAFA /* SearchRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A6AF502B0A319D0045EAFA /* SearchRouteView.xib */; };
+		08A6AF552B0A32240045EAFA /* SearchRouteViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF542B0A32240045EAFA /* SearchRouteViewReactor.swift */; };
+		08A6AF582B0A33710045EAFA /* SearchRouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF572B0A33710045EAFA /* SearchRouteCell.swift */; };
+		08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF5A2B0A33C00045EAFA /* SearchRouteModel.swift */; };
 		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
 		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */; };
@@ -123,6 +128,11 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		08A6AF4F2B0A319D0045EAFA /* SearchRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteView.swift; sourceTree = "<group>"; };
+		08A6AF502B0A319D0045EAFA /* SearchRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteView.xib; sourceTree = "<group>"; };
+		08A6AF542B0A32240045EAFA /* SearchRouteViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewReactor.swift; sourceTree = "<group>"; };
+		08A6AF572B0A33710045EAFA /* SearchRouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteCell.swift; sourceTree = "<group>"; };
+		08A6AF5A2B0A33C00045EAFA /* SearchRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteModel.swift; sourceTree = "<group>"; };
 		08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouteView.swift; sourceTree = "<group>"; };
 		08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterRouteView.xib; sourceTree = "<group>"; };
 		090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceSelectView.swift; sourceTree = "<group>"; };
@@ -253,6 +263,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A6AF4D2B0A313A0045EAFA /* SearchRoute */ = {
+			isa = PBXGroup;
+			children = (
+				08A6AF592B0A33B40045EAFA /* Model */,
+				08A6AF562B0A33600045EAFA /* Cell */,
+				08A6AF532B0A32100045EAFA /* Reactor */,
+				08A6AF4E2B0A318D0045EAFA /* View */,
+			);
+			path = SearchRoute;
+			sourceTree = "<group>";
+		};
+		08A6AF4E2B0A318D0045EAFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08A6AF4F2B0A319D0045EAFA /* SearchRouteView.swift */,
+				08A6AF502B0A319D0045EAFA /* SearchRouteView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08A6AF532B0A32100045EAFA /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				08A6AF542B0A32240045EAFA /* SearchRouteViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		08A6AF562B0A33600045EAFA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				08A6AF572B0A33710045EAFA /* SearchRouteCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		08A6AF592B0A33B40045EAFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08A6AF5A2B0A33C00045EAFA /* SearchRouteModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		08FA166D2AFBAA3E00E9C452 /* RegisterRoute */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +847,7 @@
 				091D5F412AB17F6000D58FA2 /* Mypage */,
 				0914EF782AF4ACF3008F1E5B /* MyRoute */,
 				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
+				08A6AF4D2B0A313A0045EAFA /* SearchRoute */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -945,6 +1000,7 @@
 				09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */,
 				09A83F0C2AAEE8AF0082A6A2 /* SUIT-Heavy.otf in Resources */,
 				09A83F0B2AAEE8AF0082A6A2 /* SUIT-Medium.otf in Resources */,
+				08A6AF522B0A319D0045EAFA /* SearchRouteView.xib in Resources */,
 				0914EF7C2AF4AD12008F1E5B /* MyRouteView.xib in Resources */,
 				09BF583F2AD7E07600DCF822 /* SearchSpaceView.xib in Resources */,
 				09A83F0D2AAEE8AF0082A6A2 /* SUIT-SemiBold.otf in Resources */,
@@ -1021,6 +1077,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */,
+				08A6AF512B0A319D0045EAFA /* SearchRouteView.swift in Sources */,
 				09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */,
 				09A83F212AAF09290082A6A2 /* SessionManager.swift in Sources */,
 				090FB9EE2ADE5B48005081F8 /* UIImage+Extension.swift in Sources */,
@@ -1031,9 +1088,11 @@
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
 				09CDB73C2AF0C1C700044CF2 /* PassThroughView.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
+				08A6AF582B0A33710045EAFA /* SearchRouteCell.swift in Sources */,
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
 				0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */,
 				09B318492AD667420060CF20 /* Utils.swift in Sources */,
+				08A6AF552B0A32240045EAFA /* SearchRouteViewReactor.swift in Sources */,
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */,
 				09A83F262AAF0B0E0082A6A2 /* NetworkWrapper.swift in Sources */,
@@ -1042,6 +1101,7 @@
 				090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */,
 				09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */,
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
+				08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */,
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
