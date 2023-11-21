@@ -13,10 +13,11 @@ import RxCocoa
 import RxGesture
 import YPImagePicker
 
-class RegisterRouteView: UIViewController {
+class RegisterRouteView: BaseViewController {
 
     @IBOutlet weak var bannerConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var spaceStackView: UIStackView!
     @IBOutlet weak var banner: UIImageView!
     @IBOutlet weak var backBtn: UIImageView!
@@ -268,5 +269,23 @@ extension RegisterRouteView {
         let addSpace = UITapGestureRecognizer(target: self, action: #selector(addStackSpace))
         addLabel.isUserInteractionEnabled = true
         addLabel.addGestureRecognizer(addSpace)
+        
+        let backGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
+        backBtn.addGestureRecognizer(backGesture)
+        backBtn.isUserInteractionEnabled = true
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(scrollKeyboardHide))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+    }
+    
+    @objc func scrollKeyboardHide(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
+    @objc func backBtnAction(sender: UITapGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

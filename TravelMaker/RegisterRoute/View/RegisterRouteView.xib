@@ -33,6 +33,7 @@
                 <outlet property="departArrow" destination="dNP-ua-fFV" id="7AS-l6-LbF"/>
                 <outlet property="departLabel" destination="s6I-or-S9I" id="glW-pb-GYr"/>
                 <outlet property="departView" destination="jad-re-Uro" id="Vmv-l0-pho"/>
+                <outlet property="scrollView" destination="8VJ-P1-dXs" id="FJb-no-eA5"/>
                 <outlet property="spaceStackView" destination="DYq-8p-Rk7" id="6P8-5J-HEv"/>
                 <outlet property="titleTextField" destination="tuL-Cn-RhJ" id="9gB-m7-x6Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
