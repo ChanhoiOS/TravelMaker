@@ -11,6 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import YPImagePicker
 
 class RegisterRouteView: UIViewController {
 
@@ -36,6 +37,7 @@ class RegisterRouteView: UIViewController {
     var disposeBag = DisposeBag()
     
     var spaceFirstView: UIView!
+    var selectedImage = UIImage()
     var count = 1
     
     override func viewDidLoad() {
@@ -46,6 +48,10 @@ class RegisterRouteView: UIViewController {
         setGesture()
         
         setData()
+    }
+    
+    @IBAction func addBanner(_ sender: Any) {
+        presentToImagePicker()
     }
     
     func setUI() {
@@ -196,6 +202,64 @@ extension RegisterRouteView {
                 }
             }
         }
+    }
+}
+
+extension RegisterRouteView: YPImagePickerDelegate {
+    func presentSelectedPhoto() {
+        banner.image = selectedImage
+        bannerConstraint.constant = 180
+    }
+    
+    func imagePickerHasNoItemsInLibrary(_ picker: YPImagePicker) {
+        print("사진 가져오기 에러")
+    }
+    
+    func shouldAddToSelection(indexPath: IndexPath, numSelections: Int) -> Bool {
+        return true
+    }
+    
+    private func presentToImagePicker() {
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photo
+        config.library.defaultMultipleSelection = false
+        config.library.maxNumberOfItems = 1
+        config.screens = [.library]
+        config.startOnScreen = .library
+        // cropping style 을 square or not 으로 지정.
+        config.library.isSquareByDefault = true
+        // 필터 단계 스킵.
+        config.showsPhotoFilters = false
+        config.showsCrop = .rectangle(ratio: 1.0)
+        
+        config.shouldSaveNewPicturesToAlbum = false
+        
+        let imagePicker = YPImagePicker(configuration: config)
+        imagePicker.imagePickerDelegate = self
+        
+        imagePicker.didFinishPicking { [weak self] items, cancelled in
+            guard let self = self else { return }
+            
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    selectedImage = photo.image
+                case .video(let video):
+                    print("video: ", video)
+                }
+            }
+            
+            imagePicker.dismiss(animated: true) {
+                if !cancelled {
+                    DispatchQueue.main.async {
+                        self.presentSelectedPhoto()
+                    }
+                }
+            }
+        }
+        
+        imagePicker.modalPresentationStyle = .overFullScreen
+        present(imagePicker, animated: true, completion: nil)
     }
 }
 
