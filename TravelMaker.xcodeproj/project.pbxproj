@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A0ACF12B0F79210082161F /* MyRecommendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */; };
+		08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0ACF02B0F79200082161F /* MyRecommendListView.xib */; };
+		08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */; };
+		08A0ACF72B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0ACF52B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib */; };
 		08A6AF4C2B0A2E520045EAFA /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 08A6AF4B2B0A2E520045EAFA /* RxGesture */; };
 		08A6AF512B0A319D0045EAFA /* SearchRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF4F2B0A319D0045EAFA /* SearchRouteView.swift */; };
 		08A6AF522B0A319D0045EAFA /* SearchRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A6AF502B0A319D0045EAFA /* SearchRouteView.xib */; };
@@ -131,6 +135,10 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendListView.swift; sourceTree = "<group>"; };
+		08A0ACF02B0F79200082161F /* MyRecommendListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendListView.xib; sourceTree = "<group>"; };
+		08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
+		08A0ACF52B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendCollectionViewCell.xib; sourceTree = "<group>"; };
 		08A6AF4F2B0A319D0045EAFA /* SearchRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteView.swift; sourceTree = "<group>"; };
 		08A6AF502B0A319D0045EAFA /* SearchRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteView.xib; sourceTree = "<group>"; };
 		08A6AF542B0A32240045EAFA /* SearchRouteViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewReactor.swift; sourceTree = "<group>"; };
@@ -269,6 +277,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A0ACED2B0F787B0082161F /* MyRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				08A0ACF32B0F7A390082161F /* Cell */,
+				08A0ACEE2B0F78C20082161F /* View */,
+			);
+			path = MyRecommend;
+			sourceTree = "<group>";
+		};
+		08A0ACEE2B0F78C20082161F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */,
+				08A0ACF02B0F79200082161F /* MyRecommendListView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08A0ACF32B0F7A390082161F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */,
+				08A0ACF52B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		08A6AF4D2B0A313A0045EAFA /* SearchRoute */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +900,7 @@
 				0914EF782AF4ACF3008F1E5B /* MyRoute */,
 				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
 				08A6AF4D2B0A313A0045EAFA /* SearchRoute */,
+				08A0ACED2B0F787B0082161F /* MyRecommend */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -1013,6 +1049,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A0ACF72B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib in Resources */,
 				090FB9EC2ADE553D005081F8 /* SearchSpaceSelectView.xib in Resources */,
 				09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */,
 				09A83F0C2AAEE8AF0082A6A2 /* SUIT-Heavy.otf in Resources */,
@@ -1034,6 +1071,7 @@
 				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
 				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
+				08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */,
 				0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */,
@@ -1105,12 +1143,14 @@
 				09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */,
 				09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */,
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
+				08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */,
 				09CDB73C2AF0C1C700044CF2 /* PassThroughView.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
 				08A6AF582B0A33710045EAFA /* SearchRouteCell.swift in Sources */,
 				09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */,
 				0960FFA22AE64979004D9068 /* ResponseRegisterNearMeModel.swift in Sources */,
 				09B318492AD667420060CF20 /* Utils.swift in Sources */,
+				08A0ACF12B0F79210082161F /* MyRecommendListView.swift in Sources */,
 				08A6AF552B0A32240045EAFA /* SearchRouteViewReactor.swift in Sources */,
 				09591B8E2AB020F600A3F0D6 /* BaseViewController.swift in Sources */,
 				0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */,

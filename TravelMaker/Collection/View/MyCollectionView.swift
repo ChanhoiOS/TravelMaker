@@ -215,11 +215,27 @@ class MyCollectionView: UIViewController {
 
 extension MyCollectionView {
     func setGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goMyRoute))
-        myRouteListView.addGestureRecognizer(tapGesture)
-        myRouteListView.isUserInteractionEnabled = true
+        let myRecommend = UITapGestureRecognizer(target: self, action: #selector(goMyRecommendList))
+        recommendListView.addGestureRecognizer(myRecommend)
+        recommendListView.isUserInteractionEnabled = true
         
-        self.view.addGestureRecognizer(tapGesture)
+        let mySpace = UITapGestureRecognizer(target: self, action: #selector(goMySpaceList))
+        mySpaceListView.addGestureRecognizer(mySpace)
+        mySpaceListView.isUserInteractionEnabled = true
+        
+        let myRoute = UITapGestureRecognizer(target: self, action: #selector(goMyRoute))
+        myRouteListView.addGestureRecognizer(myRoute)
+        myRouteListView.isUserInteractionEnabled = true
+    }
+    
+    @objc func goMyRecommendList(sender: UITapGestureRecognizer) {
+        let vc = MyRecommendListView(nibName: "MyRecommendListView", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func goMySpaceList(sender: UITapGestureRecognizer) {
+        let vc = MyRouteView(nibName: "MyRouteView", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goMyRoute(sender: UITapGestureRecognizer) {
