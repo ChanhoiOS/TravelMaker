@@ -19,6 +19,9 @@ class SignUpView: BaseViewController {
     let flexView = UIView()
     var nickNameText = ""
     
+    var loginId = ""
+    var loginType = ""
+    
     private let nickNameTitle: UILabel = {
         let label = UILabel()
         label.text = "닉네임을 \n입력해 주세요."
@@ -113,13 +116,17 @@ class SignUpView: BaseViewController {
 
 extension SignUpView {
     @objc func signUpAction() {
-        wrapper.requestPost(target: .signUp("kakao", "minchan", "12345"), instance: SignUpModel.self) { response in
-            print("SignUp Data: ", response)
+        guard let topVC = UIApplication.topMostController() else { return }
+        
+        wrapper.requestPost(target: .signUp(loginType, nickNameText, loginId), instance: SignUpModel.self) { response in
             switch response {
             case .success(let data):
-                print("data: ", data)
+                print("회원가입 Data: ", data)
+                Utils.completionShowAlert(title: "회원가입이 완료되었습니다.", message: "", topViewController: topVC) {
+                    self.dismiss(animated: true)
+                }
             case .failure(let error):
-                print("error: ", error)
+                print("회원가입 Error: ", error)
             }
         }
     }

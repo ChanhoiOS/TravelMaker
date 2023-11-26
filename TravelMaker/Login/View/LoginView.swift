@@ -258,11 +258,11 @@ extension LoginView: SocialLoginDelegate {
     func socialLoginSuccess(_ social_id: String, _ type: LoginType) {
         switch type {
         case .apple:
-            socialLogin(.apple, id: social_id)
+            socialLogin("apple", social_id)
         case .kakao:
-            socialLogin(.kakao, id: social_id)
+            socialLogin("kakao", social_id)
         case .naver:
-            socialLogin(.naver, id: social_id)
+            socialLogin("naver", social_id)
         }
     }
     
@@ -277,13 +277,13 @@ extension LoginView: SocialLoginDelegate {
         }
     }
     
-    func socialLogin(_ type: LoginType, id: String) {
-        wrapper.requestPost(target: .login("kakao", "123456"), instance: LoginModel.self) { response in
+    func socialLogin(_ type: String, _ id: String) {
+        wrapper.requestPost(target: .login(type, id), instance: LoginModel.self) { response in
             switch response {
             case .success(let data):
                 self.goToMain(data)
             case .failure( _):
-                self.goToSignUp()
+                self.goToSignUp(type, id)
             }
         }
     }
@@ -295,12 +295,17 @@ extension LoginView {
             SessionManager.shared.accessToken = token
         }
         
+        SessionManager.shared.nickName = data.data?.userInfo?.nickName ?? ""
+        SessionManager.shared.profileUrl = data.data?.userInfo?.imageURL ?? ""
+        
         self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }
     
-    func goToSignUp() {
+    func goToSignUp(_ type: String, _ id: String) {
         let vc = SignUpView(nibName: "SignUpView", bundle: nil)
         vc.modalPresentationStyle = .overFullScreen
+        vc.loginId = id
+        vc.loginType = type
         self.present(vc, animated: true)
     }
 }

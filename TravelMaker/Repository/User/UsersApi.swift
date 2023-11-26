@@ -21,10 +21,10 @@ extension UsersApi: TargetType {
     
     var path: String {
         switch self {
-        case .login(let socialType, _):
-            return "/api/auth/login/\(socialType)"
-        case .signUp(let socialType, _ , _):
-            return "/api/user/signUp/\(socialType)"
+        case .login(_ , _):
+            return "/api/auth/login"
+        case .signUp(_ , _ , _):
+            return "/api/user/join"
         case .fetchMyData:
             return "/api/user/profile"
         }
@@ -43,14 +43,16 @@ extension UsersApi: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .login(_ , let loginId):
+        case .login(let loginType , let loginId):
             let params: [String: Any] = [
+                "loginType" : loginType,
                 "loginId" : loginId
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .signUp(_, let nickname, let loginId):
+        case .signUp(let loginType, let nickname, let loginId):
             let params: [String: Any] = [
-                "nickname" : nickname,
+                "loginType" : loginType,
+                "nickName" : nickname,
                 "loginId" : loginId
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)

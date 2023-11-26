@@ -7,17 +7,23 @@
 
 import Foundation
 
-import Foundation
-
+// MARK: - SignUpModel
 struct SignUpModel: Codable {
-    let code: String?
-    let message: String?
     let data: SignUpData?
-    let size: Int?
 }
 
+// MARK: - DataClass
 struct SignUpData: Codable {
-    let userId: Int?
-    let loginId: String?
-    let nickname: String?
+    let loginID, loginType, nickName: String?
+    let imageURL: String?
+    let userID: Int?
+    let createdAt, updateAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case loginID = "loginId"
+        case loginType, nickName
+        case imageURL = "imageUrl"
+        case userID = "userId"
+        case createdAt, updateAt
+    }
 }

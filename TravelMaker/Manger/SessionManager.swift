@@ -13,5 +13,6 @@ class SessionManager {
         
     var accessToken: String? = ""
     var nickName: String = ""
+    var profileUrl: String = ""
     
 }
