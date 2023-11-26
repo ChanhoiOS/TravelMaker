@@ -19,11 +19,6 @@ class OnboardingView: UIViewController {
     var currentPage: Int = 0 {
         didSet {
             pageControl.currentPage = currentPage
-            if currentPage == contentText.count - 1 {
-               
-            } else {
-               
-            }
         }
     }
     
@@ -59,7 +54,7 @@ class OnboardingView: UIViewController {
 
 extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contentText.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,6 +73,6 @@ extension OnboardingView: UICollectionViewDelegate, UICollectionViewDataSource {
 // MARK: - CollectionView Delegate Flow Layout
 extension OnboardingView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width, height: 400)
     }
 }

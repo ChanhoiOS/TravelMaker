@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SUIT-Bold.otf">
-            <string>SUIT-Bold</string>
+        <array key="SUIT-ExtraBold.otf">
+            <string>SUIT-ExtraBold</string>
         </array>
     </customFonts>
     <objects>
@@ -22,28 +23,29 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rei-h8-e3G">
-                        <rect key="frame" x="59" y="0.0" width="257" height="75"/>
+                        <rect key="frame" x="58" y="0.0" width="259" height="75"/>
                         <string key="text">내 손으로 직접 만드는
 여행 노선</string>
-                        <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="30"/>
+                        <fontDescription key="fontDescription" name="SUIT-ExtraBold" family="SUIT" pointSize="30"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="93F-qK-LZM">
-                        <rect key="frame" x="69" y="163" width="237" height="237"/>
+                        <rect key="frame" x="69" y="158" width="237" height="242"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="237" id="L9q-qZ-tlu"/>
+                            <constraint firstAttribute="height" constant="242" id="B0U-4Z-m2l"/>
                         </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="93F-qK-LZM" firstAttribute="top" secondItem="rei-h8-e3G" secondAttribute="bottom" constant="88" id="UYV-7X-kV2"/>
-                <constraint firstItem="rei-h8-e3G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W2a-2O-TAo"/>
-                <constraint firstItem="rei-h8-e3G" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bNB-da-oeL"/>
-                <constraint firstAttribute="bottom" secondItem="93F-qK-LZM" secondAttribute="bottom" id="kqU-au-lLt"/>
-                <constraint firstItem="93F-qK-LZM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xrN-v2-00c"/>
+                <constraint firstItem="rei-h8-e3G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="58" id="B42-VR-H1V"/>
+                <constraint firstAttribute="trailing" secondItem="93F-qK-LZM" secondAttribute="trailing" constant="69" id="Con-Ad-wyx"/>
+                <constraint firstAttribute="bottom" secondItem="93F-qK-LZM" secondAttribute="bottom" id="DmF-H3-EFL"/>
+                <constraint firstItem="93F-qK-LZM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="69" id="gqQ-KG-9Xg"/>
+                <constraint firstAttribute="trailing" secondItem="rei-h8-e3G" secondAttribute="trailing" constant="58" id="lky-zD-fSY"/>
+                <constraint firstItem="rei-h8-e3G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sss-85-n5q"/>
             </constraints>
             <connections>
                 <outlet property="contentImage" destination="93F-qK-LZM" id="KVY-lV-cGe"/>

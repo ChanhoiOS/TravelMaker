@@ -8,7 +8,23 @@
 import Foundation
 
 struct Apis {
+    static let baseUrl2 = "http://43.200.32.96:8140"
+    
+    static let postAround = "\(Apis.baseUrl2)/api/post"
+    
+    static let getAround = "\(Apis.baseUrl2)/api/post/all"
+    
+    static let recommendAll = "\(Apis.baseUrl2)/api/place/all"
+    
+    static let imageUrl = "\(Apis.baseUrl2)/images/"
+    
+    
+    
+    
+    
     static let baseUrl = "http://mytravelmaker.shop:3000"
+    
+ 
     
     
     
