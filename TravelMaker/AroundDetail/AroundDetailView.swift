@@ -148,11 +148,11 @@ class AroundDetailView: BaseViewController {
             .then {
                 $0.contentScaleMode = .scaleAspectFill
                 
-                if let imagesPath = detailData?.imagesPath {
-                    $0.setImageInputs(getImageInputs(imagePaths: imagesPath))
-                    $0.slideshowInterval = 3
-                    $0.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
-                }
+//                if let imagesPath = detailData?.imagesPath {
+//                    $0.setImageInputs(getImageInputs(imagePaths: imagesPath))
+//                    $0.slideshowInterval = 3
+//                    $0.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
+//                }
             }
         
         imageSlide.addSubview(backBtn)
@@ -222,7 +222,7 @@ class AroundDetailView: BaseViewController {
         }
         
         contentView.addSubview(contentDate)
-        contentDate.text = detailData?.dateTime ?? ""
+        //contentDate.text = detailData?.dateTime ?? ""
         
         contentDate.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
@@ -253,7 +253,7 @@ class AroundDetailView: BaseViewController {
     
     func setStar() {
         contentView.addSubview(starLabel)
-        starLabel.text = "★ " + "\(detailData?.starRating ?? 0.0)" + " | " + "만족도"
+        //starLabel.text = "★ " + "\(detailData?.starRating ?? 0.0)" + " | " + "만족도"
         
         starLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)

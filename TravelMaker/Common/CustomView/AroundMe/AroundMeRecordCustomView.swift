@@ -156,7 +156,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(starLabel)
-        starLabel.text = "★ " + "\(detail.starRating ?? 0.0)"
+       // starLabel.text = "★ " + "\(detail.starRating ?? 0.0)"
         starLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-24)
             make.centerY.equalTo(profileImage)

@@ -55,11 +55,11 @@ extension AroundViewReactor {
         ]
         
         if let accessToken = SessionManager.shared.accessToken {
-            headers = ["Authorization": accessToken]
+            headers = ["Authorization": "Bearer " + accessToken]
         }
         
         return Observable<Mutation>.create { observer -> Disposable in
-            AF.request(Apis.getAround,
+            AF.request(Apis.nearby_all,
                        method: .get,
                        parameters: nil,
                        encoding: URLEncoding.queryString,

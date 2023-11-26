@@ -147,24 +147,25 @@ extension AroundView: NMFMapViewTouchDelegate {
                 let marker = NMFMarker()
                 
                 marker.captionRequestedWidth = 60
-                
-                
-                if let imageUrls = detail.imagesPath {
+                                
+                if let imageUrls = detail.imgList {
                     if imageUrls.count > 0 {
                         DispatchQueue.global().async {
-                            let url = URL(string: Apis.imageUrl + imageUrls[0])!
+                            let url = URL(string: imageUrls[0])!
+                            let latitude = (detail.latitude as? NSString)?.doubleValue
+                            let longitude = (detail.longitude as? NSString)?.doubleValue
                             
                             if let data = try? Data(contentsOf: url) {
                                 if let image = UIImage(data: data) {
                                     DispatchQueue.main.async {
                                         let resizeImage = image.resizeAll(newWidth: 60, newHeight: 70)
                                         marker.iconImage = NMFOverlayImage(image: resizeImage)
-                                        marker.position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                        marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
                                         marker.mapView = self.naverMapView
                                         
                                         marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
                                             self.markerAction(index, detail, image)
-                                            self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)))
+                                            self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)))
                                             return true
                                         }
                                     }

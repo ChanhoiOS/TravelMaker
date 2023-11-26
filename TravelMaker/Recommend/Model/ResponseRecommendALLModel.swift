@@ -23,13 +23,11 @@ struct RecommendAllData: Codable {
     let starRating: Int?
     let detailURL: String?
     let imageURL: String?
-    let bookmarkStatus: BookmarkStatus?
 
     enum CodingKeys: String, CodingKey {
         case id, address, latitude, longitude, category, placeName, categoryName, starRating
         case detailURL = "detailUrl"
         case imageURL = "imageUrl"
-        case bookmarkStatus
     }
 }
 
