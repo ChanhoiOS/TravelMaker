@@ -8,25 +8,22 @@
 import Foundation
 
 struct ResponseRegisterNearMeModel: Codable {
-    let code, message: String?
     let data: ResponseNearMeData?
-    let size: Int?
 }
 
 // MARK: - DataClass
 struct ResponseNearMeData: Codable {
-    let postID: Int?
-    let content: String?
+    let nearbyID: Int?
+    let categoryName, placeName, content: String?
+    let starRating: Int?
+    let address, latitude, longitude: String?
     let viewCount: Int?
-    let placeName: String?
-    let latitude, longitude: Double?
-    let dateTime, address, categoryName: String?
-    let starRating: Double?
-    let bookmarkStatus: String?
-    let imagesPath: [String]?
+    let createdAt, updateAt: String?
+    let user: UserInfo?
+    let imgList: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case postID = "postId"
-        case content, viewCount, placeName, latitude, longitude, dateTime, address, categoryName, starRating, bookmarkStatus, imagesPath
+        case nearbyID = "nearbyId"
+        case categoryName, placeName, content, starRating, address, latitude, longitude, viewCount, createdAt, updateAt, user, imgList
     }
 }

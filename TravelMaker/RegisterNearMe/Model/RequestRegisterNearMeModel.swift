@@ -9,12 +9,12 @@ import Foundation
 
 struct RequestRegisterNearMeModel {
     let content: String
-    let placeName: String
+    let place_name: String
     let dateTime: String
     let latitude: Double
     let longitude: Double
     let imageFiles: [Data]?
     let address: String
-    let categoryName: String
-    let starRating: Double
+    let category_name: String
+    let star_rating: Double
 }

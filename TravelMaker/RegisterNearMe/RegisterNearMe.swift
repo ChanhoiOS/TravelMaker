@@ -462,17 +462,17 @@ extension RegisterNearMe {
         
         requestModel = RequestRegisterNearMeModel(
             content: contentTextView.text,
-            placeName: selectedSpace["placeName"] as? String ?? "",
+            place_name: selectedSpace["placeTitle"] as? String ?? "",
             dateTime: dateTextField.text ?? "",
             latitude: selectedSpace["y"] as? Double ?? 0.0,
             longitude: selectedSpace["x"] as? Double ?? 0.0,
             imageFiles: imageData,
             address: selectedSpace["address"] as? String ?? "",
-            categoryName: selectedSpace["categoryName"] as? String ?? "",
-            starRating: star.rating)
+            category_name: selectedSpace["categoryName"] as? String ?? "",
+            star_rating: star.rating)
         
-        FileUploadRepository.shared.uploadArroundMeData(url: Apis.postAround, with: requestModel!) { response in
-            print("response: ", response)
+        FileUploadRepository.shared.uploadArroundMeData(url: Apis.nearby_add, with: requestModel!) { response in
+            print("내 주변 등록: ", response)
             self.navigationController?.popViewController(animated: true)
         } failureHandler: { error in
             print("error: ", error)
