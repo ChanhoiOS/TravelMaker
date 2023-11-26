@@ -214,7 +214,7 @@ extension LoginView {
         myCollectionNavigationView.isNavigationBarHidden = true
         myPageNavigationView.isNavigationBarHidden = true
         
-        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, UIViewController(), myCollectionNavigationView, myPageNavigationView], animated: true)
+        tabBarViewController?.setViewControllers([recommentNavigationView, aroundNavigationView, BaseWhiteView(), myCollectionNavigationView, myPageNavigationView], animated: true)
         
         if let items = tabBarViewController?.tabBar.items {
             items[0].selectedImage = UIImage(named: "tabBar_selected_recommend")

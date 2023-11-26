@@ -23,6 +23,7 @@
 		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
 		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */; };
+		08FF47412B13472E00B0D6AB /* BaseWhiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF47402B13472E00B0D6AB /* BaseWhiteView.swift */; };
 		090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */; };
 		090FB9EC2ADE553D005081F8 /* SearchSpaceSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */; };
 		090FB9EE2ADE5B48005081F8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */; };
@@ -151,6 +152,7 @@
 		08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouteView.swift; sourceTree = "<group>"; };
 		08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterRouteView.xib; sourceTree = "<group>"; };
 		08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		08FF47402B13472E00B0D6AB /* BaseWhiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWhiteView.swift; sourceTree = "<group>"; };
 		090FB9E92ADE553D005081F8 /* SearchSpaceSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceSelectView.swift; sourceTree = "<group>"; };
 		090FB9EA2ADE553D005081F8 /* SearchSpaceSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpaceSelectView.xib; sourceTree = "<group>"; };
 		090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				09591B8D2AB020F600A3F0D6 /* BaseViewController.swift */,
+				08FF47402B13472E00B0D6AB /* BaseWhiteView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1188,6 +1191,7 @@
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
+				08FF47412B13472E00B0D6AB /* BaseWhiteView.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,
 				0914EF7B2AF4AD12008F1E5B /* MyRouteView.swift in Sources */,
 				0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */,
