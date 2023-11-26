@@ -12,6 +12,7 @@ enum UsersApi {
     case login(_ socialType: String, _ loginId: String)
     case signUp(_ socialType: String, _ nickname: String, _ loginId: String)
     case fetchMyData
+    case checkNickName(_ nickname: String)
 }
 
 extension UsersApi: TargetType {
@@ -27,6 +28,8 @@ extension UsersApi: TargetType {
             return "/api/user/join"
         case .fetchMyData:
             return "/api/user/profile"
+        case .checkNickName(_ ):
+            return "/api/user/nickname/check"
         }
     }
     
@@ -38,6 +41,8 @@ extension UsersApi: TargetType {
             return .post
         case .fetchMyData:
             return .get
+        case .checkNickName(_):
+            return .post
         }
     }
     
@@ -59,6 +64,11 @@ extension UsersApi: TargetType {
         case .fetchMyData:
             let params: [String: Any] = [:]
             return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .checkNickName(let nickName):
+            let params: [String: Any] = [
+                "nickName" : nickName
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     

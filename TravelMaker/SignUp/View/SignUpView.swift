@@ -50,7 +50,7 @@ class SignUpView: BaseViewController {
         button.titleLabel?.font = UIFont(name: "SUIT-Bold", size: 20)
         button.backgroundColor = Colors.DESIGN_GRAY
         button.frame.size.height = 69
-        button.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(checkNickName), for: .touchUpInside)
         button.isEnabled = false
         return button
     }()
@@ -115,7 +115,7 @@ class SignUpView: BaseViewController {
 }
 
 extension SignUpView {
-    @objc func signUpAction() {
+    func signUp() {
         guard let topVC = UIApplication.topMostController() else { return }
         
         wrapper.requestPost(target: .signUp(loginType, nickNameText, loginId), instance: SignUpModel.self) { response in
@@ -127,6 +127,26 @@ extension SignUpView {
                 }
             case .failure(let error):
                 print("회원가입 Error: ", error)
+                Utils.completionShowAlert(title: "회원가입에 실패하였습니다. 관리자에게 문의해주세요.", message: "", topViewController: topVC) {
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+    }
+    
+    @objc func checkNickName() {
+        guard let topVC = UIApplication.topMostController() else { return }
+        
+        wrapper.requestPost(target: .checkNickName(nickNameText), instance: CheckNickNameModel.self) { response in
+            switch response {
+            case .success(let data):
+                print("닉네임 Data: ", data)
+                self.signUp()
+            case .failure(let error):
+              print("닉네임 Error: ", error)
+                Utils.completionShowAlert(title: "이미 존재하는 아이디입니다.", message: "", topViewController: topVC) {
+                    
+                }
             }
         }
     }

@@ -27,3 +27,8 @@ struct SignUpData: Codable {
         case createdAt, updateAt
     }
 }
+
+// MARK: - NickName Check
+struct CheckNickNameModel: Codable {
+    let message: String?
+}
