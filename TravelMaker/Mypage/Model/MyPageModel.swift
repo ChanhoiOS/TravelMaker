@@ -7,16 +7,23 @@
 
 import Foundation
 
+// MARK: - MyPageModel
 struct MyPageModel: Codable {
-    let code: String?
-    let message: String?
     let data: MyPageDataModel?
-    let size: Int?
 }
 
+// MARK: - MyPageDataModel
 struct MyPageDataModel: Codable {
-    let userId: Int?
-    let loginId: String?
-    let nickname: String?
-    let imagePath: String?
+    let userID: Int?
+    let loginID, loginType, nickName: String?
+    let imageURL: String?
+    let createdAt, updateAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "userId"
+        case loginID = "loginId"
+        case loginType, nickName
+        case imageURL = "imageUrl"
+        case createdAt, updateAt
+    }
 }

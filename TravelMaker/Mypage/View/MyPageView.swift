@@ -41,7 +41,7 @@ class MyPageView: UIViewController {
     
     private let nickName: UILabel = {
         let label = UILabel()
-        label.text = "여행가"
+        label.text = SessionManager.shared.nickName
         label.textColor = Colors.PRIMARY_BLACK
         label.font = UIFont(name: "SUIT-Bold", size: 20)
         return label
@@ -185,6 +185,10 @@ class MyPageView: UIViewController {
         if let localData = getCacheImage() {
             profileImage.image = localData
         }
+        
+        if SessionManager.shared.nickName != "" {
+            nickName.text = SessionManager.shared.nickName
+        }
     }
 }
 
@@ -211,15 +215,12 @@ extension MyPageView {
     }
     
     func setUserData(_ data: MyPageModel) {
-        nickName.text = data.data?.nickname ?? "여행자A"
-        SessionManager.shared.nickName = data.data?.nickname ?? "여행자A"
-        
         if let localData = getCacheImage() {
             profileImage.image = localData
             return
         }
          
-        if let url = data.data?.imagePath {
+        if let url = data.data?.imageURL {
             _Concurrency.Task {
                 do {
                     let imageData = try await loadImage(url)
