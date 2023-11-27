@@ -46,7 +46,7 @@ class FileUploadRepository {
             if let imageArray = model.imageFiles {
                 for (idx, images) in imageArray.enumerated() {
                     multipartFormData.append(images,
-                                             withName: "nearMe",
+                                             withName: "imageFiles",
                                              fileName: "image_\(idx)",
                                              mimeType: "image/jpg")
                 }

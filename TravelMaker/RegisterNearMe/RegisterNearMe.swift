@@ -453,11 +453,12 @@ extension RegisterNearMe {
     }
     
     @objc func uploadData() {
-        var imageData: [Data]?
+        var imageData = [Data]()
         
         for image in images {
-            let imageJpg = image.jpegData(compressionQuality: 1.0)!
-            imageData?.append(imageJpg)
+            let resizeImage = image.resize(newWidth: 100)
+            var imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
+            imageData.append(imageJpg)
         }
         
         requestModel = RequestRegisterNearMeModel(
