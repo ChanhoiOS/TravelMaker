@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0868D6DF2B176C9F00094464 /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6DD2B176C9F00094464 /* WithdrawalView.swift */; };
+		0868D6E02B176C9F00094464 /* WithdrawalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0868D6DE2B176C9F00094464 /* WithdrawalView.xib */; };
+		0868D6E32B176D3900094464 /* CommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6E22B176D3900094464 /* CommonHeader.swift */; };
+		0868D6E52B176D7600094464 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6E42B176D7600094464 /* UIView+Extension.swift */; };
+		0868D6E82B176DEA00094464 /* BasicButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6E72B176DEA00094464 /* BasicButtonBuilder.swift */; };
+		0868D6EC2B176EEE00094464 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6EA2B176EEE00094464 /* QuestionCell.swift */; };
+		0868D6ED2B176EEE00094464 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0868D6EB2B176EEE00094464 /* QuestionCell.xib */; };
+		0868D6F12B176F5500094464 /* WithdrawalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6F02B176F5500094464 /* WithdrawalViewModel.swift */; };
+		0868D6F42B176F6D00094464 /* WithdrawalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6F32B176F6C00094464 /* WithdrawalModel.swift */; };
 		08A0ACF12B0F79210082161F /* MyRecommendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */; };
 		08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0ACF02B0F79200082161F /* MyRecommendListView.xib */; };
 		08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */; };
@@ -137,6 +146,15 @@
 
 /* Begin PBXFileReference section */
 		084B620A9339468BEB583C7C /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.release.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
+		0868D6DD2B176C9F00094464 /* WithdrawalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
+		0868D6DE2B176C9F00094464 /* WithdrawalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WithdrawalView.xib; sourceTree = "<group>"; };
+		0868D6E22B176D3900094464 /* CommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeader.swift; sourceTree = "<group>"; };
+		0868D6E42B176D7600094464 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0868D6E72B176DEA00094464 /* BasicButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonBuilder.swift; sourceTree = "<group>"; };
+		0868D6EA2B176EEE00094464 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		0868D6EB2B176EEE00094464 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		0868D6F02B176F5500094464 /* WithdrawalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalViewModel.swift; sourceTree = "<group>"; };
+		0868D6F32B176F6C00094464 /* WithdrawalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalModel.swift; sourceTree = "<group>"; };
 		08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendListView.swift; sourceTree = "<group>"; };
 		08A0ACF02B0F79200082161F /* MyRecommendListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendListView.xib; sourceTree = "<group>"; };
 		08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -281,6 +299,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0868D6DC2B176C6800094464 /* Withdrawal */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6F22B176F6C00094464 /* Model */,
+				0868D6EF2B176F5500094464 /* ViewModel */,
+				0868D6EE2B176F3E00094464 /* View */,
+			);
+			path = Withdrawal;
+			sourceTree = "<group>";
+		};
+		0868D6E12B176D2100094464 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6E22B176D3900094464 /* CommonHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		0868D6E62B176DDD00094464 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6E72B176DEA00094464 /* BasicButtonBuilder.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		0868D6E92B176EEE00094464 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6EA2B176EEE00094464 /* QuestionCell.swift */,
+				0868D6EB2B176EEE00094464 /* QuestionCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0868D6EE2B176F3E00094464 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6E92B176EEE00094464 /* Cell */,
+				0868D6DD2B176C9F00094464 /* WithdrawalView.swift */,
+				0868D6DE2B176C9F00094464 /* WithdrawalView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0868D6EF2B176F5500094464 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6F02B176F5500094464 /* WithdrawalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0868D6F22B176F6C00094464 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0868D6F32B176F6C00094464 /* WithdrawalModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		08A0ACED2B0F787B0082161F /* MyRecommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +597,8 @@
 		09591B7D2AAFF43100A3F0D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0868D6E62B176DDD00094464 /* Button */,
+				0868D6E12B176D2100094464 /* Header */,
 				09CDB7412AF0DA1500044CF2 /* Error */,
 				090FB9EF2ADE7942005081F8 /* CustomView */,
 				099EE9B82ADD13FB000F0BBE /* Location */,
@@ -539,6 +620,7 @@
 				090FB9ED2ADE5B48005081F8 /* UIImage+Extension.swift */,
 				0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */,
 				08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */,
+				0868D6E42B176D7600094464 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -907,6 +989,7 @@
 				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
 				08A6AF4D2B0A313A0045EAFA /* SearchRoute */,
 				08A0ACED2B0F787B0082161F /* MyRecommend */,
+				0868D6DC2B176C6800094464 /* Withdrawal */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
 				09D7B1802AAAFE9100991841 /* TabBarViewController.swift */,
@@ -1076,6 +1159,8 @@
 				09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */,
 				09591B962AB0305A00A3F0D6 /* OnboardingView.xib in Resources */,
 				09A83EF52AAEAB620082A6A2 /* LoginView.xib in Resources */,
+				0868D6E02B176C9F00094464 /* WithdrawalView.xib in Resources */,
+				0868D6ED2B176EEE00094464 /* QuestionCell.xib in Resources */,
 				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
 				08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */,
 				0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */,
@@ -1146,9 +1231,11 @@
 				090FB9EE2ADE5B48005081F8 /* UIImage+Extension.swift in Sources */,
 				09C4BA752AD8E12200BE8376 /* SearchSpaceViewReactor.swift in Sources */,
 				09BF583E2AD7E07600DCF822 /* SearchSpaceView.swift in Sources */,
+				0868D6E82B176DEA00094464 /* BasicButtonBuilder.swift in Sources */,
 				09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */,
 				09591B912AB0296800A3F0D6 /* SignUpModel.swift in Sources */,
 				09A83F282AAF0C600082A6A2 /* CustomPlugin.swift in Sources */,
+				0868D6E32B176D3900094464 /* CommonHeader.swift in Sources */,
 				08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */,
 				09CDB73C2AF0C1C700044CF2 /* PassThroughView.swift in Sources */,
 				09A83F1E2AAF05DB0082A6A2 /* Apis.swift in Sources */,
@@ -1164,6 +1251,7 @@
 				09112BF52AE8D6D5001AFDC6 /* PaddingLabel.swift in Sources */,
 				08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
+				0868D6E52B176D7600094464 /* UIView+Extension.swift in Sources */,
 				090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */,
 				09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */,
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
@@ -1173,6 +1261,7 @@
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
 				091D5F452AB17F8C00D58FA2 /* MyPageView.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
+				0868D6EC2B176EEE00094464 /* QuestionCell.swift in Sources */,
 				09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */,
 				091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */,
 				099EE9BA2ADD140F000F0BBE /* LocationManager.swift in Sources */,
@@ -1181,12 +1270,14 @@
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
+				0868D6F12B176F5500094464 /* WithdrawalViewModel.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A565122AE75DC6003DF90B /* AroundViewReactor.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09A6E7942AF2142C0033152E /* RecommendCollectionViewCell.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */,
+				0868D6DF2B176C9F00094464 /* WithdrawalView.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
@@ -1203,6 +1294,7 @@
 				09317F102AEF47E50030EAC5 /* KFSource.swift in Sources */,
 				09A565152AE76061003DF90B /* ResponseAroundModel.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
+				0868D6F42B176F6D00094464 /* WithdrawalModel.swift in Sources */,
 				09C4BA7F2AD9350100BE8376 /* SearchSpaceModel.swift in Sources */,
 				09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */,
 				08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */,

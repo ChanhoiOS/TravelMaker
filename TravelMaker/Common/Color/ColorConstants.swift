@@ -21,6 +21,7 @@ struct Colors {
     
     // blue
     static let DESIGN_BLUE = UIColor(red: 56/255, green: 96/255, blue: 226/255, alpha: 1.0)
+    static let PRIMARY_BLUE = UIColor(red: 48.0/255.0, green: 116.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
     // white
     static let DESIGN_WHITE = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)

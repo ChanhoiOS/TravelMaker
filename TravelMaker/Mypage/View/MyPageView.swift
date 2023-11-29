@@ -64,17 +64,17 @@ class MyPageView: UIViewController {
         return button
     }()
     
-    private let myPostsLabel_1: UILabel = {
+    private let logoutLabel: UILabel = {
         let label = UILabel()
-        label.text = "내가 작성한 글"
+        label.text = "로그아웃"
         label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 18)
         return label
     }()
     
-    private let myPostsLabel_2: UILabel = {
+    private let withdrawalLabel: UILabel = {
         let label = UILabel()
-        label.text = "내가 작성한 글"
+        label.text = "회원 탈퇴"
         label.textColor = Colors.DESIGN_BLACK
         label.font = UIFont(name: "SUIT-Regular", size: 18)
         return label
@@ -88,17 +88,17 @@ class MyPageView: UIViewController {
         return label
     }()
     
-    private lazy var myPostsButton_1: UIButton = {
+    private lazy var logoutAction: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "myPost_go_btn"), for: .normal)
-        button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
+        button.addTarget(self, action: #selector(logout), for: .touchUpInside)
         return button
     }()
     
-    private lazy var myPostsButton_2: UIButton = {
+    private lazy var withdrawalAtion: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "myPost_go_btn"), for: .normal)
-        button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
+        button.addTarget(self, action: #selector(withdrawal), for: .touchUpInside)
         return button
     }()
     
@@ -146,13 +146,13 @@ class MyPageView: UIViewController {
                         flex.addItem(nickName).marginTop(38)
                     }
                     flex.addItem().height(62).define { flex in
-                        flex.addItem(address).marginBottom(38)
+                        flex.addItem(address).marginBottom(30)
                     }
                 }
                 flex.addItem().define { flex in
                     flex.addItem().height(62)
                     flex.addItem().height(62).define { flex in
-                        flex.addItem(editButton).marginRight(24).marginBottom(38)
+                        flex.addItem(editButton).marginRight(24).marginBottom(30)
                     }
                 }
             }
@@ -162,19 +162,20 @@ class MyPageView: UIViewController {
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).define { flex in
             
                 flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                    flex.addItem(myPostsLabel_1).position(.absolute).left(20)
-                    flex.addItem(myPostsButton_1).position(.absolute).right(20)
+                    flex.addItem(logoutLabel).position(.absolute).left(20)
+                    flex.addItem(logoutAction).position(.absolute).right(20)
                 }
                 
                 flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                    flex.addItem(myPostsLabel_2).position(.absolute).left(20)
-                    flex.addItem(myPostsButton_2).position(.absolute).right(20)
+                    flex.addItem(withdrawalLabel).position(.absolute).left(20)
+                    flex.addItem(withdrawalAtion).position(.absolute).right(20)
                 }
-                
+                /*
                 flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
                     flex.addItem(myPostsLabel_3).position(.absolute).left(20)
                     flex.addItem(myPostsButton_3).position(.absolute).right(20)
                 }
+                 */
             }.grow(2)
             
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).grow(1)
@@ -199,6 +200,17 @@ extension MyPageView {
     
     @objc func goMyPosts() {
         
+    }
+}
+
+extension MyPageView {
+    @objc func logout() {
+        
+    }
+    
+    @objc func withdrawal() {
+        let vc = WithdrawalView(nibName: "WithdrawalView", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
