@@ -18,7 +18,7 @@ class AsyncNetworkManager {
         ]
         
         if let accessToken = SessionManager.shared.accessToken {
-            headers = ["Authorization": accessToken]
+            headers = ["Authorization": "Bearer " + accessToken]
         }
         
         return headers

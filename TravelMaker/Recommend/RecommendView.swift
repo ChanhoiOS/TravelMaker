@@ -177,7 +177,7 @@ extension RecommendView {
     func setData() {
         Task {
             do {
-                responseAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommendAll)
+                responseAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommend_all)
             } catch {
                 
             }
@@ -259,6 +259,9 @@ extension RecommendView {
                 if let imageUrls = detail.imageURL {
                     if imageUrls.count > 0 {
                         DispatchQueue.global().async {
+                            let latitude = (detail.latitude as? NSString)?.doubleValue
+                            let longitude = (detail.longitude as? NSString)?.doubleValue
+                            
                             var imageName = "recommend_red_marker"
                             
                             if detail.category == .food {
@@ -273,13 +276,13 @@ extension RecommendView {
                             DispatchQueue.main.async {
                                 let resizeImage = image.resizeAll(newWidth: 48, newHeight: 48)
                                 self.markers[index].iconImage = NMFOverlayImage(image: resizeImage)
-                                self.markers[index].position = NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449)
+                                self.markers[index].position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
                                 self.markers[index].mapView = self.naverMapView
                                 
                                 self.markers[index].touchHandler = { (overlay: NMFOverlay) -> Bool in
                                     self.markerAction(index, detail)
                                     
-                                    let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: detail.latitude ?? 37.50518440330725, lng: detail.longitude ?? 127.05485569769449))
+                                    let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449))
                                     cameraUpdate.animation = .easeOut
                                     self.naverMapView?.moveCamera(cameraUpdate)
                                     return true
@@ -329,8 +332,8 @@ extension RecommendView {
 
 extension RecommendView: SelectRecommendData {
     func selectSpace(_ data: RecommendAllData?) {
-        let latitude = data?.latitude ?? 37.50518440330725
-        let longitude = data?.longitude ?? 127.05485569769449
+        let latitude = (data?.latitude as? NSString)?.doubleValue ?? 37.50518440330725
+        let longitude = (data?.longitude as? NSString)?.doubleValue ?? 127.05485569769449
         
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
         cameraUpdate.animation = .easeOut
