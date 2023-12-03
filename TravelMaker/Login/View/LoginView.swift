@@ -297,6 +297,8 @@ extension LoginView {
         
         SessionManager.shared.nickName = data.data?.userInfo?.nickName ?? ""
         SessionManager.shared.profileUrl = data.data?.userInfo?.imageURL ?? ""
+        SessionManager.shared.loginType = data.data?.userInfo?.loginType ?? ""
+        SessionManager.shared.loginId = data.data?.userInfo?.loginID ?? ""
         
         self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
     }

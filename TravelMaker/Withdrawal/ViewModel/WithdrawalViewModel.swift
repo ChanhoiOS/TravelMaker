@@ -26,13 +26,13 @@ class WithdrawalViewModel: WithdrawalViewModelType {
     }
     
     struct Output {
-        var responseDelete: PublishSubject<WithdrawalModel?>
+        var responseDelete: PublishSubject<Void>//PublishSubject<WithdrawalModel?>
         var responseReason: PublishSubject<Void>
     }
     
     init() {
         input = Input(deleteUserInfo: PublishSubject<[String: Any]>(), collectReason: PublishSubject<[String: Any]>())
-        output = Output(responseDelete: PublishSubject<WithdrawalModel?>(), responseReason: PublishSubject<Void>())
+        output = Output(responseDelete: PublishSubject<Void>(), responseReason: PublishSubject<Void>())
         
         input.deleteUserInfo.subscribe(onNext: {[weak self] data in
             self?.requestDelete(data)
@@ -52,17 +52,12 @@ class WithdrawalViewModel: WithdrawalViewModelType {
     func requestDelete(_ data: [String: Any]) {
         let paramDic = [String: Any]()
         
-       /* AuthRepository.deleteUserInfo(paramDic: paramDic) { response in
-            if let error = response.error {
-                print("**** 회원정보삭제 에러 **** ")
-                self.output.responseDelete.onError(error)
-            } else {
-                print("**** 회원정보삭제 성공 **** ")
-                let data = response.data as? WithdrawalModel
-                self.output.responseDelete.onNext(data)
-            }
+        ApiManager.shared.delete(url: Apis.leave, paramDic: paramDic) {
+            print("**** 회원정보삭제 성공 **** ")
+            self.output.responseDelete.onNext(())
+        } failHandler: {
+            print("**** 탈퇴 사유 수집 실패 ****")
         }
-        */
     }
     
     func collectData(_ data: [String: Any]) {
@@ -72,13 +67,12 @@ class WithdrawalViewModel: WithdrawalViewModelType {
         
         paramDic["outReason"] = reason
         paramDic["improvements"] = improvements
-        /*
-        ApiManager.shared.notResponsePost(url: Apis.collectReason, paramDic: paramDic) {
+        
+        ApiManager.shared.post(url: Apis.leave_reason, paramDic: paramDic) {
             print("**** 탈퇴 사유 수집 성공 ****")
             self.output.responseReason.onNext(())
         } failHandler: {
             print("**** 탈퇴 사유 수집 실패 ****")
         }
-         */
     }
 }

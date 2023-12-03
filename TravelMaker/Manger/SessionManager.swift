@@ -12,6 +12,8 @@ class SessionManager {
     static let shared = SessionManager()
         
     var accessToken: String? = ""
+    var loginType: String = ""
+    var loginId: String = ""
     var nickName: String = ""
     var profileUrl: String = ""
     

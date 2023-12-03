@@ -29,6 +29,7 @@
 		08A6AF5E2B0A390F0045EAFA /* SearchRouteSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF5C2B0A390F0045EAFA /* SearchRouteSelectView.swift */; };
 		08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A6AF5D2B0A390F0045EAFA /* SearchRouteSelectView.xib */; };
 		08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF612B0A39690045EAFA /* SearchRouteViewModel.swift */; };
+		08C876F22B1C6FC0009544E4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C876F12B1C6FC0009544E4 /* ApiManager.swift */; };
 		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
 		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */; };
@@ -167,6 +168,7 @@
 		08A6AF5C2B0A390F0045EAFA /* SearchRouteSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteSelectView.swift; sourceTree = "<group>"; };
 		08A6AF5D2B0A390F0045EAFA /* SearchRouteSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteSelectView.xib; sourceTree = "<group>"; };
 		08A6AF612B0A39690045EAFA /* SearchRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewModel.swift; sourceTree = "<group>"; };
+		08C876F12B1C6FC0009544E4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouteView.swift; sourceTree = "<group>"; };
 		08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterRouteView.xib; sourceTree = "<group>"; };
 		08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 				09A83F252AAF0B0E0082A6A2 /* NetworkWrapper.swift */,
 				09A83F272AAF0C600082A6A2 /* CustomPlugin.swift */,
 				09CDB73F2AF0D76E00044CF2 /* AsyncNetworkManager.swift */,
+				08C876F12B1C6FC0009544E4 /* ApiManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1275,6 +1278,7 @@
 				09A565122AE75DC6003DF90B /* AroundViewReactor.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
 				09A6E7942AF2142C0033152E /* RecommendCollectionViewCell.swift in Sources */,
+				08C876F22B1C6FC0009544E4 /* ApiManager.swift in Sources */,
 				09D7B17F2AAAFE9100991841 /* SceneDelegate.swift in Sources */,
 				09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */,
 				0868D6DF2B176C9F00094464 /* WithdrawalView.swift in Sources */,

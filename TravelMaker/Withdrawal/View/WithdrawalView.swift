@@ -321,7 +321,8 @@ extension WithdrawalView {
     
     func deleteUser() {
         var paramDic = [String: Any]()
-        paramDic["index"] = 0
+        paramDic["loginType"] = SessionManager.shared.loginType
+        paramDic["loginId"] = SessionManager.shared.loginId
         self.viewModel.input.deleteUserInfo.onNext(paramDic)
     }
 }
