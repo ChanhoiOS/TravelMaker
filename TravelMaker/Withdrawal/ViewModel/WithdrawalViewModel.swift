@@ -49,9 +49,7 @@ class WithdrawalViewModel: WithdrawalViewModelType {
         .disposed(by: disposeBag)
     }
     
-    func requestDelete(_ data: [String: Any]) {
-        let paramDic = [String: Any]()
-        
+    func requestDelete(_ paramDic: [String: Any]) {
         ApiManager.shared.delete(url: Apis.leave, paramDic: paramDic) {
             print("**** 회원정보삭제 성공 **** ")
             self.output.responseDelete.onNext(())
