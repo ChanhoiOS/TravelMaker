@@ -17,6 +17,8 @@ class MyPageView: UIViewController {
     private let imageCache = NSCache<NSString, UIImage>()
     let fileManager = FileManager.default
     
+    var alertView: LogoutAlert?
+    var blurView: UIVisualEffectView?
     let flexView = UIView()
     
     private let backBtn: UIImageView = {
@@ -218,7 +220,32 @@ extension MyPageView {
 
 extension MyPageView {
     @objc func logout() {
+        self.blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        self.blurView?.frame = self.view.bounds
+        self.view.addSubview(self.blurView ?? UIVisualEffectView())
+        self.alertView = LogoutAlert(frame: CGRect(x: 0, y: 0, width: 335, height: 250))
+        self.alertView?.center = self.view.center
+        self.alertView?.logoutAction = self.goLogout
+        self.alertView?.closeAction = self.closeAction
+        self.view.addSubview(self.alertView ?? UIView())
+    }
+    
+    func closeAction() {
+        self.blurView?.removeFromSuperview()
+        self.blurView = nil
+        self.alertView?.removeFromSuperview()
+        alertView = nil
+    }
+    
+    func goLogout() {
+        SessionManager.shared.profileUrl = ""
+        SessionManager.shared.nickName = ""
+        SessionManager.shared.loginId = ""
+        SessionManager.shared.loginType = ""
+        SessionManager.shared.accessToken = ""
         
+        let vc = LoginView(nibName: "LoginView", bundle: nil)
+        self.navigationController?.offAllNamed(vc)
     }
     
     @objc func withdrawal() {

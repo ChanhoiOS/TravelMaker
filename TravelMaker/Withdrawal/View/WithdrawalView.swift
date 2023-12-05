@@ -301,7 +301,7 @@ class WithdrawalView: BaseViewController {
     
     func goNextView() {
         let vc = LoginView(nibName: "LoginView", bundle: nil)
-        self.navigationController?.toNamed(vc)
+        self.navigationController?.offAllNamed(vc)
     }
     
     @objc func tapKeyboardHide() {

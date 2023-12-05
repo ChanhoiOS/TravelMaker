@@ -122,6 +122,8 @@
 		09BF58312AD78F5C00DCF822 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 09BF58302AD78F5C00DCF822 /* Kingfisher */; };
 		09BF583E2AD7E07600DCF822 /* SearchSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF583C2AD7E07600DCF822 /* SearchSpaceView.swift */; };
 		09BF583F2AD7E07600DCF822 /* SearchSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */; };
+		09C2DD912B1EE23F00C0320C /* LogoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C2DD902B1EE23F00C0320C /* LogoutAlert.swift */; };
+		09C2DD932B1EE65400C0320C /* LogoutAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C2DD922B1EE65400C0320C /* LogoutAlert.xib */; };
 		09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */; };
 		09C4BA752AD8E12200BE8376 /* SearchSpaceViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C4BA742AD8E12200BE8376 /* SearchSpaceViewReactor.swift */; };
 		09C4BA782AD9059300BE8376 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C4BA772AD9059300BE8376 /* ReactorKit */; };
@@ -240,6 +242,8 @@
 		09B318482AD667410060CF20 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		09BF583C2AD7E07600DCF822 /* SearchSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceView.swift; sourceTree = "<group>"; };
 		09BF583D2AD7E07600DCF822 /* SearchSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSpaceView.xib; sourceTree = "<group>"; };
+		09C2DD902B1EE23F00C0320C /* LogoutAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlert.swift; sourceTree = "<group>"; };
+		09C2DD922B1EE65400C0320C /* LogoutAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoutAlert.xib; sourceTree = "<group>"; };
 		09C4BA712AD8E0B500BE8376 /* SearchSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceCell.swift; sourceTree = "<group>"; };
 		09C4BA742AD8E12200BE8376 /* SearchSpaceViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewReactor.swift; sourceTree = "<group>"; };
 		09C4BA7E2AD9350100BE8376 /* SearchSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceModel.swift; sourceTree = "<group>"; };
@@ -464,6 +468,7 @@
 		090FB9EF2ADE7942005081F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				09C2DD8F2B1EE21F00C0320C /* Logout */,
 				0986BCC12AF364AA00987836 /* Recommend */,
 				09CDB73A2AF0C1AC00044CF2 /* BottomSheet */,
 				09112BF32AE8D6B9001AFDC6 /* PaddingLabel */,
@@ -902,6 +907,15 @@
 			path = SearchSpace;
 			sourceTree = "<group>";
 		};
+		09C2DD8F2B1EE21F00C0320C /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				09C2DD902B1EE23F00C0320C /* LogoutAlert.swift */,
+				09C2DD922B1EE65400C0320C /* LogoutAlert.xib */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
 		09C4BA702AD8E08C00BE8376 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1153,6 +1167,7 @@
 				09A83F082AAEE8AF0082A6A2 /* SUIT-ExtraBold.otf in Resources */,
 				091D5F462AB17F8C00D58FA2 /* MyPageView.xib in Resources */,
 				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
+				09C2DD932B1EE65400C0320C /* LogoutAlert.xib in Resources */,
 				091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */,
 				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
@@ -1274,6 +1289,7 @@
 				08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
 				0868D6F12B176F5500094464 /* WithdrawalViewModel.swift in Sources */,
+				09C2DD912B1EE23F00C0320C /* LogoutAlert.swift in Sources */,
 				09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */,
 				09A565122AE75DC6003DF90B /* AroundViewReactor.swift in Sources */,
 				09A83F122AAF04940082A6A2 /* UsersApi.swift in Sources */,
