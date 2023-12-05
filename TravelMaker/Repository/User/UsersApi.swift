@@ -27,7 +27,7 @@ extension UsersApi: TargetType {
         case .signUp(_ , _ , _):
             return "/api/user/join"
         case .fetchMyData:
-            return "/api/user/profile"
+            return "/api/user"
         case .checkNickName(_ ):
             return "/api/user/nickname/check"
         }
@@ -79,7 +79,7 @@ extension UsersApi: TargetType {
         ]
         
         if let accessToken = SessionManager.shared.accessToken {
-            header = ["Authorization": accessToken]
+            header = ["Authorization": "Bearer " + accessToken]
         }
         
         return header

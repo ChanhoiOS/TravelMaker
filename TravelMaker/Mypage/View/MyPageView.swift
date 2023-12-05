@@ -277,20 +277,22 @@ extension MyPageView {
     }
     
     func setUserData(_ data: MyPageModel) {
+        /*
         if let localData = getCacheImage() {
             profileImage.image = localData
-            return
         }
-         
+         */
+        
         if let url = data.data?.imageURL {
+            SessionManager.shared.profileUrl = url
             _Concurrency.Task {
                 do {
                     let imageData = try await loadImage(url)
                     DispatchQueue.main.async {
                         if let image = UIImage(data: imageData) {
                             self.profileImage.image = image
-                            self.setMemoryCache(url, image)
-                            self.setDiskCache(url, image)
+                            //self.setMemoryCache(url, image)
+                            //self.setDiskCache(url, image)
                         }
                     }
                 } catch {
@@ -301,7 +303,7 @@ extension MyPageView {
     }
         
     func loadImage(_ url: String) async throws -> Data {
-        let imageUrl = URL(string: Constants.imageUrl + url)!
+        let imageUrl = URL(string: url)!
         let (data, response) = try await URLSession.shared.data(from: imageUrl)
         
         guard let httpReponse = response as? HTTPURLResponse, httpReponse.statusCode == 200 else {
