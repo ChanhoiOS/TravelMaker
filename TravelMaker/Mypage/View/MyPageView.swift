@@ -108,12 +108,23 @@ class MyPageView: UIViewController {
         button.addTarget(self, action: #selector(goMyPosts), for: .touchUpInside)
         return button
     }()
-
+    
+    private let logoutView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private let withdrawalView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setFlexView()
         cacheCheck()
+        setGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,39 +171,41 @@ class MyPageView: UIViewController {
             flex.addItem().height(1).backgroundColor(Colors.DESIGN_WHITE).marginHorizontal(24)
             
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).define { flex in
-            
-                flex.addItem().direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                
+                flex.addItem(logoutView).direction(.row).alignItems(.center).marginTop(32).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
                     flex.addItem(logoutLabel).position(.absolute).left(20)
                     flex.addItem(logoutAction).position(.absolute).right(20)
                 }
                 
-                flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                flex.addItem(withdrawalView).direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
                     flex.addItem(withdrawalLabel).position(.absolute).left(20)
                     flex.addItem(withdrawalAtion).position(.absolute).right(20)
                 }
                 /*
-                flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
-                    flex.addItem(myPostsLabel_3).position(.absolute).left(20)
-                    flex.addItem(myPostsButton_3).position(.absolute).right(20)
-                }
+                 flex.addItem().direction(.row).alignItems(.center).marginTop(14).height(58).marginHorizontal(24).backgroundColor(.white).define { flex in
+                 flex.addItem(myPostsLabel_3).position(.absolute).left(20)
+                 flex.addItem(myPostsButton_3).position(.absolute).right(20)
+                 }
                  */
             }.grow(2)
             
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).grow(1)
         }
     }
-    
-    func cacheCheck() {
-        if let localData = getCacheImage() {
-            profileImage.image = localData
-        }
-        
-        if SessionManager.shared.nickName != "" {
-            nickName.text = SessionManager.shared.nickName
-        }
-    }
 }
 
+extension MyPageView {
+    func setGesture() {
+        let logout = UITapGestureRecognizer(target: self, action: #selector(logout))
+        logoutView.addGestureRecognizer(logout)
+        logoutView.isUserInteractionEnabled = true
+        
+        let withdrawal = UITapGestureRecognizer(target: self, action: #selector(withdrawal))
+        withdrawalView.addGestureRecognizer(withdrawal)
+        withdrawalView.isUserInteractionEnabled = true
+    }
+}
+    
 extension MyPageView {
     @objc func editProfile() {
         
@@ -215,6 +228,16 @@ extension MyPageView {
 }
 
 extension MyPageView {
+    func cacheCheck() {
+        if let localData = getCacheImage() {
+            profileImage.image = localData
+        }
+        
+        if SessionManager.shared.nickName != "" {
+            nickName.text = SessionManager.shared.nickName
+        }
+    }
+    
     func fetchUserData() {
         wrapper.requestGet(target: .fetchMyData, instance: MyPageModel.self) { response in
             switch response {
