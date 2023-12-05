@@ -9,6 +9,7 @@ import UIKit
 import Moya
 import PinLayout
 import FlexLayout
+import YPImagePicker
 
 class MyPageView: UIViewController {
     
@@ -20,6 +21,8 @@ class MyPageView: UIViewController {
     var alertView: LogoutAlert?
     var blurView: UIVisualEffectView?
     let flexView = UIView()
+    var selectedImage = UIImage()
+    var requestModel: RequestProfileImageModel?
     
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
@@ -41,6 +44,12 @@ class MyPageView: UIViewController {
         return imageView
     }()
     
+    private let editProfileImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "cameraEdit")
+        return imageView
+    }()
+    
     private let nickName: UILabel = {
         let label = UILabel()
         label.text = SessionManager.shared.nickName
@@ -59,7 +68,7 @@ class MyPageView: UIViewController {
     
     private lazy var editButton: UIButton = {
         let button = UIButton()
-        button.setTitle("프로필관리", for: .normal)
+        button.setTitle("프로필 이미지 변경", for: .normal)
         button.setTitleColor(Colors.DESIGN_BLUE, for: .normal)
         button.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
         button.addTarget(self, action: #selector(editProfile), for: .touchUpInside)
@@ -140,6 +149,7 @@ class MyPageView: UIViewController {
         flexView.flex.layout()
         
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        editProfileImage.layer.cornerRadius = editProfileImage.frame.height / 2
     }
     
     func setFlexView() {
@@ -210,7 +220,7 @@ extension MyPageView {
     
 extension MyPageView {
     @objc func editProfile() {
-        
+        presentToImagePicker()
     }
     
     @objc func goMyPosts() {
@@ -251,6 +261,79 @@ extension MyPageView {
     @objc func withdrawal() {
         let vc = WithdrawalView(nibName: "WithdrawalView", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension MyPageView: YPImagePickerDelegate {
+    func uploadSelectedPhoto() {
+        var imageData = Data()
+        
+        let resizeImage = selectedImage.resize(newWidth: 100)
+        var imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
+        imageData.append(imageJpg)
+        
+        requestModel = RequestProfileImageModel(
+            imageFiles: imageData
+        )
+        
+        FileUploadRepository.shared.uploadProfileData(url: Apis.update_image, with: requestModel!) { response in
+            print("내 프로필 등록: ", response)
+            self.setUserData(response)
+            self.navigationController?.popViewController(animated: true)
+        } failureHandler: { error in
+            print("error: ", error)
+        }
+    }
+    
+    func imagePickerHasNoItemsInLibrary(_ picker: YPImagePicker) {
+        print("사진 가져오기 에러")
+    }
+    
+    func shouldAddToSelection(indexPath: IndexPath, numSelections: Int) -> Bool {
+        return true
+    }
+    
+    private func presentToImagePicker() {
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photo
+        config.library.defaultMultipleSelection = false
+        config.library.maxNumberOfItems = 1
+        config.screens = [.library]
+        config.startOnScreen = .library
+        // cropping style 을 square or not 으로 지정.
+        config.library.isSquareByDefault = true
+        // 필터 단계 스킵.
+        config.showsPhotoFilters = false
+        config.showsCrop = .rectangle(ratio: 1.0)
+        
+        config.shouldSaveNewPicturesToAlbum = false
+        
+        let imagePicker = YPImagePicker(configuration: config)
+        imagePicker.imagePickerDelegate = self
+        
+        imagePicker.didFinishPicking { [weak self] items, cancelled in
+            guard let self = self else { return }
+            
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    selectedImage = photo.image
+                case .video(let video):
+                    print("video: ", video)
+                }
+            }
+            
+            imagePicker.dismiss(animated: true) {
+                if !cancelled {
+                    DispatchQueue.main.async {
+                        self.uploadSelectedPhoto()
+                    }
+                }
+            }
+        }
+        
+        imagePicker.modalPresentationStyle = .overFullScreen
+        present(imagePicker, animated: true, completion: nil)
     }
 }
 

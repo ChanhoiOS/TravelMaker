@@ -293,6 +293,7 @@ extension LoginView {
     func goToMain(_ data: LoginModel) {
         if let token = data.data?.accessToken {
             SessionManager.shared.accessToken = token
+            print("token: ", token)
         }
         
         SessionManager.shared.nickName = data.data?.userInfo?.nickName ?? ""

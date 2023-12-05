@@ -62,4 +62,31 @@ class FileUploadRepository {
                 failureHandler(error)
             }}
     }
+    
+    func uploadProfileData(url: String,
+                             with model: RequestProfileImageModel,
+                             successHandler: @escaping ((MyPageModel) -> Void),
+                             failureHandler: @escaping ((AFError) -> Void)) {
+        
+        if let accessToken = SessionManager.shared.accessToken {
+            header = ["Authorization": "Bearer " + accessToken]
+        }
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            if let imageFiles = model.imageFiles {
+                multipartFormData.append(imageFiles,
+                                        withName: "imageFiles",
+                                        fileName: "image_profile",
+                                        mimeType: "image/jpg")
+            }
+        }, to: url,
+                  headers: header)
+        .responseDecodable(of: MyPageModel.self) { response in
+            switch response.result {
+            case .success(let data):
+                successHandler(data)
+            case .failure(let error):
+                failureHandler(error)
+            }}
+    }
 }

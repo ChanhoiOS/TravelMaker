@@ -27,3 +27,10 @@ struct MyPageDataModel: Codable {
         case createdAt, updateAt
     }
 }
+
+
+
+
+struct RequestProfileImageModel {
+    let imageFiles: Data?
+}
