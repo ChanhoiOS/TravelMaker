@@ -41,6 +41,7 @@ class MyPageView: UIViewController {
     private let profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "empty_profile")
+        imageView.layer.cornerRadius = 30
         return imageView
     }()
     
@@ -148,8 +149,8 @@ class MyPageView: UIViewController {
         flexView.pin.all(view.pin.safeArea)
         flexView.flex.layout()
         
-        profileImage.layer.cornerRadius = profileImage.frame.height / 2
-        editProfileImage.layer.cornerRadius = editProfileImage.frame.height / 2
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = 30
     }
     
     func setFlexView() {
@@ -163,7 +164,7 @@ class MyPageView: UIViewController {
             }
             
             flex.addItem().height(124).direction(.row).backgroundColor(Colors.DESIGN_BACKGROUND).justifyContent(.spaceBetween).define { flex in
-                flex.addItem(profileImage).marginLeft(24).width(60).height(60).marginVertical(32)
+                flex.addItem(profileImage).marginLeft(24).width(60).height(60).marginVertical(32).cornerRadius(30)
                 flex.addItem().paddingRight(80).define { flex in
                     flex.addItem().height(62).define { flex in
                         flex.addItem(nickName).marginTop(38)
@@ -277,11 +278,12 @@ extension MyPageView: YPImagePickerDelegate {
         )
         
         FileUploadRepository.shared.uploadProfileData(url: Apis.update_image, with: requestModel!) { response in
-            print("내 프로필 등록: ", response)
+            print("내 프로필 이미지 등록 성공: ", response)
             self.setUserData(response)
-            self.navigationController?.popViewController(animated: true)
+            LoadingIndicator.shared.hideIndicator()
         } failureHandler: { error in
-            print("error: ", error)
+            print("내 프로필 이미지 error: ", error)
+            LoadingIndicator.shared.hideIndicator()
         }
     }
     
@@ -326,6 +328,7 @@ extension MyPageView: YPImagePickerDelegate {
             imagePicker.dismiss(animated: true) {
                 if !cancelled {
                     DispatchQueue.main.async {
+                        LoadingIndicator.shared.showIndicator()
                         self.uploadSelectedPhoto()
                     }
                 }
