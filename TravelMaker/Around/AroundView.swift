@@ -53,7 +53,7 @@ class AroundView: BaseViewController, StoryboardView {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        bind(reactor: reactor)
     }
     
     func initHeader() {

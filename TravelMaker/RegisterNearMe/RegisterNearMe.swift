@@ -455,10 +455,12 @@ extension RegisterNearMe {
     @objc func uploadData() {
         var imageData = [Data]()
         
-        for image in images {
-            let resizeImage = image.resize(newWidth: 100)
-            var imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
-            imageData.append(imageJpg)
+        if images.count > 0 {
+            for image in images {
+                let resizeImage = image.resize(newWidth: 100)
+                var imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
+                imageData.append(imageJpg)
+            }
         }
         
         requestModel = RequestRegisterNearMeModel(
@@ -472,11 +474,16 @@ extension RegisterNearMe {
             category_name: selectedSpace["categoryName"] as? String ?? "",
             star_rating: star.rating)
         
+        LoadingIndicator.shared.showIndicator()
+        
         FileUploadRepository.shared.uploadArroundMeData(url: Apis.nearby_add, with: requestModel!) { response in
-            print("내 주변 등록: ", response)
+            print("내 주변 등록 성공: ", response)
+            LoadingIndicator.shared.hideIndicator()
             self.navigationController?.popViewController(animated: true)
         } failureHandler: { error in
-            print("error: ", error)
+            print("내 주변 등록 error: ", error)
+            LoadingIndicator.shared.hideIndicator()
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
