@@ -54,7 +54,8 @@ extension AppDelegate {
 
 extension AppDelegate {
     func setKakaoLogin() {
-        KakaoSDK.initSDK(appKey: "5be589cc2deb0cbaf08105f0ada52f30")
+        //KakaoSDK.initSDK(appKey: "5be589cc2deb0cbaf08105f0ada52f30")
+        KakaoSDK.initSDK(appKey: "b4eb3fea0c7fbe33689c9458651ff344")
     }
 }
 
