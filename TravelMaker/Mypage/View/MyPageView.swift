@@ -256,7 +256,7 @@ extension MyPageView {
         SessionManager.shared.accessToken = ""
         
         let vc = LoginView(nibName: "LoginView", bundle: nil)
-        self.navigationController?.offAllNamed(vc)
+        self.tabBarController?.navigationController?.offAllNamed(vc)
     }
     
     @objc func withdrawal() {
