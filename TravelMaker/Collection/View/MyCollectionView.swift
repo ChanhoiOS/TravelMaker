@@ -230,6 +230,7 @@ extension MyCollectionView {
     
     @objc func goMyRecommendList(sender: UITapGestureRecognizer) {
         let vc = MyRecommendListView(nibName: "MyRecommendListView", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

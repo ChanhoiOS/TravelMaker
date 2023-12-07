@@ -9,22 +9,34 @@ import UIKit
 
 class MyRecommendListView: UIViewController {
 
+    @IBOutlet weak var backBtn: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setCollectionView()
+        setGesture()
     }
-
+    
     func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "MyRecommendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyRecommendCollectionViewCell")
     }
- 
+}
 
+extension MyRecommendListView {
+    func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
+        backBtn.addGestureRecognizer(tapGesture)
+        backBtn.isUserInteractionEnabled = true
+    }
+    
+    @objc func backBtnAction(sender: UITapGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension MyRecommendListView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -26,8 +26,6 @@ class SearchRouteView: BaseViewController, StoryboardView {
     var latitude = 37.50518440330725
     var longitude = 127.05485569769449
     
-    var tabBarHeight: Int = 83
-    
     private let backBtn: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "header_back_btn.png")
@@ -82,7 +80,6 @@ class SearchRouteView: BaseViewController, StoryboardView {
 
         initHeader()
         initTextField()
-        getHeight()
         initRegisterView()
         setTableView()
         
@@ -169,14 +166,10 @@ class SearchRouteView: BaseViewController, StoryboardView {
         self.view.addSubview(confirmBtn)
         
         confirmBtn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-tabBarHeight)
+            make.bottom.equalToSuperview().offset(-44)
             make.left.right.equalToSuperview()
             make.height.equalTo(69)
         }
-    }
-    
-    func getHeight() {
-        tabBarHeight = Int(self.tabBarController?.tabBar.frame.height ?? 49.0)
     }
 }
 
