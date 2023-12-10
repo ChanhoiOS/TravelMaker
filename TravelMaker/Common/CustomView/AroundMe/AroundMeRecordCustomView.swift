@@ -166,7 +166,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(starLabel)
-        var rating = Double(detail.starRating ?? 0)
+        let rating = Double(detail.starRating ?? 0)
         
         starLabel.text = "\(rating)"
         starLabel.snp.makeConstraints { make in

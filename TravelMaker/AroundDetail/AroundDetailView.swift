@@ -40,21 +40,14 @@ class AroundDetailView: BaseViewController {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 14)
-        return label
-    }()
-    
-    private let addressLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = Colors.DESIGN_GRAY
-        label.font = UIFont(name: "SUIT-Regular", size: 14)
+        label.font = UIFont(name: "SUIT-Bold", size: 16)
         return label
     }()
     
     private let contentTitle: UILabel = {
         let label = UILabel()
         label.textColor = Colors.DESIGN_BLACK
-        label.font = UIFont(name: "SUIT-Regular", size: 26)
+        label.font = UIFont(name: "SUIT-Bold", size: 26)
         return label
     }()
     
@@ -80,10 +73,17 @@ class AroundDetailView: BaseViewController {
         return label
     }()
     
+    private let starImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "around_star_image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let starLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 16)
+        label.textColor = Colors.DESIGN_GREEN
+        label.font = UIFont(name: "SUIT-Bold", size: 16)
         return label
     }()
     
@@ -148,11 +148,11 @@ class AroundDetailView: BaseViewController {
             .then {
                 $0.contentScaleMode = .scaleAspectFill
                 
-//                if let imagesPath = detailData?.imagesPath {
-//                    $0.setImageInputs(getImageInputs(imagePaths: imagesPath))
-//                    $0.slideshowInterval = 3
-//                    $0.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
-//                }
+                if let imagesPath = detailData?.imgList {
+                    $0.setImageInputs(getImageInputs(imagePaths: imagesPath))
+                    $0.slideshowInterval = 3
+                    $0.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
+                }
             }
         
         imageSlide.addSubview(backBtn)
@@ -171,25 +171,16 @@ class AroundDetailView: BaseViewController {
         
         profileImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
-            make.width.height.equalTo(36)
+            make.width.height.equalTo(31)
             make.top.equalTo(imageSlide.snp.bottom).offset(18)
         }
         
         contentView.addSubview(nameLabel)
-        nameLabel.text = "차니"
+        nameLabel.text = detailData?.user?.nickName ?? ""
         
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(profileImage.snp.right).offset(12)
-            make.top.equalTo(imageSlide.snp.bottom).offset(21.5)
-        }
-        
-        contentView.addSubview(addressLabel)
-        addressLabel.text = detailData?.address ?? ""
-        
-        
-        addressLabel.snp.makeConstraints { make in
-            make.left.equalTo(profileImage.snp.right).offset(12)
-            make.top.equalTo(nameLabel.snp.bottom).offset(6)
+            make.centerY.equalTo(profileImage)
         }
         
         profileLine = UIView()
@@ -226,7 +217,7 @@ class AroundDetailView: BaseViewController {
         
         contentDate.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
-            make.top.equalTo(contentAddress.snp.bottom).offset(10)
+            make.top.equalTo(contentAddress.snp.bottom).offset(5)
         }
         
         contentView.addSubview(contentText)
@@ -252,27 +243,27 @@ class AroundDetailView: BaseViewController {
     }
     
     func setStar() {
-        contentView.addSubview(starLabel)
-        //starLabel.text = "★ " + "\(detailData?.starRating ?? 0.0)" + " | " + "만족도"
-        
-        starLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(24)
+        contentView.addSubview(starImage)
+        starImage.snp.makeConstraints { make in
             make.top.equalTo(bottomLine.snp.bottom).offset(16)
+            make.left.equalToSuperview().offset(24)
+            make.height.width.equalTo(20)
         }
         
-        contentView.addSubview(commentImage)
+        contentView.addSubview(starLabel)
+        let rating = Double(detailData?.starRating ?? 0)
+        starLabel.text = "\(rating)"
         
-        commentImage.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-24)
+        starLabel.snp.makeConstraints { make in
+            make.left.equalTo(starImage.snp.right).offset(2)
             make.top.equalTo(bottomLine.snp.bottom).offset(16)
-            make.width.height.equalTo(28)
         }
         
         contentView.addSubview(bookmarkImage)
         
         bookmarkImage.snp.makeConstraints { make in
-            make.right.equalTo(commentImage.snp.left).offset(4)
-            make.centerY.equalTo(commentImage)
+            make.right.equalToSuperview().offset(-24)
+            make.top.equalTo(bottomLine.snp.bottom).offset(16)
             make.width.height.equalTo(28)
             make.bottom.equalToSuperview().offset(-40)
         }
@@ -282,7 +273,7 @@ class AroundDetailView: BaseViewController {
 extension AroundDetailView {
     func getImageInputs(imagePaths: [String]) -> [KFSource] {
         let sources = imagePaths.map {
-            KFSource(urlString: Apis.imageUrl + $0)!
+            KFSource(urlString: $0)!
         }
         
         return sources
