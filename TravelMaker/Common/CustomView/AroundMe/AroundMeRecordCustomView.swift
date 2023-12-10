@@ -53,14 +53,21 @@ class AroundMeRecordCumtomView: UIView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 16)
+        label.font = UIFont(name: "SUIT-Bold", size: 16)
         return label
+    }()
+    
+    private let starImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "around_star_image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private let starLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 16)
+        label.textColor = Colors.DESIGN_GREEN
+        label.font = UIFont(name: "SUIT-Bold", size: 16)
         return label
     }()
 
@@ -94,6 +101,8 @@ class AroundMeRecordCumtomView: UIView {
         self.layer.shadowRadius = 12
         
         self.addSubview(infoImage)
+        infoImage.clipsToBounds = true
+        infoImage.layer.cornerRadius = 4
         infoImage.image = image
         
         infoImage.snp.makeConstraints { make in
@@ -140,6 +149,7 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(profileImage)
+        profileImage.clipsToBounds = true
         profileImage.layer.cornerRadius = 12
         
         profileImage.snp.makeConstraints { make in
@@ -156,10 +166,19 @@ class AroundMeRecordCumtomView: UIView {
         }
         
         self.addSubview(starLabel)
-       // starLabel.text = "★ " + "\(detail.starRating ?? 0.0)"
+        var rating = Double(detail.starRating ?? 0)
+        
+        starLabel.text = "\(rating)"
         starLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-24)
             make.centerY.equalTo(profileImage)
+        }
+        
+        self.addSubview(starImage)
+        starImage.snp.makeConstraints { make in
+            make.right.equalTo(starLabel.snp.left).offset(-2)
+            make.centerY.equalTo(starLabel)
+            make.height.width.equalTo(20)
         }
         
         self.addSubview(selectBtn)

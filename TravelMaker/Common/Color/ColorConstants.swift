@@ -19,6 +19,9 @@ struct Colors {
     
     static let RECOMMEND_GRAY = UIColor(red: 92/255, green: 92/255, blue: 92/255, alpha: 1.0)
     
+    // green
+    static let DESIGN_GREEN = UIColor(red: 141/255, green: 224/255, blue: 126/255, alpha: 1.0)
+    
     // blue
     static let DESIGN_BLUE = UIColor(red: 56/255, green: 96/255, blue: 226/255, alpha: 1.0)
     static let PRIMARY_BLUE = UIColor(red: 48.0/255.0, green: 116.0/255.0, blue: 248.0/255.0, alpha: 1.0)
