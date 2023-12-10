@@ -158,7 +158,7 @@ extension AroundView: NMFMapViewTouchDelegate {
                             if let data = try? Data(contentsOf: url) {
                                 if let image = UIImage(data: data) {
                                     DispatchQueue.main.async {
-                                        let resizeImage = image.resizeAll(newWidth: 60, newHeight: 70)
+                                        let resizeImage = image.resizeAll(newWidth: 36, newHeight: 36)
                                         marker.iconImage = NMFOverlayImage(image: resizeImage)
                                         marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
                                         marker.mapView = self.naverMapView
