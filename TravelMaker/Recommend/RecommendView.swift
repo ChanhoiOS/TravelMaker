@@ -177,7 +177,7 @@ extension RecommendView {
     func setData() {
         Task {
             do {
-                responseAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommend_all)
+                responseAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommend_all, ResponseRecommendALLModel.self)
             } catch {
                 
             }

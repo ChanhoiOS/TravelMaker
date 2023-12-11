@@ -24,7 +24,8 @@ class AsyncNetworkManager {
         return headers
     }
     
-    func asyncGet(_ url: String) async throws -> ResponseRecommendALLModel {
+    func asyncGet<T: Decodable>(_ url: String,
+                                _ responseModel: T.Type) async throws -> T {
         guard let url = URL(string: url) else {
             throw ErrorHandling.invalindUrl
         }
@@ -36,7 +37,7 @@ class AsyncNetworkManager {
             throw ErrorHandling.responseError
         }
         
-        let asyncResult = try JSONDecoder().decode(ResponseRecommendALLModel.self, from: data)
+        let asyncResult = try JSONDecoder().decode(T.self, from: data)
 
         return asyncResult
     }
