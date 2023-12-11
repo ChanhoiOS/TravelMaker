@@ -30,6 +30,7 @@
 		08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A6AF5D2B0A390F0045EAFA /* SearchRouteSelectView.xib */; };
 		08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6AF612B0A39690045EAFA /* SearchRouteViewModel.swift */; };
 		08C876F22B1C6FC0009544E4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C876F12B1C6FC0009544E4 /* ApiManager.swift */; };
+		08DE19D72B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE19D62B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift */; };
 		08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */; };
 		08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */; };
 		08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */; };
@@ -173,6 +174,7 @@
 		08A6AF5D2B0A390F0045EAFA /* SearchRouteSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRouteSelectView.xib; sourceTree = "<group>"; };
 		08A6AF612B0A39690045EAFA /* SearchRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteViewModel.swift; sourceTree = "<group>"; };
 		08C876F12B1C6FC0009544E4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		08DE19D62B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNearByBookmarkModel.swift; sourceTree = "<group>"; };
 		08FA166F2AFBAA6600E9C452 /* RegisterRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouteView.swift; sourceTree = "<group>"; };
 		08FA16702AFBAA6600E9C452 /* RegisterRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterRouteView.xib; sourceTree = "<group>"; };
 		08FF473E2B1336FA00B0D6AB /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 			isa = PBXGroup;
 			children = (
 				097333382B26E45000C5F192 /* SetNearByBookmarkModel.swift */,
+				08DE19D62B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1332,6 +1335,7 @@
 				0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */,
 				090FB9F22ADE7985005081F8 /* AroundMeCustomView.swift in Sources */,
 				09CDB73E2AF0C20300044CF2 /* BottomSheetView.swift in Sources */,
+				08DE19D72B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift in Sources */,
 				0960FF9F2AE6321D004D9068 /* RequestRegisterNearMeModel.swift in Sources */,
 				09A83EEF2AAE9D210082A6A2 /* AroundView.swift in Sources */,
 				09591B952AB0305A00A3F0D6 /* OnboardingView.swift in Sources */,

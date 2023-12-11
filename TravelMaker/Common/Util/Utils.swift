@@ -23,4 +23,39 @@ class Utils {
         alertController.addAction(okAction)
         topViewController.present(alertController, animated: true)
     }
+    
+    static func showToast(_ text: String) {
+        guard let topVC = UIApplication.topMostController() else { return }
+        
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        containerView.layer.cornerRadius = 10
+        containerView.clipsToBounds = true
+        
+        let toastLabel = UILabel()
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont(name: "SUIT-Regular", size: 14)
+        toastLabel.textAlignment = .center
+        toastLabel.text = text
+        
+        containerView.addSubview(toastLabel)
+        topVC.view.addSubview(containerView)
+        
+        containerView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+        toastLabel.snp.makeConstraints { make in
+            make.top.equalTo(containerView).offset(10)
+            make.leading.equalTo(containerView).offset(10)
+            make.bottom.equalTo(containerView).offset(-10)
+            make.trailing.equalTo(containerView).offset(-10)
+        }
+         
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            containerView.alpha = 0.0
+        }, completion: {(isCompleted) in
+            containerView.removeFromSuperview()
+        })
+    }
 }

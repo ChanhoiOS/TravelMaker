@@ -86,35 +86,49 @@ class AsyncNetworkManager {
             throw ErrorHandling.responseError
         }
     }
-}
+    
+    func asyncDelete<T: Decodable>(_ url: String,
+                                 _ paramDic: [String: Any],
+                                 _ resopnseModel: T.Type) async throws -> T {
+        
+        var headers = [String: String]()
+        
+        if let accessToken = SessionManager.shared.accessToken {
+            headers = [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + accessToken
+            ]
+        } else {
+            headers = [
+                "Content-Type": "application/json"
+            ]
+        }
+        
+        guard let url = URL(string: url) else {
+            throw ErrorHandling.invalindUrl
+        }
+        
+        let requestBody = try JSONSerialization.data(withJSONObject: paramDic, options: [])
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        for (key, value) in headers {
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+        request.httpBody = requestBody
 
-struct ResponseModel {
-    var data: Any?
-    var error: Error?
-    var status: Int?
-}
+        let (data, response) = try await URLSession.shared.data(for: request)
 
-class ResponseModelBuilder {
-    var data: Any?
-    var error: Error?
-    var status: Int?
-    
-    func setData(data: Any?) -> ResponseModelBuilder {
-        self.data = data
-        return self
-    }
-    
-    func setError(error: Error?) -> ResponseModelBuilder {
-        self.error = error
-        return self
-    }
-    
-    func setStatusCode(code: Int?) -> ResponseModelBuilder {
-        self.status = code
-        return self
-    }
-    
-    func build() -> ResponseModel {
-        return ResponseModel(data: self.data, error: self.error, status: status)
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw ErrorHandling.responseError
+        }
+
+        do {
+            let asyncResult = try JSONDecoder().decode(T.self, from: data)
+            return asyncResult
+        } catch {
+            throw ErrorHandling.responseError
+        }
     }
 }

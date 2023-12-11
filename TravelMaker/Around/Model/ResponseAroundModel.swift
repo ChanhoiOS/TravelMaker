@@ -20,7 +20,7 @@ struct AroundData: Codable {
     let viewCount: Int?
     let createdAt, updateAt: String?
     let user: UserInfo?
-    let bookmarked: Bool?
+    var bookmarked: Bool?
     let imgList: [String]?
 
     enum CodingKeys: String, CodingKey {

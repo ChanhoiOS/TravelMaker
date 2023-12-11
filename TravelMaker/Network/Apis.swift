@@ -66,7 +66,7 @@ struct Apis {
     
     static let nearby_bookmakr_all = "\(Apis.baseUrl)/api/nearby_bookmark"
     
-    static let nearby_delete = "\(Apis.baseUrl)/api/nearby_bookmark"
+    static let nearby_delete_bookmark = "\(Apis.baseUrl)/api/nearby_bookmark"
     
     
     

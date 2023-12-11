@@ -307,20 +307,41 @@ extension AroundDetailView {
     @objc func switchBookmark() {
         guard let topVC = UIApplication.topMostController() else { return }
         
-        Task {
-            do {
-                var paramDic = [String: Any]()
-                let nearbyId = detailData?.nearbyID ?? 0
-                paramDic["nearby_id"] = nearbyId
-                
-                let response = try await AsyncNetworkManager.shared.asyncPost(Apis.nearby_add_bookmark, paramDic, SetNearByBookmarkModel.self)
-                if response.message == "성공" {
-                    bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
-                } else {
-                    Utils.completionShowAlert(title: "즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.", message: "", topViewController: topVC) {}
+        var paramDic = [String: Any]()
+        let nearbyId = detailData?.nearbyID ?? 0
+        paramDic["nearby_id"] = nearbyId
+        
+        let bookmarked = detailData?.bookmarked ?? false
+        
+        if bookmarked {
+            Task {
+                do {
+                    let response = try await AsyncNetworkManager.shared.asyncDelete(Apis.nearby_delete_bookmark, paramDic, DeleteNearByBookmarkModel.self)
+                    if response.message == "성공" {
+                        bookmarkImage.image = UIImage(named: "detail_bookmark")
+                        Utils.showToast("즐겨찾기 해제")
+                        detailData?.bookmarked = false
+                    } else {
+                        Utils.showToast("즐겨찾기 해제에 실패하였습니다. 잠시 후에 다시 시도해주세요.")
+                    }
+                } catch {
+                    Utils.showToast("즐겨찾기 해제에 실패하였습니다. 잠시 후에 다시 시도해주세요.")
                 }
-            } catch {
-                Utils.completionShowAlert(title: "즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.", message: "", topViewController: topVC) {}
+            }
+        } else {
+            Task {
+                do {
+                    let response = try await AsyncNetworkManager.shared.asyncPost(Apis.nearby_add_bookmark, paramDic, SetNearByBookmarkModel.self)
+                    if response.message == "성공" {
+                        bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
+                        Utils.showToast("즐겨찾기 등록")
+                        detailData?.bookmarked = true
+                    } else {
+                        Utils.showToast("즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.")
+                    }
+                } catch {
+                    Utils.showToast("즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.")
+                }
             }
         }
     }
