@@ -286,10 +286,36 @@ extension AroundDetailView {
         backBtn.addGestureRecognizer(tapGesture)
         backBtn.isUserInteractionEnabled = true
         
-        scrollView.addGestureRecognizer(tapGesture)
+        let tapBookmark = UITapGestureRecognizer(target: self, action: #selector(switchBookmark))
+        bookmarkImage.addGestureRecognizer(tapBookmark)
+        bookmarkImage.isUserInteractionEnabled = true
+        
+        //scrollView.addGestureRecognizer(tapGesture)
     }
     
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension AroundDetailView {
+    @objc func switchBookmark() {
+        guard let topVC = UIApplication.topMostController() else { return }
+        
+        Task {
+            do {
+                var paramDic = [String: Any]()
+                paramDic["nearby_id"] = 28
+                
+                let response = try await AsyncNetworkManager.shared.asyncPost(Apis.nearby_add_bookmark, paramDic, SetNearByBookmarkModel.self)
+                if response.message == "성공" {
+                    bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
+                } else {
+                    Utils.completionShowAlert(title: "즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.", message: "", topViewController: topVC) {}
+                }
+            } catch {
+                Utils.completionShowAlert(title: "즐겨찾기 등록에 실패하였습니다. 잠시 후에 다시 시도해주세요.", message: "", topViewController: topVC) {}
+            }
+        }
     }
 }
