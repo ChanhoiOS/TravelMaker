@@ -261,6 +261,11 @@ class AroundDetailView: BaseViewController {
         
         contentView.addSubview(bookmarkImage)
         
+        let bookmarked = detailData?.bookmarked ?? false
+        if bookmarked {
+            bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
+        }
+        
         bookmarkImage.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-24)
             make.top.equalTo(bottomLine.snp.bottom).offset(16)
@@ -305,7 +310,8 @@ extension AroundDetailView {
         Task {
             do {
                 var paramDic = [String: Any]()
-                paramDic["nearby_id"] = 28
+                let nearbyId = detailData?.nearbyID ?? 0
+                paramDic["nearby_id"] = nearbyId
                 
                 let response = try await AsyncNetworkManager.shared.asyncPost(Apis.nearby_add_bookmark, paramDic, SetNearByBookmarkModel.self)
                 if response.message == "성공" {
