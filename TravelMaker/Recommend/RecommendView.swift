@@ -339,6 +339,7 @@ extension RecommendView: SelectRecommendData {
         
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
         cameraUpdate.animation = .fly
+        cameraUpdate.animationDuration = 2.0
         naverMapView?.moveCamera(cameraUpdate)
     }
 }

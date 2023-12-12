@@ -36,23 +36,23 @@ class WithdrawalViewModel: WithdrawalViewModelType {
         
         input.deleteUserInfo.subscribe(onNext: {[weak self] data in
             self?.requestDelete(data)
-        }, onError: {[weak self] error in
-            print("error: ",error)
+        }, onError: { error in
+            print("**** 유저삭제 실패 ****")
         })
         .disposed(by: disposeBag)
         
         input.collectReason.subscribe(onNext: {[weak self] data in
             self?.collectData(data)
-        }, onError: {[weak self] error in
-            print("error: ",error)
+        }, onError: { error in
+            print("**** 탈퇴 이유 저장 실패 ****")
         })
         .disposed(by: disposeBag)
     }
     
     func requestDelete(_ paramDic: [String: Any]) {
         ApiManager.shared.delete(url: Apis.leave, paramDic: paramDic) {
-            print("**** 회원정보삭제 성공 **** ")
             self.output.responseDelete.onNext(())
+            print("**** 회원정보삭제 성공 ****")
         } failHandler: {
             print("**** 탈퇴 사유 수집 실패 ****")
         }
