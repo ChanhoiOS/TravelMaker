@@ -274,7 +274,7 @@ extension RecommendView {
                             
                             let image = UIImage(named: imageName)!
                             DispatchQueue.main.async {
-                                let resizeImage = image.resizeAll(newWidth: 48, newHeight: 48)
+                                let resizeImage = image.resizeAll(newWidth: 36, newHeight: 36)
                                 self.markers[index].iconImage = NMFOverlayImage(image: resizeImage)
                                 self.markers[index].position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
                                 self.markers[index].mapView = self.naverMapView
@@ -336,7 +336,7 @@ extension RecommendView: SelectRecommendData {
         let longitude = (data?.longitude as? NSString)?.doubleValue ?? 127.05485569769449
         
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
-        cameraUpdate.animation = .easeOut
+        cameraUpdate.animation = .fly
         naverMapView?.moveCamera(cameraUpdate)
     }
 }
