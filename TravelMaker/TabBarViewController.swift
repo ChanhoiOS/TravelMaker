@@ -16,12 +16,19 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         self.delegate = self
+        setLine()
         
         NotificationCenter.default.addObserver(self, selector: #selector(transferIndex(_:)), name: Notification.Name("transferIndex"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.selectedIndex = 1
+    }
+    
+    func setLine() {
+        self.tabBar.layer.borderWidth = 0.5
+        self.tabBar.layer.borderColor = CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.14)
+        self.tabBar.clipsToBounds = true
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

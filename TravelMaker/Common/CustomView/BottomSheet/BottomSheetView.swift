@@ -24,14 +24,14 @@ final class BottomSheetView: PassThroughView {
     private enum Const {
         static let duration = 0.5
         static let cornerRadius = 12.0
-        static let barViewTopSpacing = 5.0
-        static let barViewSize = CGSize(width: UIScreen.main.bounds.width * 0.2, height: 5.0)
+        static let barViewTopSpacing = 16.0
+        static let barViewSize = CGSize(width: UIScreen.main.bounds.width * 0.07, height: 3.0)
         static let bottomSheetRatio: (Mode) -> Double = { mode in
             switch mode {
                 case .tip:
-                    return 0.85 // 위에서 부터의 값 (밑으로 갈수록 값이 커짐)
+                    return 0.87 // 위에서 부터의 값 (밑으로 갈수록 값이 커짐)
                 case .full:
-                    return 0.55
+                    return 0.59
             }
         }
         
@@ -48,7 +48,7 @@ final class BottomSheetView: PassThroughView {
     
     private let barView: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = Colors.DESIGN_WHITE
         view.isUserInteractionEnabled = false
         return view
     }()
@@ -110,6 +110,8 @@ final class BottomSheetView: PassThroughView {
         self.bottomSheetView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.bottomSheetView.layer.cornerRadius = Const.cornerRadius
         self.bottomSheetView.clipsToBounds = true
+        self.bottomSheetView.layer.borderWidth = 0.5
+        self.bottomSheetView.layer.borderColor = CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.2)
         
         self.addSubview(self.bottomSheetView)
         self.bottomSheetView.addSubview(self.barView)
@@ -136,6 +138,7 @@ final class BottomSheetView: PassThroughView {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: RecommendCollectionViewCell.id)
         
