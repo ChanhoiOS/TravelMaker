@@ -182,10 +182,14 @@ final class BottomSheetView: PassThroughView {
     }
     
     private func updateConstraint(offset: Double) {
-        self.bottomSheetView.snp.remakeConstraints {
-            $0.left.right.bottom.equalToSuperview()
-            $0.top.equalToSuperview().inset(offset)
-        }
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
+            self.bottomSheetView.snp.remakeConstraints {
+                $0.left.right.bottom.equalToSuperview()
+                $0.top.equalToSuperview().inset(offset)
+            }
+            self.layoutIfNeeded()
+        }, completion: nil)
+       
     }
 }
 
