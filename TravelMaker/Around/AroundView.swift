@@ -222,6 +222,7 @@ extension AroundView {
     @objc func selectDetail() {
         let detailView = AroundDetailView(nibName: "AroundDetailView", bundle: nil)
         detailView.detailData = detailData
+        detailView.nearbyId = detailData?.nearbyID
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 }

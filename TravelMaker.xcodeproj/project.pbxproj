@@ -47,6 +47,7 @@
 		0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */; };
 		091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */; };
 		091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */; };
+		091C68812B285382005DAD86 /* ResponseAroundDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091C68802B285382005DAD86 /* ResponseAroundDetailModel.swift */; };
 		091D5F2D2AB1391900D58FA2 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */; };
 		091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */; };
 		091D5F322AB1551B00D58FA2 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 091D5F312AB1551B00D58FA2 /* KakaoSDK */; };
@@ -191,6 +192,7 @@
 		0914EF7F2AF4B246008F1E5B /* MyRouteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRouteCollectionViewCell.xib; sourceTree = "<group>"; };
 		091B19A22AD4E732009A6AF1 /* RegisterNearMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNearMe.swift; sourceTree = "<group>"; };
 		091B19A32AD4E732009A6AF1 /* RegisterNearMe.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNearMe.xib; sourceTree = "<group>"; };
+		091C68802B285382005DAD86 /* ResponseAroundDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAroundDetailModel.swift; sourceTree = "<group>"; };
 		091D5F2C2AB1391900D58FA2 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
 		091D5F2E2AB13AF700D58FA2 /* NaverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginModel.swift; sourceTree = "<group>"; };
 		091D5F3F2AB176F900D58FA2 /* TravelMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelMaker.entitlements; sourceTree = "<group>"; };
@@ -754,6 +756,7 @@
 			children = (
 				097333382B26E45000C5F192 /* SetNearByBookmarkModel.swift */,
 				08DE19D62B2736F900CF3C9E /* DeleteNearByBookmarkModel.swift */,
+				091C68802B285382005DAD86 /* ResponseAroundDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1326,6 +1329,7 @@
 				09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */,
 				0868D6DF2B176C9F00094464 /* WithdrawalView.swift in Sources */,
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
+				091C68812B285382005DAD86 /* ResponseAroundDetailModel.swift in Sources */,
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,

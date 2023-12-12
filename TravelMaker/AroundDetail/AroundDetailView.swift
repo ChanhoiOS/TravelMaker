@@ -23,6 +23,8 @@ class AroundDetailView: BaseViewController {
     var imageSlide: ImageSlideshow!
     
     var detailData: AroundData?
+    var serverDetailData: ResponseAroundDetailModel?
+    var nearbyId: Int?
     
     private let profileImage: UIImageView = {
         let imageView = UIImageView()
@@ -109,6 +111,7 @@ class AroundDetailView: BaseViewController {
         setProfile()
         setContent()
         setStar()
+        setBookmarkedData()
         
         setGesture()
     }
@@ -261,11 +264,6 @@ class AroundDetailView: BaseViewController {
         
         contentView.addSubview(bookmarkImage)
         
-        let bookmarked = detailData?.bookmarked ?? false
-        if bookmarked {
-            bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
-        }
-        
         bookmarkImage.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-24)
             make.top.equalTo(bottomLine.snp.bottom).offset(16)
@@ -304,6 +302,24 @@ extension AroundDetailView {
 }
 
 extension AroundDetailView {
+    func setBookmarkedData() {
+        let url = Apis.nearby_one + "/\(nearbyId ?? 0)"
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, ResponseAroundDetailModel.self)
+                serverDetailData = response
+                
+                let bookmarked = response.data?.bookmarked ?? false
+                
+                if bookmarked {
+                    bookmarkImage.image = UIImage(named: "recommend_bookmark_fiill")
+                }
+            } catch {
+                
+            }
+        }
+    }
+    
     @objc func switchBookmark() {
         guard let topVC = UIApplication.topMostController() else { return }
         
@@ -311,7 +327,7 @@ extension AroundDetailView {
         let nearbyId = detailData?.nearbyID ?? 0
         paramDic["nearby_id"] = nearbyId
         
-        let bookmarked = detailData?.bookmarked ?? false
+        let bookmarked = serverDetailData?.data?.bookmarked ?? false
         
         if bookmarked {
             Task {
