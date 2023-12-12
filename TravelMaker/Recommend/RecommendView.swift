@@ -310,7 +310,7 @@ extension RecommendView {
                     make.bottom.equalToSuperview().offset(-64 - tabBarHeight)
                     make.left.equalToSuperview().offset(24)
                     make.right.equalToSuperview().offset(-24)
-                    make.height.equalTo(184)
+                    make.height.equalTo(136)
                 }
                 
                 self.view.insertSubview($0, belowSubview: bottomSheet ?? UIView())

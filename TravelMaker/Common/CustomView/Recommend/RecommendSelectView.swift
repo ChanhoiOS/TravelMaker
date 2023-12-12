@@ -60,9 +60,16 @@ class RecommendSelectView: UIView {
     
     private let starLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 16)
+        label.textColor = Colors.DESIGN_GREEN
+        label.font = UIFont(name: "SUIT-Bold", size: 16)
         return label
+    }()
+    
+    private let starImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "around_star_image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
 
     private lazy var selectBtn: UIButton = {
@@ -100,6 +107,9 @@ class RecommendSelectView: UIView {
             let url = URL(string: imageUrl)
             infoImage.kf.setImage(with: url)
         }
+        
+        infoImage.clipsToBounds = true
+        infoImage.layer.cornerRadius = 4
        
         infoImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24)
@@ -127,29 +137,25 @@ class RecommendSelectView: UIView {
         self.addSubview(pageContent)
         
         pageContent.snp.makeConstraints { make in
-            make.top.equalTo(pageTitle.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-24)
             make.left.equalToSuperview().offset(24)
             make.right.equalTo(infoImage.snp.left).offset(-24)
         }
         
-        grayView = UIView()
-            .then {
-                self.addSubview($0)
-                $0.backgroundColor = Colors.DESIGN_WHITE
-                
-                $0.snp.makeConstraints { make in
-                    make.height.equalTo(1)
-                    make.left.equalToSuperview().offset(24)
-                    make.right.equalToSuperview().offset(-24)
-                    make.top.equalTo(pageContent.snp.bottom).offset(12)
-            }
+        self.addSubview(starLabel)
+        let rating = Double(detail.starRating ?? 0)
+        
+        starLabel.text = "\(rating)"
+        starLabel.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-30)
+            make.bottom.equalToSuperview().offset(-24)
         }
         
-        self.addSubview(starLabel)
-        starLabel.text = "★ " + "\(detail.starRating ?? 0)"
-        starLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-24)
-            make.bottom.equalToSuperview().offset(-24)
+        self.addSubview(starImage)
+        starImage.snp.makeConstraints { make in
+            make.right.equalTo(starLabel.snp.left).offset(-2)
+            make.centerY.equalTo(starLabel)
+            make.height.width.equalTo(20)
         }
         
         self.addSubview(selectBtn)
