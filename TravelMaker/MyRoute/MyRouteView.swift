@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyRouteView: UIViewController {
+class MyRouteView: BaseViewController {
 
     @IBOutlet weak var plusBtn: UIImageView!
     @IBOutlet weak var backBtn: UIImageView!

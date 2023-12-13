@@ -223,6 +223,7 @@ extension AroundView {
         let detailView = AroundDetailView(nibName: "AroundDetailView", bundle: nil)
         detailView.detailData = detailData
         detailView.nearbyId = detailData?.nearbyID
+        detailView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 }

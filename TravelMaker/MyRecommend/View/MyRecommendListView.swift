@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyRecommendListView: UIViewController {
+class MyRecommendListView: BaseViewController {
 
     @IBOutlet weak var backBtn: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!

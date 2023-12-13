@@ -261,6 +261,7 @@ extension MyPageView {
     
     @objc func withdrawal() {
         let vc = WithdrawalView(nibName: "WithdrawalView", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
