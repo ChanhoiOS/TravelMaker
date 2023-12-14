@@ -27,6 +27,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     var detailData: RecommendAllData?
     
     var tabBarHeight: Int = 83
+    var currentGps: CLLocationCoordinate2D?
     
     var markers = [NMFMarker]()
     
@@ -114,7 +115,7 @@ class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     }
     
     func setBottomSheet(_ data: ResponseRecommendALLModel?) {
-        bottomSheet = BottomSheetView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), data)
+        bottomSheet = BottomSheetView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), data, currentGps)
             .then {
                 self.view.addSubview($0)
                 $0.delegate = self
@@ -135,6 +136,7 @@ extension RecommendView: NMFMapViewTouchDelegate {
     func setCoordinate() {
         let gpsDisposable = LocationManager.shared.locationSubject
             .subscribe(onNext: { [weak self] gps in
+                self?.currentGps = gps
                 let x = gps?.longitude ?? 127.05485569769449
                 let y = gps?.latitude ?? 37.50518440330725
                 self?.setLocation(x, y)

@@ -48,5 +48,14 @@ class LocationManager {
         }
     }
     
-    
+    func distance(_ from: CLLocationCoordinate2D?, _ latitude: String?, _ longitude: String?) -> CLLocationDistance {
+        let fromLatitude = from?.latitude ?? 37.542786501548630000
+        let fromLongitude = from?.longitude ?? 126.951350477023310000
+        let toLatitude = Double(latitude ?? "37.542786501548630000") ?? 37.542786501548630000
+        let toLongittude = Double(longitude ?? "126.951350477023310000") ?? 126.951350477023310000
+        
+        let coordinate = CLLocation(latitude: fromLatitude, longitude: fromLongitude)
+        let to = CLLocation(latitude: toLatitude, longitude: toLongittude)
+        return coordinate.distance(from: to)
+    }
 }

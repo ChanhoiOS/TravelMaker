@@ -38,13 +38,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "SUIT-Regular", size: 12)
         return label
     }()
-    
-    lazy var open: UILabel = {
-        let label = UILabel()
-        label.textColor = Colors.DESIGN_BLUE
-        label.font = UIFont(name: "SUIT-Regular", size: 12)
-        return label
-    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,7 +56,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         addSubview(recommendImage)
         addSubview(placeName)
         addSubview(distance)
-        addSubview(open)
     }
 
     private func configure() {
@@ -83,11 +75,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
             make.left.equalToSuperview().offset(12)
         }
         
-        open.snp.makeConstraints { make in
-            make.top.equalTo(placeName.snp.bottom).offset(8)
-            make.left.equalTo(distance.snp.right).offset(6)
-        }
-        
         backgroundColor = .placeholderText
     }
 
@@ -98,8 +85,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
         
         placeName.text = model?.placeName ?? ""
-        distance.text = "500M | "
-        open.text = "영업중"
     }
 
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CoreLocation
 
 protocol SelectRecommendData {
     func selectSpace(_ data: RecommendAllData?)
@@ -15,6 +16,7 @@ protocol SelectRecommendData {
 final class BottomSheetView: PassThroughView {
     var recommendAllModel: ResponseRecommendALLModel?
     var delegate: SelectRecommendData?
+    var currentGps: CLLocationCoordinate2D?
     
     enum Mode {
         case tip
@@ -92,7 +94,7 @@ final class BottomSheetView: PassThroughView {
         didSet { self.barView.backgroundColor = self.barViewColor }
     }
     
-    required init?(coder: NSCoder, _ data: ResponseRecommendALLModel?) {
+    required init?(coder: NSCoder, _ data: ResponseRecommendALLModel?, _ gps: CLLocationCoordinate2D?) {
         super.init(coder: coder)
     }
     
@@ -100,7 +102,7 @@ final class BottomSheetView: PassThroughView {
         fatalError("init() has not been implemented")
     }
     
-    init(frame: CGRect, _ data: ResponseRecommendALLModel?) {
+    init(frame: CGRect, _ data: ResponseRecommendALLModel?, _ gps: CLLocationCoordinate2D?) {
         super.init(frame: frame)
         
         self.backgroundColor = .clear
@@ -150,6 +152,7 @@ final class BottomSheetView: PassThroughView {
         }
         
         recommendAllModel = data
+        currentGps = gps
         collectionView.reloadData()
     }
     
@@ -206,6 +209,7 @@ extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource,
         
         if let cell = cell as? RecommendCollectionViewCell {
             cell.model = recommendAllModel?.data?[indexPath.item]
+            cell.distance.text = getDistance((LocationManager.shared.distance(currentGps, recommendAllModel?.data?[indexPath.item].latitude , recommendAllModel?.data?[indexPath.item].longitude))) + "km"
         }
         
         cell.backgroundColor = .white
@@ -223,5 +227,13 @@ extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 160, height: collectionView.frame.height)
+    }
+}
+
+extension BottomSheetView {
+    func getDistance(_ distance: CLLocationDistance) -> String {
+        let convertKm = distance / 1000
+        let formattedDistance = String(format: "%.2f", convertKm)
+        return formattedDistance
     }
 }
