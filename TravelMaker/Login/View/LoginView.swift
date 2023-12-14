@@ -301,7 +301,7 @@ extension LoginView {
         SessionManager.shared.loginType = data.data?.userInfo?.loginType ?? ""
         SessionManager.shared.loginId = data.data?.userInfo?.loginID ?? ""
         
-        self.navigationController?.pushViewController(tabBarViewController ?? TabBarViewController(), animated: true)
+        self.navigationController?.offAllNamed(tabBarViewController ?? TabBarViewController())
     }
     
     func goToSignUp(_ type: String, _ id: String) {

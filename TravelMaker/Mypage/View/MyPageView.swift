@@ -11,7 +11,7 @@ import PinLayout
 import FlexLayout
 import YPImagePicker
 
-class MyPageView: UIViewController {
+class MyPageView: BaseViewController {
     
     let wrapper = NetworkWrapper<UsersApi>(plugins: [CustomPlugIn()])
     
@@ -271,7 +271,7 @@ extension MyPageView: YPImagePickerDelegate {
         var imageData = Data()
         
         let resizeImage = selectedImage.resize(newWidth: 100)
-        var imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
+        let imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
         imageData.append(imageJpg)
         
         requestModel = RequestProfileImageModel(

@@ -10,7 +10,7 @@ import Moya
 import PinLayout
 import FlexLayout
 
-class MyCollectionView: UIViewController {
+class MyCollectionView: BaseViewController {
 
     let flexView = UIView()
     
