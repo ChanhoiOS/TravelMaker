@@ -11,6 +11,8 @@ import PinLayout
 import FlexLayout
 
 class MyCollectionView: BaseViewController {
+    
+    var collectionData: RecommendBookmarkCollectionModel?
 
     let flexView = UIView()
     
@@ -125,8 +127,11 @@ class MyCollectionView: BaseViewController {
         super.viewDidLoad()
 
         setFlexView()
-        
         setGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setRecommend()
     }
     
     override func viewDidLayoutSubviews() {
@@ -208,9 +213,26 @@ class MyCollectionView: BaseViewController {
             
             flex.addItem().backgroundColor(Colors.DESIGN_BACKGROUND).grow(1)
         }
-        
     }
+}
 
+extension MyCollectionView {
+    func setRecommend() {
+        let url = Apis.bookmark_recommend
+        
+        _Concurrency.Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, RecommendBookmarkCollectionModel.self)
+                collectionData = response
+                
+                let count = self.collectionData?.data?.count ?? 0
+                
+                recommendCount.text = "\(count)" + "개"
+            } catch {
+                
+            }
+        }
+    }
 }
 
 extension MyCollectionView {
