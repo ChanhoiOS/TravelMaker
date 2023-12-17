@@ -12,6 +12,9 @@ import Kingfisher
 
 class RecommendCollectionViewCell: UICollectionViewCell {
     static var id: String { NSStringFromClass(Self.self).components(separatedBy: ".").last ?? "" }
+    
+    var likeAction: ((Int) -> Void)?
+    var deleteAction: ((Int) -> Void)?
 
     var model: RecommendAllData? {
         didSet {
@@ -22,6 +25,12 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     var recommendImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "collection_recommend")
+        return imageView
+    }()
+    
+    var heartImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "recommend_heart_empty")
         return imageView
     }()
 
@@ -43,7 +52,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
 
         addSubviews()
-
+        setGesture()
         configure()
     }
 
@@ -54,6 +63,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
 
     private func addSubviews() {
         addSubview(recommendImage)
+        addSubview(heartImage)
         addSubview(placeName)
         addSubview(distance)
     }
@@ -62,6 +72,12 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         recommendImage.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(100)
+        }
+        
+        heartImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(12)
+            make.right.equalToSuperview().offset(-12)
+            make.width.height.equalTo(24)
         }
         
         placeName.snp.makeConstraints { make in
@@ -84,7 +100,39 @@ class RecommendCollectionViewCell: UICollectionViewCell {
             recommendImage.kf.setImage(with: url)
         }
         
+        let bookmarked = model?.bookmarked ?? false
+        
+        if bookmarked {
+            heartImage.image = UIImage(named: "recommend_heart_fill")
+        } else {
+            heartImage.image = UIImage(named: "recommend_heart_empty")
+        }
+        
         placeName.text = model?.placeName ?? ""
     }
+    
+    
+}
 
+extension RecommendCollectionViewCell {
+    func setGesture() {
+        let setRecommend = UITapGestureRecognizer(target: self, action: #selector(setRecommend))
+        heartImage.addGestureRecognizer(setRecommend)
+        heartImage.isUserInteractionEnabled = true
+    }
+    
+    @objc func setRecommend() {
+        let bookmarked = model?.bookmarked ?? false
+        let recommendId = model?.recommendID ?? 300
+        
+        if !bookmarked {
+            if let likeAction = likeAction {
+                likeAction(recommendId)
+            }
+        } else {
+            if let deleteAction = deleteAction {
+                deleteAction(recommendId)
+            }
+        }
+    }
 }

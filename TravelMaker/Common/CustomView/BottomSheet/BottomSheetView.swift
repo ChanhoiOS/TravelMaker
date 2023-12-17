@@ -210,6 +210,8 @@ extension BottomSheetView: UICollectionViewDelegate, UICollectionViewDataSource,
         if let cell = cell as? RecommendCollectionViewCell {
             cell.model = recommendAllModel?.data?[indexPath.item]
             cell.distance.text = getDistance((LocationManager.shared.distance(currentGps, recommendAllModel?.data?[indexPath.item].latitude , recommendAllModel?.data?[indexPath.item].longitude))) + "km"
+            cell.likeAction = likeAction(_:)
+            cell.deleteAction = deleteAction(_:)
         }
         
         cell.backgroundColor = .white
@@ -235,5 +237,46 @@ extension BottomSheetView {
         let convertKm = distance / 1000
         let formattedDistance = String(format: "%.2f", convertKm)
         return formattedDistance
+    }
+}
+
+extension BottomSheetView {
+    func likeAction(_ recommendId: Int) {
+        var paramDic = [String: Any]()
+        paramDic["recommend_id"] = recommendId
+        
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncPost(Apis.bookmark_add, paramDic, RecommendBookmarkAddModel.self)
+                reloadBottomSheet()
+            } catch {
+                
+            }
+        }
+    }
+    
+    func deleteAction(_ recommendId: Int) {
+        var paramDic = [String: Any]()
+        paramDic["recommend_id"] = recommendId
+        
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncDelete(Apis.bookmark_delete, paramDic, RecommendBookmarkDeleteModel.self)
+                reloadBottomSheet()
+            } catch {
+                
+            }
+        }
+    }
+    
+    func reloadBottomSheet() {
+        Task {
+            do {
+                recommendAllModel = try await AsyncNetworkManager.shared.asyncGet(Apis.recommend_all, ResponseRecommendALLModel.self)
+                collectionView.reloadData()
+            } catch {
+                
+            }
+        }
     }
 }

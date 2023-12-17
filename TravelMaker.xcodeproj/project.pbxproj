@@ -16,6 +16,8 @@
 		0868D6ED2B176EEE00094464 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0868D6EB2B176EEE00094464 /* QuestionCell.xib */; };
 		0868D6F12B176F5500094464 /* WithdrawalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6F02B176F5500094464 /* WithdrawalViewModel.swift */; };
 		0868D6F42B176F6D00094464 /* WithdrawalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0868D6F32B176F6C00094464 /* WithdrawalModel.swift */; };
+		0892670C2B2EFC01003D6697 /* RecommendBookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892670B2B2EFC01003D6697 /* RecommendBookmarkModel.swift */; };
+		0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892670D2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift */; };
 		08A0ACF12B0F79210082161F /* MyRecommendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */; };
 		08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0ACF02B0F79200082161F /* MyRecommendListView.xib */; };
 		08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */; };
@@ -162,6 +164,8 @@
 		0868D6EB2B176EEE00094464 /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		0868D6F02B176F5500094464 /* WithdrawalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalViewModel.swift; sourceTree = "<group>"; };
 		0868D6F32B176F6C00094464 /* WithdrawalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalModel.swift; sourceTree = "<group>"; };
+		0892670B2B2EFC01003D6697 /* RecommendBookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookmarkModel.swift; sourceTree = "<group>"; };
+		0892670D2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookmarkDeleteModel.swift; sourceTree = "<group>"; };
 		08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendListView.swift; sourceTree = "<group>"; };
 		08A0ACF02B0F79200082161F /* MyRecommendListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendListView.xib; sourceTree = "<group>"; };
 		08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -990,6 +994,8 @@
 			isa = PBXGroup;
 			children = (
 				09CDB7452AF0DE1600044CF2 /* ResponseRecommendALLModel.swift */,
+				0892670B2B2EFC01003D6697 /* RecommendBookmarkModel.swift */,
+				0892670D2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1303,6 +1309,7 @@
 				09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */,
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
 				08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */,
+				0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */,
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
@@ -1315,6 +1322,7 @@
 				0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */,
 				0986BCC32AF364D100987836 /* RecommendSelectView.swift in Sources */,
 				097333392B26E45000C5F192 /* SetNearByBookmarkModel.swift in Sources */,
+				0892670C2B2EFC01003D6697 /* RecommendBookmarkModel.swift in Sources */,
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,
