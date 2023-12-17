@@ -99,6 +99,7 @@ extension MyRecommendListView {
                 if let message = response.message {
                     if message == "성공" {
                         setData()
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateRecommend"), object: nil, userInfo: nil)
                     }
                 }
             } catch {

@@ -154,6 +154,8 @@ final class BottomSheetView: PassThroughView {
         recommendAllModel = data
         currentGps = gps
         collectionView.reloadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "updateRecommend"), object: nil)
     }
     
     @objc private func didPan(_ recognizer: UIPanGestureRecognizer) {
@@ -280,3 +282,11 @@ extension BottomSheetView {
         }
     }
 }
+
+extension BottomSheetView {
+    @objc func updateData(_ notification: NSNotification) {
+        reloadBottomSheet()
+    }
+}
+
+
