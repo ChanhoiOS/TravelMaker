@@ -24,6 +24,21 @@ class Utils {
         topViewController.present(alertController, animated: true)
     }
     
+    static func confirmAndCancelAlert(title: String, message: String, topViewController: UIViewController, completion: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            completion()
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default) { _ in
+            topViewController.dismiss(animated: true)
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        topViewController.present(alertController, animated: true)
+    }
+    
     static func showToast(_ text: String) {
         guard let topVC = UIApplication.topMostController() else { return }
         

@@ -87,7 +87,11 @@
                 <constraint firstItem="ex0-pu-oFf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ePP-Cu-BB1"/>
             </constraints>
             <connections>
+                <outlet property="address" destination="p19-aK-WgL" id="f22-3J-bR1"/>
+                <outlet property="bookmarkImage" destination="qEi-H4-Xqa" id="GlH-AD-0aa"/>
                 <outlet property="categoryLabel" destination="VF7-j8-sOj" id="ZMO-te-648"/>
+                <outlet property="placeImage" destination="DTk-IQ-RL0" id="ZYr-Xz-f80"/>
+                <outlet property="placename" destination="Oj2-In-2Xm" id="LTd-i7-u1O"/>
             </connections>
             <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </collectionViewCell>

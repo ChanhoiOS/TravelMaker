@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyRecommendListView: BaseViewController {
 
     @IBOutlet weak var backBtn: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var collectionData: RecommendBookmarkCollectionModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,22 @@ class MyRecommendListView: BaseViewController {
 }
 
 extension MyRecommendListView {
+    func setData() {
+        let url = Apis.bookmark_recommend
+        
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, RecommendBookmarkCollectionModel.self)
+                collectionData = response
+                collectionView.reloadData()
+            } catch {
+                
+            }
+        }
+    }
+}
+
+extension MyRecommendListView {
     func setGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backBtnAction))
         backBtn.addGestureRecognizer(tapGesture)
@@ -41,19 +60,50 @@ extension MyRecommendListView {
 
 extension MyRecommendListView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return collectionData?.data?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyRecommendCollectionViewCell", for: indexPath) as! MyRecommendCollectionViewCell
         
+        let backgroundUrl = collectionData?.data?[indexPath.row].recommend?.imageURL ?? ""
+        let url = URL(string: backgroundUrl)
+        cell.placeImage.kf.setImage(with: url)
+        cell.categoryLabel.text = collectionData?.data?[indexPath.row].recommend?.categoryName ?? ""
+        cell.placename.text = collectionData?.data?[indexPath.row].recommend?.placeName ?? ""
+        cell.address.text = collectionData?.data?[indexPath.row].recommend?.address ?? ""
+        
         cell.contentView.layer.borderColor = Colors.DESIGN_WHITE.cgColor
         cell.contentView.layer.borderWidth = 1
+        
+        cell.recommendId = collectionData?.data?[indexPath.row].recommend?.recommendID ?? 0
+        cell.deleteAction = deleteAction(_:)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width - 48, height: 180)
+    }
+}
+
+extension MyRecommendListView {
+    func deleteAction(_ recommendId: Int) {
+        var paramDic = [String: Any]()
+        paramDic["recommend_id"] = recommendId
+        
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncDelete(Apis.bookmark_delete, paramDic, RecommendBookmarkDeleteModel.self)
+                
+                if let message = response.message {
+                    if message == "성공" {
+                        setData()
+                    }
+                }
+            } catch {
+                
+            }
+        }
     }
 }
