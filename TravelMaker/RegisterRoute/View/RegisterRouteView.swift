@@ -41,6 +41,9 @@ class RegisterRouteView: BaseViewController {
     var selectedImage = UIImage()
     var count = 1
     
+    let datePicker = UIDatePicker()
+    let dateFormat = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +52,8 @@ class RegisterRouteView: BaseViewController {
         setGesture()
         
         setData()
+        
+        dateFormat.dateFormat = "yyyy-MM-dd"
     }
     
     @IBAction func addBanner(_ sender: Any) {
@@ -279,6 +284,14 @@ extension RegisterRouteView {
         singleTapGestureRecognizer.isEnabled = true
         singleTapGestureRecognizer.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(singleTapGestureRecognizer)
+        
+        let depart = UITapGestureRecognizer(target: self, action: #selector(setDepartLabel))
+        departView.isUserInteractionEnabled = true
+        departView.addGestureRecognizer(depart)
+        
+        let arrive = UITapGestureRecognizer(target: self, action: #selector(setArriveLabel))
+        arriveView.isUserInteractionEnabled = true
+        arriveView.addGestureRecognizer(arrive)
     }
     
     @objc func scrollKeyboardHide(sender: UITapGestureRecognizer) {
@@ -287,5 +300,45 @@ extension RegisterRouteView {
     
     @objc func backBtnAction(sender: UITapGestureRecognizer) {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension RegisterRouteView {
+    @objc func setDepartLabel() {
+        let alert = UIAlertController(title: "출발시간", message: "", preferredStyle: .actionSheet)
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko_KR")
+                
+        let confirm = UIAlertAction(title: "선택 완료", style: .cancel) { action in
+            self.departLabel.text = Utils.parsingDate(self.dateFormat.string(from: self.datePicker.date))
+        }
+                        
+        alert.addAction(confirm)
+                
+        let vc = UIViewController()
+        vc.view = datePicker
+        alert.setValue(vc, forKey: "contentViewController")
+        
+        self.present(alert, animated: true)
+    }
+    
+    @objc func setArriveLabel() {
+        let alert = UIAlertController(title: "도착시간", message: "", preferredStyle: .actionSheet)
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ko_KR")
+                
+        let confirm = UIAlertAction(title: "선택 완료", style: .cancel) { action in
+            self.arriveLabel.text = Utils.parsingDate(self.dateFormat.string(from: self.datePicker.date))
+        }
+                        
+        alert.addAction(confirm)
+                
+        let vc = UIViewController()
+        vc.view = datePicker
+        alert.setValue(vc, forKey: "contentViewController")
+        
+        self.present(alert, animated: true)
     }
 }

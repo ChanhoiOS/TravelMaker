@@ -124,7 +124,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="nw7-Wb-B16"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="15"/>
                                             <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -154,7 +154,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="ars-zr-isc"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="15"/>
                                             <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
