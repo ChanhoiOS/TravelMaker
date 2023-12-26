@@ -19,6 +19,8 @@
 		0892670C2B2EFC01003D6697 /* RecommendBookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892670B2B2EFC01003D6697 /* RecommendBookmarkModel.swift */; };
 		0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892670D2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift */; };
 		089267112B2F0723003D6697 /* RecommendBookmarkCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089267102B2F0723003D6697 /* RecommendBookmarkCollectionModel.swift */; };
+		089267142B3ADFAC003D6697 /* RequestRegisterRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089267132B3ADFAC003D6697 /* RequestRegisterRouteModel.swift */; };
+		089267162B3AE771003D6697 /* ResponseRegisterRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089267152B3AE771003D6697 /* ResponseRegisterRouteModel.swift */; };
 		08A0ACF12B0F79210082161F /* MyRecommendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */; };
 		08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A0ACF02B0F79200082161F /* MyRecommendListView.xib */; };
 		08A0ACF62B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */; };
@@ -168,6 +170,8 @@
 		0892670B2B2EFC01003D6697 /* RecommendBookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookmarkModel.swift; sourceTree = "<group>"; };
 		0892670D2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookmarkDeleteModel.swift; sourceTree = "<group>"; };
 		089267102B2F0723003D6697 /* RecommendBookmarkCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookmarkCollectionModel.swift; sourceTree = "<group>"; };
+		089267132B3ADFAC003D6697 /* RequestRegisterRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterRouteModel.swift; sourceTree = "<group>"; };
+		089267152B3AE771003D6697 /* ResponseRegisterRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRegisterRouteModel.swift; sourceTree = "<group>"; };
 		08A0ACEF2B0F79200082161F /* MyRecommendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendListView.swift; sourceTree = "<group>"; };
 		08A0ACF02B0F79200082161F /* MyRecommendListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendListView.xib; sourceTree = "<group>"; };
 		08A0ACF42B0F7A5C0082161F /* MyRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -388,6 +392,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		089267122B3ADF98003D6697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				089267132B3ADFAC003D6697 /* RequestRegisterRouteModel.swift */,
+				089267152B3AE771003D6697 /* ResponseRegisterRouteModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		08A0ACED2B0F787B0082161F /* MyRecommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +486,7 @@
 		08FA166D2AFBAA3E00E9C452 /* RegisterRoute */ = {
 			isa = PBXGroup;
 			children = (
+				089267122B3ADF98003D6697 /* Model */,
 				08FA166E2AFBAA4D00E9C452 /* View */,
 			);
 			path = RegisterRoute;
@@ -1288,6 +1302,7 @@
 			files = (
 				08A6AF5E2B0A390F0045EAFA /* SearchRouteSelectView.swift in Sources */,
 				09A83EF42AAEAB620082A6A2 /* LoginView.swift in Sources */,
+				089267142B3ADFAC003D6697 /* RequestRegisterRouteModel.swift in Sources */,
 				08A6AF512B0A319D0045EAFA /* SearchRouteView.swift in Sources */,
 				09D7B1812AAAFE9100991841 /* TabBarViewController.swift in Sources */,
 				09A83F212AAF09290082A6A2 /* SessionManager.swift in Sources */,
@@ -1325,6 +1340,7 @@
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
+				089267162B3AE771003D6697 /* ResponseRegisterRouteModel.swift in Sources */,
 				091D5F452AB17F8C00D58FA2 /* MyPageView.swift in Sources */,
 				09A83F242AAF0A410082A6A2 /* LoginModel.swift in Sources */,
 				0868D6EC2B176EEE00094464 /* QuestionCell.swift in Sources */,

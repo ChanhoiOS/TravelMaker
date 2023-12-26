@@ -309,6 +309,9 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="registerRoute:" destination="-1" eventType="touchUpInside" id="tfk-Jw-9uy"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

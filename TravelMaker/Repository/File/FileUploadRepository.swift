@@ -89,4 +89,57 @@ class FileUploadRepository {
                 failureHandler(error)
             }}
     }
+    
+    func uploadRouteData(url: String,
+                             with model: RequestRegisterRouteModel,
+                             successHandler: @escaping ((ResponseRegisterRouteModel) -> Void),
+                             failureHandler: @escaping ((AFError) -> Void)) {
+        
+        if let accessToken = SessionManager.shared.accessToken {
+            header = ["Authorization": "Bearer " + accessToken]
+        }
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(Data(model.title.utf8),
+                                     withName: "title")
+            multipartFormData.append(Data(model.startDate.utf8),
+                                     withName: "startDate")
+            multipartFormData.append(Data(model.endDate.utf8),
+                                     withName: "endDate")
+//            multipartFormData.append(Data(model.routeAddressList.utf8),
+//                                     withName: "routeAddressList")
+            
+            if let routeAddressList = model.routeAddressList {
+                do {
+                    let jsonData = try JSONEncoder().encode(routeAddressList)
+                    let jsonString = String(data: jsonData, encoding: .utf8)
+                    if let jsonString = jsonString {
+                        multipartFormData.append(Data(jsonString.utf8),
+                                                 withName: "routeAddressList",
+                                                 mimeType: "application/json")
+                    }
+                    } catch {
+                        print("Error encoding routeAddressList to JSON: \(error)")
+                    }
+                }
+            
+            if let imageArray = model.imageFiles {
+                for (idx, images) in imageArray.enumerated() {
+                    multipartFormData.append(images,
+                                             withName: "imageFiles",
+                                             fileName: "image_\(idx)",
+                                             mimeType: "image/jpg")
+                }
+            }
+            
+        }, to: url,
+                  headers: header)
+        .responseDecodable(of: ResponseRegisterRouteModel.self) { response in
+            switch response.result {
+            case .success(let data):
+                successHandler(data)
+            case .failure(let error):
+                failureHandler(error)
+            }}
+    }
 }

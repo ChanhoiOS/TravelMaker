@@ -38,11 +38,14 @@ class RegisterRouteView: BaseViewController {
     var disposeBag = DisposeBag()
     
     var spaceFirstView: UIView!
-    var selectedImage = UIImage()
+    var selectedImage: UIImage?
     var count = 1
     
     let datePicker = UIDatePicker()
     let dateFormat = DateFormatter()
+    
+    var requestModel: RequestRegisterRouteModel?
+    //var routeAddressList: [RequestRegisterRoute]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +55,17 @@ class RegisterRouteView: BaseViewController {
         setGesture()
         
         setData()
+        setModelInit()
         
         dateFormat.dateFormat = "yyyy-MM-dd"
     }
     
     @IBAction func addBanner(_ sender: Any) {
         presentToImagePicker()
+    }
+    
+    @IBAction func registerRoute(_ sender: Any) {
+        uploadData()
     }
     
     func setUI() {
@@ -174,6 +182,8 @@ extension RegisterRouteView {
                 }
             }
         }
+        
+        requestModel?.routeAddressList?.remove(at: index)
     }
 }
 
@@ -187,6 +197,15 @@ extension RegisterRouteView {
 }
 
 extension RegisterRouteView {
+    func setModelInit() {
+        requestModel = RequestRegisterRouteModel(
+            imageFiles: [Data](),
+            title: "",
+            startDate: "",
+            endDate: "",
+            routeAddressList: [])
+    }
+    
     func setData() {
         searchRouteViewModel.responseSelectedData
             .subscribe(onNext: { [weak self] data in
@@ -198,16 +217,26 @@ extension RegisterRouteView {
     func setTitle(_ data: [String: Any]) {
         let index = data["index"] as? Int ?? 0
         let labelIndex = index + 100
+        let placeTitle = data["placeTitle"] as? String ?? ""
+        let address = data["address"] as? String ?? ""
         
-        for (index, sub) in spaceStackView.subviews.enumerated() {
+        for (_ , sub) in spaceStackView.subviews.enumerated() {
             for piece in sub.subviews {
                 if let spaceLabel = piece as? UILabel {
                     if spaceLabel.tag == labelIndex {
-                        spaceLabel.text = data["placeTitle"] as? String
+                        spaceLabel.text = placeTitle + "(" + address + ")"
                     }
                 }
             }
         }
+        
+        var list = RequestRegisterRoute(
+            addressName: data["placeTitle"] as? String ?? "",
+            addressDetail: data["address"] as? String ?? "",
+            latitude: data["y"] as? Double ?? 0.0,
+            longitude: data["x"] as? Double ?? 0.0)
+        
+        requestModel?.routeAddressList?.append(list)
     }
 }
 
@@ -340,5 +369,35 @@ extension RegisterRouteView {
         alert.setValue(vc, forKey: "contentViewController")
         
         self.present(alert, animated: true)
+    }
+}
+
+extension RegisterRouteView {
+    func uploadData() {
+        var imageData = [Data]()
+        
+        if let resizeImage = selectedImage?.resize(newWidth: 100) {
+            let imageJpg = resizeImage.jpegData(compressionQuality: 1.0)!
+            imageData.append(imageJpg)
+        }
+        
+        requestModel?.imageFiles = imageData
+        requestModel?.title = titleTextField.text ?? ""
+        requestModel?.startDate = departLabel.text ?? ""
+        requestModel?.endDate = arriveLabel.text ?? ""
+        
+        LoadingIndicator.shared.showIndicator()
+        
+        print("requestModel: ", requestModel)
+        
+        FileUploadRepository.shared.uploadRouteData(url: Apis.route_add, with: requestModel!) { response in
+            print("내 루트 등록 성공: ", response)
+            LoadingIndicator.shared.hideIndicator()
+            self.navigationController?.popViewController(animated: true)
+        } failureHandler: { error in
+            print("내 루트 등록 error: ", error)
+            LoadingIndicator.shared.hideIndicator()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
