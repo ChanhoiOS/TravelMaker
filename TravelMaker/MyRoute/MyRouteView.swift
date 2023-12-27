@@ -11,9 +11,9 @@ class MyRouteView: BaseViewController {
 
     @IBOutlet weak var plusBtn: UIImageView!
     @IBOutlet weak var backBtn: UIImageView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var collectionData: ResponseRegisterRouteModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +22,32 @@ class MyRouteView: BaseViewController {
         setGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setData()
+    }
+    
     func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "MyRouteCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyRouteCollectionViewCell")
+    }
+}
+
+extension MyRouteView {
+    func setData() {
+        let url = Apis.route_all
+        
+        _Concurrency.Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, ResponseRegisterRouteModel.self)
+                collectionData = response
+                
+                collectionView.reloadData()
+            } catch {
+                
+            }
+        }
     }
 }
 
@@ -53,11 +74,21 @@ extension MyRouteView {
 
 extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return collectionData?.data?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyRouteCollectionViewCell", for: indexPath) as! MyRouteCollectionViewCell
+        
+        let backgroundUrl = collectionData?.data?[indexPath.row].fileURL ?? ""
+        let url = URL(string: backgroundUrl)
+        cell.routeImage.kf.setImage(with: url)
+        cell.routeTitle.text = collectionData?.data?[indexPath.row].title ?? ""
+        
+        let startDate = collectionData?.data?[indexPath.row].startDate ?? ""
+        let endDate = collectionData?.data?[indexPath.row].endDate ?? ""
+        
+        cell.routeDate.text = startDate + " ~ " + endDate
         
         cell.contentView.layer.borderColor = Colors.DESIGN_WHITE.cgColor
         cell.contentView.layer.borderWidth = 1

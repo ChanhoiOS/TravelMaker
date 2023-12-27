@@ -9,9 +9,14 @@ import UIKit
 
 class MyRouteCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var routeImage: UIImageView!
+    @IBOutlet weak var deleteLabel: UILabel!
+    @IBOutlet weak var routeDate: UILabel!
+    @IBOutlet weak var routeTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

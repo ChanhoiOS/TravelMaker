@@ -38,19 +38,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023.05.22 - 05.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSu-Ze-pbF">
-                                <rect key="frame" x="24" y="216" width="145" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023.05.22 - 2023.05.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSu-Ze-pbF">
+                                <rect key="frame" x="24" y="216" width="187.66666666666666" height="20"/>
                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="16"/>
                                 <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeB-6R-7wn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeB-6R-7wn">
                                 <rect key="frame" x="275" y="216" width="28" height="20"/>
                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6c-Oy-7Wb">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6c-Oy-7Wb">
                                 <rect key="frame" x="231" y="216" width="28" height="20"/>
                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="16"/>
                                 <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,6 +81,12 @@
                 <constraint firstAttribute="trailing" secondItem="eob-Ia-fFB" secondAttribute="trailing" id="vfp-Wo-NPH"/>
                 <constraint firstAttribute="bottom" secondItem="eob-Ia-fFB" secondAttribute="bottom" id="ykw-Vq-uPe"/>
             </constraints>
+            <connections>
+                <outlet property="deleteLabel" destination="zeB-6R-7wn" id="mRn-sk-vz3"/>
+                <outlet property="routeDate" destination="VSu-Ze-pbF" id="sju-kb-EUl"/>
+                <outlet property="routeImage" destination="KhY-qm-nxS" id="Hlg-bd-QPA"/>
+                <outlet property="routeTitle" destination="MCA-A7-JK6" id="8ue-oD-VXq"/>
+            </connections>
             <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </collectionViewCell>
     </objects>
