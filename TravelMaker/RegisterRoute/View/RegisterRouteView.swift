@@ -96,6 +96,8 @@ class RegisterRouteView: BaseViewController {
 
 extension RegisterRouteView {
     @objc func addStackSpace(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+        
         count += 1
         
         let addSpaceView = UIView()
@@ -146,7 +148,7 @@ extension RegisterRouteView {
                 
                 spaceLabel.snp.makeConstraints { make in
                     make.left.equalTo(removeBtn.snp.right).offset(10)
-                    make.right.equalTo(searchImage.snp.left).offset(16)
+                    make.right.equalTo(searchImage.snp.left).offset(-16)
                     make.centerY.equalToSuperview()
                 }
                 

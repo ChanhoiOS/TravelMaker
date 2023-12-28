@@ -29,7 +29,7 @@ class MyRouteView: BaseViewController {
     func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(UINib(nibName: "MyRouteCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyRouteCollectionViewCell")
     }
 }
