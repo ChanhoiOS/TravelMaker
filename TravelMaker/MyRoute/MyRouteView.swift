@@ -96,6 +96,11 @@ extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = CheckRouteView(nibName: "CheckRouteView", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width - 48, height: 260)
     }

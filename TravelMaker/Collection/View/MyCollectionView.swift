@@ -258,9 +258,9 @@ extension MyCollectionView {
     }
     
     @objc func goMySpaceList(sender: UITapGestureRecognizer) {
-        let vc = MyRouteView(nibName: "MyRouteView", bundle: nil)
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = MyRouteView(nibName: "MyRouteView", bundle: nil)
+//        vc.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goMyRoute(sender: UITapGestureRecognizer) {

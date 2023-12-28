@@ -67,7 +67,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
 }
 
 extension TabBarViewController {
-    @objc func transferIndex(_ notification: Notification){
+    @objc func transferIndex(_ notification: Notification) {
         let index = notification.object as? Int ?? 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.selectedIndex = index

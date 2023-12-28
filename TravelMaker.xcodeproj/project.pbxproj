@@ -84,6 +84,11 @@
 		09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */; };
 		09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */; };
 		09591BA62AB0588F00A3F0D6 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */; };
+		095FD1E22B3D2F3000ACD996 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 095FD1E12B3D2F3000ACD996 /* PanModal */; };
+		095FD1E72B3D2FB700ACD996 /* CheckRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FD1E52B3D2FB700ACD996 /* CheckRouteView.swift */; };
+		095FD1E82B3D2FB700ACD996 /* CheckRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095FD1E62B3D2FB700ACD996 /* CheckRouteView.xib */; };
+		095FD1EC2B3D2FFF00ACD996 /* RouteModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */; };
+		095FD1ED2B3D2FFF00ACD996 /* RouteModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */; };
 		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
 		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
 		0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF992AE63187004D9068 /* FileUploadRepository.swift */; };
@@ -225,6 +230,10 @@
 		09591B9A2AB033C800A3F0D6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		09591BA22AB04CC500A3F0D6 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		09591BA52AB0588F00A3F0D6 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		095FD1E52B3D2FB700ACD996 /* CheckRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckRouteView.swift; sourceTree = "<group>"; };
+		095FD1E62B3D2FB700ACD996 /* CheckRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckRouteView.xib; sourceTree = "<group>"; };
+		095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModal.swift; sourceTree = "<group>"; };
+		095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteModal.xib; sourceTree = "<group>"; };
 		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		0960FF992AE63187004D9068 /* FileUploadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadRepository.swift; sourceTree = "<group>"; };
@@ -310,6 +319,7 @@
 				091D5F382AB1551B00D58FA2 /* KakaoSDKShare in Frameworks */,
 				09A83F152AAF05060082A6A2 /* CombineMoya in Frameworks */,
 				08A6AF4C2B0A2E520045EAFA /* RxGesture in Frameworks */,
+				095FD1E22B3D2F3000ACD996 /* PanModal in Frameworks */,
 				09A83F1B2AAF05060082A6A2 /* RxMoya in Frameworks */,
 				09CAB1532AD508230077B46F /* Then in Frameworks */,
 				09A83EE02AAE94CE0082A6A2 /* FlexLayoutYogaKit in Frameworks */,
@@ -755,6 +765,33 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		095FD1E32B3D2F7000ACD996 /* CheckRoute */ = {
+			isa = PBXGroup;
+			children = (
+				095FD1E92B3D2FEB00ACD996 /* Modal */,
+				095FD1E42B3D2F9500ACD996 /* View */,
+			);
+			path = CheckRoute;
+			sourceTree = "<group>";
+		};
+		095FD1E42B3D2F9500ACD996 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				095FD1E52B3D2FB700ACD996 /* CheckRouteView.swift */,
+				095FD1E62B3D2FB700ACD996 /* CheckRouteView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		095FD1E92B3D2FEB00ACD996 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */,
+				095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		0960FF962AE60DDF004D9068 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1062,6 +1099,7 @@
 				091D5F472AB189CB00D58FA2 /* Collection */,
 				091D5F412AB17F6000D58FA2 /* Mypage */,
 				0914EF782AF4ACF3008F1E5B /* MyRoute */,
+				095FD1E32B3D2F7000ACD996 /* CheckRoute */,
 				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
 				08A6AF4D2B0A313A0045EAFA /* SearchRoute */,
 				08A0ACED2B0F787B0082161F /* MyRecommend */,
@@ -1156,6 +1194,7 @@
 				09C4BA772AD9059300BE8376 /* ReactorKit */,
 				099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */,
 				08A6AF4B2B0A2E520045EAFA /* RxGesture */,
+				095FD1E12B3D2F3000ACD996 /* PanModal */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -1199,6 +1238,7 @@
 				09C4BA762AD9059200BE8376 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 				08A6AF4A2B0A2E520045EAFA /* XCRemoteSwiftPackageReference "RxGesture" */,
+				095FD1E02B3D2F3000ACD996 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -1227,7 +1267,9 @@
 				091D5F462AB17F8C00D58FA2 /* MyPageView.xib in Resources */,
 				09A83F0A2AAEE8AF0082A6A2 /* SUIT-Light.otf in Resources */,
 				09C2DD932B1EE65400C0320C /* LogoutAlert.xib in Resources */,
+				095FD1E82B3D2FB700ACD996 /* CheckRouteView.xib in Resources */,
 				091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */,
+				095FD1ED2B3D2FFF00ACD996 /* RouteModal.xib in Resources */,
 				09A83F0E2AAEE8AF0082A6A2 /* SUIT-Regular.otf in Resources */,
 				09A83F092AAEE8AF0082A6A2 /* SUIT-ExtraLight.otf in Resources */,
 				09317F0D2AEF2AEF0030EAC5 /* AroundDetailView.xib in Resources */,
@@ -1331,9 +1373,11 @@
 				09112BF52AE8D6D5001AFDC6 /* PaddingLabel.swift in Sources */,
 				08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
+				095FD1EC2B3D2FFF00ACD996 /* RouteModal.swift in Sources */,
 				0868D6E52B176D7600094464 /* UIView+Extension.swift in Sources */,
 				090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */,
 				09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */,
+				095FD1E72B3D2FB700ACD996 /* CheckRouteView.swift in Sources */,
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
 				08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */,
 				0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */,
@@ -1649,6 +1693,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		095FD1E02B3D2F3000ACD996 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxCoreLocation.git";
@@ -1786,6 +1838,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09591B812AB003AF00A3F0D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		095FD1E12B3D2F3000ACD996 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 095FD1E02B3D2F3000ACD996 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */ = {
 			isa = XCSwiftPackageProductDependency;
