@@ -89,6 +89,7 @@
 		095FD1E82B3D2FB700ACD996 /* CheckRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095FD1E62B3D2FB700ACD996 /* CheckRouteView.xib */; };
 		095FD1EC2B3D2FFF00ACD996 /* RouteModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */; };
 		095FD1ED2B3D2FFF00ACD996 /* RouteModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */; };
+		095FD1F12B3D59B900ACD996 /* RouteModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FD1EF2B3D59B900ACD996 /* RouteModalTableViewCell.swift */; };
 		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
 		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
 		0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF992AE63187004D9068 /* FileUploadRepository.swift */; };
@@ -234,6 +235,7 @@
 		095FD1E62B3D2FB700ACD996 /* CheckRouteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckRouteView.xib; sourceTree = "<group>"; };
 		095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModal.swift; sourceTree = "<group>"; };
 		095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteModal.xib; sourceTree = "<group>"; };
+		095FD1EF2B3D59B900ACD996 /* RouteModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteModalTableViewCell.swift; sourceTree = "<group>"; };
 		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		0960FF992AE63187004D9068 /* FileUploadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadRepository.swift; sourceTree = "<group>"; };
@@ -786,10 +788,19 @@
 		095FD1E92B3D2FEB00ACD996 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				095FD1EE2B3D599100ACD996 /* Cell */,
 				095FD1EA2B3D2FFF00ACD996 /* RouteModal.swift */,
 				095FD1EB2B3D2FFF00ACD996 /* RouteModal.xib */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		095FD1EE2B3D599100ACD996 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				095FD1EF2B3D59B900ACD996 /* RouteModalTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0960FF962AE60DDF004D9068 /* ViewModel */ = {
@@ -1412,6 +1423,7 @@
 				091C68812B285382005DAD86 /* ResponseAroundDetailModel.swift in Sources */,
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
+				095FD1F12B3D59B900ACD996 /* RouteModalTableViewCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
 				08FF47412B13472E00B0D6AB /* BaseWhiteView.swift in Sources */,
 				091D5F2F2AB13AF700D58FA2 /* NaverLoginModel.swift in Sources */,

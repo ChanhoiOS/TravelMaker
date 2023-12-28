@@ -92,7 +92,7 @@ extension CheckRouteView {
         fpc.changePanelStyle() // panel 스타일 변경 (대신 bar UI가 사라지므로 따로 넣어주어야함)
         fpc.delegate = self
         fpc.set(contentViewController: vc) // floating panel에 삽입할 것
-        //fpc.track(scrollView: vc.tbl)
+        fpc.track(scrollView: vc.tableView)
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
         fpc.layout = MyFloatingPanelLayout()
         fpc.invalidateLayout() // if needed
@@ -177,7 +177,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
         return .half
     }
 
-    var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] { // 가능한 floating panel: 현재 full, half만 가능하게 설정
+    var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
             .full: FloatingPanelLayoutAnchor(absoluteInset: 240.0, edge: .top, referenceGuide: .safeArea),
             .half: FloatingPanelLayoutAnchor(absoluteInset: 24.0, edge: .bottom, referenceGuide: .safeArea),

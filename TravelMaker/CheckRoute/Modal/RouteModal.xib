@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteModal" customModule="TravelMaker" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Def-cP-Nfm" id="Kaf-6w-rTw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +20,31 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF6-qP-c38">
-                    <rect key="frame" x="175" y="364" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXt-LE-MLJ">
+                    <rect key="frame" x="180.66666666666666" y="12" width="32" height="4"/>
+                    <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="Zvr-Zh-Boo"/>
+                        <constraint firstAttribute="width" constant="32" id="ntA-9k-rox"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Def-cP-Nfm">
+                    <rect key="frame" x="24" y="32" width="345" height="802"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="138" y="21"/>
+            <constraints>
+                <constraint firstItem="Def-cP-Nfm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="IPt-pa-Nux"/>
+                <constraint firstItem="Def-cP-Nfm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="16" id="OOq-qp-tAV"/>
+                <constraint firstItem="OXt-LE-MLJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="dIH-DJ-JGG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Def-cP-Nfm" secondAttribute="trailing" constant="24" id="eOW-O8-Iml"/>
+                <constraint firstItem="Def-cP-Nfm" firstAttribute="top" secondItem="OXt-LE-MLJ" secondAttribute="bottom" constant="16" id="l7h-t5-HXL"/>
+                <constraint firstItem="OXt-LE-MLJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tHS-cX-Pvr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
