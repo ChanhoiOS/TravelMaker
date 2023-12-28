@@ -21,6 +21,11 @@ class CheckRouteView: BaseViewController, FloatingPanelControllerDelegate {
     
     var fpc: FloatingPanelController!
     
+    var collectionData: ResponseRegisterRoute?
+    
+    var screenHeight = 0.0
+    var bottomHeight: Double = 0.0
+    
     private let pageTitle: UILabel = {
         let label = UILabel()
         label.text = "장소 확인"
@@ -42,6 +47,8 @@ class CheckRouteView: BaseViewController, FloatingPanelControllerDelegate {
         setMap()
         setCoordinate()
         setGesture()
+        
+        screenHeight = UIScreen.main.bounds.size.height
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.setFloatingPanel()
@@ -86,15 +93,20 @@ class CheckRouteView: BaseViewController, FloatingPanelControllerDelegate {
 
 extension CheckRouteView {
     func setFloatingPanel() {
+        let count = collectionData?.routeAddress?.count ?? 0
+        
+        bottomHeight = screenHeight - Double(200 * count)
+        
         fpc = FloatingPanelController(delegate: self)
                 
         let vc = RouteModal(nibName: "RouteModal", bundle: nil)
+        vc.model = collectionData
         fpc.changePanelStyle() // panel 스타일 변경 (대신 bar UI가 사라지므로 따로 넣어주어야함)
         fpc.delegate = self
         fpc.set(contentViewController: vc) // floating panel에 삽입할 것
         fpc.track(scrollView: vc.tableView)
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
-        fpc.layout = MyFloatingPanelLayout()
+        fpc.layout = MyFloatingPanelLayout(bottomHeight)
         fpc.invalidateLayout() // if needed
     }
 }
@@ -168,6 +180,13 @@ extension FloatingPanelController {
 }
 
 class MyFloatingPanelLayout: FloatingPanelLayout {
+    
+    var height = 0.0
+    
+    init(_ bottomHeight: Double) {
+        height = bottomHeight
+        print("height: ", height)
+    }
 
     var position: FloatingPanelPosition {
         return .bottom
@@ -176,10 +195,10 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     var initialState: FloatingPanelState {
         return .half
     }
-
+    
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
-            .full: FloatingPanelLayoutAnchor(absoluteInset: 240.0, edge: .top, referenceGuide: .safeArea),
+            .full: FloatingPanelLayoutAnchor(absoluteInset: height, edge: .top, referenceGuide: .safeArea),
             .half: FloatingPanelLayoutAnchor(absoluteInset: 24.0, edge: .bottom, referenceGuide: .safeArea),
         ]
     }

@@ -11,14 +11,7 @@ class RouteModal: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let data = [
-            "NewYork",
-            "Seoul",
-            "Toronto",
-            "Boston",
-            "Paris",
-            "LA",
-        ]
+    var model: ResponseRegisterRoute?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +34,19 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return model?.routeAddress?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RouteModalTableViewCell", for: indexPath) as! RouteModalTableViewCell
         
+        let count = model?.routeAddress?.count ?? 0
+        let data =  model?.routeAddress
+        
         if indexPath.row == 0 {
             cell.departArriveLabel.text = "출발"
             cell.departArriveLabel.isHidden = false
-        } else if indexPath.row == data.count - 1 {
+        } else if indexPath.row == count - 1 {
             cell.departArriveLabel.isHidden = false
             cell.departArriveLabel.text = "도착"
             cell.grayLine1.isHidden = true
@@ -61,8 +57,8 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.numberLabel.text = "\(indexPath.row)"
-        cell.spaceName.text = data[indexPath.row]
-        cell.spaceAddress.text = data[indexPath.row]
+        cell.spaceName.text = data?[indexPath.row].addressName ?? ""
+        cell.spaceAddress.text = data?[indexPath.row].addressDetail ?? ""
         
         return cell
     }

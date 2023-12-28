@@ -98,6 +98,7 @@ extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = CheckRouteView(nibName: "CheckRouteView", bundle: nil)
+        vc.collectionData = collectionData?.data?[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
