@@ -153,6 +153,64 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
     func setLocation(_ x: Double, _ y: Double) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
         naverMapView?.moveCamera(cameraUpdate)
+        
+        setMarker()
+    }
+    
+    func setMarker() {
+        let pathOverlay = NMFPath()
+        pathOverlay.color = .red            // pathOverlay의 색
+        pathOverlay.outlineColor = .blue    // pathOverlay 테두리 색
+        pathOverlay.width = 10              // pathOverlay 두께
+        
+        var points: [NMGLatLng] = [NMGLatLng(lat: 37.50518440330725, lng: 127.05485569769449)]
+        
+        if let details = collectionData?.routeAddress {
+            points.removeAll()
+            
+            for (_ , detail) in details.enumerated() {
+                let latitude = (detail.latitude as? NSString)?.doubleValue
+                let longitude = (detail.longitude as? NSString)?.doubleValue
+                let coordinate = CLLocationCoordinate2D(latitude: latitude ?? 37.50518440330725, longitude: longitude ?? 127.05485569769449)
+                
+                points.append(NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449))
+            }
+            print("points: ", points)
+            pathOverlay.path = NMGLineString(points: points)
+            
+            pathOverlay.mapView = naverMapView
+//                let marker = NMFMarker()
+//                
+//                marker.captionRequestedWidth = 60
+//                                
+//                if let imageUrls = detail.imgList {
+//                    if imageUrls.count > 0 {
+//                        DispatchQueue.global().async {
+//                            let url = URL(string: imageUrls[0])!
+//                            let latitude = (detail.latitude as? NSString)?.doubleValue
+//                            let longitude = (detail.longitude as? NSString)?.doubleValue
+//                            
+//                            if let data = try? Data(contentsOf: url) {
+//                                if let image = UIImage(data: data) {
+//                                    DispatchQueue.main.async {
+//                                        let resizeImage = image.resizeAll(newWidth: 36, newHeight: 36)
+//                                        marker.iconImage = NMFOverlayImage(image: resizeImage)
+//                                        marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
+//                                        marker.mapView = self.naverMapView
+//                                        
+//                                        marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
+//                                            //self.markerAction(index, detail, image)
+//                                            self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)))
+//                                            return true
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+        //    }
+        }
     }
 }
 
