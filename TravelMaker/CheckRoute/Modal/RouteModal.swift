@@ -39,6 +39,7 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RouteModalTableViewCell", for: indexPath) as! RouteModalTableViewCell
+        cell.selectionStyle = .none
         
         let count = model?.routeAddress?.count ?? 0
         let data =  model?.routeAddress
@@ -61,5 +62,10 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
         cell.spaceAddress.text = data?[indexPath.row].addressDetail ?? ""
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data =  model?.routeAddress
+        print("data?[indexPath.row]: ", data?[indexPath.row])
     }
 }
