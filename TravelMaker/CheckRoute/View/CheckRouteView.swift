@@ -12,7 +12,7 @@ import Then
 import SnapKit
 import FloatingPanel
 
-class CheckRouteView: BaseViewController, FloatingPanelControllerDelegate {
+class CheckRouteView: BaseViewController {
     
     var headerView: UIView!
     var headerLine: UIView!
@@ -91,11 +91,17 @@ class CheckRouteView: BaseViewController, FloatingPanelControllerDelegate {
     }
 }
 
-extension CheckRouteView {
+extension CheckRouteView: FloatingPanelControllerDelegate {
     func setFloatingPanel() {
         let count = collectionData?.routeAddress?.count ?? 0
         
-        bottomHeight = screenHeight - Double(200 * count)
+        if count == 1 {
+            bottomHeight = screenHeight - Double(160)
+        } else if count == 2 {
+            bottomHeight = screenHeight - Double(280)
+        } else {
+            bottomHeight = screenHeight - Double(100 * count)
+        }
         
         fpc = FloatingPanelController(delegate: self)
                 
@@ -108,6 +114,8 @@ extension CheckRouteView {
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
         fpc.layout = MyFloatingPanelLayout(bottomHeight)
         fpc.invalidateLayout() // if needed
+        
+        fpc.contentMode = .fitToBounds
     }
 }
 
@@ -185,7 +193,6 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     
     init(_ bottomHeight: Double) {
         height = bottomHeight
-        print("height: ", height)
     }
 
     var position: FloatingPanelPosition {
