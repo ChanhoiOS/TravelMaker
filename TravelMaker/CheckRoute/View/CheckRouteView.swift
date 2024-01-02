@@ -45,7 +45,8 @@ class CheckRouteView: BaseViewController {
         
         initHeader()
         setMap()
-        setCoordinate()
+        //setCoordinate()
+        setMarker()
         setGesture()
         
         screenHeight = UIScreen.main.bounds.size.height
@@ -125,7 +126,6 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
             .subscribe(onNext: { [weak self] gps in
                 let x = gps?.longitude ?? 127.05485569769449
                 let y = gps?.latitude ?? 37.50518440330725
-                self?.setLocation(x, y)
             }, onCompleted: {
                 print("onComplete")
             }) {
@@ -150,20 +150,24 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
             }
     }
     
-    func setLocation(_ x: Double, _ y: Double) {
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: y, lng: x))
+    func setLocation(_ locations: [NMGLatLng]) {
+        let bounds = NMGLatLngBounds(latLngs: locations)
+        let cameraUpdate = NMFCameraUpdate(fit: bounds, paddingInsets: UIEdgeInsets(top: 100, left: 100, bottom: 200, right: 100))
         naverMapView?.moveCamera(cameraUpdate)
-        
-        setMarker()
     }
     
     func setMarker() {
         let pathOverlay = NMFPath()
-        pathOverlay.color = .red            // pathOverlay의 색
-        pathOverlay.outlineColor = .blue    // pathOverlay 테두리 색
-        pathOverlay.width = 10              // pathOverlay 두께
+        pathOverlay.color = .blue
+        pathOverlay.outlineColor = .blue
+        pathOverlay.width = 5
+       // pathOverlay.patternIcon = NMFOverlayImage(name: "path_pattern")
+        pathOverlay.patternInterval = 10
         
         var points: [NMGLatLng] = [NMGLatLng(lat: 37.50518440330725, lng: 127.05485569769449)]
+        
+        let marker = NMFMarker()
+        marker.captionRequestedWidth = 60
         
         if let details = collectionData?.routeAddress {
             points.removeAll()
@@ -171,14 +175,20 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
             for (_ , detail) in details.enumerated() {
                 let latitude = (detail.latitude as? NSString)?.doubleValue
                 let longitude = (detail.longitude as? NSString)?.doubleValue
-                let coordinate = CLLocationCoordinate2D(latitude: latitude ?? 37.50518440330725, longitude: longitude ?? 127.05485569769449)
                 
                 points.append(NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449))
+                
+                marker.iconImage = NMFOverlayImage(image: resizeImage)
+                marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
+                marker.mapView = self.naverMapView
             }
-            print("points: ", points)
+            
             pathOverlay.path = NMGLineString(points: points)
             
             pathOverlay.mapView = naverMapView
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.setLocation(points)
+            }
 //                let marker = NMFMarker()
 //                
 //                marker.captionRequestedWidth = 60
