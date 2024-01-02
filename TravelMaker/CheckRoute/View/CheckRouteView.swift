@@ -158,68 +158,43 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
     
     func setMarker() {
         let pathOverlay = NMFPath()
-        pathOverlay.color = .blue
-        pathOverlay.outlineColor = .blue
+        pathOverlay.color = .clear
+        pathOverlay.outlineColor = .clear
         pathOverlay.width = 5
-       // pathOverlay.patternIcon = NMFOverlayImage(name: "path_pattern")
+        pathOverlay.patternIcon = NMFOverlayImage(name: "checkCircle")
         pathOverlay.patternInterval = 10
         
         var points: [NMGLatLng] = [NMGLatLng(lat: 37.50518440330725, lng: 127.05485569769449)]
         
-        let marker = NMFMarker()
-        marker.captionRequestedWidth = 60
-        
         if let details = collectionData?.routeAddress {
             points.removeAll()
             
-            for (_ , detail) in details.enumerated() {
+            for (index , detail) in details.enumerated() {
                 let latitude = (detail.latitude as? NSString)?.doubleValue
                 let longitude = (detail.longitude as? NSString)?.doubleValue
                 
                 points.append(NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449))
                 
-                marker.iconImage = NMFOverlayImage(image: resizeImage)
-                marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
-                marker.mapView = self.naverMapView
+                DispatchQueue.main.async {
+                    var numberView = UIView()
+                    var numberLabel = UILabel()
+                    
+                    let marker = NMFMarker()
+                    marker.captionRequestedWidth = 60
+                    let markerImage = UIImage(named: "number_\(index + 1)")!.resizeAll(newWidth: 36, newHeight: 36)
+                    let resizeImage = markerImage.resizeAll(newWidth: 36, newHeight: 36)
+                    marker.iconImage = NMFOverlayImage(image: resizeImage)
+                    marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
+                    marker.mapView = self.naverMapView
+                }
             }
             
             pathOverlay.path = NMGLineString(points: points)
-            
             pathOverlay.mapView = naverMapView
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.setLocation(points)
             }
-//                let marker = NMFMarker()
-//                
-//                marker.captionRequestedWidth = 60
-//                                
-//                if let imageUrls = detail.imgList {
-//                    if imageUrls.count > 0 {
-//                        DispatchQueue.global().async {
-//                            let url = URL(string: imageUrls[0])!
-//                            let latitude = (detail.latitude as? NSString)?.doubleValue
-//                            let longitude = (detail.longitude as? NSString)?.doubleValue
-//                            
-//                            if let data = try? Data(contentsOf: url) {
-//                                if let image = UIImage(data: data) {
-//                                    DispatchQueue.main.async {
-//                                        let resizeImage = image.resizeAll(newWidth: 36, newHeight: 36)
-//                                        marker.iconImage = NMFOverlayImage(image: resizeImage)
-//                                        marker.position = NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)
-//                                        marker.mapView = self.naverMapView
-//                                        
-//                                        marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
-//                                            //self.markerAction(index, detail, image)
-//                                            self.naverMapView?.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449)))
-//                                            return true
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-        //    }
         }
     }
 }
