@@ -136,8 +136,13 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
     
     func setLocation(_ locations: [NMGLatLng]) {
         let bounds = NMGLatLngBounds(latLngs: locations)
-        let cameraUpdate = NMFCameraUpdate(fit: bounds, paddingInsets: UIEdgeInsets(top: 100, left: 100, bottom: 200, right: 100))
-        naverMapView?.moveCamera(cameraUpdate)
+        if locations.count == 1 {
+            let cameraUpdate = NMFCameraUpdate(scrollTo: locations[0])
+            naverMapView?.moveCamera(cameraUpdate)
+        } else {
+            let cameraUpdate = NMFCameraUpdate(fit: bounds, paddingInsets: UIEdgeInsets(top: 100, left: 100, bottom: 200, right: 100))
+            naverMapView?.moveCamera(cameraUpdate)
+        }
     }
     
     func setMarker() {
@@ -160,9 +165,6 @@ extension CheckRouteView: NMFMapViewTouchDelegate {
                 points.append(NMGLatLng(lat: latitude ?? 37.50518440330725, lng: longitude ?? 127.05485569769449))
                 
                 DispatchQueue.main.async {
-                    var numberView = UIView()
-                    var numberLabel = UILabel()
-                    
                     let marker = NMFMarker()
                     marker.captionRequestedWidth = 60
                     let markerImage = UIImage(named: "number_\(index + 1)")!.resizeAll(newWidth: 36, newHeight: 36)
