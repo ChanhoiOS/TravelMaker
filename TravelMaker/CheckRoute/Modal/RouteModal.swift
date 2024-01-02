@@ -47,6 +47,11 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             cell.departArriveLabel.text = "출발"
             cell.departArriveLabel.isHidden = false
+            if count == 1 {
+                cell.grayLine1.isHidden = true
+                cell.grayLine2.isHidden = true
+                cell.grayLine3.isHidden = true
+            }
         } else if indexPath.row == count - 1 {
             cell.departArriveLabel.isHidden = false
             cell.departArriveLabel.text = "도착"

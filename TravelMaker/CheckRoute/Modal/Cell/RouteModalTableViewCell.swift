@@ -105,7 +105,7 @@ class RouteModalTableViewCell: UITableViewCell {
             make.top.equalTo(numberView.snp.bottom).offset(0)
             make.centerX.equalTo(numberView)
             make.width.equalTo(1)
-            make.height.equalTo(5)
+            make.height.equalTo(10)
         }
         
         contentView.addSubview(grayLine3)
@@ -113,7 +113,7 @@ class RouteModalTableViewCell: UITableViewCell {
             make.bottom.equalToSuperview().offset(0)
             make.centerX.equalTo(numberView)
             make.width.equalTo(1)
-            make.height.equalTo(5)
+            make.height.equalTo(10)
         }
         
         contentView.addSubview(grayLine2)

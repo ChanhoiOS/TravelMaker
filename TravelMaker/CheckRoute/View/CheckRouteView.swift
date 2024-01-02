@@ -45,7 +45,6 @@ class CheckRouteView: BaseViewController {
         
         initHeader()
         setMap()
-        //setCoordinate()
         setMarker()
         setGesture()
         
@@ -99,7 +98,7 @@ extension CheckRouteView: FloatingPanelControllerDelegate {
         if count == 1 {
             bottomHeight = screenHeight - Double(160)
         } else if count == 2 {
-            bottomHeight = screenHeight - Double(280)
+            bottomHeight = screenHeight - Double(240)
         } else {
             bottomHeight = screenHeight - Double(100 * count)
         }
@@ -115,26 +114,11 @@ extension CheckRouteView: FloatingPanelControllerDelegate {
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
         fpc.layout = MyFloatingPanelLayout(bottomHeight)
         fpc.invalidateLayout() // if needed
-        
         fpc.contentMode = .fitToBounds
     }
 }
 
 extension CheckRouteView: NMFMapViewTouchDelegate {
-    func setCoordinate() {
-        let gpsDisposable = LocationManager.shared.locationSubject
-            .subscribe(onNext: { [weak self] gps in
-                let x = gps?.longitude ?? 127.05485569769449
-                let y = gps?.latitude ?? 37.50518440330725
-            }, onCompleted: {
-                print("onComplete")
-            }) {
-                print("disposed")
-            }
-        
-        gpsDisposable.dispose()
-    }
-    
     func setMap() {
         naverMapView = NMFMapView()
             .then {
@@ -243,7 +227,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     }
 
     var initialState: FloatingPanelState {
-        return .half
+        return .full
     }
     
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
