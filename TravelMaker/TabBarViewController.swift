@@ -23,6 +23,13 @@ class TabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.selectedIndex = 1
+        
+        if let items = tabBar.items {
+            for item in items {
+                item.setTitleTextAttributes([.foregroundColor: Colors.DESIGN_BLUE], for: .selected)
+                item.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+            }
+        }
     }
     
     func setLine() {
