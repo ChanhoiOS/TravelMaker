@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol FocusRoute {
+    func focus(_ route: RouteAddress?)
+}
+
 class RouteModal: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     var model: ResponseRegisterRoute?
+    var delegate: FocusRoute?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +75,7 @@ extension RouteModal: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data =  model?.routeAddress
-        print("data?[indexPath.row]: ", data?[indexPath.row])
+        let data = model?.routeAddress?[indexPath.row]
+        delegate?.focus(data)
     }
 }

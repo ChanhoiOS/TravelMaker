@@ -107,6 +107,7 @@ extension CheckRouteView: FloatingPanelControllerDelegate {
                 
         let vc = RouteModal(nibName: "RouteModal", bundle: nil)
         vc.model = collectionData
+        vc.delegate = self
         fpc.changePanelStyle() // panel 스타일 변경 (대신 bar UI가 사라지므로 따로 넣어주어야함)
         fpc.delegate = self
         fpc.set(contentViewController: vc) // floating panel에 삽입할 것
@@ -237,5 +238,15 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
             .full: FloatingPanelLayoutAnchor(absoluteInset: height, edge: .top, referenceGuide: .safeArea),
             .half: FloatingPanelLayoutAnchor(absoluteInset: 24.0, edge: .bottom, referenceGuide: .safeArea),
         ]
+    }
+}
+
+extension CheckRouteView: FocusRoute {
+    func focus(_ route: RouteAddress?) {
+        let latitude = (route?.latitude as? NSString)?.doubleValue ?? 37.50518440330725
+        let longitude = (route?.longitude as? NSString)?.doubleValue ?? 127.05485569769449
+        
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        naverMapView?.moveCamera(cameraUpdate)
     }
 }
