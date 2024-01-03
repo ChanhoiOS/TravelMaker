@@ -178,6 +178,9 @@ class RegisterNearMe: BaseViewController {
                 star.settings.emptyBorderColor = Colors.STAR_EMPTY
                 star.settings.filledBorderColor = Colors.STAR_FILL
                 
+                // 초기화
+                self.star.rating = 3.0
+                
                 star.didFinishTouchingCosmos = { rating in
                     self.star.rating = rating
                 }
