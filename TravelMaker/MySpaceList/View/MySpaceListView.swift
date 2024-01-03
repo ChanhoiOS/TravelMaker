@@ -22,6 +22,10 @@ class MySpaceListView: BaseViewController {
         setGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setData()
+    }
+    
     func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -88,6 +92,13 @@ extension MySpaceListView: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width - 48, height: 180)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailView = MySpaceDetailView(nibName: "MySpaceDetailView", bundle: nil)
+        detailView.nearbyId = collectionData?.data?[indexPath.row].nearby?.nearbyID ?? 0
+        detailView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }
 

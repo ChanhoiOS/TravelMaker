@@ -96,6 +96,8 @@
 		0960740E2B44DED5000453F7 /* MySpaceListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0960740C2B44DED5000453F7 /* MySpaceListView.xib */; };
 		096074112B44E4CB000453F7 /* MySpaceBookmarkCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096074102B44E4CB000453F7 /* MySpaceBookmarkCollectionModel.swift */; };
 		096074132B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096074122B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift */; };
+		096074182B44F9AE000453F7 /* MySpaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096074162B44F9AE000453F7 /* MySpaceDetailView.swift */; };
+		096074192B44F9AE000453F7 /* MySpaceDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096074172B44F9AE000453F7 /* MySpaceDetailView.xib */; };
 		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
 		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
 		0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF992AE63187004D9068 /* FileUploadRepository.swift */; };
@@ -248,6 +250,8 @@
 		0960740C2B44DED5000453F7 /* MySpaceListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySpaceListView.xib; sourceTree = "<group>"; };
 		096074102B44E4CB000453F7 /* MySpaceBookmarkCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceBookmarkCollectionModel.swift; sourceTree = "<group>"; };
 		096074122B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceBookmarkDeleteModel.swift; sourceTree = "<group>"; };
+		096074162B44F9AE000453F7 /* MySpaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceDetailView.swift; sourceTree = "<group>"; };
+		096074172B44F9AE000453F7 /* MySpaceDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySpaceDetailView.xib; sourceTree = "<group>"; };
 		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		0960FF992AE63187004D9068 /* FileUploadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadRepository.swift; sourceTree = "<group>"; };
@@ -830,6 +834,8 @@
 			children = (
 				0960740B2B44DED5000453F7 /* MySpaceListView.swift */,
 				0960740C2B44DED5000453F7 /* MySpaceListView.xib */,
+				096074162B44F9AE000453F7 /* MySpaceDetailView.swift */,
+				096074172B44F9AE000453F7 /* MySpaceDetailView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1349,6 +1355,7 @@
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */,
 				09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */,
+				096074192B44F9AE000453F7 /* MySpaceDetailView.xib in Resources */,
 				09A83F0F2AAEE8AF0082A6A2 /* SUIT-Bold.otf in Resources */,
 				08FA16722AFBAA6600E9C452 /* RegisterRouteView.xib in Resources */,
 				09A83F072AAEE8AF0082A6A2 /* SUIT-Thin.otf in Resources */,
@@ -1443,6 +1450,7 @@
 				090FB9EB2ADE553D005081F8 /* SearchSpaceSelectView.swift in Sources */,
 				096074132B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift in Sources */,
 				09112BF22AE8A8EE001AFDC6 /* AroundMeRecordCustomView.swift in Sources */,
+				096074182B44F9AE000453F7 /* MySpaceDetailView.swift in Sources */,
 				095FD1E72B3D2FB700ACD996 /* CheckRouteView.swift in Sources */,
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
 				08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */,
