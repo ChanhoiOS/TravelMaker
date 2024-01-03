@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SafariServices
 
 class MyRecommendListView: BaseViewController {
 
@@ -82,6 +83,12 @@ extension MyRecommendListView: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let url = URL(string: collectionData?.data?[indexPath.row].recommend?.detailURL ?? "www.apple.com") else { return }
+
+        selectDetail(url)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width - 48, height: 180)
     }
@@ -106,5 +113,17 @@ extension MyRecommendListView {
                 
             }
         }
+    }
+}
+
+extension MyRecommendListView: SFSafariViewControllerDelegate {
+    func selectDetail(_ url: URL) {
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        self.present(safariViewController, animated: true)
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: 3)
     }
 }
