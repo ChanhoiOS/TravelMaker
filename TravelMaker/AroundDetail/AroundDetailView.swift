@@ -321,8 +321,6 @@ extension AroundDetailView {
     }
     
     @objc func switchBookmark() {
-        guard let topVC = UIApplication.topMostController() else { return }
-        
         var paramDic = [String: Any]()
         let nearbyId = detailData?.nearbyID ?? 0
         paramDic["nearby_id"] = nearbyId

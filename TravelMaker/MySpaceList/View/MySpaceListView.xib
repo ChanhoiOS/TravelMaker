@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SUIT-Bold.otf">
+            <string>SUIT-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MySpaceListView" customModule="TravelMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="XJb-hw-q1x" id="xqW-Pr-MAP"/>
+                <outlet property="collectionView" destination="Ke1-NJ-yr2" id="mtS-gV-Ixj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJ2-Qo-3DS">
+                    <rect key="frame" x="0.0" y="59" width="393" height="59"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_back_btn" translatesAutoresizingMaskIntoConstraints="NO" id="XJb-hw-q1x">
+                            <rect key="frame" x="24" y="13.666666666666671" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="Ska-YS-wkw"/>
+                                <constraint firstAttribute="width" constant="32" id="qfs-qj-9Jc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 장소 목록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFx-ih-e1g">
+                            <rect key="frame" x="148" y="17" width="97" height="25"/>
+                            <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="20"/>
+                            <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="XJb-hw-q1x" firstAttribute="leading" secondItem="FJ2-Qo-3DS" secondAttribute="leading" constant="24" id="U7h-Ob-TyB"/>
+                        <constraint firstAttribute="bottom" secondItem="cFx-ih-e1g" secondAttribute="bottom" constant="17" id="etu-Cs-crF"/>
+                        <constraint firstItem="XJb-hw-q1x" firstAttribute="centerY" secondItem="FJ2-Qo-3DS" secondAttribute="centerY" id="hdU-ea-wD4"/>
+                        <constraint firstAttribute="height" constant="59" id="lLh-U4-INt"/>
+                        <constraint firstItem="cFx-ih-e1g" firstAttribute="centerX" secondItem="FJ2-Qo-3DS" secondAttribute="centerX" id="nGX-lu-evo"/>
+                        <constraint firstItem="cFx-ih-e1g" firstAttribute="top" secondItem="FJ2-Qo-3DS" secondAttribute="top" constant="17" id="xV5-3F-fYx"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-NJ-yr2">
+                    <rect key="frame" x="24" y="142" width="345" height="652"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="war-0w-n7G">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FJ2-Qo-3DS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3l4-JY-aHt"/>
+                <constraint firstItem="Ke1-NJ-yr2" firstAttribute="top" secondItem="FJ2-Qo-3DS" secondAttribute="bottom" constant="24" id="Ke6-Ab-Qog"/>
+                <constraint firstItem="FJ2-Qo-3DS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Llx-D4-tiu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ke1-NJ-yr2" secondAttribute="trailing" constant="24" id="jyX-CX-a6G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ke1-NJ-yr2" secondAttribute="bottom" constant="24" id="nyC-Wb-bBQ"/>
+                <constraint firstItem="FJ2-Qo-3DS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qaw-yB-N69"/>
+                <constraint firstItem="Ke1-NJ-yr2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="sRo-vh-0We"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="header_back_btn" width="96" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

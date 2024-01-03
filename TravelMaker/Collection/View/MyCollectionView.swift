@@ -12,7 +12,9 @@ import FlexLayout
 
 class MyCollectionView: BaseViewController {
     
-    var collectionData: RecommendBookmarkCollectionModel?
+    var recommendCollectionData: RecommendBookmarkCollectionModel?
+    var mySpaceCollectionData: MySpaceBookmarkCollectionModel?
+    var myRouteCollectionData: ResponseRegisterRouteModel?
 
     let flexView = UIView()
     
@@ -132,6 +134,8 @@ class MyCollectionView: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setRecommend()
+        setMySpace()
+        setMyRoute()
     }
     
     override func viewDidLayoutSubviews() {
@@ -223,11 +227,45 @@ extension MyCollectionView {
         _Concurrency.Task {
             do {
                 let response = try await AsyncNetworkManager.shared.asyncGet(url, RecommendBookmarkCollectionModel.self)
-                collectionData = response
+                recommendCollectionData = response
                 
-                let count = self.collectionData?.data?.count ?? 0
+                let count = self.recommendCollectionData?.data?.count ?? 0
                 
                 recommendCount.text = "\(count)" + "개"
+            } catch {
+                
+            }
+        }
+    }
+    
+    func setMySpace() {
+        let url = Apis.nearby_bookmark_all
+        
+        _Concurrency.Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, MySpaceBookmarkCollectionModel.self)
+                mySpaceCollectionData = response
+                
+                let count = self.mySpaceCollectionData?.data?.count ?? 0
+                
+                mySpaceCount.text = "\(count)" + "개"
+            } catch {
+                
+            }
+        }
+    }
+    
+    func setMyRoute() {
+        let url = Apis.bookmark_recommend
+        
+        _Concurrency.Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncGet(url, ResponseRegisterRouteModel.self)
+                myRouteCollectionData = response
+                
+                let count = self.myRouteCollectionData?.data?.count ?? 0
+                
+                myRouteCount.text = "\(count)" + "개"
             } catch {
                 
             }
@@ -253,19 +291,21 @@ extension MyCollectionView {
     @objc func goMyRecommendList(sender: UITapGestureRecognizer) {
         let vc = MyRecommendListView(nibName: "MyRecommendListView", bundle: nil)
         vc.hidesBottomBarWhenPushed = true
-        vc.collectionData = collectionData
+        vc.collectionData = recommendCollectionData
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goMySpaceList(sender: UITapGestureRecognizer) {
-//        let vc = MyRouteView(nibName: "MyRouteView", bundle: nil)
-//        vc.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = MySpaceListView(nibName: "MySpaceListView", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
+        vc.collectionData = mySpaceCollectionData
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goMyRoute(sender: UITapGestureRecognizer) {
         let vc = MyRouteView(nibName: "MyRouteView", bundle: nil)
         vc.hidesBottomBarWhenPushed = true
+        vc.collectionData = myRouteCollectionData
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
