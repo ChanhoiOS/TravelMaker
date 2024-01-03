@@ -167,10 +167,10 @@ class MyPageView: BaseViewController {
                 flex.addItem(profileImage).marginLeft(24).width(60).height(60).marginVertical(32).cornerRadius(30)
                 flex.addItem().paddingRight(80).define { flex in
                     flex.addItem().height(62).define { flex in
-                        flex.addItem(nickName).marginTop(38)
+                        flex.addItem(nickName).marginTop(38).marginLeft(10)
                     }
                     flex.addItem().height(62).define { flex in
-                        flex.addItem(address).marginBottom(30)
+                        flex.addItem(address).marginBottom(30).marginLeft(10)
                     }
                 }
                 flex.addItem().define { flex in
