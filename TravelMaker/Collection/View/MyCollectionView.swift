@@ -256,7 +256,7 @@ extension MyCollectionView {
     }
     
     func setMyRoute() {
-        let url = Apis.bookmark_recommend
+        let url = Apis.route_all
         
         _Concurrency.Task {
             do {
