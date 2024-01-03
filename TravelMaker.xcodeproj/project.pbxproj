@@ -98,6 +98,7 @@
 		096074132B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096074122B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift */; };
 		096074182B44F9AE000453F7 /* MySpaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096074162B44F9AE000453F7 /* MySpaceDetailView.swift */; };
 		096074192B44F9AE000453F7 /* MySpaceDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096074172B44F9AE000453F7 /* MySpaceDetailView.xib */; };
+		0960741C2B4516A1000453F7 /* MyRouteDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960741B2B4516A1000453F7 /* MyRouteDeleteModel.swift */; };
 		0960FF952AE607E2004D9068 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */; };
 		0960FF982AE60DF6004D9068 /* SearchSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */; };
 		0960FF9A2AE63187004D9068 /* FileUploadRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0960FF992AE63187004D9068 /* FileUploadRepository.swift */; };
@@ -252,6 +253,7 @@
 		096074122B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceBookmarkDeleteModel.swift; sourceTree = "<group>"; };
 		096074162B44F9AE000453F7 /* MySpaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceDetailView.swift; sourceTree = "<group>"; };
 		096074172B44F9AE000453F7 /* MySpaceDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySpaceDetailView.xib; sourceTree = "<group>"; };
+		0960741B2B4516A1000453F7 /* MyRouteDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouteDeleteModel.swift; sourceTree = "<group>"; };
 		0960FF942AE607E2004D9068 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0960FF972AE60DF6004D9068 /* SearchSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSpaceViewModel.swift; sourceTree = "<group>"; };
 		0960FF992AE63187004D9068 /* FileUploadRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadRepository.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 		0914EF782AF4ACF3008F1E5B /* MyRoute */ = {
 			isa = PBXGroup;
 			children = (
+				0960741A2B45167D000453F7 /* Model */,
 				0914EF7D2AF4B1A5008F1E5B /* Cell */,
 				0914EF792AF4AD12008F1E5B /* MyRouteView.swift */,
 				0914EF7A2AF4AD12008F1E5B /* MyRouteView.xib */,
@@ -854,6 +857,14 @@
 			children = (
 				096074102B44E4CB000453F7 /* MySpaceBookmarkCollectionModel.swift */,
 				096074122B44EEEC000453F7 /* MySpaceBookmarkDeleteModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0960741A2B45167D000453F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0960741B2B4516A1000453F7 /* MyRouteDeleteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1444,6 +1455,7 @@
 				09112BF52AE8D6D5001AFDC6 /* PaddingLabel.swift in Sources */,
 				08FF473F2B1336FA00B0D6AB /* UIApplication+Extension.swift in Sources */,
 				09D7B17D2AAAFE9100991841 /* AppDelegate.swift in Sources */,
+				0960741C2B4516A1000453F7 /* MyRouteDeleteModel.swift in Sources */,
 				096074092B44DE7A000453F7 /* MySpaceCollectionViewCell.swift in Sources */,
 				095FD1EC2B3D2FFF00ACD996 /* RouteModal.swift in Sources */,
 				0868D6E52B176D7600094464 /* UIView+Extension.swift in Sources */,

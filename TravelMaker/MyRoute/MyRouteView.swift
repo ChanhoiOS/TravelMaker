@@ -93,6 +93,9 @@ extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         cell.contentView.layer.borderColor = Colors.DESIGN_WHITE.cgColor
         cell.contentView.layer.borderWidth = 1
         
+        cell.routeInfoId = collectionData?.data?[indexPath.row].routeInfoID ?? 0
+        cell.deleteAction = deleteAction(_:)
+        
         return cell
     }
     
@@ -104,5 +107,21 @@ extension MyRouteView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width - 48, height: 260)
+    }
+}
+
+extension MyRouteView {
+    func deleteAction(_ routeInfoId: Int) {
+        var paramDic = [String: Any]()
+        paramDic["routeInfoId"] = routeInfoId
+        
+        Task {
+            do {
+                let response = try await AsyncNetworkManager.shared.asyncDelete(Apis.route_delete, paramDic, MyRouteDeleteModel.self)
+                    setData()
+            } catch {
+                Utils.showToast("나만의 경로 삭제에 실패하였습니다. 잠시 후에 다시 시도해주세요.")
+            }
+        }
     }
 }
