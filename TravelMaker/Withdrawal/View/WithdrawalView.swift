@@ -300,6 +300,9 @@ class WithdrawalView: BaseViewController {
     }
     
     func goNextView() {
+        UserDefaultsManager.shared.loginID = ""
+        UserDefaultsManager.shared.loginType = ""
+        
         let vc = LoginView(nibName: "LoginView", bundle: nil)
         self.tabBarController?.navigationController?.offAllNamed(vc)
     }

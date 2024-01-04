@@ -109,6 +109,10 @@ class LoginView: BaseViewController {
         SocialLoginManager.shared.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        autoLogin()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -290,6 +294,14 @@ extension LoginView: SocialLoginDelegate {
 }
 
 extension LoginView {
+    func autoLogin() {
+        if UserDefaultsManager.shared.loginID != "" {
+            socialLogin(UserDefaultsManager.shared.loginType, UserDefaultsManager.shared.loginID)
+        }
+    }
+}
+
+extension LoginView {
     func goToMain(_ data: LoginModel) {
         if let token = data.data?.accessToken {
             SessionManager.shared.accessToken = token
@@ -300,6 +312,9 @@ extension LoginView {
         SessionManager.shared.profileUrl = data.data?.userInfo?.imageURL ?? ""
         SessionManager.shared.loginType = data.data?.userInfo?.loginType ?? ""
         SessionManager.shared.loginId = data.data?.userInfo?.loginID ?? ""
+        
+        UserDefaultsManager.shared.loginID = data.data?.userInfo?.loginID ?? ""
+        UserDefaultsManager.shared.loginType = data.data?.userInfo?.loginType ?? ""
         
         self.navigationController?.offAllNamed(tabBarViewController ?? TabBarViewController())
     }

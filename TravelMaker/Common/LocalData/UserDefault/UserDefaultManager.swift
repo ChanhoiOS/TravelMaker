@@ -33,4 +33,22 @@ class UserDefaultsManager {
             defaults.set(newValue, forKey: "profileCache")
         }
     }
+    
+    var loginID: String {
+        get {
+            return defaults.string(forKey: "loginID") ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "loginID")
+        }
+    }
+    
+    var loginType: String {
+        get {
+            return defaults.string(forKey: "loginType") ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "loginType")
+        }
+    }
 }
