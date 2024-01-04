@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "naver_login@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "naver_login@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
