@@ -122,7 +122,7 @@ extension SignUpView {
             switch response {
             case .success(let data):
                 print("회원가입 Data: ", data)
-                Utils.completionShowAlert(title: "회원가입이 완료되었습니다.", message: "", topViewController: topVC) {
+                Utils.completionShowAlert(title: "회원가입이 완료되었습니다. 다시 로그인을 시도해주세요.", message: "", topViewController: topVC) {
                     self.dismiss(animated: true)
                 }
             case .failure(let error):
