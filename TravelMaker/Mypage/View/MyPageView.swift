@@ -151,6 +151,8 @@ class MyPageView: BaseViewController {
         
         profileImage.clipsToBounds = true
         profileImage.layer.cornerRadius = 30
+        
+        backBtn.isHidden = true
     }
     
     func setFlexView() {
