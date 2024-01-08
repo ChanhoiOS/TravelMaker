@@ -70,6 +70,9 @@
 		09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */; };
 		09317F0D2AEF2AEF0030EAC5 /* AroundDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */; };
 		09317F102AEF47E50030EAC5 /* KFSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0F2AEF47E50030EAC5 /* KFSource.swift */; };
+		0933CF5B2B4B788500707EC3 /* RecommendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933CF592B4B788500707EC3 /* RecommendDetailView.swift */; };
+		0933CF5C2B4B788500707EC3 /* RecommendDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0933CF5A2B4B788500707EC3 /* RecommendDetailView.xib */; };
+		0933CF5F2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */; };
 		09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B792AAFE77800A3F0D6 /* SignUpView.swift */; };
 		09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */; };
 		09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */; };
@@ -229,6 +232,9 @@
 		09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundDetailView.swift; sourceTree = "<group>"; };
 		09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundDetailView.xib; sourceTree = "<group>"; };
 		09317F0F2AEF47E50030EAC5 /* KFSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFSource.swift; sourceTree = "<group>"; };
+		0933CF592B4B788500707EC3 /* RecommendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetailView.swift; sourceTree = "<group>"; };
+		0933CF5A2B4B788500707EC3 /* RecommendDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendDetailView.xib; sourceTree = "<group>"; };
+		0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollFlotyBtnView.swift; sourceTree = "<group>"; };
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -534,6 +540,7 @@
 		090FB9EF2ADE7942005081F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				0933CF5D2B4B7E8000707EC3 /* Components */,
 				091F8BC02B1FFBEC0044E18B /* Loading */,
 				09C2DD8F2B1EE21F00C0320C /* Logout */,
 				0986BCC12AF364AA00987836 /* Recommend */,
@@ -659,6 +666,23 @@
 				09317F0F2AEF47E50030EAC5 /* KFSource.swift */,
 			);
 			path = ImageResource;
+			sourceTree = "<group>";
+		};
+		0933CF582B4B786500707EC3 /* RecommendDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0933CF592B4B788500707EC3 /* RecommendDetailView.swift */,
+				0933CF5A2B4B788500707EC3 /* RecommendDetailView.xib */,
+			);
+			path = RecommendDetail;
+			sourceTree = "<group>";
+		};
+		0933CF5D2B4B7E8000707EC3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		09591B752AAFE72A00A3F0D6 /* SignUp */ = {
@@ -1171,6 +1195,7 @@
 				09A83EEC2AAE9D040082A6A2 /* Around */,
 				09317F092AEF2ABF0030EAC5 /* AroundDetail */,
 				09A83EE72AAE9C790082A6A2 /* Recommend */,
+				0933CF582B4B786500707EC3 /* RecommendDetail */,
 				091B19A12AD4E716009A6AF1 /* RegisterNearMe */,
 				09BF583B2AD7E04400DCF822 /* SearchSpace */,
 				091D5F472AB189CB00D58FA2 /* Collection */,
@@ -1332,6 +1357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0933CF5C2B4B788500707EC3 /* RecommendDetailView.xib in Resources */,
 				08A0ACF72B0F7A5C0082161F /* MyRecommendCollectionViewCell.xib in Resources */,
 				090FB9EC2ADE553D005081F8 /* SearchSpaceSelectView.xib in Resources */,
 				09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */,
@@ -1467,6 +1493,7 @@
 				09CDB7462AF0DE1600044CF2 /* ResponseRecommendALLModel.swift in Sources */,
 				08A6AF5B2B0A33C00045EAFA /* SearchRouteModel.swift in Sources */,
 				0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */,
+				0933CF5F2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift in Sources */,
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
@@ -1515,6 +1542,7 @@
 				09A565152AE76061003DF90B /* ResponseAroundModel.swift in Sources */,
 				09A83EEA2AAE9C9B0082A6A2 /* RecommendView.swift in Sources */,
 				0868D6F42B176F6D00094464 /* WithdrawalModel.swift in Sources */,
+				0933CF5B2B4B788500707EC3 /* RecommendDetailView.swift in Sources */,
 				09C4BA7F2AD9350100BE8376 /* SearchSpaceModel.swift in Sources */,
 				09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */,
 				08FA16712AFBAA6600E9C452 /* RegisterRouteView.swift in Sources */,
