@@ -150,16 +150,21 @@ class AroundMeRecordCumtomView: UIView {
         
         self.addSubview(profileImage)
         profileImage.clipsToBounds = true
-        profileImage.layer.cornerRadius = 12
+        profileImage.layer.cornerRadius = 15
+        
+        if let imageUrl = detail.user?.imageURL {
+            let url = URL(string: imageUrl)
+            profileImage.kf.setImage(with: url)
+        }
         
         profileImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
-            make.width.height.equalTo(31)
+            make.width.height.equalTo(30)
             make.top.equalTo(grayView.snp.bottom).offset(12)
         }
         
         self.addSubview(nameLabel)
-        nameLabel.text = SessionManager.shared.nickName
+        nameLabel.text = detail.user?.nickName ?? "여행자A"
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(profileImage.snp.right).offset(12)
             make.centerY.equalTo(profileImage)
