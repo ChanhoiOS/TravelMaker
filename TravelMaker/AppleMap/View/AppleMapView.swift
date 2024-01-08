@@ -7,22 +7,43 @@
 
 import UIKit
 import MapKit
+import SnapKit
+import Then
 
 class AppleMapView: UIViewController {
 
     let mapView = MKMapView()
+    var header: CommonHeader!
     var detailData: RecommendAllData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUI()
         setMapkit()
+    }
+    
+    func setUI() {
+        header = CommonHeaderBuilder()
+            .setHeaderTitle(detailData?.placeName ?? "")
+            .setHeaderType(.normal)
+            .build()
+            .then {
+                self.view.addSubview($0)
+                $0.snp.makeConstraints { make in
+                    make.top.equalToSuperview().offset(self.view.topSafeAreaHeight)
+                    make.left.right.equalToSuperview()
+                    make.height.equalTo(84)
+                }
+            }
     }
     
     func setMapkit() {
         self.view.addSubview(mapView)
-        mapView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        mapView.snp.makeConstraints { make in
+            make.top.equalTo(header.snp.bottom).offset(0)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(0)
         }
         
         if #available(iOS 16.0, *) {
