@@ -348,8 +348,8 @@ extension RecommendView: SelectRecommendData {
 
 extension RecommendView: SFSafariViewControllerDelegate {
     @objc func selectDetail() {
-        let alert = UIAlertController(title: "맵 선택하기", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "애플맵", style: .default) { action in
+        let alert = UIAlertController(title: "상세보기", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "애플맵으로 보기", style: .default) { action in
             let lat = self.detailData?.latitude ?? ""
             let lon = self.detailData?.longitude ?? ""
             let placeName = self.detailData?.placeName ?? ""
@@ -365,7 +365,7 @@ extension RecommendView: SFSafariViewControllerDelegate {
             }
         })
         
-        alert.addAction(UIAlertAction(title: "카카오맵", style: .default) { action in
+        alert.addAction(UIAlertAction(title: "카카오맵으로 보기", style: .default) { action in
             guard let url = URL(string: self.detailData?.detailURL ?? "www.apple.com") else { return }
             
             let safariViewController = SFSafariViewController(url: url)
