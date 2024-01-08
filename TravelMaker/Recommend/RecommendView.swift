@@ -348,15 +348,22 @@ extension RecommendView: SelectRecommendData {
 
 extension RecommendView: SFSafariViewControllerDelegate {
     @objc func selectDetail() {
-//        guard let url = URL(string: detailData?.detailURL ?? "www.apple.com") else { return }
-//
-//        let safariViewController = SFSafariViewController(url: url)
-//        safariViewController.delegate = self
-//        self.present(safariViewController, animated: true)
-        let vc = RecommendDetailView(nibName: "RecommendDetailView", bundle: nil)
-        vc.detailUrl = detailData?.detailURL ?? "www.apple.com"
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: "알림", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Apple Map", style: .default) { action in
+            let appleMapView = AppleMapView(nibName: "AppleMapView", bundle: nil)
+            appleMapView.detailData = self.detailData
+            appleMapView.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(appleMapView, animated: true)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Kakao Map", style: .default) { action in
+            guard let url = URL(string: self.detailData?.detailURL ?? "www.apple.com") else { return }
+            
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.delegate = self
+            self.present(safariViewController, animated: true)
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {

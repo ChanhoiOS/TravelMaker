@@ -73,6 +73,8 @@
 		0933CF5B2B4B788500707EC3 /* RecommendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933CF592B4B788500707EC3 /* RecommendDetailView.swift */; };
 		0933CF5C2B4B788500707EC3 /* RecommendDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0933CF5A2B4B788500707EC3 /* RecommendDetailView.xib */; };
 		0933CF5F2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */; };
+		0933CF642B4B88BD00707EC3 /* AppleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933CF622B4B88BD00707EC3 /* AppleMapView.swift */; };
+		0933CF652B4B88BD00707EC3 /* AppleMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0933CF632B4B88BD00707EC3 /* AppleMapView.xib */; };
 		09591B7B2AAFE77800A3F0D6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B792AAFE77800A3F0D6 /* SignUpView.swift */; };
 		09591B7C2AAFE77800A3F0D6 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */; };
 		09591B802AAFF44F00A3F0D6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */; };
@@ -235,6 +237,8 @@
 		0933CF592B4B788500707EC3 /* RecommendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDetailView.swift; sourceTree = "<group>"; };
 		0933CF5A2B4B788500707EC3 /* RecommendDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendDetailView.xib; sourceTree = "<group>"; };
 		0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollFlotyBtnView.swift; sourceTree = "<group>"; };
+		0933CF622B4B88BD00707EC3 /* AppleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapView.swift; sourceTree = "<group>"; };
+		0933CF632B4B88BD00707EC3 /* AppleMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppleMapView.xib; sourceTree = "<group>"; };
 		09591B792AAFE77800A3F0D6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		09591B7A2AAFE77800A3F0D6 /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		09591B7F2AAFF44F00A3F0D6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -683,6 +687,23 @@
 				0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0933CF602B4B887B00707EC3 /* AppleMap */ = {
+			isa = PBXGroup;
+			children = (
+				0933CF612B4B88AB00707EC3 /* View */,
+			);
+			path = AppleMap;
+			sourceTree = "<group>";
+		};
+		0933CF612B4B88AB00707EC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0933CF622B4B88BD00707EC3 /* AppleMapView.swift */,
+				0933CF632B4B88BD00707EC3 /* AppleMapView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		09591B752AAFE72A00A3F0D6 /* SignUp */ = {
@@ -1206,6 +1227,7 @@
 				08FA166D2AFBAA3E00E9C452 /* RegisterRoute */,
 				08A6AF4D2B0A313A0045EAFA /* SearchRoute */,
 				08A0ACED2B0F787B0082161F /* MyRecommend */,
+				0933CF602B4B887B00707EC3 /* AppleMap */,
 				0868D6DC2B176C6800094464 /* Withdrawal */,
 				09D7B17C2AAAFE9100991841 /* AppDelegate.swift */,
 				09D7B17E2AAAFE9100991841 /* SceneDelegate.swift */,
@@ -1373,6 +1395,7 @@
 				09C2DD932B1EE65400C0320C /* LogoutAlert.xib in Resources */,
 				095FD1E82B3D2FB700ACD996 /* CheckRouteView.xib in Resources */,
 				091B19A52AD4E732009A6AF1 /* RegisterNearMe.xib in Resources */,
+				0933CF652B4B88BD00707EC3 /* AppleMapView.xib in Resources */,
 				0960740A2B44DE7A000453F7 /* MySpaceCollectionViewCell.xib in Resources */,
 				095FD1ED2B3D2FFF00ACD996 /* RouteModal.xib in Resources */,
 				0960740E2B44DED5000453F7 /* MySpaceListView.xib in Resources */,
@@ -1525,6 +1548,7 @@
 				09591BA32AB04CC500A3F0D6 /* UserDefaultManager.swift in Sources */,
 				091C68812B285382005DAD86 /* ResponseAroundDetailModel.swift in Sources */,
 				09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */,
+				0933CF642B4B88BD00707EC3 /* AppleMapView.swift in Sources */,
 				09C4BA722AD8E0B500BE8376 /* SearchSpaceCell.swift in Sources */,
 				095FD1F12B3D59B900ACD996 /* RouteModalTableViewCell.swift in Sources */,
 				09591B9B2AB033C800A3F0D6 /* OnboardingCell.swift in Sources */,
