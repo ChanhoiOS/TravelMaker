@@ -348,15 +348,24 @@ extension RecommendView: SelectRecommendData {
 
 extension RecommendView: SFSafariViewControllerDelegate {
     @objc func selectDetail() {
-        let alert = UIAlertController(title: "알림", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Apple Map", style: .default) { action in
-            let appleMapView = AppleMapView(nibName: "AppleMapView", bundle: nil)
-            appleMapView.detailData = self.detailData
-            appleMapView.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(appleMapView, animated: true)
+        let alert = UIAlertController(title: "맵 선택하기", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "애플맵", style: .default) { action in
+            let lat = self.detailData?.latitude ?? ""
+            let lon = self.detailData?.longitude ?? ""
+            let placeName = self.detailData?.placeName ?? ""
+            let address = self.detailData?.address ?? ""
+            
+            let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
+            guard let url = URL(string: appleUrl) else { return }
+            
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.delegate = self
+            self.present(safariViewController, animated: true) {
+                NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: nil)
+            }
         })
         
-        alert.addAction(UIAlertAction(title: "Kakao Map", style: .default) { action in
+        alert.addAction(UIAlertAction(title: "카카오맵", style: .default) { action in
             guard let url = URL(string: self.detailData?.detailURL ?? "www.apple.com") else { return }
             
             let safariViewController = SFSafariViewController(url: url)

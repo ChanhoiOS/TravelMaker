@@ -86,7 +86,7 @@ extension MyRecommendListView: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let url = URL(string: collectionData?.data?[indexPath.row].recommend?.detailURL ?? "www.apple.com") else { return }
 
-        selectDetail(url)
+        selectDetail(collectionData?.data?[indexPath.row].recommend)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -117,10 +117,32 @@ extension MyRecommendListView {
 }
 
 extension MyRecommendListView: SFSafariViewControllerDelegate {
-    func selectDetail(_ url: URL) {
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.delegate = self
-        self.present(safariViewController, animated: true)
+    func selectDetail(_ detailData: RecommendCollection?) {
+        let alert = UIAlertController(title: "맵 선택하기", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "애플맵", style: .default) { action in
+            let lat = detailData?.latitude ?? ""
+            let lon = detailData?.longitude ?? ""
+            let placeName = detailData?.placeName ?? ""
+            let address = detailData?.address ?? ""
+            
+            let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
+            guard let url = URL(string: appleUrl) else { return }
+            
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.delegate = self
+            self.present(safariViewController, animated: true) {
+                NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: 3)
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "카카오맵", style: .default) { action in
+            guard let url = URL(string: detailData?.detailURL ?? "www.apple.com") else { return }
+            
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.delegate = self
+            self.present(safariViewController, animated: true)
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
