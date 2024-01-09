@@ -20,7 +20,6 @@ class RecommendDetailView: BaseViewController {
         super.viewDidLoad()
 
         setWebView()
-        setAppleMapBtn()
         setBackBtn()
     }
     
@@ -29,6 +28,8 @@ class RecommendDetailView: BaseViewController {
         let request = URLRequest(url: url!)
         
         webView.load(request)
+        
+        webView.navigationDelegate = self
     }
     
     func setAppleMapBtn() {
@@ -82,4 +83,21 @@ extension RecommendDetailView {
     func backFunc() {
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+extension RecommendDetailView: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let url = navigationAction.request.url, url.scheme != "http" && url.scheme != "https" {
+            UIApplication.shared.open(url)
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        setAppleMapBtn()
+    }
+    
+    
 }

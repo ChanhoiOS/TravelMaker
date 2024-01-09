@@ -14,7 +14,6 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import Kingfisher
-import SafariServices
 
 class RecommendView: UIViewController, NMFMapViewCameraDelegate {
     
@@ -346,43 +345,11 @@ extension RecommendView: SelectRecommendData {
     }
 }
 
-extension RecommendView: SFSafariViewControllerDelegate {
+extension RecommendView {
     @objc func selectDetail() {
         let vc = RecommendDetailView(nibName: "RecommendDetailView", bundle: nil)
         vc.detailData = detailData
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
-        /*
-        let alert = UIAlertController(title: "상세보기", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "애플맵으로 보기", style: .default) { action in
-            let lat = self.detailData?.latitude ?? ""
-            let lon = self.detailData?.longitude ?? ""
-            let placeName = self.detailData?.placeName ?? ""
-            let address = self.detailData?.address ?? ""
-            
-            let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
-            guard let url = URL(string: appleUrl) else { return }
-            
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            self.present(safariViewController, animated: true) {
-                NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: nil)
-            }
-        })
-        
-        alert.addAction(UIAlertAction(title: "카카오맵으로 보기", style: .default) { action in
-            guard let url = URL(string: self.detailData?.detailURL ?? "www.apple.com") else { return }
-            
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            self.present(safariViewController, animated: true)
-        })
-        self.present(alert, animated: true, completion: nil)
-         */
     }
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: nil)
-    }
-    
 }
