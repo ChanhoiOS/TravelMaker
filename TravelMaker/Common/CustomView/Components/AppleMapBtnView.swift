@@ -16,12 +16,20 @@ class AppleMapBtnView: UIView {
     
     var disposeBag = DisposeBag()
     var jumpMapFunc: (() -> Void)?
+    var closeFunc: (() -> Void)?
     
     private let appleImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "apple_login")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    private lazy var selectBtn: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.setTitleColor(.white, for: .normal)
+        return button
     }()
 
     override init(frame: CGRect) {
@@ -96,7 +104,9 @@ class AppleMapBtnView: UIView {
                 }
                 $0.rx.controlEvent(.touchDown)
                     .bind(onNext: { [weak self] _ in
-                        print("click")
+                        if let closeFunc = self?.closeFunc {
+                            closeFunc()
+                        }
                     })
                     .disposed(by: disposeBag)
             }
@@ -113,15 +123,19 @@ class AppleMapBtnView: UIView {
                 }
             }
         
-        buttonContainer.rx
-            .tapGesture()
-            .when(.recognized)
-            .bind(onNext: { [unowned self] _ in
-                if let jumpMapFunc = jumpMapFunc {
+        self.addSubview(selectBtn)
+        selectBtn.snp.makeConstraints { make in
+            make.left.top.bottom.equalToSuperview()
+            make.right.equalTo(grayView.snp.right).offset(0)
+        }
+        
+        selectBtn.rx.controlEvent(.touchDown)
+            .bind(onNext: { [weak self] _ in
+                if let jumpMapFunc = self?.jumpMapFunc {
                     jumpMapFunc()
                 }
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: disposeBag)
         
     }
 

@@ -42,7 +42,11 @@ class RecommendDetailView: BaseViewController {
                     make.width.equalTo(220)
                     make.height.equalTo(48)
                 }
+                $0.bringSubviewToFront(self.view)
             }
+        
+        customView?.jumpMapFunc = jumpMapFunc
+        customView?.closeFunc = closeFunc
     }
 }
 
@@ -54,7 +58,15 @@ extension RecommendDetailView {
         let address = self.detailData?.address ?? ""
         
         let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
-        guard let url = URL(string: appleUrl) else { return }
+        if let url = URL(string: appleUrl) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func closeFunc() {
+        if customView != nil {
+            customView?.removeFromSuperview()
+        }
     }
 }
 
