@@ -80,6 +80,12 @@ extension RecommendDetailView {
         floatyBtn.backFunc = backFunc
         self.view.addSubview(floatyBtn)
         
+        floatyBtn.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-60)
+            make.width.height.equalTo(48)
+        }
+        
         floatyBtn.bringSubviewToFront(self.view)
     }
     
