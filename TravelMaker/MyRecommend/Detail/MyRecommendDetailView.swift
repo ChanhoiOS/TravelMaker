@@ -58,8 +58,11 @@ extension MyRecommendDetailView {
         let placeName = self.detailData?.placeName ?? ""
         let address = self.detailData?.address ?? ""
         
-        let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
-        if let url = URL(string: appleUrl) {
+        let appleUrl = "https://maps.apple.com?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
+        
+        guard let encodedStr = appleUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        
+        if let url = URL(string: encodedStr) {
             UIApplication.shared.open(url)
         }
     }
