@@ -67,6 +67,7 @@
 		091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D5F492AB18A0B00D58FA2 /* MyCollectionView.swift */; };
 		091D5F4C2AB18A0B00D58FA2 /* MyCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */; };
 		091F8BC22B1FFBFC0044E18B /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8BC12B1FFBFC0044E18B /* LoadingIndicator.swift */; };
+		092C9F8C2B4CC85D00EDBFB1 /* AppleMapBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C9F8B2B4CC85D00EDBFB1 /* AppleMapBtnView.swift */; };
 		09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */; };
 		09317F0D2AEF2AEF0030EAC5 /* AroundDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */; };
 		09317F102AEF47E50030EAC5 /* KFSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0F2AEF47E50030EAC5 /* KFSource.swift */; };
@@ -231,6 +232,7 @@
 		091D5F492AB18A0B00D58FA2 /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
 		091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionView.xib; sourceTree = "<group>"; };
 		091F8BC12B1FFBFC0044E18B /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		092C9F8B2B4CC85D00EDBFB1 /* AppleMapBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapBtnView.swift; sourceTree = "<group>"; };
 		09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundDetailView.swift; sourceTree = "<group>"; };
 		09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundDetailView.xib; sourceTree = "<group>"; };
 		09317F0F2AEF47E50030EAC5 /* KFSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFSource.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				0933CF5E2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift */,
+				092C9F8B2B4CC85D00EDBFB1 /* AppleMapBtnView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1518,6 +1521,7 @@
 				0892670E2B2EFDFB003D6697 /* RecommendBookmarkDeleteModel.swift in Sources */,
 				0933CF5F2B4B7E9300707EC3 /* ScrollFlotyBtnView.swift in Sources */,
 				09CDB7432AF0DA2A00044CF2 /* ErrorHandling.swift in Sources */,
+				092C9F8C2B4CC85D00EDBFB1 /* AppleMapBtnView.swift in Sources */,
 				09CDB7402AF0D76E00044CF2 /* AsyncNetworkManager.swift in Sources */,
 				0914EF802AF4B246008F1E5B /* MyRouteCollectionViewCell.swift in Sources */,
 				089267162B3AE771003D6697 /* ResponseRegisterRouteModel.swift in Sources */,

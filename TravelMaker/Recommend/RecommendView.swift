@@ -348,6 +348,11 @@ extension RecommendView: SelectRecommendData {
 
 extension RecommendView: SFSafariViewControllerDelegate {
     @objc func selectDetail() {
+        let vc = RecommendDetailView(nibName: "RecommendDetailView", bundle: nil)
+        vc.detailData = detailData
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        /*
         let alert = UIAlertController(title: "상세보기", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "애플맵으로 보기", style: .default) { action in
             let lat = self.detailData?.latitude ?? ""
@@ -373,6 +378,7 @@ extension RecommendView: SFSafariViewControllerDelegate {
             self.present(safariViewController, animated: true)
         })
         self.present(alert, animated: true, completion: nil)
+         */
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
