@@ -170,11 +170,17 @@ class AroundDetailView: BaseViewController {
     
     func setProfile() {
         contentView.addSubview(profileImage)
-        profileImage.layer.cornerRadius = 18
+        profileImage.layer.cornerRadius = 15
+        profileImage.clipsToBounds = true
+        
+        if let imageUrl = detailData?.user?.imageURL {
+            let url = URL(string: imageUrl)
+            profileImage.kf.setImage(with: url)
+        }
         
         profileImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
-            make.width.height.equalTo(31)
+            make.width.height.equalTo(30)
             make.top.equalTo(imageSlide.snp.bottom).offset(18)
         }
         
