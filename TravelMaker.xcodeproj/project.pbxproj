@@ -68,6 +68,8 @@
 		091D5F4C2AB18A0B00D58FA2 /* MyCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */; };
 		091F8BC22B1FFBFC0044E18B /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8BC12B1FFBFC0044E18B /* LoadingIndicator.swift */; };
 		092C9F8C2B4CC85D00EDBFB1 /* AppleMapBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C9F8B2B4CC85D00EDBFB1 /* AppleMapBtnView.swift */; };
+		092C9F902B4CDC6F00EDBFB1 /* MyRecommendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092C9F8E2B4CDC6F00EDBFB1 /* MyRecommendDetailView.swift */; };
+		092C9F912B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092C9F8F2B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib */; };
 		09317F0C2AEF2AEF0030EAC5 /* AroundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */; };
 		09317F0D2AEF2AEF0030EAC5 /* AroundDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */; };
 		09317F102AEF47E50030EAC5 /* KFSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09317F0F2AEF47E50030EAC5 /* KFSource.swift */; };
@@ -233,6 +235,8 @@
 		091D5F4A2AB18A0B00D58FA2 /* MyCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionView.xib; sourceTree = "<group>"; };
 		091F8BC12B1FFBFC0044E18B /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		092C9F8B2B4CC85D00EDBFB1 /* AppleMapBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapBtnView.swift; sourceTree = "<group>"; };
+		092C9F8E2B4CDC6F00EDBFB1 /* MyRecommendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecommendDetailView.swift; sourceTree = "<group>"; };
+		092C9F8F2B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecommendDetailView.xib; sourceTree = "<group>"; };
 		09317F0A2AEF2AEF0030EAC5 /* AroundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundDetailView.swift; sourceTree = "<group>"; };
 		09317F0B2AEF2AEF0030EAC5 /* AroundDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundDetailView.xib; sourceTree = "<group>"; };
 		09317F0F2AEF47E50030EAC5 /* KFSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFSource.swift; sourceTree = "<group>"; };
@@ -446,6 +450,7 @@
 		08A0ACED2B0F787B0082161F /* MyRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				092C9F8D2B4CDC3F00EDBFB1 /* Detail */,
 				08A0ACF32B0F7A390082161F /* Cell */,
 				08A0ACEE2B0F78C20082161F /* View */,
 			);
@@ -654,6 +659,15 @@
 				091F8BC12B1FFBFC0044E18B /* LoadingIndicator.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		092C9F8D2B4CDC3F00EDBFB1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				092C9F8E2B4CDC6F00EDBFB1 /* MyRecommendDetailView.swift */,
+				092C9F8F2B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		09317F092AEF2ABF0030EAC5 /* AroundDetail */ = {
@@ -1414,6 +1428,7 @@
 				0868D6ED2B176EEE00094464 /* QuestionCell.xib in Resources */,
 				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
 				08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */,
+				092C9F912B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib in Resources */,
 				0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */,
@@ -1535,6 +1550,7 @@
 				0986BCC32AF364D100987836 /* RecommendSelectView.swift in Sources */,
 				097333392B26E45000C5F192 /* SetNearByBookmarkModel.swift in Sources */,
 				0892670C2B2EFC01003D6697 /* RecommendBookmarkModel.swift in Sources */,
+				092C9F902B4CDC6F00EDBFB1 /* MyRecommendDetailView.swift in Sources */,
 				091D5F4B2AB18A0B00D58FA2 /* MyCollectionView.swift in Sources */,
 				08A6AF622B0A39690045EAFA /* SearchRouteViewModel.swift in Sources */,
 				091B19A42AD4E732009A6AF1 /* RegisterNearMe.swift in Sources */,

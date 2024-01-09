@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import SafariServices
 
 class MyRecommendListView: BaseViewController {
 
@@ -116,36 +115,13 @@ extension MyRecommendListView {
     }
 }
 
-extension MyRecommendListView: SFSafariViewControllerDelegate {
+extension MyRecommendListView {
     func selectDetail(_ detailData: RecommendCollection?) {
-        let alert = UIAlertController(title: "상세보기", message: "", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "애플맵으로 보기", style: .default) { action in
-            let lat = detailData?.latitude ?? ""
-            let lon = detailData?.longitude ?? ""
-            let placeName = detailData?.placeName ?? ""
-            let address = detailData?.address ?? ""
-            
-            let appleUrl = "https://maps.apple.com/?" + "address=" + address + "&ll=" + lat + "," + lon + "&q=" + placeName
-            guard let url = URL(string: appleUrl) else { return }
-            
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            self.present(safariViewController, animated: true) {
-                NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: 3)
-            }
-        })
+        let vc = MyRecommendDetailView(nibName: "MyRecommendDetailView", bundle: nil)
+        vc.detailData = detailData
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
         
-        alert.addAction(UIAlertAction(title: "카카오맵으로 보기", style: .default) { action in
-            guard let url = URL(string: detailData?.detailURL ?? "www.apple.com") else { return }
-            
-            let safariViewController = SFSafariViewController(url: url)
-            safariViewController.delegate = self
-            self.present(safariViewController, animated: true)
-        })
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         NotificationCenter.default.post(name: Notification.Name("transferIndex"), object: 3)
     }
 }
