@@ -22,7 +22,7 @@ struct Apis {
     
     
     
-    static let baseUrl = "http://mytravelmaker.shop:3000"
+    static let baseUrl = "http://travelmaker.store:3000"
     
  
     
