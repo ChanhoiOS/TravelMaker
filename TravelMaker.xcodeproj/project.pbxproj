@@ -176,6 +176,7 @@
 		09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DB992AB3F1C500207F0D /* MyPageModel.swift */; };
 		09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DB9C2AB412D500207F0D /* Constants.swift */; };
 		09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DBA52AB4493100207F0D /* String+Extension.swift */; };
+		09FC49CB2CFE88A9003DFA27 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 09FC49CA2CFE88A9003DFA27 /* PrivacyInfo.xcprivacy */; };
 		2E999E17F8C54B0610DF36B4 /* Pods_TravelMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */; };
 /* End PBXBuildFile section */
 
@@ -326,6 +327,7 @@
 		09F0DB992AB3F1C500207F0D /* MyPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModel.swift; sourceTree = "<group>"; };
 		09F0DB9C2AB412D500207F0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09F0DBA52AB4493100207F0D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		09FC49CA2CFE88A9003DFA27 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CFF17FA126BD179BF203F006 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMaker.debug.xcconfig"; path = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2940B7494B3F7E41A9AB72D /* Pods_TravelMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1254,6 +1256,7 @@
 				09D7B18A2AAAFE9200991841 /* Info.plist */,
 				09D7B1852AAAFE9200991841 /* Assets.xcassets */,
 				09A83EFB2AAEE88D0082A6A2 /* Resource */,
+				09FC49CA2CFE88A9003DFA27 /* PrivacyInfo.xcprivacy */,
 			);
 			path = TravelMaker;
 			sourceTree = "<group>";
@@ -1429,6 +1432,7 @@
 				09591B9C2AB033C800A3F0D6 /* OnboardingCell.xib in Resources */,
 				08A0ACF22B0F79210082161F /* MyRecommendListView.xib in Resources */,
 				092C9F912B4CDC6F00EDBFB1 /* MyRecommendDetailView.xib in Resources */,
+				09FC49CB2CFE88A9003DFA27 /* PrivacyInfo.xcprivacy in Resources */,
 				0914EF812AF4B246008F1E5B /* MyRouteCollectionViewCell.xib in Resources */,
 				09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */,
 				08A6AF5F2B0A390F0045EAFA /* SearchRouteSelectView.xib in Resources */,
