@@ -20,7 +20,7 @@ struct RecommendAllData: Codable {
     let address, latitude, longitude: String?
     let imageURL: String?
     let detailURL: String?
-    let createdAt, updateAt: At?
+    let createdAt, updateAt: Date?
     let bookmarked: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -36,8 +36,4 @@ enum Category: String, Codable {
     case accommodation = "ACCOMMODATION"
     case food = "FOOD"
     case popular = "POPULAR"
-}
-
-enum At: String, Codable {
-    case the20231117T150000000Z = "2023-11-17T15:00:00.000Z"
 }

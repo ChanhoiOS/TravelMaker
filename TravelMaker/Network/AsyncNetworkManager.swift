@@ -31,15 +31,17 @@ class AsyncNetworkManager {
         }
         
         let request = try URLRequest(url: url, method: .get, headers: commonHeaders())
-
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
             throw ErrorHandling.responseError
         }
         
-        let asyncResult = try JSONDecoder().decode(T.self, from: data)
-
-        return asyncResult
+        do {
+            let asyncResult = try JSONDecoder.iso8601WithFractionalSeconds.decode(T.self, from: data)
+            return asyncResult
+        } catch {
+            throw ErrorHandling.responseError
+        }
     }
     
     func asyncPost<T: Decodable>(_ url: String,
