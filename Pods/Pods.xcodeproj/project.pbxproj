@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */ = {
+		0928C6151B80FDB69B74BB33FDF695A5 /* NidThirdPartyLogin */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 75CE31157FEFB4EACB18011E2D25C61C /* Build configuration list for PBXAggregateTarget "naveridlogin-sdk-ios" */;
+			buildConfigurationList = 6C225DE576CFE271F8518A8BFF5A35AF /* Build configuration list for PBXAggregateTarget "NidThirdPartyLogin" */;
 			buildPhases = (
-				5E05BCF0D92F31389F4CCB961DA341B4 /* [CP] Copy XCFrameworks */,
+				EE20EA37296DBA1A66B9720626401A0F /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
-			name = "naveridlogin-sdk-ios";
+			name = NidThirdPartyLogin;
 		};
 		72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */ = {
 			isa = PBXAggregateTarget;
@@ -34,257 +34,264 @@
 				B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				287D5386AD9766355350ED1EAA06379F /* PBXTargetDependency */,
+				B16B45462142B07577C77D2234F27312 /* PBXTargetDependency */,
 			);
 			name = NMapsMap;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		02E9AA511A2D172A8FEEB85D50D25559 /* FloatingPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC623CE07378EBC75D4033BC656D350 /* FloatingPanel-dummy.m */; };
-		0E8B4C6C3FC4F926AEFEE8A68E18AAA5 /* ImageSlideshow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4708B5421A364DF61D6336071F439F /* ImageSlideshow-dummy.m */; };
-		19CAF035226E30170C413BB69CAF3EB6 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B0A4302BD98474FC67C1F73E7441F /* Behavior.swift */; };
-		22A550F3962CC7925596E171849ADD22 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254076A600CEB640DD93BC493160FF8 /* State.swift */; };
-		315E4A8996F23377ADBF38865A416085 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6918B26BCB14033DD0D2D30C16966F94 /* Extensions.swift */; };
-		3480DC99DE9C1F2CE72EC275F1F01473 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		37532F1C3F548FB210218D9A7C2B6528 /* ImageSlideshowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC634B45BB675F004251D1736295CEF1 /* ImageSlideshowItem.swift */; };
-		3C0A97FC36BE7A967BB02FC1EA8C3976 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7B2DF20FB9587268445370E63CE8 /* Position.swift */; };
-		47B6806493F0F11A6F9FAC7CE4F070EC /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9623A3FAC4EC00EC691741407F297 /* FullScreenSlideshowViewController.swift */; };
-		53B4539A09E05B884DA75A1655747124 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96375B4C6F49ECABE0BE0B459C49312C /* ic_cross_white@3x.png */; };
-		55883362AB1A02167EABF7EB311CE030 /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D075A2E8C4930223884E34D0655CF /* BackdropView.swift */; };
-		5925A6294EE5B50BC8E2B26628797A60 /* UIImageView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C528950515CF3E98D94B72077E78F /* UIImageView+Tools.swift */; };
-		60E1BF38C6DBD5F7CA2A8640A1885B1F /* LayoutAnchoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C7368DDB49236E7153757E2FB07B65 /* LayoutAnchoring.swift */; };
-		671ABC0FDB995DDE7B3AFAB5E02DBD00 /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
-		716F1AB371C1DBC5A91F85053DE427FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		738F63FD76213507BEFDEC938EAA1CB4 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A581126D75CBE75D86BB066903B34 /* PassthroughView.swift */; };
-		74EA001A27A206767BE222A6539BC5D8 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58AD9900A6AA70758953EF022BB41E /* ZoomAnimatedTransitioning.swift */; };
-		77B4A451EF0C07F1AC3712F915FA8F91 /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D75F1D0CF9E66FDEB0810ED46DEF97E /* UIImage+AspectFit.swift */; };
-		83F41747CE86EB46D492651C10B9DE29 /* GrabberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D1FCE112748CB2DE0E06D2FE39E63 /* GrabberView.swift */; };
-		8D158FB7773B86AAE9F81A3DFF8F7275 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		95EDF0D844D99237550E7209F6E2C87C /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668E6C1ADA8197ABF1CA4C8DAE59845F /* ImageSlideshow.swift */; };
-		994043A4233B17CA62C28A52C78A8FC3 /* SurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43147A54B13D9F2810B0D05CB8288D0C /* SurfaceView.swift */; };
-		B99E793E702BE86A5CDB45EB96BA109B /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C923CB2DC1A089CE3FF819CDB8C78 /* InputSource.swift */; };
-		C25ECEC767960C062FB59A570C98945D /* PageIndicatorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D4594CCAA57041BCA72738C008B2F /* PageIndicatorPosition.swift */; };
-		C384D813296E9BD67C4AB97225C907A3 /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C51F23068C5C7908F073CAE1640B9EA1 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1646645C29AB5EBB8819A256BA7A2D62 /* SwiftSupport.swift */; };
-		C62E5A2D5E2B7C8B9233924E8421CFF6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0D096BC291755037079B41D6AA3D8 /* Logging.swift */; };
-		CA652637599E58E561ACF5A5D5AA14B9 /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C55B0CCB63BB63C56BB352A60CA107 /* Transitioning.swift */; };
-		CE2FD7926FE07535266AA22DEC47F434 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9058122C67518A84B62648042D70092 /* Core.swift */; };
-		D2355558CDF30BD4941D1740C18237FB /* ImageSlideshow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E95860CB45619A51170D56099C24E959 /* ImageSlideshow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC0EDBA61967D32C87F4A9AE587BBC30 /* FloatingPanel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7F983D0F19773906C3765F4979A6BD /* FloatingPanel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEA3E3C7FD0C3EF78B89AF15AC7A2BFA /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563B704F6125544749F037A51F85F7EF /* PageIndicator.swift */; };
-		E1A05F7AAC7473380981C8B79C629BC9 /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47FAB2F00FC68CDFF2CAD9097AD8D8 /* Bundle+Module.swift */; };
-		F15006A1D3124DBD2DA00F85AA72F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		F4C3A79277E7C41B8C8D49906FCB6E5E /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB163065CFA27D6943ABE706F514836 /* Layout.swift */; };
-		F6F652FAF9D47F3D4AB6191139E7548A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9379D229D86FC2BE15473DCC164ED6D /* ActivityIndicator.swift */; };
-		FBAEF9FDA1A58C056383C040F01AB1B8 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26991DB7FC72FF4E66D9126C5D43E584 /* Controller.swift */; };
-		FE0ACA68E14F40AD7364C10534AFBA8C /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20BFDF315B322E3713E6190969C710A4 /* ic_cross_white@2x.png */; };
-		FF24208E41193057579142A3984563FB /* LayoutProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899C83E973C049F370A55F58B114170 /* LayoutProperties.swift */; };
+		02A8374ACC62DE5933C09B195C2E94E9 /* Pods-TravelMaker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0527FFE5D4C7D447DC6AED4C6587DD3D /* LayoutProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279F56017903CB4B788DF5518B96702 /* LayoutProperties.swift */; };
+		06C1FEAC781C91AB8E93DD5CBDF68211 /* ImageSlideshow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5182AE463172FB016FC54BA5233933D /* ImageSlideshow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		073A6FF2F34D7AD21E8ED1100328587F /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6ACDB73821A1CE707AA9C83A92F468 /* PageIndicator.swift */; };
+		08B5541CB13C196E9435530316F340D1 /* ImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383138789D2100456A3B2060E21A7C8 /* ImageSlideshow.swift */; };
+		0E63C8ED11C8BB1B409FC67E97D3D8AC /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00911A237F9AFE0B4B12D70C973B693 /* Behavior.swift */; };
+		10A957C8620DFDAF5E30BFAAAA667DC5 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700D85A950709D9B17F027B8A427AFF /* Position.swift */; };
+		11F4225439F53103341D309DCD7BE1F6 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A541853DF984DAF415F897FE0EACE5 /* SwiftSupport.swift */; };
+		19C67E21CA02A89D689AE1F87D16A544 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ED0CA0B4F84E446EE50681D8E300C /* Controller.swift */; };
+		1A4555DC111ECD55494B7D518B400DED /* Pods-TravelMaker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */; };
+		20A25F205DAB33ED9DEC4463ACFB6754 /* GrabberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A6527442D83EB2241B9ADCD9F55EC /* GrabberView.swift */; };
+		3D8D482F449DAB9159CB8B401CEBF8C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
+		4B89E6C9EAECE44ABED0E9673631A776 /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA95C0F642284575AECC051ED72ABE /* Bundle+Module.swift */; };
+		4F8FD6AD301598885A4FC125B133CF03 /* FloatingPanel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DAF100EEFD0BC64E5FADF573B9D9EC1 /* FloatingPanel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54D6AD7CDD96006688DB042084E52124 /* UIImage+AspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD12D2263371F88936FFE907C8EA09B7 /* UIImage+AspectFit.swift */; };
+		563A0DBE5DE63F5F5409AD2B2ED930B9 /* LayoutAnchoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A6FEC47C88E5B463A9148BA875F424 /* LayoutAnchoring.swift */; };
+		5E7E400C5EBE60187805B4C0BB8809FC /* ic_cross_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 382C410487ABAD8A2A5801DAC4F2E22E /* ic_cross_white@2x.png */; };
+		6028469BBF10C943C97C43FB8CE31898 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
+		670765612297940252ADFF62C406C0F5 /* ImageSlideshow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BBD745E00ECC79698EFC81A7DAC054 /* ImageSlideshow-dummy.m */; };
+		6832F1A0434DC591D076CC98277DB05F /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF9152FFCB843218E6814806BC900E /* State.swift */; };
+		74BBD03C421129D5AC7B818BCB0EF429 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF68BF0F58DA9EF01EE2F0B72CAEF2F /* Core.swift */; };
+		7F187C80366DB95009E1C8513320EE74 /* FullScreenSlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175677FD71D5CB4024B97C9246DBD68 /* FullScreenSlideshowViewController.swift */; };
+		7F4A9BEC369542129D7BF2A2FE38D399 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BB0A3530E22D7E0476CE6267CFE8F /* Extensions.swift */; };
+		84E52AA152D342335ECD372C2027A238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */; };
+		8FE8BBAF52B08B13F23896A424821C85 /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59EBD0FF57E6D01C1161D5532325754 /* ZoomAnimatedTransitioning.swift */; };
+		9D83AF8E2098E7DB31F95FFA75E0A011 /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB248CC5E47E0C7048B09E97B8CD5F /* Transitioning.swift */; };
+		A0AD546FCCC91C1C66AB09CC7A75B653 /* UIImageView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B97AB27CA274100CDC7350D27CF1B59 /* UIImageView+Tools.swift */; };
+		A347F95C743947B8DC05A3AB6BAD7203 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9827598492AB9565E89A07D6960FBC /* PassthroughView.swift */; };
+		ADA111E898AA89E509A8089B2240495D /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C97B6C99F757D2577FC6A75E066944 /* Logging.swift */; };
+		B1061F3D84D05FE3DFCB8117553E9DCB /* ImageSlideshowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E542977FBDDE076F16454FC697A556 /* ImageSlideshowItem.swift */; };
+		B5FCA5E67F0BDFA04510F007FE117488 /* SurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE550D54B8D69E87C274DFE8D3D37D1A /* SurfaceView.swift */; };
+		C379BB5C126242ECFB379687DD1D9A30 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75CFFC3B4E73F580C319AB025199749 /* ActivityIndicator.swift */; };
+		C97BD456F89F132EB8DA01DF4EB154F7 /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD35657594AB430B66706E41E0937FD /* InputSource.swift */; };
+		D6522459B941964E1D0CAEB90610AA8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */; };
+		DF091092757190C4D98F23A33F794328 /* PageIndicatorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263C7FA462A770135E419F4C2786B072 /* PageIndicatorPosition.swift */; };
+		E8DD48EF3C41E38A5167713EA7715D92 /* ic_cross_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC37627C39F1ADA054B490C58D21BEF /* ic_cross_white@3x.png */; };
+		E965A5FFC1C96DA09CE4436ED34E443F /* BackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1C1B172C315BFD3780C8A1FA9C968 /* BackdropView.swift */; };
+		F119A6D758001A7B8F448B641EB31A92 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE9B955CE092370EAABE9013D8ECA6 /* Layout.swift */; };
+		F3C77841C29DD50FC3AC986A209DB24F /* FloatingPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89732C205F83B912631AC1F8C72DBC05 /* FloatingPanel-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2383600A278F4A85234C62C197EE43A6 /* PBXContainerItemProxy */ = {
+		0637DD25F1558C7A840C5F21DD7EB6DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0928C6151B80FDB69B74BB33FDF695A5;
+			remoteInfo = NidThirdPartyLogin;
+		};
+		43609A1DBACE0FDF89D715313DB23725 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B2F46A67275CC5973EE13076CD708247;
 			remoteInfo = ImageSlideshow;
 		};
-		4D67FF680CB4BC719CA446E407DF8B5C /* PBXContainerItemProxy */ = {
+		56A13AD9F9BBC0AEF0B44F0DFB5C4DFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8E049F5F4E3BDC647F924FEF22D49D90;
 			remoteInfo = NMapsMap;
 		};
-		5D2DD8CB48872BEFD4F7B3D23D5AFFF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
-			remoteInfo = NMapsGeometry;
-		};
-		5F620D2D2BCAA37EF0889F845FE81127 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3516E9D4735D155BC036A4DB393966FC;
-			remoteInfo = "naveridlogin-sdk-ios";
-		};
-		8BC018C62CC8A750D12F592909F227B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
-			remoteInfo = NMapsGeometry;
-		};
-		AD08A8071B00D4693B2C9E2AF99D1A80 /* PBXContainerItemProxy */ = {
+		6BCA232E2C4E64D08B1A33F471CE2290 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4874E7E655CEB4C01E4572AD903AEA21;
 			remoteInfo = FloatingPanel;
 		};
+		B41183B00C6D37D1118741697BEF3816 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
+		F6F9C5F50FA5A6401D87011BE93113A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042D4594CCAA57041BCA72738C008B2F /* PageIndicatorPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicatorPosition.swift; path = ImageSlideshow/Classes/Core/PageIndicatorPosition.swift; sourceTree = "<group>"; };
-		0809A385E4768086C8747DE2C4C8FF34 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
-		09298F954BC30D7DDED11F453D5D3960 /* ImageSlideshow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-prefix.pch"; sourceTree = "<group>"; };
-		09C55B0CCB63BB63C56BB352A60CA107 /* Transitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transitioning.swift; path = Sources/Transitioning.swift; sourceTree = "<group>"; };
-		0B9D1FCE112748CB2DE0E06D2FE39E63 /* GrabberView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GrabberView.swift; path = Sources/GrabberView.swift; sourceTree = "<group>"; };
-		0EDAA41EBE330885FFF33EB483E60E87 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
-		133642F97C23EE97D3493A69A29CE0A1 /* FloatingPanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FloatingPanel.modulemap; sourceTree = "<group>"; };
-		1646645C29AB5EBB8819A256BA7A2D62 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = ImageSlideshow/Classes/Core/SwiftSupport.swift; sourceTree = "<group>"; };
-		1856364A1C81A114C73389C5E7967381 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
-		20BFDF315B322E3713E6190969C710A4 /* ic_cross_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
-		26991DB7FC72FF4E66D9126C5D43E584 /* Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Sources/Controller.swift; sourceTree = "<group>"; };
+		02BB9AB6386A66BAE7043A3AADB01684 /* NidThirdPartyLogin-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NidThirdPartyLogin-xcframeworks.sh"; sourceTree = "<group>"; };
+		072F2D2E28EA43EC296B6EA6105B029E /* NidThirdPartyLogin.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NidThirdPartyLogin.xcframework; path = frameworks/NidThirdPartyLogin.xcframework; sourceTree = "<group>"; };
+		08D019E913BC04C0F225632C9F950BC4 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
+		09D4B24EC2F854F4AE77CCBBBA7371FB /* FloatingPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.debug.xcconfig; sourceTree = "<group>"; };
+		0E84441FC73692383F68804DC4529C96 /* NidCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NidCore.xcframework; path = frameworks/NidCore.xcframework; sourceTree = "<group>"; };
+		1A14848F8A9F364230D9B287F7DAF409 /* FloatingPanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FloatingPanel.modulemap; sourceTree = "<group>"; };
+		1BAA95C0F642284575AECC051ED72ABE /* Bundle+Module.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Module.swift"; path = "ImageSlideshow/Classes/Core/Bundle+Module.swift"; sourceTree = "<group>"; };
+		1DCF9152FFCB843218E6814806BC900E /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
+		21E1D97564D247E2E43AEE242D90DD29 /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
+		22AE9B955CE092370EAABE9013D8ECA6 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Sources/Layout.swift; sourceTree = "<group>"; };
+		24EE001FC52FA1CD3AA329C7C127B4EC /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
+		263C7FA462A770135E419F4C2786B072 /* PageIndicatorPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicatorPosition.swift; path = ImageSlideshow/Classes/Core/PageIndicatorPosition.swift; sourceTree = "<group>"; };
+		2A9827598492AB9565E89A07D6960FBC /* PassthroughView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughView.swift; path = Sources/PassthroughView.swift; sourceTree = "<group>"; };
+		2AECFA4A4C4C6C30E487EB316245ED24 /* FloatingPanel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FloatingPanel-Info.plist"; sourceTree = "<group>"; };
+		2F7E8A038C114E2CD355D104A854BE36 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
+		382C410487ABAD8A2A5801DAC4F2E22E /* ic_cross_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@2x.png"; path = "ImageSlideshow/Assets/ic_cross_white@2x.png"; sourceTree = "<group>"; };
 		384DA08F24DD23E03FDC8890E5C7F1D1 /* Pods-TravelMaker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TravelMaker-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3899C83E973C049F370A55F58B114170 /* LayoutProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProperties.swift; path = Sources/LayoutProperties.swift; sourceTree = "<group>"; };
-		3BF56E32360B57943546744BD1C4981B /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
+		3A478DA417D41722606EB98D18699BDB /* ImageSlideshow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-prefix.pch"; sourceTree = "<group>"; };
+		3DF68BF0F58DA9EF01EE2F0B72CAEF2F /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = Sources/Core.swift; sourceTree = "<group>"; };
+		3E6D346DB72FAB33BFF5A244EE6A9DB7 /* FloatingPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-prefix.pch"; sourceTree = "<group>"; };
 		3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.debug.xcconfig"; sourceTree = "<group>"; };
-		43147A54B13D9F2810B0D05CB8288D0C /* SurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SurfaceView.swift; path = Sources/SurfaceView.swift; sourceTree = "<group>"; };
+		3FD35657594AB430B66706E41E0937FD /* InputSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputSource.swift; path = ImageSlideshow/Classes/Core/InputSource.swift; sourceTree = "<group>"; };
+		43F3193E78BDE485CB1A445C942E2748 /* NidThirdPartyLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NidThirdPartyLogin.release.xcconfig; sourceTree = "<group>"; };
 		45FAA68E5355F84BB55D6EB419D9782E /* Pods-TravelMaker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TravelMaker"; path = Pods_TravelMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		470C923CB2DC1A089CE3FF819CDB8C78 /* InputSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputSource.swift; path = ImageSlideshow/Classes/Core/InputSource.swift; sourceTree = "<group>"; };
-		482B0A4302BD98474FC67C1F73E7441F /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Behavior.swift; sourceTree = "<group>"; };
 		4C4E7ACE1512FC68AA17D5BB9D6CC5F6 /* Pods-TravelMaker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-acknowledgements.plist"; sourceTree = "<group>"; };
-		4F4F2BB8A77F77BD23DF6FA298CC11AF /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
-		563B704F6125544749F037A51F85F7EF /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = ImageSlideshow/Classes/Core/PageIndicator.swift; sourceTree = "<group>"; };
-		5C1902571267041354B42F14A43B58CB /* naveridlogin-sdk-ios-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "naveridlogin-sdk-ios-xcframeworks.sh"; sourceTree = "<group>"; };
-		5D53CE8A34F06D23943A33AD90E43513 /* ImageSlideshow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageSlideshow.modulemap; sourceTree = "<group>"; };
-		5EF9623A3FAC4EC00EC691741407F297 /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenSlideshowViewController.swift; path = ImageSlideshow/Classes/Core/FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
-		656C528950515CF3E98D94B72077E78F /* UIImageView+Tools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Tools.swift"; path = "ImageSlideshow/Classes/Core/UIImageView+Tools.swift"; sourceTree = "<group>"; };
-		65BBFBA15AA4A8978E7A54CAF2462C11 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
-		668E6C1ADA8197ABF1CA4C8DAE59845F /* ImageSlideshow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshow.swift; path = ImageSlideshow/Classes/Core/ImageSlideshow.swift; sourceTree = "<group>"; };
-		68C7368DDB49236E7153757E2FB07B65 /* LayoutAnchoring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAnchoring.swift; path = Sources/LayoutAnchoring.swift; sourceTree = "<group>"; };
-		6918B26BCB14033DD0D2D30C16966F94 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
-		6AC623CE07378EBC75D4033BC656D350 /* FloatingPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FloatingPanel-dummy.m"; sourceTree = "<group>"; };
-		6C4708B5421A364DF61D6336071F439F /* ImageSlideshow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageSlideshow-dummy.m"; sourceTree = "<group>"; };
+		513A6527442D83EB2241B9ADCD9F55EC /* GrabberView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GrabberView.swift; path = Sources/GrabberView.swift; sourceTree = "<group>"; };
+		6B97AB27CA274100CDC7350D27CF1B59 /* UIImageView+Tools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Tools.swift"; path = "ImageSlideshow/Classes/Core/UIImageView+Tools.swift"; sourceTree = "<group>"; };
+		6F0BB0A3530E22D7E0476CE6267CFE8F /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
 		6FAAB7D3DE9B2564509ABD18687E938E /* FloatingPanel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FloatingPanel; path = FloatingPanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C18A73F9C4BE5EE6F32030F21B6ED4 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
 		79DD4FA719AF54FB40075999FF7FF9FE /* Pods-TravelMaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelMaker-Info.plist"; sourceTree = "<group>"; };
 		7A1BCCC47647F05FC7FC673D76CEA552 /* Pods-TravelMaker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TravelMaker-umbrella.h"; sourceTree = "<group>"; };
 		7CBA60C873735FBD873AAA19563AADBD /* Pods-TravelMaker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TravelMaker-frameworks.sh"; sourceTree = "<group>"; };
-		7E7F983D0F19773906C3765F4979A6BD /* FloatingPanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-umbrella.h"; sourceTree = "<group>"; };
-		842F34FD738414EC521E96B8AA230BD8 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
-		859D76E7600881693F5BCDA18DA824F5 /* ImageSlideshow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.debug.xcconfig; sourceTree = "<group>"; };
-		862E5337B71A8CECBF40FFDAF7E2FE59 /* ImageSlideshow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageSlideshow-Info.plist"; sourceTree = "<group>"; };
-		887B8742432E8E6D99323249F81406B2 /* ImageSlideshow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.release.xcconfig; sourceTree = "<group>"; };
-		957A581126D75CBE75D86BB066903B34 /* PassthroughView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughView.swift; path = Sources/PassthroughView.swift; sourceTree = "<group>"; };
-		96375B4C6F49ECABE0BE0B459C49312C /* ic_cross_white@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
+		80A541853DF984DAF415F897FE0EACE5 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = ImageSlideshow/Classes/Core/SwiftSupport.swift; sourceTree = "<group>"; };
+		8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		83BBD745E00ECC79698EFC81A7DAC054 /* ImageSlideshow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageSlideshow-dummy.m"; sourceTree = "<group>"; };
+		89732C205F83B912631AC1F8C72DBC05 /* FloatingPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FloatingPanel-dummy.m"; sourceTree = "<group>"; };
+		8D25BB4ED8ACD5FCD7CE4FD96DEA17DD /* FloatingPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.release.xcconfig; sourceTree = "<group>"; };
+		8DAF100EEFD0BC64E5FADF573B9D9EC1 /* FloatingPanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-umbrella.h"; sourceTree = "<group>"; };
+		8F4ED0CA0B4F84E446EE50681D8E300C /* Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Sources/Controller.swift; sourceTree = "<group>"; };
+		946487E52AC9C061CFACD28AC3D916AC /* ImageSlideshow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageSlideshow-Info.plist"; sourceTree = "<group>"; };
+		94C1F004D1E90AC31C1774E020A0044C /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
 		99F7808A0770AA044E2A57BEC08BBC3D /* Pods-TravelMaker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TravelMaker.modulemap"; sourceTree = "<group>"; };
-		9D75F1D0CF9E66FDEB0810ED46DEF97E /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+AspectFit.swift"; path = "ImageSlideshow/Classes/Core/UIImage+AspectFit.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F47FAB2F00FC68CDFF2CAD9097AD8D8 /* Bundle+Module.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Module.swift"; path = "ImageSlideshow/Classes/Core/Bundle+Module.swift"; sourceTree = "<group>"; };
-		ABA5041CEAF37045FE800FBD91E96032 /* naveridlogin-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
-		AD4D075A2E8C4930223884E34D0655CF /* BackdropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackdropView.swift; path = Sources/BackdropView.swift; sourceTree = "<group>"; };
+		A383138789D2100456A3B2060E21A7C8 /* ImageSlideshow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshow.swift; path = ImageSlideshow/Classes/Core/ImageSlideshow.swift; sourceTree = "<group>"; };
+		A9779DAA8EBD921FBC1D6F210225CEE6 /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
+		AF31B513FF687268272D15332921CBBE /* NidThirdPartyLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NidThirdPartyLogin.debug.xcconfig; sourceTree = "<group>"; };
 		B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TravelMaker.release.xcconfig"; sourceTree = "<group>"; };
-		B843689051C102418AD7EA2414190354 /* FloatingPanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.debug.xcconfig; sourceTree = "<group>"; };
-		B9058122C67518A84B62648042D70092 /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = Sources/Core.swift; sourceTree = "<group>"; };
-		BC634B45BB675F004251D1736295CEF1 /* ImageSlideshowItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshowItem.swift; path = ImageSlideshow/Classes/Core/ImageSlideshowItem.swift; sourceTree = "<group>"; };
+		B279F56017903CB4B788DF5518B96702 /* LayoutProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProperties.swift; path = Sources/LayoutProperties.swift; sourceTree = "<group>"; };
+		BC6ACDB73821A1CE707AA9C83A92F468 /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = ImageSlideshow/Classes/Core/PageIndicator.swift; sourceTree = "<group>"; };
+		C00911A237F9AFE0B4B12D70C973B693 /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Behavior.swift; sourceTree = "<group>"; };
 		C1D78A7F43807F49FDB5B04DD9BD6AC7 /* ImageSlideshow */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImageSlideshow; path = ImageSlideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A5E9566F36F9B4D69615E52990A3E6 /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
 		C4AAAC7E4538D2E440E1E624F3C14E85 /* Pods-TravelMaker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TravelMaker-dummy.m"; sourceTree = "<group>"; };
-		C98D7B2DF20FB9587268445370E63CE8 /* Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Position.swift; path = Sources/Position.swift; sourceTree = "<group>"; };
-		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D254076A600CEB640DD93BC493160FF8 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
-		D90CBD7CB0B3522E1656D3BA65DA02CF /* FloatingPanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FloatingPanel.release.xcconfig; sourceTree = "<group>"; };
-		D9379D229D86FC2BE15473DCC164ED6D /* ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = ImageSlideshow/Classes/Core/ActivityIndicator.swift; sourceTree = "<group>"; };
-		DAB163065CFA27D6943ABE706F514836 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Sources/Layout.swift; sourceTree = "<group>"; };
-		DF84457886A8F8457AC1B6F3A778C44D /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
-		E23B9CA22F0BE67CDD7A9E3886A11781 /* FloatingPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FloatingPanel-prefix.pch"; sourceTree = "<group>"; };
-		E878ECF215627BECB10A7DEE4A8670D0 /* naveridlogin-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "naveridlogin-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		E95860CB45619A51170D56099C24E959 /* ImageSlideshow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-umbrella.h"; sourceTree = "<group>"; };
-		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EE58AD9900A6AA70758953EF022BB41E /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomAnimatedTransitioning.swift; path = ImageSlideshow/Classes/Core/ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		F43BB62A7140E8AEE6644975E80F7847 /* FloatingPanel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FloatingPanel-Info.plist"; sourceTree = "<group>"; };
-		F5D554DC99CB0AE9C223C23C29ADF9B6 /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
-		F6C0D096BC291755037079B41D6AA3D8 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Sources/Logging.swift; sourceTree = "<group>"; };
+		C5182AE463172FB016FC54BA5233933D /* ImageSlideshow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageSlideshow-umbrella.h"; sourceTree = "<group>"; };
+		C59EBD0FF57E6D01C1161D5532325754 /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZoomAnimatedTransitioning.swift; path = ImageSlideshow/Classes/Core/ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		CC242FD427269F83CF7023088EB4A7AA /* ImageSlideshow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.debug.xcconfig; sourceTree = "<group>"; };
+		CEC37627C39F1ADA054B490C58D21BEF /* ic_cross_white@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_cross_white@3x.png"; path = "ImageSlideshow/Assets/ic_cross_white@3x.png"; sourceTree = "<group>"; };
+		D6A6FEC47C88E5B463A9148BA875F424 /* LayoutAnchoring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAnchoring.swift; path = Sources/LayoutAnchoring.swift; sourceTree = "<group>"; };
+		D75CFFC3B4E73F580C319AB025199749 /* ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = ImageSlideshow/Classes/Core/ActivityIndicator.swift; sourceTree = "<group>"; };
+		D7E9EC795E1A7341BB9023E4D5D4E6F7 /* ImageSlideshow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageSlideshow.modulemap; sourceTree = "<group>"; };
+		E0B1C1B172C315BFD3780C8A1FA9C968 /* BackdropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackdropView.swift; path = Sources/BackdropView.swift; sourceTree = "<group>"; };
+		E175677FD71D5CB4024B97C9246DBD68 /* FullScreenSlideshowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullScreenSlideshowViewController.swift; path = ImageSlideshow/Classes/Core/FullScreenSlideshowViewController.swift; sourceTree = "<group>"; };
+		E8E542977FBDDE076F16454FC697A556 /* ImageSlideshowItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageSlideshowItem.swift; path = ImageSlideshow/Classes/Core/ImageSlideshowItem.swift; sourceTree = "<group>"; };
+		ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EE550D54B8D69E87C274DFE8D3D37D1A /* SurfaceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SurfaceView.swift; path = Sources/SurfaceView.swift; sourceTree = "<group>"; };
+		F2C97B6C99F757D2577FC6A75E066944 /* Logging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logging.swift; path = Sources/Logging.swift; sourceTree = "<group>"; };
+		F6EB248CC5E47E0C7048B09E97B8CD5F /* Transitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transitioning.swift; path = Sources/Transitioning.swift; sourceTree = "<group>"; };
+		F700D85A950709D9B17F027B8A427AFF /* Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Position.swift; path = Sources/Position.swift; sourceTree = "<group>"; };
+		F97D0128D87C147C4B98071D652E04D7 /* ImageSlideshow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageSlideshow.release.xcconfig; sourceTree = "<group>"; };
+		FD12D2263371F88936FFE907C8EA09B7 /* UIImage+AspectFit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+AspectFit.swift"; path = "ImageSlideshow/Classes/Core/UIImage+AspectFit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14F264C01C84630FF55D25F52035AF1B /* Frameworks */ = {
+		2DEF8B03BE282AFBF9409E0E64249226 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3480DC99DE9C1F2CE72EC275F1F01473 /* Foundation.framework in Frameworks */,
+				3D8D482F449DAB9159CB8B401CEBF8C1 /* Foundation.framework in Frameworks */,
+				D6522459B941964E1D0CAEB90610AA8E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C2600B062A98E702FEC03475B350B69 /* Frameworks */ = {
+		A5ACAF270EA39430FC0999EB704B98D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15006A1D3124DBD2DA00F85AA72F93A /* Foundation.framework in Frameworks */,
+				6028469BBF10C943C97C43FB8CE31898 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFF472590F7E17200944CB3BE693B9D6 /* Frameworks */ = {
+		AC75FBD473BC2F4A9A8D0C691B369365 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716F1AB371C1DBC5A91F85053DE427FD /* Foundation.framework in Frameworks */,
-				8D158FB7773B86AAE9F81A3DFF8F7275 /* UIKit.framework in Frameworks */,
+				84E52AA152D342335ECD372C2027A238 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04377D0EBD070D8229ECE0E12A24C7BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				382C410487ABAD8A2A5801DAC4F2E22E /* ic_cross_white@2x.png */,
+				CEC37627C39F1ADA054B490C58D21BEF /* ic_cross_white@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+				1DE6440B6853131A80C53DDA34375AAB /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1C82A5354E7C9C574655BCD360A712F9 /* NMapsGeometry */ = {
+		1DE6440B6853131A80C53DDA34375AAB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				93FF90654DEFE8DB37B2C89172881A6B /* Frameworks */,
-				2847C0FDB0821ECDC5EDDBA4AD1AA2C8 /* Support Files */,
+				8193349D819536E58C58A34C1B7DF545 /* Foundation.framework */,
+				ECF4CA3AF5536D14B4E015504E7AEEC0 /* UIKit.framework */,
 			);
-			name = NMapsGeometry;
-			path = NMapsGeometry;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		1F836BA12C5537606DB750DC2636F3C1 /* Support Files */ = {
+		2108994D5D9356B3779E86EA48672EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				842F34FD738414EC521E96B8AA230BD8 /* NMapsMap-xcframeworks.sh */,
-				3BF56E32360B57943546744BD1C4981B /* NMapsMap.debug.xcconfig */,
-				4F4F2BB8A77F77BD23DF6FA298CC11AF /* NMapsMap.release.xcconfig */,
+				08D019E913BC04C0F225632C9F950BC4 /* NMapsGeometry.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23DAE5546C108EF4F34A830B58CD9326 /* ImageSlideshow */ = {
+			isa = PBXGroup;
+			children = (
+				A7F9CAB94E5AC5BE2E2025B9C71B7429 /* Core */,
+				7D9F36B65A2B3749DC6A4E22B331A231 /* Support Files */,
+			);
+			name = ImageSlideshow;
+			path = ImageSlideshow;
+			sourceTree = "<group>";
+		};
+		3829E9C0A080D4C96F3B3EBE9831CD9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E84441FC73692383F68804DC4529C96 /* NidCore.xcframework */,
+				072F2D2E28EA43EC296B6EA6105B029E /* NidThirdPartyLogin.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B56C0F2DA38DF7369139F09485A2BF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C18A73F9C4BE5EE6F32030F21B6ED4 /* NMapsMap-xcframeworks.sh */,
+				C2A5E9566F36F9B4D69615E52990A3E6 /* NMapsMap.debug.xcconfig */,
+				24EE001FC52FA1CD3AA329C7C127B4EC /* NMapsMap.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NMapsMap";
-			sourceTree = "<group>";
-		};
-		21D35B3E9097E78F635D778E704B34C0 /* naveridlogin-sdk-ios */ = {
-			isa = PBXGroup;
-			children = (
-				2DEF7AD937B8BCEF70BEC8F23F3C5B28 /* Frameworks */,
-				B65C96513818B010999DE37961551C2C /* Support Files */,
-			);
-			name = "naveridlogin-sdk-ios";
-			path = "naveridlogin-sdk-ios";
-			sourceTree = "<group>";
-		};
-		2847C0FDB0821ECDC5EDDBA4AD1AA2C8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DF84457886A8F8457AC1B6F3A778C44D /* NMapsGeometry-xcframeworks.sh */,
-				65BBFBA15AA4A8978E7A54CAF2462C11 /* NMapsGeometry.debug.xcconfig */,
-				F5D554DC99CB0AE9C223C23C29ADF9B6 /* NMapsGeometry.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/NMapsGeometry";
-			sourceTree = "<group>";
-		};
-		2DEF7AD937B8BCEF70BEC8F23F3C5B28 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0EDAA41EBE330885FFF33EB483E60E87 /* NaverThirdPartyLogin.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		574E10BE4F34FE0170AF76069B111F4C /* Products */ = {
@@ -297,34 +304,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
-				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		621622A79D439EB88525333CDCA0847D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				20BFDF315B322E3713E6190969C710A4 /* ic_cross_white@2x.png */,
-				96375B4C6F49ECABE0BE0B459C49312C /* ic_cross_white@3x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		6366213A011871FD9B38ED208B943C79 /* ImageSlideshow */ = {
-			isa = PBXGroup;
-			children = (
-				8D834D8BCE91697C9BD0B5572E3B3D3E /* Core */,
-				8743B7F90793A966AE2F3F15E6665617 /* Support Files */,
-			);
-			name = ImageSlideshow;
-			path = ImageSlideshow;
-			sourceTree = "<group>";
-		};
 		6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,107 +312,114 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8743B7F90793A966AE2F3F15E6665617 /* Support Files */ = {
+		71C401F0E8F5B3E62E0F1B975C252754 /* NMapsGeometry */ = {
 			isa = PBXGroup;
 			children = (
-				5D53CE8A34F06D23943A33AD90E43513 /* ImageSlideshow.modulemap */,
-				6C4708B5421A364DF61D6336071F439F /* ImageSlideshow-dummy.m */,
-				862E5337B71A8CECBF40FFDAF7E2FE59 /* ImageSlideshow-Info.plist */,
-				09298F954BC30D7DDED11F453D5D3960 /* ImageSlideshow-prefix.pch */,
-				E95860CB45619A51170D56099C24E959 /* ImageSlideshow-umbrella.h */,
-				859D76E7600881693F5BCDA18DA824F5 /* ImageSlideshow.debug.xcconfig */,
-				887B8742432E8E6D99323249F81406B2 /* ImageSlideshow.release.xcconfig */,
+				2108994D5D9356B3779E86EA48672EED /* Frameworks */,
+				D022E820172C6A2AC1CFAB444A2BD977 /* Support Files */,
+			);
+			name = NMapsGeometry;
+			path = NMapsGeometry;
+			sourceTree = "<group>";
+		};
+		7D9F36B65A2B3749DC6A4E22B331A231 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7E9EC795E1A7341BB9023E4D5D4E6F7 /* ImageSlideshow.modulemap */,
+				83BBD745E00ECC79698EFC81A7DAC054 /* ImageSlideshow-dummy.m */,
+				946487E52AC9C061CFACD28AC3D916AC /* ImageSlideshow-Info.plist */,
+				3A478DA417D41722606EB98D18699BDB /* ImageSlideshow-prefix.pch */,
+				C5182AE463172FB016FC54BA5233933D /* ImageSlideshow-umbrella.h */,
+				CC242FD427269F83CF7023088EB4A7AA /* ImageSlideshow.debug.xcconfig */,
+				F97D0128D87C147C4B98071D652E04D7 /* ImageSlideshow.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ImageSlideshow";
 			sourceTree = "<group>";
 		};
-		8D834D8BCE91697C9BD0B5572E3B3D3E /* Core */ = {
+		875E8B772230C9000D69C18E30FE2006 /* NMapsMap */ = {
 			isa = PBXGroup;
 			children = (
-				D9379D229D86FC2BE15473DCC164ED6D /* ActivityIndicator.swift */,
-				9F47FAB2F00FC68CDFF2CAD9097AD8D8 /* Bundle+Module.swift */,
-				5EF9623A3FAC4EC00EC691741407F297 /* FullScreenSlideshowViewController.swift */,
-				668E6C1ADA8197ABF1CA4C8DAE59845F /* ImageSlideshow.swift */,
-				BC634B45BB675F004251D1736295CEF1 /* ImageSlideshowItem.swift */,
-				470C923CB2DC1A089CE3FF819CDB8C78 /* InputSource.swift */,
-				563B704F6125544749F037A51F85F7EF /* PageIndicator.swift */,
-				042D4594CCAA57041BCA72738C008B2F /* PageIndicatorPosition.swift */,
-				1646645C29AB5EBB8819A256BA7A2D62 /* SwiftSupport.swift */,
-				9D75F1D0CF9E66FDEB0810ED46DEF97E /* UIImage+AspectFit.swift */,
-				656C528950515CF3E98D94B72077E78F /* UIImageView+Tools.swift */,
-				EE58AD9900A6AA70758953EF022BB41E /* ZoomAnimatedTransitioning.swift */,
-				621622A79D439EB88525333CDCA0847D /* Resources */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		8E1CBF724AB11850DC73B4F85F583CA9 /* NMapsMap */ = {
-			isa = PBXGroup;
-			children = (
-				F94D1E209712192345CDAC9BC9A47A12 /* Frameworks */,
-				1F836BA12C5537606DB750DC2636F3C1 /* Support Files */,
+				9DBF4DA555C4A876F2DFB0E9E608E455 /* Frameworks */,
+				4B56C0F2DA38DF7369139F09485A2BF7 /* Support Files */,
 			);
 			name = NMapsMap;
 			path = NMapsMap;
 			sourceTree = "<group>";
 		};
-		93FF90654DEFE8DB37B2C89172881A6B /* Frameworks */ = {
+		8C1550396AFA9DB7D73CA735E4F1686C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0809A385E4768086C8747DE2C4C8FF34 /* NMapsGeometry.xcframework */,
+				02BB9AB6386A66BAE7043A3AADB01684 /* NidThirdPartyLogin-xcframeworks.sh */,
+				AF31B513FF687268272D15332921CBBE /* NidThirdPartyLogin.debug.xcconfig */,
+				43F3193E78BDE485CB1A445C942E2748 /* NidThirdPartyLogin.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NidThirdPartyLogin";
+			sourceTree = "<group>";
+		};
+		9DBF4DA555C4A876F2DFB0E9E608E455 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F7E8A038C114E2CD355D104A854BE36 /* NMapsMap.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B205E078A52540E705F7E372773BB77F /* Support Files */ = {
+		A7F9CAB94E5AC5BE2E2025B9C71B7429 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				133642F97C23EE97D3493A69A29CE0A1 /* FloatingPanel.modulemap */,
-				6AC623CE07378EBC75D4033BC656D350 /* FloatingPanel-dummy.m */,
-				F43BB62A7140E8AEE6644975E80F7847 /* FloatingPanel-Info.plist */,
-				E23B9CA22F0BE67CDD7A9E3886A11781 /* FloatingPanel-prefix.pch */,
-				7E7F983D0F19773906C3765F4979A6BD /* FloatingPanel-umbrella.h */,
-				B843689051C102418AD7EA2414190354 /* FloatingPanel.debug.xcconfig */,
-				D90CBD7CB0B3522E1656D3BA65DA02CF /* FloatingPanel.release.xcconfig */,
+				D75CFFC3B4E73F580C319AB025199749 /* ActivityIndicator.swift */,
+				1BAA95C0F642284575AECC051ED72ABE /* Bundle+Module.swift */,
+				E175677FD71D5CB4024B97C9246DBD68 /* FullScreenSlideshowViewController.swift */,
+				A383138789D2100456A3B2060E21A7C8 /* ImageSlideshow.swift */,
+				E8E542977FBDDE076F16454FC697A556 /* ImageSlideshowItem.swift */,
+				3FD35657594AB430B66706E41E0937FD /* InputSource.swift */,
+				BC6ACDB73821A1CE707AA9C83A92F468 /* PageIndicator.swift */,
+				263C7FA462A770135E419F4C2786B072 /* PageIndicatorPosition.swift */,
+				80A541853DF984DAF415F897FE0EACE5 /* SwiftSupport.swift */,
+				FD12D2263371F88936FFE907C8EA09B7 /* UIImage+AspectFit.swift */,
+				6B97AB27CA274100CDC7350D27CF1B59 /* UIImageView+Tools.swift */,
+				C59EBD0FF57E6D01C1161D5532325754 /* ZoomAnimatedTransitioning.swift */,
+				04377D0EBD070D8229ECE0E12A24C7BE /* Resources */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/FloatingPanel";
+			name = Core;
 			sourceTree = "<group>";
 		};
-		B65C96513818B010999DE37961551C2C /* Support Files */ = {
+		BBBC8F9DE2C3D6430F239E734A7A1E92 /* FloatingPanel */ = {
 			isa = PBXGroup;
 			children = (
-				5C1902571267041354B42F14A43B58CB /* naveridlogin-sdk-ios-xcframeworks.sh */,
-				E878ECF215627BECB10A7DEE4A8670D0 /* naveridlogin-sdk-ios.debug.xcconfig */,
-				ABA5041CEAF37045FE800FBD91E96032 /* naveridlogin-sdk-ios.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/naveridlogin-sdk-ios";
-			sourceTree = "<group>";
-		};
-		CEC2646336345060760CB8B939F9348A /* FloatingPanel */ = {
-			isa = PBXGroup;
-			children = (
-				AD4D075A2E8C4930223884E34D0655CF /* BackdropView.swift */,
-				482B0A4302BD98474FC67C1F73E7441F /* Behavior.swift */,
-				26991DB7FC72FF4E66D9126C5D43E584 /* Controller.swift */,
-				B9058122C67518A84B62648042D70092 /* Core.swift */,
-				6918B26BCB14033DD0D2D30C16966F94 /* Extensions.swift */,
-				0B9D1FCE112748CB2DE0E06D2FE39E63 /* GrabberView.swift */,
-				DAB163065CFA27D6943ABE706F514836 /* Layout.swift */,
-				68C7368DDB49236E7153757E2FB07B65 /* LayoutAnchoring.swift */,
-				3899C83E973C049F370A55F58B114170 /* LayoutProperties.swift */,
-				F6C0D096BC291755037079B41D6AA3D8 /* Logging.swift */,
-				957A581126D75CBE75D86BB066903B34 /* PassthroughView.swift */,
-				C98D7B2DF20FB9587268445370E63CE8 /* Position.swift */,
-				D254076A600CEB640DD93BC493160FF8 /* State.swift */,
-				43147A54B13D9F2810B0D05CB8288D0C /* SurfaceView.swift */,
-				09C55B0CCB63BB63C56BB352A60CA107 /* Transitioning.swift */,
-				B205E078A52540E705F7E372773BB77F /* Support Files */,
+				E0B1C1B172C315BFD3780C8A1FA9C968 /* BackdropView.swift */,
+				C00911A237F9AFE0B4B12D70C973B693 /* Behavior.swift */,
+				8F4ED0CA0B4F84E446EE50681D8E300C /* Controller.swift */,
+				3DF68BF0F58DA9EF01EE2F0B72CAEF2F /* Core.swift */,
+				6F0BB0A3530E22D7E0476CE6267CFE8F /* Extensions.swift */,
+				513A6527442D83EB2241B9ADCD9F55EC /* GrabberView.swift */,
+				22AE9B955CE092370EAABE9013D8ECA6 /* Layout.swift */,
+				D6A6FEC47C88E5B463A9148BA875F424 /* LayoutAnchoring.swift */,
+				B279F56017903CB4B788DF5518B96702 /* LayoutProperties.swift */,
+				F2C97B6C99F757D2577FC6A75E066944 /* Logging.swift */,
+				2A9827598492AB9565E89A07D6960FBC /* PassthroughView.swift */,
+				F700D85A950709D9B17F027B8A427AFF /* Position.swift */,
+				1DCF9152FFCB843218E6814806BC900E /* State.swift */,
+				EE550D54B8D69E87C274DFE8D3D37D1A /* SurfaceView.swift */,
+				F6EB248CC5E47E0C7048B09E97B8CD5F /* Transitioning.swift */,
+				EFAEAB36E762D641D20D55EF46DF67A3 /* Support Files */,
 			);
 			name = FloatingPanel;
 			path = FloatingPanel;
+			sourceTree = "<group>";
+		};
+		BCA594D026A4BAFD66AEC55CB8D63123 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBBC8F9DE2C3D6430F239E734A7A1E92 /* FloatingPanel */,
+				23DAE5546C108EF4F34A830B58CD9326 /* ImageSlideshow */,
+				D6D89B0793E64192C0500CFA5F95B31E /* NidThirdPartyLogin */,
+				71C401F0E8F5B3E62E0F1B975C252754 /* NMapsGeometry */,
+				875E8B772230C9000D69C18E30FE2006 /* NMapsMap */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -441,10 +427,31 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				F39AD60F95B565AD360757C718691A7D /* Pods */,
+				BCA594D026A4BAFD66AEC55CB8D63123 /* Pods */,
 				574E10BE4F34FE0170AF76069B111F4C /* Products */,
 				6BCE455B27419EB0944B1D011A720A65 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D022E820172C6A2AC1CFAB444A2BD977 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9779DAA8EBD921FBC1D6F210225CEE6 /* NMapsGeometry-xcframeworks.sh */,
+				94C1F004D1E90AC31C1774E020A0044C /* NMapsGeometry.debug.xcconfig */,
+				21E1D97564D247E2E43AEE242D90DD29 /* NMapsGeometry.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMapsGeometry";
+			sourceTree = "<group>";
+		};
+		D6D89B0793E64192C0500CFA5F95B31E /* NidThirdPartyLogin */ = {
+			isa = PBXGroup;
+			children = (
+				3829E9C0A080D4C96F3B3EBE9831CD9B /* Frameworks */,
+				8C1550396AFA9DB7D73CA735E4F1686C /* Support Files */,
+			);
+			name = NidThirdPartyLogin;
+			path = NidThirdPartyLogin;
 			sourceTree = "<group>";
 		};
 		ECD3429FAD76C4AB75FBDCD251D6C904 /* Pods-TravelMaker */ = {
@@ -464,50 +471,45 @@
 			path = "Target Support Files/Pods-TravelMaker";
 			sourceTree = "<group>";
 		};
-		F39AD60F95B565AD360757C718691A7D /* Pods */ = {
+		EFAEAB36E762D641D20D55EF46DF67A3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEC2646336345060760CB8B939F9348A /* FloatingPanel */,
-				6366213A011871FD9B38ED208B943C79 /* ImageSlideshow */,
-				21D35B3E9097E78F635D778E704B34C0 /* naveridlogin-sdk-ios */,
-				1C82A5354E7C9C574655BCD360A712F9 /* NMapsGeometry */,
-				8E1CBF724AB11850DC73B4F85F583CA9 /* NMapsMap */,
+				1A14848F8A9F364230D9B287F7DAF409 /* FloatingPanel.modulemap */,
+				89732C205F83B912631AC1F8C72DBC05 /* FloatingPanel-dummy.m */,
+				2AECFA4A4C4C6C30E487EB316245ED24 /* FloatingPanel-Info.plist */,
+				3E6D346DB72FAB33BFF5A244EE6A9DB7 /* FloatingPanel-prefix.pch */,
+				8DAF100EEFD0BC64E5FADF573B9D9EC1 /* FloatingPanel-umbrella.h */,
+				09D4B24EC2F854F4AE77CCBBBA7371FB /* FloatingPanel.debug.xcconfig */,
+				8D25BB4ED8ACD5FCD7CE4FD96DEA17DD /* FloatingPanel.release.xcconfig */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F94D1E209712192345CDAC9BC9A47A12 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1856364A1C81A114C73389C5E7967381 /* NMapsMap.xcframework */,
-			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/FloatingPanel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		18FCCCEFE9DBF9BB8AA2A0F835B73A00 /* Headers */ = {
+		373E544FAAD01F69C077D7BCE6B153D0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2355558CDF30BD4941D1740C18237FB /* ImageSlideshow-umbrella.h in Headers */,
+				06C1FEAC781C91AB8E93DD5CBDF68211 /* ImageSlideshow-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F07665DFDFE047D433F1F66C41945B4 /* Headers */ = {
+		9CEBB7F7148A36EF8E7DF6380683D3A0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C384D813296E9BD67C4AB97225C907A3 /* Pods-TravelMaker-umbrella.h in Headers */,
+				4F8FD6AD301598885A4FC125B133CF03 /* FloatingPanel-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0F1E1EBF83F19100B7EABB591F1D634 /* Headers */ = {
+		A214DEA8EDC5166F23B7D958FE3FEFF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0EDBA61967D32C87F4A9AE587BBC30 /* FloatingPanel-umbrella.h in Headers */,
+				02A8374ACC62DE5933C09B195C2E94E9 /* Pods-TravelMaker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,12 +518,12 @@
 /* Begin PBXNativeTarget section */
 		4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FF3C92FABCE4BE1998FD8441567F565 /* Build configuration list for PBXNativeTarget "FloatingPanel" */;
+			buildConfigurationList = EB49CF8987BBB650FD58144A96114FA1 /* Build configuration list for PBXNativeTarget "FloatingPanel" */;
 			buildPhases = (
-				E0F1E1EBF83F19100B7EABB591F1D634 /* Headers */,
-				D8BFA82AE5F02096466C3CB401DF26C6 /* Sources */,
-				AFF472590F7E17200944CB3BE693B9D6 /* Frameworks */,
-				6B1709DCDD61B255A2B2EF302AA6C832 /* Resources */,
+				9CEBB7F7148A36EF8E7DF6380683D3A0 /* Headers */,
+				B294098712D60C0BB0621E18A6971FDA /* Sources */,
+				2DEF8B03BE282AFBF9409E0E64249226 /* Frameworks */,
+				70951E97E8508888D603544D88131990 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -534,21 +536,21 @@
 		};
 		63B4D62694066E40AB546D642FAA8D56 /* Pods-TravelMaker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E05157B533F732D5ABEE04B3399F62B /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
+			buildConfigurationList = 925FEAEC5C41EF3EAA88782E6F00CCCD /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */;
 			buildPhases = (
-				5F07665DFDFE047D433F1F66C41945B4 /* Headers */,
-				E937EC1411C1D6172A50B7A2F68FEDAF /* Sources */,
-				14F264C01C84630FF55D25F52035AF1B /* Frameworks */,
-				4C0B33BD8AD34DC9E8152282E30A62D4 /* Resources */,
+				A214DEA8EDC5166F23B7D958FE3FEFF1 /* Headers */,
+				CD630E58BB1D315CB77FE23E19CBFF49 /* Sources */,
+				AC75FBD473BC2F4A9A8D0C691B369365 /* Frameworks */,
+				108A816DAF56E0D1F1C55548186A7400 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				290DFFC70205888711B4616C99AC623D /* PBXTargetDependency */,
-				788226C8BE7DCAC64DB85473902FED35 /* PBXTargetDependency */,
-				6A9F598C181F9BE32E6BE621DDF4AB7D /* PBXTargetDependency */,
-				00BC275C511A45EF301D3A505A01796A /* PBXTargetDependency */,
-				0579653525BDE03FFCFB96E927AA62A9 /* PBXTargetDependency */,
+				C115E9D587E1472C0ADE33013DE9EFB2 /* PBXTargetDependency */,
+				C64EBA677A79E7232E5A50729E51A776 /* PBXTargetDependency */,
+				7EC7D358DB9583033B4C8B4CCEBFDF52 /* PBXTargetDependency */,
+				177819BB0C4510C9E310AF936D747E3D /* PBXTargetDependency */,
+				B105326477A82CF436419E96B31A352C /* PBXTargetDependency */,
 			);
 			name = "Pods-TravelMaker";
 			productName = Pods_TravelMaker;
@@ -557,12 +559,12 @@
 		};
 		B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41C17E86ABA339C15EA7E6F1FAF29E11 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */;
+			buildConfigurationList = AC1CA046FE01BA106425B4AEDAC43BE0 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */;
 			buildPhases = (
-				18FCCCEFE9DBF9BB8AA2A0F835B73A00 /* Headers */,
-				C4982A9FFE61E31045E3DB5C0A2F3EB8 /* Sources */,
-				3C2600B062A98E702FEC03475B350B69 /* Frameworks */,
-				DD1EB5C47999A598DD0A6DB3CD1082D0 /* Resources */,
+				373E544FAAD01F69C077D7BCE6B153D0 /* Headers */,
+				C979124EFC74C20F13067A805B0222DD /* Sources */,
+				A5ACAF270EA39430FC0999EB704B98D5 /* Frameworks */,
+				4374429080EEB1244820D455C8585942 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -579,8 +581,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -591,13 +593,15 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 574E10BE4F34FE0170AF76069B111F4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */,
 				B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */,
-				3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */,
+				0928C6151B80FDB69B74BB33FDF695A5 /* NidThirdPartyLogin */,
 				72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */,
 				8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */,
 				63B4D62694066E40AB546D642FAA8D56 /* Pods-TravelMaker */,
@@ -606,26 +610,26 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C0B33BD8AD34DC9E8152282E30A62D4 /* Resources */ = {
+		108A816DAF56E0D1F1C55548186A7400 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B1709DCDD61B255A2B2EF302AA6C832 /* Resources */ = {
+		4374429080EEB1244820D455C8585942 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7E400C5EBE60187805B4C0BB8809FC /* ic_cross_white@2x.png in Resources */,
+				E8DD48EF3C41E38A5167713EA7715D92 /* ic_cross_white@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD1EB5C47999A598DD0A6DB3CD1082D0 /* Resources */ = {
+		70951E97E8508888D603544D88131990 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0ACA68E14F40AD7364C10534AFBA8C /* ic_cross_white@2x.png in Resources */,
-				53B4539A09E05B884DA75A1655747124 /* ic_cross_white@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,23 +653,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/NMapsGeometry/NMapsGeometry-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E05BCF0D92F31389F4CCB961DA341B4 /* [CP] Copy XCFrameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/naveridlogin-sdk-ios/naveridlogin-sdk-ios-xcframeworks-input-files.xcfilelist",
-			);
-			name = "[CP] Copy XCFrameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/naveridlogin-sdk-ios/naveridlogin-sdk-ios-xcframeworks-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/naveridlogin-sdk-ios/naveridlogin-sdk-ios-xcframeworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -683,108 +670,126 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/NMapsMap/NMapsMap-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE20EA37296DBA1A66B9720626401A0F /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NidThirdPartyLogin/NidThirdPartyLogin-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/NidThirdPartyLogin/NidThirdPartyLogin-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/NidThirdPartyLogin/NidThirdPartyLogin-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C4982A9FFE61E31045E3DB5C0A2F3EB8 /* Sources */ = {
+		B294098712D60C0BB0621E18A6971FDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6F652FAF9D47F3D4AB6191139E7548A /* ActivityIndicator.swift in Sources */,
-				E1A05F7AAC7473380981C8B79C629BC9 /* Bundle+Module.swift in Sources */,
-				47B6806493F0F11A6F9FAC7CE4F070EC /* FullScreenSlideshowViewController.swift in Sources */,
-				95EDF0D844D99237550E7209F6E2C87C /* ImageSlideshow.swift in Sources */,
-				0E8B4C6C3FC4F926AEFEE8A68E18AAA5 /* ImageSlideshow-dummy.m in Sources */,
-				37532F1C3F548FB210218D9A7C2B6528 /* ImageSlideshowItem.swift in Sources */,
-				B99E793E702BE86A5CDB45EB96BA109B /* InputSource.swift in Sources */,
-				DEA3E3C7FD0C3EF78B89AF15AC7A2BFA /* PageIndicator.swift in Sources */,
-				C25ECEC767960C062FB59A570C98945D /* PageIndicatorPosition.swift in Sources */,
-				C51F23068C5C7908F073CAE1640B9EA1 /* SwiftSupport.swift in Sources */,
-				77B4A451EF0C07F1AC3712F915FA8F91 /* UIImage+AspectFit.swift in Sources */,
-				5925A6294EE5B50BC8E2B26628797A60 /* UIImageView+Tools.swift in Sources */,
-				74EA001A27A206767BE222A6539BC5D8 /* ZoomAnimatedTransitioning.swift in Sources */,
+				E965A5FFC1C96DA09CE4436ED34E443F /* BackdropView.swift in Sources */,
+				0E63C8ED11C8BB1B409FC67E97D3D8AC /* Behavior.swift in Sources */,
+				19C67E21CA02A89D689AE1F87D16A544 /* Controller.swift in Sources */,
+				74BBD03C421129D5AC7B818BCB0EF429 /* Core.swift in Sources */,
+				7F4A9BEC369542129D7BF2A2FE38D399 /* Extensions.swift in Sources */,
+				F3C77841C29DD50FC3AC986A209DB24F /* FloatingPanel-dummy.m in Sources */,
+				20A25F205DAB33ED9DEC4463ACFB6754 /* GrabberView.swift in Sources */,
+				F119A6D758001A7B8F448B641EB31A92 /* Layout.swift in Sources */,
+				563A0DBE5DE63F5F5409AD2B2ED930B9 /* LayoutAnchoring.swift in Sources */,
+				0527FFE5D4C7D447DC6AED4C6587DD3D /* LayoutProperties.swift in Sources */,
+				ADA111E898AA89E509A8089B2240495D /* Logging.swift in Sources */,
+				A347F95C743947B8DC05A3AB6BAD7203 /* PassthroughView.swift in Sources */,
+				10A957C8620DFDAF5E30BFAAAA667DC5 /* Position.swift in Sources */,
+				6832F1A0434DC591D076CC98277DB05F /* State.swift in Sources */,
+				B5FCA5E67F0BDFA04510F007FE117488 /* SurfaceView.swift in Sources */,
+				9D83AF8E2098E7DB31F95FFA75E0A011 /* Transitioning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8BFA82AE5F02096466C3CB401DF26C6 /* Sources */ = {
+		C979124EFC74C20F13067A805B0222DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55883362AB1A02167EABF7EB311CE030 /* BackdropView.swift in Sources */,
-				19CAF035226E30170C413BB69CAF3EB6 /* Behavior.swift in Sources */,
-				FBAEF9FDA1A58C056383C040F01AB1B8 /* Controller.swift in Sources */,
-				CE2FD7926FE07535266AA22DEC47F434 /* Core.swift in Sources */,
-				315E4A8996F23377ADBF38865A416085 /* Extensions.swift in Sources */,
-				02E9AA511A2D172A8FEEB85D50D25559 /* FloatingPanel-dummy.m in Sources */,
-				83F41747CE86EB46D492651C10B9DE29 /* GrabberView.swift in Sources */,
-				F4C3A79277E7C41B8C8D49906FCB6E5E /* Layout.swift in Sources */,
-				60E1BF38C6DBD5F7CA2A8640A1885B1F /* LayoutAnchoring.swift in Sources */,
-				FF24208E41193057579142A3984563FB /* LayoutProperties.swift in Sources */,
-				C62E5A2D5E2B7C8B9233924E8421CFF6 /* Logging.swift in Sources */,
-				738F63FD76213507BEFDEC938EAA1CB4 /* PassthroughView.swift in Sources */,
-				3C0A97FC36BE7A967BB02FC1EA8C3976 /* Position.swift in Sources */,
-				22A550F3962CC7925596E171849ADD22 /* State.swift in Sources */,
-				994043A4233B17CA62C28A52C78A8FC3 /* SurfaceView.swift in Sources */,
-				CA652637599E58E561ACF5A5D5AA14B9 /* Transitioning.swift in Sources */,
+				C379BB5C126242ECFB379687DD1D9A30 /* ActivityIndicator.swift in Sources */,
+				4B89E6C9EAECE44ABED0E9673631A776 /* Bundle+Module.swift in Sources */,
+				7F187C80366DB95009E1C8513320EE74 /* FullScreenSlideshowViewController.swift in Sources */,
+				08B5541CB13C196E9435530316F340D1 /* ImageSlideshow.swift in Sources */,
+				670765612297940252ADFF62C406C0F5 /* ImageSlideshow-dummy.m in Sources */,
+				B1061F3D84D05FE3DFCB8117553E9DCB /* ImageSlideshowItem.swift in Sources */,
+				C97BD456F89F132EB8DA01DF4EB154F7 /* InputSource.swift in Sources */,
+				073A6FF2F34D7AD21E8ED1100328587F /* PageIndicator.swift in Sources */,
+				DF091092757190C4D98F23A33F794328 /* PageIndicatorPosition.swift in Sources */,
+				11F4225439F53103341D309DCD7BE1F6 /* SwiftSupport.swift in Sources */,
+				54D6AD7CDD96006688DB042084E52124 /* UIImage+AspectFit.swift in Sources */,
+				A0AD546FCCC91C1C66AB09CC7A75B653 /* UIImageView+Tools.swift in Sources */,
+				8FE8BBAF52B08B13F23896A424821C85 /* ZoomAnimatedTransitioning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E937EC1411C1D6172A50B7A2F68FEDAF /* Sources */ = {
+		CD630E58BB1D315CB77FE23E19CBFF49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				671ABC0FDB995DDE7B3AFAB5E02DBD00 /* Pods-TravelMaker-dummy.m in Sources */,
+				1A4555DC111ECD55494B7D518B400DED /* Pods-TravelMaker-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00BC275C511A45EF301D3A505A01796A /* PBXTargetDependency */ = {
+		177819BB0C4510C9E310AF936D747E3D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMapsMap;
 			target = 8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */;
-			targetProxy = 4D67FF680CB4BC719CA446E407DF8B5C /* PBXContainerItemProxy */;
+			targetProxy = 56A13AD9F9BBC0AEF0B44F0DFB5C4DFE /* PBXContainerItemProxy */;
 		};
-		0579653525BDE03FFCFB96E927AA62A9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "naveridlogin-sdk-ios";
-			target = 3516E9D4735D155BC036A4DB393966FC /* naveridlogin-sdk-ios */;
-			targetProxy = 5F620D2D2BCAA37EF0889F845FE81127 /* PBXContainerItemProxy */;
-		};
-		287D5386AD9766355350ED1EAA06379F /* PBXTargetDependency */ = {
+		7EC7D358DB9583033B4C8B4CCEBFDF52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMapsGeometry;
 			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = 5D2DD8CB48872BEFD4F7B3D23D5AFFF2 /* PBXContainerItemProxy */;
+			targetProxy = B41183B00C6D37D1118741697BEF3816 /* PBXContainerItemProxy */;
 		};
-		290DFFC70205888711B4616C99AC623D /* PBXTargetDependency */ = {
+		B105326477A82CF436419E96B31A352C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NidThirdPartyLogin;
+			target = 0928C6151B80FDB69B74BB33FDF695A5 /* NidThirdPartyLogin */;
+			targetProxy = 0637DD25F1558C7A840C5F21DD7EB6DB /* PBXContainerItemProxy */;
+		};
+		B16B45462142B07577C77D2234F27312 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMapsGeometry;
+			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
+			targetProxy = F6F9C5F50FA5A6401D87011BE93113A8 /* PBXContainerItemProxy */;
+		};
+		C115E9D587E1472C0ADE33013DE9EFB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FloatingPanel;
 			target = 4874E7E655CEB4C01E4572AD903AEA21 /* FloatingPanel */;
-			targetProxy = AD08A8071B00D4693B2C9E2AF99D1A80 /* PBXContainerItemProxy */;
+			targetProxy = 6BCA232E2C4E64D08B1A33F471CE2290 /* PBXContainerItemProxy */;
 		};
-		6A9F598C181F9BE32E6BE621DDF4AB7D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NMapsGeometry;
-			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = 8BC018C62CC8A750D12F592909F227B9 /* PBXContainerItemProxy */;
-		};
-		788226C8BE7DCAC64DB85473902FED35 /* PBXTargetDependency */ = {
+		C64EBA677A79E7232E5A50729E51A776 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageSlideshow;
 			target = B2F46A67275CC5973EE13076CD708247 /* ImageSlideshow */;
-			targetProxy = 2383600A278F4A85234C62C197EE43A6 /* PBXContainerItemProxy */;
+			targetProxy = 43609A1DBACE0FDF89D715313DB23725 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */ = {
+		054E51A885E107CDE48497C43CBA2A76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5D554DC99CB0AE9C223C23C29ADF9B6 /* NMapsGeometry.release.xcconfig */;
+			baseConfigurationReference = 21E1D97564D247E2E43AEE242D90DD29 /* NMapsGeometry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -796,12 +801,13 @@
 			};
 			name = Release;
 		};
-		35613D0A5F350911AE6E907FDFC836E1 /* Debug */ = {
+		2A5A07E7ECD8F932FC105B66E699965B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E878ECF215627BECB10A7DEE4A8670D0 /* naveridlogin-sdk-ios.debug.xcconfig */;
+			baseConfigurationReference = 94C1F004D1E90AC31C1774E020A0044C /* NMapsGeometry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -812,19 +818,80 @@
 			};
 			name = Debug;
 		};
-		4122D12474652D4B94029A59C0DC6010 /* Debug */ = {
+		2A8C8C5C758E60300671F9D07EC2B288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65BBFBA15AA4A8978E7A54CAF2462C11 /* NMapsGeometry.debug.xcconfig */;
+			baseConfigurationReference = F97D0128D87C147C4B98071D652E04D7 /* ImageSlideshow.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
+				PRODUCT_MODULE_NAME = ImageSlideshow;
+				PRODUCT_NAME = ImageSlideshow;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4A79CF306D40F9E9D7EFFEFBE51A4C04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC242FD427269F83CF7023088EB4A7AA /* ImageSlideshow.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
+				PRODUCT_MODULE_NAME = ImageSlideshow;
+				PRODUCT_NAME = ImageSlideshow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -894,46 +961,13 @@
 			};
 			name = Debug;
 		};
-		5DA5FF897D53F86DA9C9F3A3B69407B7 /* Debug */ = {
+		5D3D4A8485CE25FA0EB43FD934BDFDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 859D76E7600881693F5BCDA18DA824F5 /* ImageSlideshow.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
-				PRODUCT_MODULE_NAME = ImageSlideshow;
-				PRODUCT_NAME = ImageSlideshow;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		768846D27ACEFD82711658787FCAC0B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABA5041CEAF37045FE800FBD91E96032 /* naveridlogin-sdk-ios.release.xcconfig */;
+			baseConfigurationReference = 24EE001FC52FA1CD3AA329C7C127B4EC /* NMapsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -945,11 +979,29 @@
 			};
 			name = Release;
 		};
-		79494A67AE94276C92D89B95AB5AD3AC /* Debug */ = {
+		7A47342C78853D8891BB446980D1E43F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
+			baseConfigurationReference = 43F3193E78BDE485CB1A445C942E2748 /* NidThirdPartyLogin.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B5237695A16BD4308575CC9F3CF1A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D25BB4ED8ACD5FCD7CE4FD96DEA17DD /* FloatingPanel.release.xcconfig */;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -959,7 +1011,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -967,49 +1023,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7DF2324936BD134EEA9B57D35CC17040 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 887B8742432E8E6D99323249F81406B2 /* ImageSlideshow.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ImageSlideshow/ImageSlideshow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ImageSlideshow/ImageSlideshow.modulemap";
-				PRODUCT_MODULE_NAME = ImageSlideshow;
-				PRODUCT_NAME = ImageSlideshow;
+				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
+				PRODUCT_MODULE_NAME = FloatingPanel;
+				PRODUCT_NAME = FloatingPanel;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.2;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1079,94 +1100,7 @@
 			};
 			name = Release;
 		};
-		C487506C1E19D40CFA7EF5D541304E9E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B843689051C102418AD7EA2414190354 /* FloatingPanel.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
-				PRODUCT_MODULE_NAME = FloatingPanel;
-				PRODUCT_NAME = FloatingPanel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E5954E17E9E2FAF4242A78FFA059FE35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D90CBD7CB0B3522E1656D3BA65DA02CF /* FloatingPanel.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
-				PRODUCT_MODULE_NAME = FloatingPanel;
-				PRODUCT_NAME = FloatingPanel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BF56E32360B57943546744BD1C4981B /* NMapsMap.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EB20CD0A8C8BDDA95F0C8889473D2B03 /* Release */ = {
+		8E4041315E6546132EBA7FCBC10AE546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B14F4F4E8B70E1DE6E15A61E3677B44B /* Pods-TravelMaker.release.xcconfig */;
 			buildSettings = {
@@ -1180,6 +1114,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1204,12 +1140,53 @@
 			};
 			name = Release;
 		};
-		FE5D137BA104CCBECE001BF38C0AEB3E /* Release */ = {
+		9872C3C21423F21205FCFB4D147105AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F4F2BB8A77F77BD23DF6FA298CC11AF /* NMapsMap.release.xcconfig */;
+			baseConfigurationReference = 09D4B24EC2F854F4AE77CCBBBA7371FB /* FloatingPanel.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/FloatingPanel/FloatingPanel-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/FloatingPanel/FloatingPanel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FloatingPanel/FloatingPanel.modulemap";
+				PRODUCT_MODULE_NAME = FloatingPanel;
+				PRODUCT_NAME = FloatingPanel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B73B55EA016B4082EAF4B235E4AFA420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF31B513FF687268272D15332921CBBE /* NidThirdPartyLogin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1217,31 +1194,68 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		FAB9677BCDB7996B80F291B474EB80E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2A5E9566F36F9B4D69615E52990A3E6 /* NMapsMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB1AAA368754145F9B9E5FD52BBA1F2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB7E8638F47485881B1649F3CEBEE48 /* Pods-TravelMaker.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TravelMaker/Pods-TravelMaker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FF3C92FABCE4BE1998FD8441567F565 /* Build configuration list for PBXNativeTarget "FloatingPanel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C487506C1E19D40CFA7EF5D541304E9E /* Debug */,
-				E5954E17E9E2FAF4242A78FFA059FE35 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41C17E86ABA339C15EA7E6F1FAF29E11 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5DA5FF897D53F86DA9C9F3A3B69407B7 /* Debug */,
-				7DF2324936BD134EEA9B57D35CC17040 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1251,11 +1265,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E05157B533F732D5ABEE04B3399F62B /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
+		6C225DE576CFE271F8518A8BFF5A35AF /* Build configuration list for PBXAggregateTarget "NidThirdPartyLogin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79494A67AE94276C92D89B95AB5AD3AC /* Debug */,
-				EB20CD0A8C8BDDA95F0C8889473D2B03 /* Release */,
+				B73B55EA016B4082EAF4B235E4AFA420 /* Debug */,
+				7A47342C78853D8891BB446980D1E43F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1263,17 +1277,35 @@
 		73E737D5F21341C24A13EBC70CD8D471 /* Build configuration list for PBXAggregateTarget "NMapsMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */,
-				FE5D137BA104CCBECE001BF38C0AEB3E /* Release */,
+				FAB9677BCDB7996B80F291B474EB80E9 /* Debug */,
+				5D3D4A8485CE25FA0EB43FD934BDFDE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75CE31157FEFB4EACB18011E2D25C61C /* Build configuration list for PBXAggregateTarget "naveridlogin-sdk-ios" */ = {
+		925FEAEC5C41EF3EAA88782E6F00CCCD /* Build configuration list for PBXNativeTarget "Pods-TravelMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35613D0A5F350911AE6E907FDFC836E1 /* Debug */,
-				768846D27ACEFD82711658787FCAC0B6 /* Release */,
+				FB1AAA368754145F9B9E5FD52BBA1F2B /* Debug */,
+				8E4041315E6546132EBA7FCBC10AE546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC1CA046FE01BA106425B4AEDAC43BE0 /* Build configuration list for PBXNativeTarget "ImageSlideshow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A79CF306D40F9E9D7EFFEFBE51A4C04 /* Debug */,
+				2A8C8C5C758E60300671F9D07EC2B288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB49CF8987BBB650FD58144A96114FA1 /* Build configuration list for PBXNativeTarget "FloatingPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9872C3C21423F21205FCFB4D147105AA /* Debug */,
+				8B5237695A16BD4308575CC9F3CF1A8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1281,8 +1313,8 @@
 		EB98AD101AB530610FAEE48FABDF7F57 /* Build configuration list for PBXAggregateTarget "NMapsGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4122D12474652D4B94029A59C0DC6010 /* Debug */,
-				138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */,
+				2A5A07E7ECD8F932FC105B66E699965B /* Debug */,
+				054E51A885E107CDE48497C43CBA2A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

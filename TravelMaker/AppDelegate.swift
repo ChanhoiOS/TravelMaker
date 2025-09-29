@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import NaverThirdPartyLogin
+import NidThirdPartyLogin
 import KakaoSDKCommon
 import NMapsMap
 import NMapsGeometry
@@ -41,14 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //MARK: 네이버 로그인 초기화
 extension AppDelegate {
     func setNaverLogin() {
-        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
-        instance?.isNaverAppOauthEnable = true
-        instance?.isInAppOauthEnable = true
-        instance?.isOnlyPortraitSupportedInIphone()
-        instance?.serviceUrlScheme = kServiceAppUrlScheme
-        instance?.consumerKey = kConsumerKey
-        instance?.consumerSecret = kConsumerSecret
-        instance?.appName = kServiceAppName
+        NidOAuth.shared.initialize()
     }
 }
 

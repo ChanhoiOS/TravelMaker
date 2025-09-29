@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import NaverThirdPartyLogin
+import NidThirdPartyLogin
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
@@ -67,9 +67,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             
             // 네이버 로그인
-            NaverThirdPartyLoginConnection
-                .getSharedInstance()?
-                .receiveAccessToken(url)
+            if NidOAuth.shared.handleURL(url) == true {
+                return
+            }
         }
     }
 }

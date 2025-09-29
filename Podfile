@@ -5,7 +5,7 @@ target 'TravelMaker' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
- pod 'naveridlogin-sdk-ios'
+ pod 'NidThirdPartyLogin'
  pod 'NMapsMap'
  pod 'ImageSlideshow', '~> 1.9.0'
  pod 'FloatingPanel'

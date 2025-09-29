@@ -35,6 +35,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NidAppName</key>
+	<string>TravelMaker</string>
+	<key>NidClientID</key>
+	<string>qTwo3dCoyZbolz4NleBt</string>
+	<key>NidClientSecret</key>
+	<string>g5wpYpg_TM</string>
+	<key>NidUrlScheme</key>
+	<string>com.develop.chanho.TravelMaker</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SUIT-Bold.otf</string>

@@ -3,7 +3,7 @@ PODS:
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
-  - naveridlogin-sdk-ios (4.1.6)
+  - NidThirdPartyLogin (5.0.1)
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.17.0):
     - NMapsGeometry
@@ -11,24 +11,24 @@ PODS:
 DEPENDENCIES:
   - FloatingPanel
   - ImageSlideshow (~> 1.9.0)
-  - naveridlogin-sdk-ios
+  - NidThirdPartyLogin
   - NMapsMap
 
 SPEC REPOS:
   trunk:
     - FloatingPanel
     - ImageSlideshow
-    - naveridlogin-sdk-ios
+    - NidThirdPartyLogin
     - NMapsGeometry
     - NMapsMap
 
 SPEC CHECKSUMS:
   FloatingPanel: f585be005983e66f8f4932f93ca46bf9f09dae3a
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
-  naveridlogin-sdk-ios: cdd34e3585a3d5aaf37c1d84c1f41faba4a25d1a
+  NidThirdPartyLogin: ed291a543cc60a433bcad522b6bf7d3126ad4fdc
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: a5b909a31b6f3d27a670f6eb2ddc913c38975474
 
-PODFILE CHECKSUM: c1327318e4eafc0dcdd589c31d7a7ec3ce5ac0c5
+PODFILE CHECKSUM: 2b6bc2c72c574a40f45e8b2b550b6241a8e9417e
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.16.2

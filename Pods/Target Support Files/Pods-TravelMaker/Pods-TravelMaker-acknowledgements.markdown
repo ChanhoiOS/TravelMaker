@@ -61,7 +61,7 @@ Copyright © 2018 NAVER Corp.
 All rights reserved.
 
 
-## naveridlogin-sdk-ios
+## NidThirdPartyLogin
 
                                 Apache License
                            Version 2.0, January 2004
@@ -251,7 +251,7 @@ All rights reserved.
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright {yyyy} {name of copyright owner}
+   Copyright (c) 2025-present NAVER Corp.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

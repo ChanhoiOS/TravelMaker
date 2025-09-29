@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-import NaverThirdPartyLogin
+import NidThirdPartyLogin
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
@@ -72,34 +72,38 @@ extension SocialLoginManager {
 }
 
 // MARK: 네이버 로그인 로직
-extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
+extension SocialLoginManager {
     func startNaverLogin() {
-        guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
+        NidOAuth.shared.requestLogin { result in
+            switch result {
+            case .success(let loginResult):
+                let accessToken = loginResult.accessToken.tokenString
                 
-        //이미 로그인되어있는 경우
-        if loginInstance.isValidAccessTokenExpireTimeNow() {
-            self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
-            return
+                self.getNaverUserInfo(accessToken)
+            case .failure(let error):
+                print("Error: ", error.localizedDescription)
+            }
         }
-                
-        loginInstance.delegate = self
-        loginInstance.requestThirdPartyLogin()
     }
         
-    func getNaverUserInfo( _ tokenType : String?, _ accessToken : String?) {
-                
-        guard let tokenType = tokenType else { return }
+    func getNaverUserInfo(_ accessToken : String?) {
         guard let accessToken = accessToken else { return }
                 
         let urlStr = "https://openapi.naver.com/v1/nid/me"
         let url = URL(string: urlStr)!
                 
-        let authorization = "\(tokenType) \(accessToken)"
+        let authorization = "bearer \(accessToken)"
+        
+        let header: HTTPHeaders = [
+            "Authorization": authorization
+        ]
                 
-        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .responseDecodable(of: NaverLoginModel.self) { [weak self] response in
                 switch response.result {
                 case .success(let data):
+                    let userId = data.response?.id ?? ""
+                    
                     let id = data.response?.id ?? ""
                     
                     self?.delegate?.socialLoginSuccess(id, .naver)
@@ -107,24 +111,6 @@ extension SocialLoginManager: NaverThirdPartyLoginConnectionDelegate {
                     self?.delegate?.socialLoginError(.naver)
                 }
         }
-    }
-    
-    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        print("토큰 요청 완료")
-    }
-        
-    func oauth20ConnectionDidFinishDeleteToken() {
-        print("네이버 로그인 토큰이 삭제되었습니다.")
-    }
-        
-    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        print("error: ",error)
-    }
-        
-    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-        guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
-               
-        self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
     }
 }
 

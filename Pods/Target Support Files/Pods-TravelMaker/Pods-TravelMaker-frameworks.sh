@@ -180,14 +180,16 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NMapsGeometry/NMapsGeometry.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NMapsMap/NMapsMap.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/naveridlogin-sdk-ios/NaverThirdPartyLogin.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NidThirdPartyLogin/NidCore.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NidThirdPartyLogin/NidThirdPartyLogin.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NMapsGeometry/NMapsGeometry.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NMapsMap/NMapsMap.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/naveridlogin-sdk-ios/NaverThirdPartyLogin.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NidThirdPartyLogin/NidCore.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/NidThirdPartyLogin/NidThirdPartyLogin.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
