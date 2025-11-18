@@ -1,5 +1,5 @@
 {
-  "originHash" : "6e7e6cfb99d89183e5564375defcdb01b152c5835af54441df4470ae431b6a48",
+  "originHash" : "edc41a26b64beb56d4a9b3f4f0be1386ff14027ccfc27ab3da2fb6390e7bb62f",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -141,8 +141,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/freshOS/Stevia",
       "state" : {
-        "revision" : "cfb1a1d2159277bb553c3dc46f3f742c0275566d",
-        "version" : "5.1.2"
+        "revision" : "6192b6216f821b7132e9b772108f25af8cf8ebc5",
+        "version" : "6.2.2"
       }
     },
     {
@@ -168,8 +168,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Yummypets/YPImagePicker.git",
       "state" : {
-        "revision" : "2db04eb020e3ef03828d3207d85250e110fa5919",
-        "version" : "5.2.2"
+        "revision" : "a1dbf277792dbfa6e15719e57bb552c9f471b94a",
+        "version" : "5.3.2"
       }
     }
   ],

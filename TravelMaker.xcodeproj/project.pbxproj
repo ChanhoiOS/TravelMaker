@@ -173,6 +173,7 @@
 		09D7B1842AAAFE9100991841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1822AAAFE9100991841 /* Main.storyboard */; };
 		09D7B1862AAAFE9200991841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1852AAAFE9200991841 /* Assets.xcassets */; };
 		09D7B1892AAAFE9200991841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D7B1872AAAFE9200991841 /* LaunchScreen.storyboard */; };
+		09E105542ECBFE6500CE58A6 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = 09E105532ECBFE6500CE58A6 /* Stevia */; };
 		09F0DB9A2AB3F1C500207F0D /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DB992AB3F1C500207F0D /* MyPageModel.swift */; };
 		09F0DB9D2AB412D500207F0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DB9C2AB412D500207F0D /* Constants.swift */; };
 		09F0DBA62AB4493100207F0D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F0DBA52AB4493100207F0D /* String+Extension.swift */; };
@@ -355,6 +356,7 @@
 				09BF58312AD78F5C00DCF822 /* Kingfisher in Frameworks */,
 				09BF582E2AD7883600DCF822 /* YPImagePicker in Frameworks */,
 				091D5F3A2AB1551B00D58FA2 /* KakaoSDKTalk in Frameworks */,
+				09E105542ECBFE6500CE58A6 /* Stevia in Frameworks */,
 				09A83EE32AAE95330082A6A2 /* PinLayout in Frameworks */,
 				091D5F382AB1551B00D58FA2 /* KakaoSDKShare in Frameworks */,
 				09A83F152AAF05060082A6A2 /* CombineMoya in Frameworks */,
@@ -1343,6 +1345,7 @@
 				099EE9BC2ADD14AC000F0BBE /* RxCoreLocation */,
 				08A6AF4B2B0A2E520045EAFA /* RxGesture */,
 				095FD1E12B3D2F3000ACD996 /* PanModal */,
+				09E105532ECBFE6500CE58A6 /* Stevia */,
 			);
 			productName = TravelMaker;
 			productReference = 09D7B1792AAAFE9100991841 /* TravelMaker.app */;
@@ -1387,6 +1390,7 @@
 				099EE9BB2ADD14AC000F0BBE /* XCRemoteSwiftPackageReference "RxCoreLocation" */,
 				08A6AF4A2B0A2E520045EAFA /* XCRemoteSwiftPackageReference "RxGesture" */,
 				095FD1E02B3D2F3000ACD996 /* XCRemoteSwiftPackageReference "PanModal" */,
+				09E105522ECBFE6500CE58A6 /* XCRemoteSwiftPackageReference "Stevia" */,
 			);
 			productRefGroup = 09D7B17A2AAAFE9100991841 /* Products */;
 			projectDirPath = "";
@@ -1481,9 +1485,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TravelMaker/Pods-TravelMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TravelMaker/Pods-TravelMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1768,7 +1776,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1811,7 +1819,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1965,6 +1973,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		09E105522ECBFE6500CE58A6 /* XCRemoteSwiftPackageReference "Stevia" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Stevia";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2102,6 +2118,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09CAB1542AD508820077B46F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		09E105532ECBFE6500CE58A6 /* Stevia */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09E105522ECBFE6500CE58A6 /* XCRemoteSwiftPackageReference "Stevia" */;
+			productName = Stevia;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
