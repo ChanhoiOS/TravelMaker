@@ -61,7 +61,7 @@ class SearchSpaceViewReactor: Reactor {
 extension SearchSpaceViewReactor {
     func getCommonHeaders() -> HTTPHeaders {
         let headers: HTTPHeaders = [
-            "Authorization": "KakaoAK 6c8efb7c415446c40b0a1ffb43babe9a",
+            "Authorization": "KakaoAK 7caf64fa5306dcc269e66c45c0b9fb78",
             "Content-Type": "application/json"
         ]
         
